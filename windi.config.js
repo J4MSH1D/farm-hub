@@ -5,6 +5,7 @@ export default defineConfig({
 		extend: {
 			container: {
 				center: true,
+				padding: "1.5rem",
 			},
 		},
 	},

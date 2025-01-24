@@ -2,7 +2,7 @@
 import links from "./data/index";
 </script>
 <template>
-	<header class="bg-white py-5">
+	<header class="py-5 shadow rounded-b-5xl bg-white">
 		<div class="container">
 			<div class="flex items-center justify-between">
 				<icon name="logo" is-svg />
@@ -10,7 +10,7 @@ import links from "./data/index";
 			<div class="flex mt-5 gap-5">
 				<div v-for="link in links">
 					<div v-if="link.children">
-						<a-dropdown placement="bottomLeft">
+						<a-dropdown placement="bottomLeft" overlayClassName="pt-5">
 							<span class="*hoverGreen">{{ link.name }}</span>
 							<template #overlay>
 								<div class="border bg-white rounded-xl px-4 py-3">
@@ -41,3 +41,9 @@ import links from "./data/index";
 		</div>
 	</header>
 </template>
+
+<style>
+.overlayClass {
+	padding-top: 10px;
+}
+</style>
