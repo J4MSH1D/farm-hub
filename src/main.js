@@ -2,6 +2,8 @@
 import "virtual:windi.css";
 import "ant-design-vue/dist/reset.css";
 import "./assets/styles/main.css";
+import "swiper/css";
+import "swiper/css/pagination";
 
 // Vue
 import { createApp } from "vue";

@@ -1,0 +1,22 @@
+<template>
+	<div class="background h-[300px] rounded-3xl overflow-hidden p-10">
+		<div class="relative z-20">
+			<div class="text-4xl font-bold">Monitoring of agricultural machinery</div>
+			<div class="mt-5 max-w-[400px] leading-relaxed">
+				Monitor your equipment online - save on expenses. New opportunities with the "Expert+" tariff
+			</div>
+			<div class="mt-15">
+				<a-button size="large" type="success" class="bg-white">Read more</a-button>
+			</div>
+		</div>
+		<icon name="banner-img1.png" class="absolute right-0 top-0 h-full z-10" />
+		<icon name="gradient" is-svg class="absolute right-0 top-0 h-full z-0" />
+	</div>
+</template>
+<style scoped>
+.background {
+	background: #11998e;
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+	background: linear-gradient(to right, #38ef7d, #11998e);
+}
+</style>
