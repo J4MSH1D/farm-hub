@@ -34,7 +34,7 @@ const slides = [
 const modules = [Pagination, Autoplay];
 </script>
 <template>
-	<div class="container relative overflow-hidden mt-10 !text-white">
+	<div class="container relative overflow-hidden mt-10 !text-white px-0">
 		<swiper
 			:loop="true"
 			:pagination="{
