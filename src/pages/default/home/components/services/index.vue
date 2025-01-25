@@ -32,7 +32,7 @@ const tabsList = [
 		<div class="mt-5 relative z-30">
 			<div class="flex gap-x-3">
 				<span
-					class="bg-[#ECEDEF] px-4 py-2 rounded-5xl text-gray-400 cursor-pointer transition"
+					class="bg-[#ECEDEF] px-4 select-none py-2 rounded-5xl text-gray-400 cursor-pointer transition"
 					v-for="tab in tabsList"
 					:class="{ 'bg-black !text-white': tab.value === activeTab }"
 					@click="activeTab = tab.value"

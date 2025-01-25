@@ -6,7 +6,7 @@ const inputData = ref(""),
 	selectValue = ref("Product");
 </script>
 <template>
-	<header class="py-5 shadow rounded-b-5xl bg-white">
+	<header class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90">
 		<div class="container">
 			<div class="flex items-center justify-start gap-x-10">
 				<icon name="logo" is-svg />
