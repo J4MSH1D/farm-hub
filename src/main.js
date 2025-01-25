@@ -4,6 +4,7 @@ import "ant-design-vue/dist/reset.css";
 import "./assets/styles/main.css";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // Vue
 import { createApp } from "vue";
