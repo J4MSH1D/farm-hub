@@ -1,5 +1,5 @@
 <template>
-	<div class="container my-10 container bg-white py-10 rounded-xl">
+	<div class="container my-10 bg-white py-10 rounded-xl">
 		<div class="px-10 py-8 rounded-4xl background relative">
 			<div class="relative z-20 text-white flex justify-between items-center">
 				<div>
