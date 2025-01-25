@@ -1,11 +1,26 @@
 <script setup>
+import { ref } from "vue";
 import links from "./data/index";
+
+const inputData = ref(""),
+	selectValue = ref("Product");
 </script>
 <template>
 	<header class="py-5 shadow rounded-b-5xl bg-white">
 		<div class="container">
-			<div class="flex items-center justify-between">
+			<div class="flex items-center justify-start gap-x-10">
 				<icon name="logo" is-svg />
+				<div class="flex-grow">
+					<a-input-group compact class="!flex">
+						<a-select v-model:value="selectValue" size="large">
+							<a-select-option value="Product">Product</a-select-option>
+							<a-select-option value="Media">Media</a-select-option>
+							<a-select-option value="Article">Article</a-select-option>
+						</a-select>
+						<a-input placeholder="Search" v-model:value="inputData" size="large" class="w-full" />
+					</a-input-group>
+				</div>
+				<div></div>
 			</div>
 			<div class="flex mt-5 gap-5">
 				<div v-for="link in links">

@@ -32,7 +32,7 @@ if (props.isSvgRaw) {
 </script>
 
 <template>
-	<img v-if="props.isSvg" :src="loadSvg(name)" :alt="props.name" :draggable="false" />
+	<img class="select-none" v-if="props.isSvg" :src="loadSvg(name)" :alt="props.name" :draggable="false" />
 	<div v-else-if="props.isSvgRaw" v-html="svgContent"></div>
-	<img v-else :src="loadImage(name)" :alt="props.name" :draggable="false" />
+	<img class="select-none" v-else :src="loadImage(name)" :alt="props.name" :draggable="false" />
 </template>

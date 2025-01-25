@@ -6,7 +6,7 @@
 				Monitor your equipment online - save on expenses. New opportunities with the "Expert+" tariff
 			</div>
 			<div class="mt-15">
-				<a-button size="large" type="success" class="bg-white">Read more</a-button>
+				<a-button size="large">Read more</a-button>
 			</div>
 		</div>
 		<icon name="banner-img1.png" class="absolute right-0 top-0 h-full z-10" />

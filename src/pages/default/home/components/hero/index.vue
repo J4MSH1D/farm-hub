@@ -26,11 +26,6 @@ const slides = [
 	},
 ];
 
-// :autoplay="{
-// 				delay: 10000,
-// 				disableOnInteraction: false,
-// 			}"
-
 const modules = [Pagination, Autoplay];
 </script>
 <template>
@@ -39,6 +34,10 @@ const modules = [Pagination, Autoplay];
 			:loop="true"
 			:pagination="{
 				clickable: true,
+			}"
+			:autoplay="{
+				delay: 10000,
+				disableOnInteraction: false,
 			}"
 			:slides-per-view="1"
 			:space-between="50"
