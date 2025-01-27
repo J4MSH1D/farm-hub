@@ -19,7 +19,7 @@ import links from "./data";
 			<div class="bg-[#4AB75F] rounded-4xl col-span-4 !text-white p-5 cursor-pointer">
 				<div>All products</div>
 				<div class="flex justify-end mt-10">
-					<arrowButton />
+					<ArrowButton />
 				</div>
 			</div>
 		</div>
