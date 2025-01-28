@@ -35,7 +35,9 @@ onMounted(() => {
 	<header class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[130px]">
 		<div class="container">
 			<div class="flex items-center justify-start gap-x-10">
-				<icon name="logo" is-svg />
+				<router-link to="/">
+					<icon name="logo" is-svg />
+				</router-link>
 				<!-- Katalog (button) -->
 				<button
 					class="flex flex-row items-center gap-2 bg-green-500 py-2.5 px-8 rounded-xl hover:bg-green-600"
