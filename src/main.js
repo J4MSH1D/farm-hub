@@ -17,12 +17,16 @@ import rightArrowButton from "./components/global/rightArrowButton.vue";
 // Router
 import router from "./router";
 
+// EIMZO
+import VueEImzoPlugin from "./plugins/vue-eimzo";
+
 // App
 const app = createApp(App);
 
 app.component("Icon", icon);
 app.component("ArrowButton", rightArrowButton);
 
+app.use(VueEImzoPlugin);
 app.use(router);
 
 app.mount("#app");

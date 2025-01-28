@@ -7,6 +7,9 @@ export default defineConfig({
 				center: true,
 				padding: "1.5rem",
 			},
+			colors: {
+				mainGreen: "#42AB44",
+			},
 		},
 	},
 	alias: {

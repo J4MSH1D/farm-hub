@@ -256,7 +256,7 @@ export const quickLinks = [
 	{
 		icon: "user300",
 		label: "Sign in",
-		path: "/",
+		path: "/auth/login",
 	},
 ];
 
