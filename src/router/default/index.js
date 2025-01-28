@@ -17,6 +17,26 @@ const links = [
 			title: "Services",
 			permissions: [],
 		},
+		children: [
+			{
+				path: "",
+				name: "Servises main",
+				component: () => lazyLoad("default/services/main"),
+				meta: {
+					title: "Services main",
+					permissions: [],
+				},
+			},
+			{
+				path: "work",
+				name: "Servises work",
+				component: () => lazyLoad("default/services/work"),
+				meta: {
+					title: "Services work",
+					permissions: [],
+				},
+			},
+		],
 	},
 	{
 		path: "/products",
