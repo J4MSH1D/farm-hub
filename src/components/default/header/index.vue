@@ -1,7 +1,8 @@
 <script setup>
 import { computed, onMounted, ref, watch } from "vue";
 import links, { catalogue, quickLinks } from "./data/index";
-import { useRoute, useRouter, RouterLink } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+import { useStore } from "vuex";
 
 const route = useRoute();
 const router = useRouter();
@@ -11,6 +12,7 @@ const catalogueOpen = ref(false);
 const catalogueType = ref("products");
 const catalogueSection = ref(null);
 const catelogueShowMore = ref({});
+const store = useStore();
 
 const catalogueSectionContent = computed(() => {
 	const section = catalogueSection.value.categories;
@@ -59,10 +61,24 @@ onMounted(() => {
 				</div>
 				<!-- Quick links -->
 				<div class="flex items-center gap-5 m-0">
-					<router-link v-for="item in quickLinks" :to="item.path" :key="item" class="group flex flex-col items-center">
-						<icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
-						<RouterLink :to="item.path" class="text-xs m-0 mt-2 text-[#171A1C] group-hover:text-green-500">{{ item.label }}</RouterLink>
-					</router-link>
+					<template v-for="item in quickLinks">
+						<router-link :to="item.path" class="group flex flex-col items-center">
+							<icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
+							<span class="text-xs m-0 mt-2 text-[#171A1C] group-hover:text-green-500">{{ item.label }}</span>
+						</router-link>
+					</template>
+					<template v-if="store.getters.user">
+						<router-link to="/profile/root" class="group flex flex-col items-center">
+							<icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
+							<span class="text-xs m-0 mt-2 text-[#171A1C] group-hover:text-green-500">Profile</span>
+						</router-link>
+					</template>
+					<template v-else>
+						<router-link to="/auth/login" class="group flex flex-col items-center">
+							<icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
+							<span class="text-xs m-0 mt-2 text-[#171A1C] group-hover:text-green-500">Sign in</span>
+						</router-link>
+					</template>
 				</div>
 			</div>
 
