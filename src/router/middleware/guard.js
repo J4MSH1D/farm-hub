@@ -8,7 +8,7 @@ export async function mainGuard(to, from, next) {
 			return next({ name: "Profile" });
 		}
 		if (redirecingPagePermissions.length && !redirecingPagePermissions.some(permission => user.permissions.includes(permission))) {
-			return next({ name: "Profile" });
+			return next({ name: "Home page" });
 		}
 	} else {
 		if (to.name !== "Login" && to.meta?.layout === "dashboard") {

@@ -6,6 +6,10 @@ const storage = {
 	get: key => {
 		return localStorage.getItem(key);
 	},
+
+	getUser: () => {
+		return localStorage.getItem("accessToken") ? JSON.parse(localStorage.getItem("accessToken")) : null;
+	},
 };
 
 export default storage;

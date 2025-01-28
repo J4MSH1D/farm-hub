@@ -17,6 +17,9 @@ import rightArrowButton from "./components/global/rightArrowButton.vue";
 // Router
 import router from "./router";
 
+// VUEX
+import store from "./store";
+
 // EIMZO
 import VueEImzoPlugin from "./plugins/vue-eimzo";
 
@@ -28,5 +31,6 @@ app.component("ArrowButton", rightArrowButton);
 
 app.use(VueEImzoPlugin);
 app.use(router);
+app.use(store);
 
 app.mount("#app");
