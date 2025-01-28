@@ -9,7 +9,9 @@ const inputData = ref(""),
 	<header class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90">
 		<div class="container">
 			<div class="flex items-center justify-start gap-x-10">
-				<icon name="logo" is-svg />
+				<router-link to="/">
+					<icon name="logo" is-svg />
+				</router-link>
 				<div class="flex-grow">
 					<a-input-group compact class="!flex">
 						<a-select v-model:value="selectValue" size="large">
@@ -26,7 +28,7 @@ const inputData = ref(""),
 				<div v-for="link in links">
 					<div v-if="link.children">
 						<a-dropdown placement="bottomLeft" overlayClassName="pt-5">
-							<span class="*hoverGreen">{{ link.name }}</span>
+							<router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
 							<template #overlay>
 								<div class="border bg-white rounded-xl px-4 py-3">
 									<div v-if="link.children && link.children.some(e => e.children)" class="flex gap-5 justify-start flex-wrap max-w-[900px]">
@@ -49,7 +51,7 @@ const inputData = ref(""),
 						</a-dropdown>
 					</div>
 					<div v-else>
-						<span class="*hoverGreen">{{ link.name }}</span>
+						<router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
 					</div>
 				</div>
 			</div>
