@@ -35,7 +35,9 @@ onMounted(() => {
 	<header class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[130px]">
 		<div class="container">
 			<div class="flex items-center justify-start gap-x-10">
-				<icon name="logo" is-svg />
+				<router-link to="/">
+					<icon name="logo" is-svg />
+				</router-link>
 				<!-- Katalog (button) -->
 				<button
 					class="flex flex-row items-center gap-2 bg-green-500 py-2.5 px-8 rounded-xl hover:bg-green-600"
@@ -63,11 +65,13 @@ onMounted(() => {
 					</router-link>
 				</div>
 			</div>
+
+			<!-- Main links -->
 			<div class="flex mt-5 gap-5">
 				<div v-for="link in links">
 					<div v-if="link.children">
 						<a-dropdown placement="bottomLeft" overlayClassName="pt-5">
-							<span class="*hoverGreen">{{ link.name }}</span>
+							<router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
 							<template #overlay>
 								<div class="border bg-white rounded-xl px-4 py-3">
 									<div v-if="link.children && link.children.some(e => e.children)" class="flex gap-5 justify-start flex-wrap max-w-[900px]">
@@ -90,7 +94,7 @@ onMounted(() => {
 						</a-dropdown>
 					</div>
 					<div v-else>
-						<span class="*hoverGreen">{{ link.name }}</span>
+						<router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
 					</div>
 				</div>
 			</div>
