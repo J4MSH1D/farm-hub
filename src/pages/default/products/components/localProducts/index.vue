@@ -6,27 +6,23 @@ const offersList = Array(10).fill({
   id: 1,
   title: "Мобильный комбикормовый завод на базе КАМАЗ",
   product_type: "Комбикормовые заводы",
-  image: "https://s56442.cdn.ngenix.net/img/164/164/resize/catalog/product/7/O/7OsHVk6Mj830.jpg",
-  price: 48285536,
-  price_old: 54896356,
+  image: "https://s56442.cdn.ngenix.net/img/164/164/resize/catalog/product/2/d/2d0vjiRQLCpV_1.png",
+  price: 18145000,
   express_leasing: true,
 });
-
-function getPercentage(price, price_old) {
-  return Math.round(((price_old - price) / price_old) * 100);
-}
 </script>
 
 <template>
   <div class="container py-8">
     <div class="flex items-center justify-between">
-      <h2 class="text-2xl font-semibold">Special offers</h2>
+      <!-- section-title -->
+      <h2 class="text-2xl font-semibold">Товары узбекского производства</h2>
       <!-- slider-buttons -->
       <div class="flex items-center justify-end gap-2">
-        <button class="specialOffers-button-prev bg-white rounded-full shadow-lg p-1.5">
+        <button class="localProducts-button-prev bg-white rounded-full shadow-lg p-1.5">
           <icon name="arrow-left-small600" is-svg-raw class="h-5 w-5 fill-gray-700" />
         </button>
-        <button class="specialOffers-button-next bg-white rounded-full shadow-lg p-1.5">
+        <button class="localProducts-button-next bg-white rounded-full shadow-lg p-1.5">
           <icon name="arrow-right-small600" is-svg-raw class="h-5 w-5 fill-gray-700" />
         </button>
       </div>
@@ -36,12 +32,12 @@ function getPercentage(price, price_old) {
     <swiper
       :modules="[Navigation]"
       slides-per-view="auto"
-      :navigation="{ nextEl: '.specialOffers-button-next', prevEl: '.specialOffers-button-prev' }"
+      :navigation="{ nextEl: '.localProducts-button-next', prevEl: '.localProducts-button-prev' }"
       class="mt-5"
     >
       <swiper-slide v-for="item in offersList" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 mr-4 hover:(shadow-2xl) last:(mr-0)">
         <!-- image -->
-        <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square">
+        <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square bg-gray-200">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </router-link>
         <!-- Express-leasing -->
@@ -64,14 +60,9 @@ function getPercentage(price, price_old) {
         <div class="flex items-center justify-between gap-2 mt-4">
           <div class="relative flex items-center">
             <p class="text-sm text-zinc-900 font-medium">{{ Number(item.price).toLocaleString("ru-RU") }} UZS</p>
-            <span class="bg-red-600 text-white text-[9px] rounded-tl-lg rounded-br-lg py-1 px-1 ml-1 transform -translate-y-1/2"
-              >-{{ getPercentage(item.price, item.price_old) }}%</span
-            >
           </div>
           <icon name="heart300" is-svg-raw class="h-3.5 w-3.5 cursor-pointer" />
         </div>
-        <!-- price_old -->
-        <del class="text-[10px] text-zinc-400 mt-1">{{ Number(item.price_old).toLocaleString("ru-RU") }} UZS</del>
       </swiper-slide>
     </swiper>
   </div>

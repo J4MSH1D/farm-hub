@@ -1,0 +1,40 @@
+<script setup>
+const banner = {
+  link: "/loans/preferential-agricultural-loans",
+  title: "Покупайте товары с финансовой поддержкой от Россельхозбанка",
+  subtitle: "на целевом маркетплейсе для фермеров в вашем регионе",
+  image: "https://s56442.cdn.ngenix.net/img/1440/500/resize/rshb/landings/landing/Desktop_1__1.jpg",
+  buttonTitle: "Получить льготный кредит",
+  infoList: [
+    { number: "500+", text: "тыс посетителей в месяц" },
+    { number: "5", text: "млн товаров" },
+    { number: "16", text: "тыс продавцов" },
+  ],
+};
+</script>
+
+<template>
+  <div class="container">
+    <div class="relative rounded-b-xl overflow-hidden">
+      <img :src="banner.image" alt="" class="absolute inset-0 h-full w-full object-cover object-top" />
+      <!-- banner-content -->
+      <div class="relative">
+        <!-- banner-content-top -->
+        <div class="min-h-[220px] w-1/2 px-10 py-6">
+          <h1 class="text-3xl text-white font-medium">{{ banner.title }}</h1>
+          <p class="text-sm text-white mt-5">{{ banner.subtitle }}</p>
+        </div>
+        <!-- banner-content-bottom -->
+        <div class="flex items-center gap-5 w-full px-10 py-4" style="backdrop-filter: blur(40px)">
+          <button class="text-sm text-white font-medium border-2 border-white rounded-full px-7 py-3">{{ banner.buttonTitle }}</button>
+          <div class="flex items-center gap-8">
+            <div v-for="item in banner.infoList" class="flex items-center justify-between gap-2">
+              <span class="text-2xl text-white font-semibold">{{ item.number }}</span>
+              <span class="text-sm text-white">{{ item.text }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
