@@ -63,11 +63,13 @@ onMounted(() => {
 					</router-link>
 				</div>
 			</div>
+
+			<!-- Main links -->
 			<div class="flex mt-5 gap-5">
 				<div v-for="link in links">
 					<div v-if="link.children">
 						<a-dropdown placement="bottomLeft" overlayClassName="pt-5">
-							<span class="*hoverGreen">{{ link.name }}</span>
+							<router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
 							<template #overlay>
 								<div class="border bg-white rounded-xl px-4 py-3">
 									<div v-if="link.children && link.children.some(e => e.children)" class="flex gap-5 justify-start flex-wrap max-w-[900px]">
@@ -90,7 +92,7 @@ onMounted(() => {
 						</a-dropdown>
 					</div>
 					<div v-else>
-						<span class="*hoverGreen">{{ link.name }}</span>
+						<router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
 					</div>
 				</div>
 			</div>
