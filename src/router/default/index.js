@@ -18,6 +18,15 @@ const links = [
 			permissions: [],
 		},
 	},
+	{
+		path: "/products",
+		name: "Products",
+		component: () => lazyLoad("default/products"),
+		meta: {
+			title: "Catalogue of products",
+			permissions: [],
+		},
+	},
 ];
 
 layoutSetter(links, "default");

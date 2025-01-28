@@ -12,5 +12,5 @@ export default defineConfig({
 	alias: {
 		hoverGreen: "cursor-pointer hover:(text-green-500)",
 	},
-	plugins: [require("windicss/plugin/aspect-ratio")],
+	plugins: [require("windicss/plugin/aspect-ratio"), require("windicss/plugin/line-clamp")],
 });

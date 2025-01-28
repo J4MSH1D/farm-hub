@@ -1,7 +1,7 @@
 <template>
 	<div class="container my-10 bg-white py-10 rounded-xl grid grid-cols-2 gap-x-5 text-white">
 		<div class="px-8 py-10 rounded-4xl background1 relative">
-			<div class="flex justify-between items-start">
+			<div class="flex justify-between items-start relative z-10">
 				<div>
 					<div class="text-2xl">Announcements</div>
 					<div class="mt-2">Buy agricultural products and services and post offers on the classifieds board</div>
@@ -11,12 +11,12 @@
 			<icon name="gradient" is-svg class="absolute right-0 top-0 h-full z-0" />
 		</div>
 		<div class="px-8 py-10 rounded-4xl background2 relative">
-			<div class="flex justify-between items-start">
+			<div class="flex justify-between items-start relative z-10">
 				<div>
 					<div class="text-2xl">Free employee search</div>
 					<div class="mt-2">to the agro-industrial complex from BRB</div>
 				</div>
-				<arrowButton />
+				<arrowButton color="#6F75E2" />
 			</div>
 			<icon name="gradient" is-svg class="absolute right-0 top-0 h-full z-0" />
 		</div>
