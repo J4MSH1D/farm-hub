@@ -2,7 +2,7 @@ const data = [
 	{
 		id: 1,
 		title: "Field work",
-		icon: "sr-truck.png",
+		icon: "sr-tractor.png",
 	},
 	{
 		id: 2,
@@ -12,37 +12,37 @@ const data = [
 	{
 		id: 3,
 		title: "Seed preparation services",
-		icon: "sr-truck.png",
+		icon: "sr-seed.png",
 	},
 	{
 		id: 4,
 		title: "Elevator services",
-		icon: "sr-truck.png",
+		icon: "sr-elevator.png",
 	},
 	{
 		id: 5,
 		title: "Recycling services",
-		icon: "sr-truck.png",
+		icon: "sr-refresh.png",
 	},
 	{
 		id: 6,
 		title: "Repair and maintenance of agricultural machinery",
-		icon: "sr-truck.png",
+		icon: "sr-settings.png",
 	},
 	{
 		id: 7,
 		title: "Rental of agricultural and special equipment",
-		icon: "sr-truck.png",
+		icon: "sr-sp-trans.png",
 	},
 	{
 		id: 8,
 		title: "Design and construction of agricultural facilities",
-		icon: "sr-truck.png",
+		icon: "sr-design.png",
 	},
 	{
 		id: 9,
 		title: "Warehouse services",
-		icon: "sr-truck.png",
+		icon: "sr-cube.png",
 	},
 	{
 		id: 10,
