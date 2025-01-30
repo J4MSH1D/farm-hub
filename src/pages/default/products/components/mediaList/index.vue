@@ -20,7 +20,7 @@ function getDate(dateString) {
 </script>
 
 <template>
-  <div class="container py-8">
+  <div class="container py-8 pb-40">
     <div class="flex items-center justify-between">
       <!-- section-title -->
       <h2 class="text-2xl font-semibold">Смотрите и читайте на Своё Медиа</h2>

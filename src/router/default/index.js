@@ -10,11 +10,29 @@ const links = [
 		},
 	},
 	{
+		path: "/services",
+		name: "Services",
+		component: () => lazyLoad("default/services"),
+		meta: {
+			title: "Services",
+			permissions: [],
+		},
+	},
+	{
 		path: "/products",
 		name: "Products",
 		component: () => lazyLoad("default/products"),
 		meta: {
 			title: "Catalogue of products",
+			permissions: [],
+		},
+	},
+	{
+		path: "/government-supply",
+		name: "GovernmentSupply",
+		component: () => lazyLoad("default/government-supply"),
+		meta: {
+			title: "GovernmentSupply",
 			permissions: [],
 		},
 	},

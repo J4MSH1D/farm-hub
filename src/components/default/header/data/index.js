@@ -253,11 +253,16 @@ export const quickLinks = [
 		label: "Ecosystem",
 		path: "/",
 	},
-	{
-		icon: "user300",
-		label: "Sign in",
-		path: "/",
-	},
+	// {
+	// 	icon: "user300",
+	// 	label: "Sign in",
+	// 	path: "/auth/login",
+	// },
+	// {
+	// 	icon: "user300",
+	// 	label: "Profile",
+	// 	path: "/profile/root",
+	// },
 ];
 
 /* ============ KATALOGLAR ============ */

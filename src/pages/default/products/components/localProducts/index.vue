@@ -16,7 +16,7 @@ const offersList = Array(10).fill({
   <div class="container py-8">
     <div class="flex items-center justify-between">
       <!-- section-title -->
-      <h2 class="text-2xl font-semibold">Товары узбекского производства</h2>
+      <h2 class="text-2xl font-semibold">Товары местного производства</h2>
       <!-- slider-buttons -->
       <div class="flex items-center justify-end gap-2">
         <button class="localProducts-button-prev bg-white rounded-full shadow-lg p-1.5">

@@ -20,7 +20,7 @@ function getPercentage(price, price_old) {
 <template>
   <div class="container py-8">
     <div class="flex items-center justify-between">
-      <h2 class="text-2xl font-semibold">Special offers</h2>
+      <h2 class="text-2xl font-semibold">Спецпредложения</h2>
       <!-- slider-buttons -->
       <div class="flex items-center justify-end gap-2">
         <button class="specialOffers-button-prev bg-white rounded-full shadow-lg p-1.5">

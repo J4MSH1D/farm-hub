@@ -1,11 +1,23 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-const services = Array(4).fill({
-  link: "biznes-s-nulya",
-  title: "Начните свой бизнес с нуля",
-  image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_3.png",
-});
+const services = [
+  {
+    link: "biznes-s-nulya",
+    title: "Начните свой бизнес с нуля",
+    image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_3.png",
+  },
+  {
+    link: "rabota-v-selskom-hozyaystve",
+    title: "Работа в сельском хозяйстве",
+    image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_2_1.png",
+  },
+  {
+    link: "mapa-s-х-predpriyatij",
+    title: "Карта с/х предприятий gfdgfds gdsfgsf gdfsgsdf gsdf",
+    image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Frame5330258_2.png",
+  },
+];
 </script>
 
 <template>
@@ -14,9 +26,9 @@ const services = Array(4).fill({
     <h2 class="text-2xl font-semibold">Полезные сервисы</h2>
 
     <!-- Slider -->
-    <swiper :slides-per-view="4" class="mt-5" space-between="20">
-      <swiper-slide v-for="item in services" :key="item" class="bg-white rounded-xl overflow-hidden hover:(shadow-xl) last:(mr-0)">
-        <router-link :to="`/products/${item.id}`" class="block p-5">
+    <swiper :slides-per-view="4" class="mt-5" space-between="20" auto-height="true">
+      <swiper-slide v-for="item in services" style="height: 100%" class="bg-white rounded-xl overflow-hidden hover:(shadow-xl) last:(mr-0)">
+        <router-link :to="`/products/${item.id}`" class="h-full flex flex-col items-start justify-between p-5">
           <div class="flex items-center justify-between gap-5">
             <!-- service-title -->
             <p class="text-xl text-zinc-900 font-medium">{{ item.title }}</p>

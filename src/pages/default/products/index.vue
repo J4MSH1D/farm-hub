@@ -1,5 +1,6 @@
 <script setup>
 import {
+  NavigationTabs,
   MainBanner,
   LeasingBanner,
   LocalProducts,
@@ -9,13 +10,11 @@ import {
   PopularBanners,
   UsefulServices,
   MediaList,
-  ExclusiveFarm,
-  navigationTabs,
 } from "./components";
 </script>
 
 <template>
-  <navigationTabs />
+  <NavigationTabs />
   <MainBanner />
   <SpecialOffers />
   <LeasingBanner />
@@ -25,5 +24,4 @@ import {
   <PopularBanners />
   <UsefulServices />
   <MediaList />
-  <ExclusiveFarm />
 </template>
