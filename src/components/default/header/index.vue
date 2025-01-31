@@ -102,7 +102,7 @@ onMounted(() => {
 									</div>
 									<div v-else>
 										<div v-for="innerLink in link.children" class="py-1">
-											<div class="*hoverGreen text-md my-1">{{ innerLink.name }}</div>
+											<router-link :to="innerLink.path" class="*hoverGreen text-md my-1">{{ innerLink.name }}</router-link>
 										</div>
 									</div>
 								</div>

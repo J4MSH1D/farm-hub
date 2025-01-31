@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-	<div class="w-full h-[300px] rounded-3xl mt-10 relative flex flex-col justify-between overflow-hidden">
+	<div class="w-full h-[320px] rounded-3xl mt-10 relative flex flex-col justify-between overflow-hidden">
 		<img src="@/assets/images/png/banner_service.png" class="w-full h-full absolute top-0 right-0 transform origin-top-right" />
 		<div class="px-4 xl:px-20 pt-6 z-10 flex flex-col lg:gap-6">
 			<h2 class="text-xl lg:text-2xl font-medium text-white">Services for your business</h2>

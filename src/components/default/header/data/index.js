@@ -161,11 +161,11 @@ const links = [
 		children: [
 			{
 				name: "For employers",
-				path: "/for-employers",
+				path: "/job",
 			},
 			{
 				name: "For applicants",
-				path: "/for-applicants",
+				path: "/job/applicants",
 			},
 			{
 				name: "Post a avacancy",
@@ -196,24 +196,12 @@ const links = [
 		path: "/agrotechnology",
 		children: [
 			{
-				name: "Agro-start",
-				path: "/agro-start",
-			},
-			{
 				name: "For plant growers",
-				path: "/for-plant-growers",
-			},
-			{
-				name: "For livestock breeders",
-				path: "/for-livestock-breeders",
-			},
-			{
-				name: "For fish farmers",
-				path: "/for-fish-farmers",
+				path: "/agrotechnology",
 			},
 			{
 				name: "Business services",
-				path: "/business-services",
+				path: "/agrotechnology/business",
 			},
 		],
 	},
