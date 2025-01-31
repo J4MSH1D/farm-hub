@@ -5,7 +5,7 @@ const links = [
     name: "Home page",
     component: () => lazyLoad("default/home"),
     meta: {
-      title: "Farm Hub",
+      title: "Mening tomorqam",
       permissions: [],
     },
   },
@@ -73,6 +73,8 @@ const links = [
       title: "CorporateCard",
       permissions: [],
     },
+  },
+  {
     path: "/job",
     name: "Job",
     component: () => lazyLoad("default/job"),

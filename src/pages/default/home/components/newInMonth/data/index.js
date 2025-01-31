@@ -1,59 +1,46 @@
 const dummyData = [
-	{
-		name: "Mobile grain dryer FRATELLI PEDROTTI XL400",
-		shortDescription: "Mobile grain dryers",
-		price: "1 750 390 000 UZS",
-		imageLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQOL8aenUmL4BD-Lwln1L0owc7_cw_3iH5IQ&s",
-	},
-	{
-		name: "Grain Loader GB-12 'Ark'",
-		shortDescription: "Bunker-transfers",
-		price: "540 000 000 UZS",
-		imageLink: "https://www.loftness.com.au/wp-content/uploads/2023/07/12-Foot-Grain-Bag-Loader_Feature-Gallery_Count-on-US.jpg",
-	},
-	{
-		name: "Soybean seeds 'SK Artika'",
-		shortDescription: "Soybean seeds",
-		price: "1 000 000 UZS",
-		imageLink: "https://5.imimg.com/data5/SELLER/Default/2023/5/307940616/BX/KW/CV/93239624/soy-bean.jpg",
-	},
-	{
-		name: "Tractor Lovol TD-1304 (Generation III)",
-		shortDescription: "Lovol Tractors",
-		price: "65 000 000 UZS",
-		imageLink:
-			"https://kupit-minitraktor.ru/image/cache/catalog/0%20%D0%A1%D0%B5%D0%BD%D1%82%D0%B0%D0%B9%20220/rus224-gur/fte404/td-1204/td-1304/kupitlovolfotontd-1304-900x700.jpg",
-	},
-	{
-		name: "Tractor MTZ 82.1",
-		shortDescription: "Tractors MTZ 82.1",
-		price: "30 000 000 UZS",
-		imageLink: "https://agro.md/wp-content/uploads/2022/10/tractor-mtz-82.1-b_645x485_397.jpg",
-	},
-	{
-		name: "Mixer/feeder Trioliet Solomix",
-		shortDescription: "Feed dispensers and mixers",
-		price: "41 000 000 UZS",
-		imageLink: "https://img.agriexpo.online/images_ag/photo-mg/170464-17940799.jpg",
-	},
-	{
-		name: "Disc harrow 1LYT-525 (green)",
-		shortDescription: "Harrows",
-		price: "3 000 000 UZS",
-		imageLink: "https://s.alicdn.com/@sc04/kf/Hd00b172e33ae4147858e0f553647ed58O.jpg_720x720q50.jpg",
-	},
-	{
-		name: "Motor oil Rosneft Revolux D1 10w40",
-		shortDescription: "Motor oil",
-		price: "40 000 UZS",
-		imageLink: "https://static.tildacdn.com/stor3030-6163-4164-a237-646632303162/92985050.jpg",
-	},
-	{
-		name: "Front loader Lonking LG855N",
-		shortDescription: "Front loaders",
-		price: "120 000 000 UZS",
-		imageLink: "https://image.made-in-china.com/202f0j00oedUlhkGEYbA/LG855n-Chinese-5-Ton-Lonking-Wheel-Loader-with-3m3-Bucket.webp",
-	},
+  {
+    name: "Сухофрукты в ассортименте высшее качество экспорт",
+    shortDescription: "MT FOODSTUFF TRADING",
+    price: "25 914 UZS",
+    imageLink:
+      "https://agrobaza.uz/upload/company/000/000/806/proposals/2025/01/27/quruq-meva-eksporti-quritilgan-mevalar-sushenie-frukti-2025-01-27-19-48-39-527462-d74bdbde008d498a1dda4c334b121a0d.webp?_=ozauc",
+  },
+  {
+    name: "Нут",
+    shortDescription: "Sultanagro.uz",
+    price: "30 000 UZS",
+    imageLink:
+      "https://agrobaza.uz/upload/company/000/000/225/proposals/2022/08/22/nut-nut-nut-2022-08-22-10-32-06-986077-4f0093930ccbd13c28e2907f0b3a431a.webp?_=ozauc",
+  },
+  {
+    name: "Замороженная малина",
+    shortDescription: "frozenmax_bs",
+    price: "45 000 UZS",
+    imageLink:
+      "https://agrobaza.uz/upload/company/000/000/143/proposals/2022/07/10/muzlatilgan-malina-muzlatilgan-mevalar-zamorojennie-frukti-2022-07-10-13-41-46-643638-2db313ee9b36d7039ad442920c7615d3.webp?_=ozauc",
+  },
+  {
+    name: "Тыква",
+    shortDescription: "EcoFruit",
+    price: "15 000 UZS",
+    imageLink:
+      "https://agrobaza.uz/upload/company/000/000/027/proposals/2022/08/08/tikva-qovoq-tikva-2022-08-08-18-49-25-395145-ebbb3d8408b4484a7774083bfdb8e549.webp?_=ozauc",
+  },
+  {
+    name: "Клубника",
+    shortDescription: "Uzterra organics",
+    price: "110 000 UZS",
+    imageLink:
+      "https://agrobaza.uz/upload/company/000/000/036/proposals/2022/06/19/qulupnay-qulupnay-klubnika-2022-06-19-22-00-59-618998-7c83adbb09dc1c49d37c7c02b1ad5c07.jpg?_=ozauc",
+  },
+  {
+    name: "Виноград Дамский пальчик",
+    shortDescription: "EcoFruit",
+    price: "100 000 UZS",
+    imageLink:
+      "https://agrobaza.uz/upload/company/000/000/027/proposals/2022/08/07/vinograd-damskiy-palchik-uzum-vinograd-2022-08-07-12-11-48-705685-8407e81ce31c4d8e428f976a63ce5d8e.webp?_=ozauc",
+  },
 ];
 
 export default dummyData;

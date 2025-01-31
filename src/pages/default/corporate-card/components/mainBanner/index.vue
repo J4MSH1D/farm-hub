@@ -9,7 +9,7 @@ const banner = {
 
 <template>
   <div class="container pb-8">
-    <div class="content relative rounded-b-4xl px-14 py-8 pb-10 mb-20">
+    <div class="content relative rounded-b-4xl px-14 py-8">
       <div class="flex justify-between gap-6 flex-grow">
         <div class="max-w-[500px]">
           <!-- Ortga qaytish (button) -->
