@@ -36,6 +36,24 @@ const links = [
 			permissions: [],
 		},
 	},
+	{
+		path: "/leasing",
+		name: "Leasing",
+		component: () => lazyLoad("default/leasing"),
+		meta: {
+			title: "Leasing",
+			permissions: [],
+		},
+	},
+	{
+		path: "/corporate-card",
+		name: "CorporateCard",
+		component: () => lazyLoad("default/corporate-card"),
+		meta: {
+			title: "CorporateCard",
+			permissions: [],
+		},
+	},
 ];
 
 layoutSetter(links, "default");
