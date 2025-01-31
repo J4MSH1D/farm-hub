@@ -183,11 +183,11 @@ const links = [
 		children: [
 			{
 				name: "Place an ad",
-				path: "/place-an-ad",
+				path: "/place-an",
 			},
 			{
 				name: "More about the service",
-				path: "/more-about-the-service",
+				path: "/about-service",
 			},
 		],
 	},

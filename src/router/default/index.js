@@ -152,6 +152,44 @@ const links = [
 			},
 		],
 	},
+	{
+		path: "/announcements",
+		name: "Announcements",
+		component: () => lazyLoad("default/announcements"),
+		meta: {
+			title: "Announcements",
+			permissions: [],
+		},
+		children: [
+			{
+				path: "/announcements",
+				name: "Announcements main",
+				component: () => lazyLoad("default/announcements/main"),
+				meta: {
+					title: "Announcements main",
+					permissions: [],
+				},
+			},
+			{
+				path: "place-an",
+				name: "Announcements place an",
+				component: () => lazyLoad("default/announcements/place"),
+				meta: {
+					title: "Announcements place an",
+					permissions: [],
+				},
+			},
+			{
+				path: "about-services",
+				name: "Announcements about services",
+				component: () => lazyLoad("default/announcements/aboutService"),
+				meta: {
+					title: "Announcements about services",
+					permissions: [],
+				},
+			},
+		],
+	},
 ];
 
 layoutSetter(links, "default");
