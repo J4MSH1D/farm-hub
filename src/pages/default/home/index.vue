@@ -10,7 +10,7 @@ import { Hero, Products, GovernmentSupport, Services, StartingBusiness, NewInMon
     <StartingBusiness />
     <NewInMonth />
     <ExtraServices />
-    <!-- <BestOffers /> -->
+    <BestOffers />
     <YourMedia />
   </div>
 </template>

@@ -1,117 +1,79 @@
 const upperLinks = [
-	{
-		name: "About BRB",
-	},
-	{
-		name: "About the project Your Farming",
-	},
-	{
-		name: "Our team",
-	},
-	{
-		name: "Feedback",
-	},
-	{
-		name: "Privacy Policy",
-	},
-	{
-		name: "User Agreement",
-	},
+  {
+    name: "О компании",
+  },
+  {
+    name: "О проетке Менинг томорқам",
+  },
+  {
+    name: "Партнеры",
+  },
 ];
 
 const bottomLinks = [
-	{
-		name: "Government support",
-		children: [
-			{
-				name: "Loans for the agro-industrial complex",
-			},
-			{
-				name: "Current account",
-			},
-			{
-				name: "Acquiring 'Recipe for Business'",
-			},
-			{
-				name: "Farmer's Map",
-			},
-			{
-				name: "Business registration",
-			},
-			{
-				name: "Leasing",
-			},
-			{
-				name: "CASCO",
-			},
-		],
-	},
-	{
-		name: "Agrotechnology",
-		children: [
-			{
-				name: "TV veterinarian",
-			},
-			{
-				name: "Innagro",
-			},
-			{
-				name: "Map of enterprises",
-			},
-			{
-				name: "Foreign Trade Announcements",
-			},
-			{
-				name: "Support measures",
-			},
-		],
-	},
-	{
-		name: "Goods",
-		children: [
-			{
-				name: "Agricultural machinery",
-			},
-			{
-				name: "Spare parts",
-			},
-			{
-				name: "Seeds",
-			},
-			{
-				name: "Fertilizers",
-			},
-			{
-				name: "Animals",
-			},
-			{
-				name: "Stern",
-			},
-		],
-	},
-	{
-		name: "Ecosystem OWN",
-		children: [
-			{
-				name: "Farming",
-			},
-			{
-				name: "Native",
-			},
-			{
-				name: "Housing",
-			},
-			{
-				name: "Village",
-			},
-			{
-				name: "Outside the city",
-			},
-			{
-				name: "Coins",
-			},
-		],
-	},
+  {
+    name: "Господдержка",
+    children: [
+      {
+        name: "Кредиты для агропромышленного комплекса",
+      },
+      {
+        name: "Расчетный счет",
+      },
+      {
+        name: "Эквайринг «Рецепт для бизнеса»",
+      },
+      {
+        name: "Карта фермера",
+      },
+      {
+        name: "Регистрация бизнеса",
+      },
+      {
+        name: "Лизинг",
+      },
+      {
+        name: "КАСКО",
+      },
+    ],
+  },
+  {
+    name: "Агротехнологии",
+    children: [
+      {
+        name: "ТВ-ветеринар",
+      },
+      {
+        name: "Иннагро",
+      },
+      {
+        name: "Карта предприятий",
+      },
+      {
+        name: "Объявления внешней торговли",
+      },
+      {
+        name: "Меры поддержки",
+      },
+    ],
+  },
+  {
+    name: "Товары",
+    children: [
+      {
+        name: "Сельскохозяйственная техника",
+      },
+      {
+        name: "Запчасти",
+      },
+      {
+        name: "Семена",
+      },
+      {
+        name: "Удобрения",
+      },
+    ],
+  },
 ];
 
 export { upperLinks, bottomLinks };
