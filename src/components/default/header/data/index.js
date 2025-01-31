@@ -1,132 +1,124 @@
 const links = [
   {
-    name: "Products",
+    name: "Товары",
     path: "/products",
   },
   {
-    name: "Services",
+    name: "Услуги",
     path: "/services",
   },
   {
-    name: "Government Supply",
+    name: "Господдержка",
     path: "/government-supply",
     children: [
       {
-        name: "Loans and subcidies",
+        name: "Кредиты и субсидии",
         children: [
           {
-            name: "Loans from parametres",
+            name: "Кредиты по параметрам",
             path: "/loans-from-parametres",
           },
           {
-            name: "Loans for farm servicers",
+            name: "Кредиты для сельскохозяйственных сервисов",
             path: "/loans-for-farm-servicers",
           },
           {
-            name: "APK loans",
+            name: "Кредиты для АПК",
             path: "/apk-loans",
           },
         ],
       },
       {
-        name: "Loans for businesses",
+        name: "Счета и платежи",
         children: [
           {
-            name: "Loans for sezoni",
-            path: "/loans-for-sezoni",
-          },
-          {
-            name: "Loans for oboroti",
-            path: "/loans-for-oboroti",
-          },
-          {
-            name: "Investment loans",
-            path: "/investment-loans",
-          },
-          {
-            name: "Overdrafts",
-            path: "/overdrafts",
-          },
-          {
-            name: "Loans for farmers",
-            path: "/loans-for-farmers",
-          },
-        ],
-      },
-      {
-        name: "Accounts and payments",
-        children: [
-          {
-            name: "Current accounts",
+            name: "Расчетные счета",
             path: "/current-accounts",
           },
           {
-            name: "Receipe for Business",
+            name: "Рецепты для бизнеса",
             path: "/receipe-for-business",
           },
           {
-            name: "Internet acquiring",
+            name: "Интернет-эквайринг",
             path: "/internet-acquiring",
           },
         ],
       },
       {
-        name: "Leasing",
+        name: "Кредиты для бизнеса",
         children: [
           {
-            name: "Express leasing",
+            name: "Инвестиционные кредиты",
+            path: "/investment-loans",
+          },
+          {
+            name: "Овердрафты",
+            path: "/overdrafts",
+          },
+          {
+            name: "Кредиты для фермеров",
+            path: "/loans-for-farmers",
+          },
+        ],
+      },
+      {
+        name: "Лизинг",
+        children: [
+          {
+            name: "Экспресс-лизинг",
             path: "/express-leasing",
           },
           {
-            name: "Leasing for agriculture",
+            name: "Лизинг для сельского хозяйства",
             path: "/leasing-for-agriculture",
           },
         ],
       },
       {
-        name: "Deposit",
+        name: "Депозиты",
         children: [
           {
-            name: "Stable deposit for 1 day",
+            name: "Стабильный депозит на 1 день",
             path: "/stable-deposit-for-1-day",
           },
           {
-            name: "Operational deposit",
+            name: "Операционный депозит",
             path: "/operational-deposit",
           },
         ],
       },
       {
-        name: "Business cards",
+        name: "Бизнес-карты",
         children: [
           {
-            name: "Farmers map",
+            name: "Карта фермера",
             path: "/farmers-map",
           },
           {
-            name: "Business card with credit limit",
+            name: "Бизнес-карта с кредитным лимитом",
             path: "/business-card-with-credit-limit",
           },
         ],
       },
       {
-        name: "Insurance",
+        name: "Страхование",
         children: [
           {
-            name: "Casco insurance",
+            name: "Страхование КАСКО",
             path: "/casco-insurance",
           },
           {
-            name: "Pet insurance Smart Farmer",
+            name: "Страхование животных «Смарт Фермер»",
             path: "/pet-insurance-smart-farmer",
           },
         ],
       },
       {
-        name: "Support measures",
+        name: "Меры поддержки",
         children: [
           {
-            name: "Grant and subsidies from the state",
+            name: "Гранты и субсидии от государства",
             path: "/grant-and-subsidies-from-the-state",
           },
         ],
@@ -134,73 +126,51 @@ const links = [
     ],
   },
   {
-    name: "Media",
-    path: "/media",
-    children: [
-      {
-        name: "News",
-        path: "/news",
-      },
-      {
-        name: "Articles",
-        path: "/articles",
-      },
-      {
-        name: "Video",
-        path: "/video",
-      },
-      {
-        name: "Online broadcasting",
-        path: "/online-broadcasting",
-      },
-    ],
-  },
-  {
-    name: "Job",
+    name: "Работа",
     path: "/job",
     children: [
       {
-        name: "For employers",
+        name: "Для работодателей",
         path: "/job",
       },
       {
-        name: "For applicants",
+        name: "Для соискателей",
         path: "/job/applicants",
       },
       {
-        name: "Post a avacancy",
+        name: "Разместить вакансию",
         path: "/post-a-avacancy",
       },
       {
-        name: "Post a resume",
+        name: "Разместить резюме",
         path: "/post-a-resume",
       },
     ],
   },
   {
-    name: "Announcements",
+    name: "Объявления",
     path: "/announcements",
     children: [
       {
-        name: "Place an ad",
+        name: "Разместить объявление",
         path: "/place-an",
       },
       {
-        name: "More about the service",
+        name: "Подробнее о сервисе",
         path: "/about-service",
       },
     ],
   },
   {
-    name: "Agrotechnology",
+    name: "Агротехнологии",
     path: "/agrotechnology",
     children: [
       {
-        name: "For plant growers",
+        name: "Для растениеводов",
         path: "/agrotechnology",
       },
       {
-        name: "Business services",
+        name: "Бизнес-услуги",
         path: "/agrotechnology/business",
       },
     ],
@@ -213,7 +183,7 @@ export default links;
 export const quickLinks = [
   {
     icon: "edit-list300",
-    label: "Purchases",
+    label: "Закупки",
     path: "/",
   },
   // {
@@ -223,7 +193,7 @@ export const quickLinks = [
   // },
   {
     icon: "heart300",
-    label: "Favorites",
+    label: "Избранное",
     path: "/",
   },
   // {
@@ -233,7 +203,7 @@ export const quickLinks = [
   // },
   {
     icon: "basket300",
-    label: "Cart",
+    label: "Корзина",
     path: "/",
   },
   // {
