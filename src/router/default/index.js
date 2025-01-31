@@ -27,6 +27,33 @@ const links = [
 			permissions: [],
 		},
 	},
+	{
+		path: "/government-supply",
+		name: "GovernmentSupply",
+		component: () => lazyLoad("default/government-supply"),
+		meta: {
+			title: "GovernmentSupply",
+			permissions: [],
+		},
+	},
+	{
+		path: "/leasing",
+		name: "Leasing",
+		component: () => lazyLoad("default/leasing"),
+		meta: {
+			title: "Leasing",
+			permissions: [],
+		},
+	},
+	{
+		path: "/corporate-card",
+		name: "CorporateCard",
+		component: () => lazyLoad("default/corporate-card"),
+		meta: {
+			title: "CorporateCard",
+			permissions: [],
+		},
+	},
 ];
 
 layoutSetter(links, "default");
