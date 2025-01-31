@@ -2,14 +2,17 @@ const links = [
   {
     name: "Товары",
     path: "/products",
+    soon: true,
   },
   {
     name: "Услуги",
     path: "/services",
+    soon: true,
   },
   {
     name: "Господдержка",
     path: "/government-supply",
+    soon: true,
     children: [
       {
         name: "Кредиты и субсидии",
@@ -17,14 +20,17 @@ const links = [
           {
             name: "Кредиты по параметрам",
             path: "/loans-from-parametres",
+            soon: true,
           },
           {
             name: "Кредиты для сельскохозяйственных сервисов",
             path: "/loans-for-farm-servicers",
+            soon: true,
           },
           {
             name: "Кредиты для АПК",
             path: "/apk-loans",
+            soon: true,
           },
         ],
       },
@@ -34,14 +40,17 @@ const links = [
           {
             name: "Расчетные счета",
             path: "/current-accounts",
+            soon: true,
           },
           {
             name: "Рецепты для бизнеса",
             path: "/receipe-for-business",
+            soon: true,
           },
           {
             name: "Интернет-эквайринг",
             path: "/internet-acquiring",
+            soon: true,
           },
         ],
       },
@@ -51,14 +60,17 @@ const links = [
           {
             name: "Инвестиционные кредиты",
             path: "/investment-loans",
+            soon: true,
           },
           {
             name: "Овердрафты",
             path: "/overdrafts",
+            soon: true,
           },
           {
             name: "Кредиты для фермеров",
             path: "/loans-for-farmers",
+            soon: true,
           },
         ],
       },
@@ -68,10 +80,12 @@ const links = [
           {
             name: "Экспресс-лизинг",
             path: "/express-leasing",
+            soon: true,
           },
           {
             name: "Лизинг для сельского хозяйства",
             path: "/leasing-for-agriculture",
+            soon: true,
           },
         ],
       },
@@ -81,10 +95,12 @@ const links = [
           {
             name: "Стабильный депозит на 1 день",
             path: "/stable-deposit-for-1-day",
+            soon: true,
           },
           {
             name: "Операционный депозит",
             path: "/operational-deposit",
+            soon: true,
           },
         ],
       },
@@ -94,10 +110,12 @@ const links = [
           {
             name: "Карта фермера",
             path: "/farmers-map",
+            soon: true,
           },
           {
             name: "Бизнес-карта с кредитным лимитом",
             path: "/business-card-with-credit-limit",
+            soon: true,
           },
         ],
       },
@@ -107,10 +125,12 @@ const links = [
           {
             name: "Страхование КАСКО",
             path: "/casco-insurance",
+            soon: true,
           },
           {
             name: "Страхование животных «Смарт Фермер»",
             path: "/pet-insurance-smart-farmer",
+            soon: true,
           },
         ],
       },
@@ -120,6 +140,7 @@ const links = [
           {
             name: "Гранты и субсидии от государства",
             path: "/grant-and-subsidies-from-the-state",
+            soon: true,
           },
         ],
       },
@@ -128,50 +149,61 @@ const links = [
   {
     name: "Работа",
     path: "/job",
+    soon: true,
     children: [
       {
         name: "Для работодателей",
         path: "/job",
+        soon: true,
       },
       {
         name: "Для соискателей",
         path: "/job/applicants",
+        soon: true,
       },
       {
         name: "Разместить вакансию",
         path: "/post-a-avacancy",
+        soon: true,
       },
       {
         name: "Разместить резюме",
         path: "/post-a-resume",
+        soon: true,
       },
     ],
   },
   {
     name: "Объявления",
     path: "/announcements",
+    soon: true,
     children: [
       {
         name: "Разместить объявление",
         path: "/place-an",
+        soon: true,
       },
       {
         name: "Подробнее о сервисе",
         path: "/about-service",
+        soon: true,
       },
     ],
   },
   {
     name: "Агротехнологии",
     path: "/agrotechnology",
+    soon: true,
     children: [
       {
         name: "Для растениеводов",
         path: "/agrotechnology",
+        soon: true,
       },
       {
         name: "Бизнес-услуги",
         path: "/agrotechnology/business",
+        soon: true,
       },
     ],
   },

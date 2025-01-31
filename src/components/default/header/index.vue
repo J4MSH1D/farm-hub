@@ -3,6 +3,8 @@ import { computed, onMounted, ref, watch } from "vue";
 import links, { catalogue, quickLinks } from "./data/index";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
+import { Vue3Marquee } from "vue3-marquee";
+import soon from "../main/soon.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -34,7 +36,12 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[130px]">
+  <div class="pb-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[150px]">
+    <div class="h-[30px] bg-yellow-500 flex items-center mb-4">
+      <Vue3Marquee :pause-on-hover="true" :duration="100">
+        <p v-for="i in 15" class="mx-7 text-white">Сайт находится в режиме разработки</p>
+      </Vue3Marquee>
+    </div>
     <div class="container">
       <div class="flex items-center justify-start gap-x-10">
         <router-link to="/">
@@ -87,22 +94,30 @@ onMounted(() => {
         <div v-for="link in links">
           <div v-if="link.children">
             <a-dropdown placement="bottomLeft" overlayClassName="pt-5">
-              <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+              <template v-if="link.soon">
+                <span class="*hoverGreen">{{ link.name }} <soon /></span>
+              </template>
+              <template v-else>
+                <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+              </template>
               <template #overlay>
                 <div class="border bg-white rounded-xl px-4 py-3">
                   <div v-if="link.children && link.children.some(e => e.children)" class="grid grid-cols-3 gap-5 justify-start max-w-[900px]">
                     <div v-for="innerLink in link.children" class="min-w-[200px]">
-                      <span class="cursor-pointer *hoverGreen text-lg">
-                        {{ innerLink.name }}
-                      </span>
-                      <div v-for="childrenLink in innerLink.children">
-                        <span class="*hoverGreen text-sm text-gray-500">{{ childrenLink.name }}</span>
+                      <span class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </span>
+                      <div v-for="childrenLink in innerLink.children" class="my-4">
+                        <span class="*hoverGreen text-sm text-gray-500">{{ childrenLink.name }} <soon is-small="" /></span>
                       </div>
                     </div>
                   </div>
                   <div v-else>
-                    <div v-for="innerLink in link.children" class="py-1">
-                      <router-link :to="innerLink.path" class="*hoverGreen text-md my-1">{{ innerLink.name }}</router-link>
+                    <div v-for="innerLink in link.children" class="py-1 my-3">
+                      <template v-if="innerLink.soon">
+                        <span class="*hoverGreen text-md my-1">{{ innerLink.name }} <soon /></span>
+                      </template>
+                      <template v-else>
+                        <router-link :to="innerLink.path" class="*hoverGreen text-md my-1">{{ innerLink.name }}</router-link>
+                      </template>
                     </div>
                   </div>
                 </div>
@@ -110,7 +125,12 @@ onMounted(() => {
             </a-dropdown>
           </div>
           <div v-else>
-            <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+            <template v-if="link.soon">
+              <span class="bg-gray-200 py-2 px-3 rounded-full">{{ link.name }}</span>
+            </template>
+            <template v-else>
+              <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+            </template>
           </div>
         </div>
       </div>
@@ -126,14 +146,14 @@ onMounted(() => {
           :class="{ 'bg-[#000] text-white': catalogueType === 'products' }"
           @click="catalogueType = 'products'"
         >
-          Products
+          Товары
         </button>
         <button
           class="bg-gray-200 text-gray-500 rounded-full py-2 px-4 text-sm"
           :class="{ 'bg-[#000] text-white': catalogueType === 'services' }"
           @click="catalogueType = 'services'"
         >
-          Services
+          Услуги
         </button>
       </div>
       <div class="mt-5 flex gap-5">
