@@ -73,6 +73,8 @@ const links = [
       title: "CorporateCard",
       permissions: [],
     },
+  },
+  {
     path: "/job",
     name: "Job",
     component: () => lazyLoad("default/job"),

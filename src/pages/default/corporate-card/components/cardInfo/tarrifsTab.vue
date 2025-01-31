@@ -67,14 +67,24 @@ const tarrifsList = [
 <template>
   <div>
     <h2 class="text-3xl text-zinc-900 font-medium">Тарифы</h2>
-    <div v-for="item in tarrifsList" :key="item.sectionName">
+    <div v-for="item in tarrifsList" :key="item.sectionName" class="my-14">
       <h3 class="text-lg text-zinc-900 font-medium">{{ item.sectionName }}</h3>
       <ul>
-        <li v-for="child in item.content" :key="child.title" class="flex items-center">
-          <span class="text-zinc-500">{{ child.title }}</span>
-          <div class="border-b border-gray-200">{{ child.description }}</div>
+        <li v-for="child in item.content" :key="child.title" class="flex items-center gap-14">
+          <span class="text-zinc-500 w-[300px] py-5">{{ child.title }}</span>
+          <div class="border-b border-gray-200 flex-grow py-5">
+            {{ child.description }}
+          </div>
         </li>
       </ul>
+
+      <div v-html="item.info" class="font-light leading-[1.7]" />
     </div>
   </div>
 </template>
+
+<style scoped>
+li:last-child :deep(div) {
+  border: none;
+}
+</style>
