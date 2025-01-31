@@ -1,6 +1,7 @@
 <script setup>
 import { loadImage, loadSvg } from "@/utils/imageLoader";
 import { ref } from "vue";
+import { type } from "windicss/utils";
 
 const svgContent = ref(""); // Reaktiv o'zgaruvchi SVG kontent uchun
 
@@ -21,6 +22,9 @@ const props = defineProps({
 	isSvgRaw: {
 		type: Boolean,
 		default: false,
+	},
+	color: {
+		type: String,
 	},
 });
 

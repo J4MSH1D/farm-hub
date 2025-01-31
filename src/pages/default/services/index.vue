@@ -4,5 +4,6 @@ import { Banner } from "./components";
 <template>
 	<div class="flex flex-col container">
 		<Banner />
+		<RouterView />
 	</div>
 </template>
