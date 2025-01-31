@@ -1,5 +1,6 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from "swiper/modules";
 
 const offersList = Array(10).fill({
   title: "Инвест-кредит АПК",
@@ -16,8 +17,13 @@ const offersList = Array(10).fill({
   <div class="container mt-10 py-8">
     <h2 class="text-3xl text-zinc-900 font-medium text-center">Другие предложения для бизнеса</h2>
 
-    <div class="mt-14">
-      <swiper space-between="20" slides-per-view="3.5">
+    <div class="relative mt-14">
+      <swiper
+        space-between="20"
+        slides-per-view="3.5"
+        :modules="[Navigation]"
+        :navigation="{ nextEl: '.otherOffers-btn-next', prevEl: '.otherOffers-btn-prev' }"
+      >
         <swiper-slide v-for="item in offersList" class="bg-white rounded-xl p-8">
           <div class="flex flex-col items-center justify-between">
             <div class="flex flex-col items-center">
@@ -32,6 +38,17 @@ const offersList = Array(10).fill({
           </div>
         </swiper-slide>
       </swiper>
+
+      <button
+        class="otherOffers-btn-prev absolute top-1/2 left-0 z-10 transform -translate-x-1/2 -translate-y-1/2 shadow-lg bg-white p-2.5 rounded-full"
+      >
+        <icon name="arrow-left-small600" is-svg-raw class="w-5 h-5 fill-black" />
+      </button>
+      <button
+        class="otherOffers-btn-next absolute top-1/2 right-0 z-10 transform translate-x-1/2 -translate-y-1/2 shadow-lg bg-white p-2.5 rounded-full"
+      >
+        <icon name="arrow-right-small600" is-svg-raw class="w-5 h-5 fill-black" />
+      </button>
     </div>
   </div>
 </template>

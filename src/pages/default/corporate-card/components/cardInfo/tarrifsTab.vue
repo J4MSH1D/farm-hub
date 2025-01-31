@@ -71,7 +71,7 @@ const tarrifsList = [
       <h3 class="text-lg text-zinc-900 font-medium">{{ item.sectionName }}</h3>
       <ul>
         <li v-for="child in item.content" :key="child.title" class="flex items-center gap-14">
-          <span class="text-zinc-500 w-[300px] py-5">{{ child.title }}</span>
+          <span class="text-zinc-500 w-[300px] py-3">{{ child.title }}</span>
           <div class="border-b border-gray-200 flex-grow py-5">
             {{ child.description }}
           </div>
