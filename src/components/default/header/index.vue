@@ -34,7 +34,7 @@ onMounted(() => {
 });
 </script>
 <template>
-	<header class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[130px]">
+	<div class="py-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[130px]">
 		<div class="container">
 			<div class="flex items-center justify-start gap-x-10">
 				<router-link to="/">
@@ -115,7 +115,7 @@ onMounted(() => {
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<!-- KATALOGLAR -->
 	<div class="fixed inset-0 top-auto z-90 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto" v-if="catalogueOpen">

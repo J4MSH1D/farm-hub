@@ -2,7 +2,7 @@
 import { upperLinks, bottomLinks } from "./data";
 </script>
 <template>
-	<footer class="bg-white rounded-t-5xl shadow">
+	<div class="bg-white rounded-t-5xl shadow">
 		<div class="container">
 			<div class="py-8 border-b border-b-gray-300 flex items-center justify-between">
 				<span class="pl-5">
@@ -21,5 +21,5 @@ import { upperLinks, bottomLinks } from "./data";
 				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
 </template>

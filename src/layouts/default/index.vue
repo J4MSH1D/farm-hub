@@ -1,13 +1,13 @@
 <script setup>
-import Header from "../../components/default/header/index.vue";
-import Footer from "../../components/default/footer/index.vue";
+import HeaderDefault from "../../components/default/header/index.vue";
+import FooterDefault from "../../components/default/footer/index.vue";
 </script>
 <template>
 	<div class="min-h-screen flex flex-col bg-[#F5F7F9]">
-		<Header />
+		<header-default />
 		<main class="flex-grow min-w-full">
 			<slot />
 		</main>
-		<Footer />
+		<footer-default />
 	</div>
 </template>
