@@ -1,7 +1,27 @@
 <script setup>
-import { SpecialOffers } from "./components";
+import {
+  NavigationTabs,
+  MainBanner,
+  LeasingBanner,
+  LocalProducts,
+  SpecialOffers,
+  PopularCategories,
+  PopularBrands,
+  PopularBanners,
+  UsefulServices,
+  MediaList,
+} from "./components";
 </script>
 
 <template>
-	<SpecialOffers />
+  <NavigationTabs />
+  <MainBanner />
+  <SpecialOffers />
+  <LeasingBanner />
+  <LocalProducts />
+  <PopularCategories />
+  <PopularBrands />
+  <PopularBanners />
+  <UsefulServices />
+  <MediaList />
 </template>
