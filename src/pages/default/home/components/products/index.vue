@@ -4,9 +4,7 @@ import links from "./data";
 <template>
   <div class="my-10 container bg-white py-10 rounded-xl">
     <div class="text-3xl font-medium">Товары для сельского хозяйства</div>
-    <div class="mt-5 text-xl text-gray-400 max-w-[700px]">
-      Покупайте товары с финансовой поддержкой от BRB-Банка на целевой площадке для фермеров в вашем регионе
-    </div>
+    <div class="mt-5 text-xl text-gray-400 max-w-[700px]">Покупайте товары на целевой площадке в вашем регионе</div>
     <div class="mt-5 grid grid-cols-22 gap-5">
       <div
         v-for="link in links"
@@ -14,7 +12,7 @@ import links from "./data";
         :style="{ gridColumn: `span ${link.span} / span ${link.span}` }"
       >
         <div class="relative z-20">{{ link.name }}</div>
-        <icon :name="link.iconName" class="absolute -right-5 -bottom-8 h-full z-10" />
+        <icon :name="link.iconName" class="absolute -right-2 -bottom-5 w-28 h-28 h-full z-10" />
       </div>
       <div class="bg-[#4AB75F] rounded-4xl col-span-4 !text-white p-5 cursor-pointer">
         <div>Все товары</div>

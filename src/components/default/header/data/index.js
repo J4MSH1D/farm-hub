@@ -7,14 +7,14 @@ const links = [
   {
     name: "Услуги",
     path: "/services",
-    soon: true,
+    // soon: true,
   },
   {
     name: "Господдержка",
     path: "/government-supply",
-    soon: true,
     children: [
       {
+        name: "Льготные кредиты и субсидии",
         name: "Льготные кредиты и субсидии",
         children: [
           {
@@ -45,7 +45,7 @@ const links = [
         ],
       },
       {
-        name: "Кредиты для бизнеса",
+        name: "Услуги банка",
         children: [
           {
             name: "-Оборотный кредит",
@@ -90,6 +90,7 @@ const links = [
         ],
       },
       {
+        name: "Финансирование поставщиков",
         name: "Финансирование поставщиков",
         children: [
           {
@@ -161,17 +162,17 @@ const links = [
   {
     name: "Объявления",
     path: "/announcements",
-    soon: true,
+    soon: false,
     children: [
       {
         name: "Разместить объявление",
         path: "/place-an",
-        soon: true,
+        soon: false,
       },
       {
         name: "Подробнее о сервисе",
         path: "/about-service",
-        soon: true,
+        soon: false,
       },
     ],
   },
