@@ -101,9 +101,8 @@ function getPercentage(price, price_old) {
       space-between="20"
       :navigation="{ nextEl: '.specialOffers-button-next', prevEl: '.specialOffers-button-prev' }"
       class="mt-5"
-      auto-height="true"
     >
-      <swiper-slide v-for="item in offersList" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 !h-full hover:(shadow-2xl)">
+      <swiper-slide v-for="item in offersList" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 hover:(shadow-2xl)">
         <!-- image -->
         <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
@@ -123,12 +122,12 @@ function getPercentage(price, price_old) {
         </div>
 
         <!-- title -->
-        <router-link :to="`/products/${item.id}`" class="text-sm text-zinc-900 line-clamp-2 mt-2">{{ item.title }}</router-link>
+        <router-link :to="`/products/${item.id}`" class="block h-10 text-sm text-zinc-900 line-clamp-2 mt-2">{{ item.title }}</router-link>
         <!-- product_type -->
-        <span class="text-xs text-zinc-400 line-clamp-2 mt-2">{{ item.product_type || "-" }}</span>
+        <span class="h-8 text-xs text-zinc-400 line-clamp-2 mt-2">{{ item.product_type || "-" }}</span>
 
         <!-- price -->
-        <div class="flex items-center justify-between gap-2 mt-4">
+        <div class="h-5 flex items-center justify-between gap-2 mt-4">
           <div class="relative flex items-center">
             <p class="text-sm text-zinc-900 font-medium">{{ Number(item.price).toLocaleString("ru-RU") }} UZS</p>
             <!-- discount % -->
@@ -139,7 +138,9 @@ function getPercentage(price, price_old) {
           <icon name="heart300" is-svg-raw class="h-3.5 w-3.5 cursor-pointer" />
         </div>
         <!-- price_old -->
-        <del class="text-[10px] text-zinc-400 mt-1" v-if="item.price_old">{{ Number(item.price_old).toLocaleString("ru-RU") }} UZS</del>
+        <del class="h-5 text-[10px] text-zinc-400 mt-1" :class="{ invisible: !item.price_old }"
+          >{{ Number(item.price_old).toLocaleString("ru-RU") }} UZS</del
+        >
       </swiper-slide>
     </swiper>
   </div>
