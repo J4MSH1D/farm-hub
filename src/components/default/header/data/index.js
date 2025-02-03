@@ -1,5 +1,6 @@
 const links = [
   {
+<<<<<<< HEAD
     name: "Products",
     path: "/products",
   },
@@ -25,10 +26,44 @@ const links = [
           {
             name: "APK loans",
             path: "/apk-loans",
+=======
+    name: "Товары",
+    path: "/products",
+    soon: true,
+  },
+  {
+    name: "Услуги",
+    path: "/services",
+    soon: true,
+  },
+  {
+    name: "Господдержка",
+    path: "/government-supply",
+    soon: true,
+    children: [
+      {
+        name: "Кредиты и субсидии",
+        children: [
+          {
+            name: "Кредиты по параметрам",
+            path: "/loans-from-parametres",
+            soon: true,
+          },
+          {
+            name: "Кредиты для сельскохозяйственных сервисов",
+            path: "/loans-for-farm-servicers",
+            soon: true,
+          },
+          {
+            name: "Кредиты для АПК",
+            path: "/apk-loans",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
           },
         ],
       },
       {
+<<<<<<< HEAD
         name: "Loans for businesses",
         children: [
           {
@@ -67,10 +102,29 @@ const links = [
           {
             name: "Internet acquiring",
             path: "/internet-acquiring",
+=======
+        name: "Счета и платежи",
+        children: [
+          {
+            name: "Расчетные счета",
+            path: "/current-accounts",
+            soon: true,
+          },
+          {
+            name: "Рецепты для бизнеса",
+            path: "/receipe-for-business",
+            soon: true,
+          },
+          {
+            name: "Интернет-эквайринг",
+            path: "/internet-acquiring",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
           },
         ],
       },
       {
+<<<<<<< HEAD
         name: "Leasing",
         children: [
           {
@@ -80,10 +134,44 @@ const links = [
           {
             name: "Leasing for agriculture",
             path: "/leasing-for-agriculture",
+=======
+        name: "Кредиты для бизнеса",
+        children: [
+          {
+            name: "Инвестиционные кредиты",
+            path: "/investment-loans",
+            soon: true,
+          },
+          {
+            name: "Овердрафты",
+            path: "/overdrafts",
+            soon: true,
+          },
+          {
+            name: "Кредиты для фермеров",
+            path: "/loans-for-farmers",
+            soon: true,
           },
         ],
       },
       {
+        name: "Лизинг",
+        children: [
+          {
+            name: "Экспресс-лизинг",
+            path: "/express-leasing",
+            soon: true,
+          },
+          {
+            name: "Лизинг для сельского хозяйства",
+            path: "/leasing-for-agriculture",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
+          },
+        ],
+      },
+      {
+<<<<<<< HEAD
         name: "Deposit",
         children: [
           {
@@ -93,10 +181,24 @@ const links = [
           {
             name: "Operational deposit",
             path: "/operational-deposit",
+=======
+        name: "Депозиты",
+        children: [
+          {
+            name: "Стабильный депозит на 1 день",
+            path: "/stable-deposit-for-1-day",
+            soon: true,
+          },
+          {
+            name: "Операционный депозит",
+            path: "/operational-deposit",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
           },
         ],
       },
       {
+<<<<<<< HEAD
         name: "Business cards",
         children: [
           {
@@ -106,10 +208,24 @@ const links = [
           {
             name: "Business card with credit limit",
             path: "/business-card-with-credit-limit",
+=======
+        name: "Бизнес-карты",
+        children: [
+          {
+            name: "Карта фермера",
+            path: "/farmers-map",
+            soon: true,
+          },
+          {
+            name: "Бизнес-карта с кредитным лимитом",
+            path: "/business-card-with-credit-limit",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
           },
         ],
       },
       {
+<<<<<<< HEAD
         name: "Insurance",
         children: [
           {
@@ -119,21 +235,44 @@ const links = [
           {
             name: "Pet insurance Smart Farmer",
             path: "/pet-insurance-smart-farmer",
+=======
+        name: "Страхование",
+        children: [
+          {
+            name: "Страхование КАСКО",
+            path: "/casco-insurance",
+            soon: true,
+          },
+          {
+            name: "Страхование животных «Смарт Фермер»",
+            path: "/pet-insurance-smart-farmer",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
           },
         ],
       },
       {
+<<<<<<< HEAD
         name: "Support measures",
         children: [
           {
             name: "Grant and subsidies from the state",
             path: "/grant-and-subsidies-from-the-state",
+=======
+        name: "Меры поддержки",
+        children: [
+          {
+            name: "Гранты и субсидии от государства",
+            path: "/grant-and-subsidies-from-the-state",
+            soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
           },
         ],
       },
     ],
   },
   {
+<<<<<<< HEAD
     name: "Media",
     path: "/media",
     children: [
@@ -174,10 +313,36 @@ const links = [
       {
         name: "Post a resume",
         path: "/post-a-resume",
+=======
+    name: "Работа",
+    path: "/job",
+    soon: true,
+    children: [
+      {
+        name: "Для работодателей",
+        path: "/job",
+        soon: true,
+      },
+      {
+        name: "Для соискателей",
+        path: "/job/applicants",
+        soon: true,
+      },
+      {
+        name: "Разместить вакансию",
+        path: "/post-a-avacancy",
+        soon: true,
+      },
+      {
+        name: "Разместить резюме",
+        path: "/post-a-resume",
+        soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
       },
     ],
   },
   {
+<<<<<<< HEAD
     name: "Announcements",
     path: "/announcements",
     children: [
@@ -188,10 +353,26 @@ const links = [
       {
         name: "More about the service",
         path: "/announcements/about-services",
+=======
+    name: "Объявления",
+    path: "/announcements",
+    soon: true,
+    children: [
+      {
+        name: "Разместить объявление",
+        path: "/place-an",
+        soon: true,
+      },
+      {
+        name: "Подробнее о сервисе",
+        path: "/about-service",
+        soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
       },
     ],
   },
   {
+<<<<<<< HEAD
     name: "Agrotechnology",
     path: "/agrotechnology",
     children: [
@@ -202,6 +383,21 @@ const links = [
       {
         name: "Business services",
         path: "/agrotechnology/business",
+=======
+    name: "Агротехнологии",
+    path: "/agrotechnology",
+    soon: true,
+    children: [
+      {
+        name: "Для растениеводов",
+        path: "/agrotechnology",
+        soon: true,
+      },
+      {
+        name: "Бизнес-услуги",
+        path: "/agrotechnology/business",
+        soon: true,
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
       },
     ],
   },
@@ -213,6 +409,7 @@ export default links;
 export const quickLinks = [
   {
     icon: "edit-list300",
+<<<<<<< HEAD
     label: "Purchases",
     path: "/",
   },
@@ -242,6 +439,37 @@ export const quickLinks = [
     path: "/",
   },
   // {
+=======
+    label: "Закупки",
+    path: "/",
+  },
+  // {
+  // 	icon: "chart-column300",
+  // 	label: "Comparison",
+  // 	path: "/",
+  // },
+  {
+    icon: "heart300",
+    label: "Избранное",
+    path: "/",
+  },
+  // {
+  // 	icon: "chat300",
+  // 	label: "Chats",
+  // 	path: "/",
+  // },
+  {
+    icon: "basket300",
+    label: "Корзина",
+    path: "/",
+  },
+  // {
+  // 	icon: "bio-leaves300",
+  // 	label: "Ecosystem",
+  // 	path: "/",
+  // },
+  // {
+>>>>>>> 7b0276a85fabb27b69f2bf63a52f51e3738a3cae
   // 	icon: "user300",
   // 	label: "Sign in",
   // 	path: "/auth/login",

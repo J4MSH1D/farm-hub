@@ -1,171 +1,66 @@
 const data = [
-	{
-		id: 101,
-		name: "All",
-		children: [
-			{
-				id: 1,
-				name: "State",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-			},
-			{
-				id: 2,
-				name: "Business",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-			},
-			{
-				id: 3,
-				name: "Animals",
-				title: "Agritourism as a driver of rural development",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737616019_shutterstock_2172821927.jpg",
-			},
-			{
-				id: 11,
-				name: "State",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-			},
-			{
-				id: 12,
-				name: "Animals",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-			},
-			{
-				id: 13,
-				name: "Useful",
-				title: "Agritourism as a driver of rural development",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737616019_shutterstock_2172821927.jpg",
-			},
-			{
-				id: 21,
-				name: "State",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-			},
-			{
-				id: 22,
-				name: "Useful",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-			},
-			{
-				id: 23,
-				name: "Animals",
-				title: "Agritourism as a driver of rural development",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737616019_shutterstock_2172821927.jpg",
-			},
-		],
-	},
-	{
-		id: 102,
-		name: "Articles",
-		children: [
-			{
-				id: 1,
-				name: "State",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-			},
-			{
-				id: 2,
-				name: "Animals",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-			},
-		],
-	},
-	{
-		id: 103,
-		name: "News",
-		children: [
-			{
-				id: 1,
-				name: "Useful",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-			},
-			{
-				id: 2,
-				name: "Animals",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-			},
-			{
-				id: 3,
-				name: "State",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-			},
-			{
-				id: 32,
-				name: "Business",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-			},
-		],
-	},
-	{
-		id: 104,
-		name: "Video",
-		children: [
-			{
-				id: 1,
-				name: "State",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-				isVideo: true,
-			},
-			{
-				id: 2,
-				name: "Animals",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-				isVideo: true,
-			},
-		],
-	},
-	{
-		id: 105,
-		name: "Online broadcasts",
-		children: [
-			{
-				id: 1,
-				name: "Live",
-				title: "State support for the agro-industrial complex will be linked to the Central Bank's key rate",
-				date: "12.02.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
-				isVideo: true,
-			},
-			{
-				id: 2,
-				name: "Live",
-				title: "A Holistic View of Plant Growing: Noospheric Principles in Commodity Business",
-				date: "01.03.2025",
-				img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
-				isVideo: true,
-			},
-		],
-	},
+  {
+    id: 101,
+    name: "Все",
+    children: [
+      {
+        id: 1,
+        name: "Бизнес",
+        title:
+          "Членам малообеспеченных семей будут выделяться субсидии для внесения паевого взноса в уставный фонд сельскохозяйственных кооперативов",
+        date: "21.01.2025",
+        img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
+      },
+      {
+        id: 2,
+        name: "Производство",
+        title: "Государственное управление в сфере сельского хозяйства будет совершенствоваться",
+        date: "03.12.2024",
+        img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
+      },
+      {
+        id: 3,
+        name: "Производство",
+        title: "Лица, выращивающие живые коконы шелкопряда в домашних условиях, освобождаются от подоходного налога",
+        date: "18.11.2024",
+        img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737616019_shutterstock_2172821927.jpg",
+      },
+    ],
+  },
+  {
+    id: 102,
+    name: "Статьи",
+    children: [
+      {
+        id: 1,
+        name: "Бизнес",
+        title:
+          "Членам малообеспеченных семей будут выделяться субсидии для внесения паевого взноса в уставный фонд сельскохозяйственных кооперативов",
+        date: "21.01.2025",
+        img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737628537_shutterstock_2495959483.jpg",
+      },
+      {
+        id: 3,
+        name: "Производство",
+        title: "Лица, выращивающие живые коконы шелкопряда в домашних условиях, освобождаются от подоходного налога",
+        date: "18.11.2024",
+        img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737616019_shutterstock_2172821927.jpg",
+      },
+    ],
+  },
+  {
+    id: 103,
+    name: "Новости",
+    children: [
+      {
+        id: 2,
+        name: "Производство",
+        title: "Государственное управление в сфере сельского хозяйства будет совершенствоваться",
+        date: "03.12.2024",
+        img: "https://svoefermerstvo.ru/img/0/0/resize/rshb/agrolife/1737622991_shutterstock_2309059777.jpg",
+      },
+    ],
+  },
 ];
 
 export default data;
