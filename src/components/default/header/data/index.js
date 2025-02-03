@@ -12,44 +12,28 @@ const links = [
   {
     name: "Господдержка",
     path: "/government-supply",
-    soon: true,
     children: [
       {
-        name: "Кредиты и субсидии",
+        name: "Льготные кредиты и субсидии",
         children: [
           {
-            name: "Кредиты по параметрам",
+            name: "Подобрать кредит по параметрам",
             path: "/loans-from-parametres",
             soon: true,
           },
           {
-            name: "Кредиты для сельскохозяйственных сервисов",
+            name: "Льготное кредитование сельхозпроизводителей",
             path: "/loans-for-farm-servicers",
             soon: true,
           },
           {
-            name: "Кредиты для АПК",
-            path: "/apk-loans",
-            soon: true,
-          },
-        ],
-      },
-      {
-        name: "Счета и платежи",
-        children: [
-          {
-            name: "Расчетные счета",
-            path: "/current-accounts",
+            name: "Кредит на приобретение сельхозтехники",
+            path: "/loans-for-technique",
             soon: true,
           },
           {
-            name: "Рецепты для бизнеса",
-            path: "/receipe-for-business",
-            soon: true,
-          },
-          {
-            name: "Интернет-эквайринг",
-            path: "/internet-acquiring",
+            name: "Льготное кредитование возобновляемых источников энергии",
+            path: "/loans-for-recycling-energy",
             soon: true,
           },
         ],
@@ -58,18 +42,43 @@ const links = [
         name: "Кредиты для бизнеса",
         children: [
           {
-            name: "Инвестиционные кредиты",
-            path: "/investment-loans",
+            name: "Оборотный кредит",
+            path: "/loan-deposite",
             soon: true,
           },
           {
-            name: "Овердрафты",
-            path: "/overdrafts",
+            name: "Инвестиционный кредит",
+            path: "/investment-loan",
             soon: true,
           },
           {
-            name: "Кредиты для фермеров",
-            path: "/loans-for-farmers",
+            name: "Кредиты для малого бизнеса",
+            path: "/small-business-loans",
+            soon: true,
+          },
+          {
+            name: "Поддержка развития молодёжного и женского предпринимательства",
+            path: "/youth-women-entrepreneurship-support",
+            soon: true,
+          },
+        ],
+      },
+      {
+        name: "Услуги банка",
+        children: [
+          {
+            name: "Открытие расчетного счёта",
+            path: "/open-account",
+            soon: true,
+          },
+          {
+            name: "Открытие банковской карты",
+            path: "/open-bank-card",
+            soon: true,
+          },
+          {
+            name: "Регистрация бизнеса",
+            path: "/register-business",
             soon: true,
           },
         ],
@@ -77,6 +86,21 @@ const links = [
       {
         name: "Лизинг",
         children: [
+          {
+            name: "Лизинг сельхозтехники",
+            path: "/leasing-agricultural-machinery",
+            soon: true,
+          },
+          {
+            name: "Лизинг оборудования",
+            path: "/equipment-leasing",
+            soon: true,
+          },
+          {
+            name: "Лизинг Спец/техники",
+            path: "/spec-equipment-leasing",
+            soon: true,
+          },
           {
             name: "Экспресс-лизинг",
             path: "/express-leasing",
@@ -90,16 +114,11 @@ const links = [
         ],
       },
       {
-        name: "Депозиты",
+        name: "Финансирование поставщиков",
         children: [
           {
-            name: "Стабильный депозит на 1 день",
-            path: "/stable-deposit-for-1-day",
-            soon: true,
-          },
-          {
-            name: "Операционный депозит",
-            path: "/operational-deposit",
+            name: "Факторинг",
+            path: "/factoring",
             soon: true,
           },
         ],
@@ -123,23 +142,8 @@ const links = [
         name: "Страхование",
         children: [
           {
-            name: "Страхование КАСКО",
-            path: "/casco-insurance",
-            soon: true,
-          },
-          {
-            name: "Страхование животных «Смарт Фермер»",
-            path: "/pet-insurance-smart-farmer",
-            soon: true,
-          },
-        ],
-      },
-      {
-        name: "Меры поддержки",
-        children: [
-          {
-            name: "Гранты и субсидии от государства",
-            path: "/grant-and-subsidies-from-the-state",
+            name: "Услуги страхования",
+            path: "/insurance-service",
             soon: true,
           },
         ],
