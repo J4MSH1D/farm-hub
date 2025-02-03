@@ -8,8 +8,11 @@ import notFound from "./notFound";
 import { mainMiddleware } from "./middleware";
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.BASE_URL),
-	routes: [...defaultPages, ...dashboard, ...authPages, ...notFound],
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [...defaultPages, ...dashboard, ...authPages, ...notFound],
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 router.beforeEach(mainMiddleware);
