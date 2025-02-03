@@ -1,12 +1,15 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { useStore } from "vuex";
+import regions from "../../../enums/regions";
+import measure from "@/enums/measure";
+import phoneNumber from "@/components/global/phoneNumber.vue";
+
 const store = useStore(),
-  radioValue = ref(null),
   fileList = ref([]),
   formState = reactive({
     name: "",
-    category: "",
+    category: null,
     count: null,
     measure: null,
     region: null,
@@ -16,7 +19,26 @@ const store = useStore(),
     phoneNumber: "",
     email: "",
     telegram: "",
-  });
+  }),
+  categories = [
+    "Сельхозтехника",
+    "Запчасти",
+    "Мини-заводы",
+    "Оборудования",
+    "Семена",
+    "Посадочные материалы",
+    "Средства защиты растений",
+    "Удобрения",
+    "Агрохимия",
+    "Сад и огород",
+    "Спецодежда",
+    "Сельскохозяйственные животные",
+    "Корма",
+    "Ветеринария",
+    "Зерно",
+    "Упаковочные материалы",
+    "Готовая продукция",
+  ];
 </script>
 
 <template>
@@ -35,16 +57,22 @@ const store = useStore(),
               <a-input v-model:value="formState.name" size="large" placeholder="Наименование товара*" />
             </a-form-item>
             <a-form-item class="col-span-2" name="category" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
-              <a-input v-model:value="formState.category" size="large" placeholder="Категория товара*" />
+              <a-select v-model:value="formState.category" placeholder="Категория товара*" size="large">
+                <a-select-option v-for="i in categories" :value="i">{{ i }}</a-select-option>
+              </a-select>
             </a-form-item>
             <a-form-item name="count" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
               <a-input v-model:value="formState.count" size="large" placeholder="Количество*" />
             </a-form-item>
             <a-form-item name="measure" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
-              <a-input v-model:value="formState.measure" size="large" placeholder="Еденица измерения*" />
+              <a-select v-model:value="formState.measure" placeholder="Еденица измерения*" size="large">
+                <a-select-option v-for="i in measure" :value="i">{{ i }}</a-select-option>
+              </a-select>
             </a-form-item>
             <a-form-item name="region" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
-              <a-input v-model:value="formState.region" size="large" placeholder="Ваш регион*" />
+              <a-select v-model:value="formState.region" placeholder="Ваш регион*" size="large">
+                <a-select-option v-for="i in regions" :value="i">{{ i }}</a-select-option>
+              </a-select>
             </a-form-item>
             <a-form-item name="dateOfUpload" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
               <a-input v-model:value="formState.dateOfUpload" size="large" placeholder="Желаемая дата отгрузки*" />
@@ -76,17 +104,18 @@ const store = useStore(),
           <div class="mt-5 font-bold">Контакты для связи</div>
           <div class="mt-2 grid grid-cols-2 gap-x-5">
             <a-form-item class="col-span-2" name="phoneNumber" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
-              <a-input v-model:value="formState.phoneNumber" class="col-span-2" size="large" placeholder="+998 (__) ___-__-__*" />
+              <phoneNumber class="w-full" size="large" v-model="formState.phoneNumber" />
+              <!-- <a-input v-model:value="formState.phoneNumber" class="col-span-2" size="large" placeholder="+998 (__) ___-__-__*" /> -->
             </a-form-item>
             <a-form-item name="email" :rules="[{ required: true, message: 'Обязательно к заполнению' }]">
-              <a-input v-model:value="formState.email" size="large" placeholder="Email" />
+              <a-input v-model:value="formState.email" size="large" placeholder="Email*" />
             </a-form-item>
             <a-form-item name="telegram" :rules="[{ required: false }]">
               <a-input v-model:value="formState.telegram" size="large" placeholder="Telegram" />
             </a-form-item>
           </div>
           <div class="mt-5 flex justify-center items-center">
-            <a-button :disabled="true" type="primary" size="large" @click="store.commit('toggleRequest')">Отправить заявку</a-button>
+            <a-button :disabled="true" type="primary" @click="store.commit('toggleRequest')">Отправить заявку</a-button>
           </div>
           <div class="text-gray-400">*Обязательные поля</div>
         </div>

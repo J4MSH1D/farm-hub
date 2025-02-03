@@ -7,7 +7,7 @@ const links = [
   {
     name: "Услуги",
     path: "/services",
-    soon: true,
+    // soon: true,
   },
   {
     name: "Господдержка",
@@ -180,17 +180,17 @@ const links = [
   {
     name: "Объявления",
     path: "/announcements",
-    soon: true,
+    soon: false,
     children: [
       {
         name: "Разместить объявление",
         path: "/place-an",
-        soon: true,
+        soon: false,
       },
       {
         name: "Подробнее о сервисе",
         path: "/about-service",
-        soon: true,
+        soon: false,
       },
     ],
   },
