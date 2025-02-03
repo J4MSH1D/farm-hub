@@ -6,7 +6,6 @@ import {
   LocalProducts,
   SpecialOffers,
   PopularCategories,
-  PopularBrands,
   PopularBanners,
   UsefulServices,
   MediaList,
@@ -20,7 +19,6 @@ import {
   <LeasingBanner />
   <LocalProducts />
   <PopularCategories />
-  <PopularBrands />
   <PopularBanners />
   <UsefulServices />
   <MediaList />

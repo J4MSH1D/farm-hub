@@ -1,14 +1,14 @@
 <script setup>
 const banner = {
   link: "/loans/preferential-agricultural-loans",
-  title: "Покупайте товары с финансовой поддержкой от Россельхозбанка",
-  subtitle: "на целевом маркетплейсе для фермеров в вашем регионе",
+  title: "Покупайте товары с финансовой поддержкой",
+  subtitle: "на целевом маркетплейсе в вашем регионе",
   image: "https://s56442.cdn.ngenix.net/img/1440/500/resize/rshb/landings/landing/Desktop_1__1.jpg",
   buttonTitle: "Получить льготный кредит",
   infoList: [
-    { number: "500+", text: "тыс посетителей в месяц" },
-    { number: "5", text: "млн товаров" },
-    { number: "16", text: "тыс продавцов" },
+    { number: "100+", text: "тыс посетителей в месяц" },
+    { number: "500+", text: "тыс товаров" },
+    { number: "3+", text: "тыс продавцов" },
   ],
 };
 </script>
@@ -20,7 +20,7 @@ const banner = {
       <!-- banner-content -->
       <div class="relative">
         <!-- banner-content-top -->
-        <div class="min-h-[220px] w-1/2 px-10 py-6">
+        <div class="min-h-[220px] w-1/3 px-10 py-6">
           <h1 class="text-3xl text-white font-medium">{{ banner.title }}</h1>
           <p class="text-sm text-white mt-5">{{ banner.subtitle }}</p>
         </div>
