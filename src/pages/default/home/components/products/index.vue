@@ -14,7 +14,7 @@ import links from "./data";
         :style="{ gridColumn: `span ${link.span} / span ${link.span}` }"
       >
         <div class="relative z-20">{{ link.name }}</div>
-        <icon :name="link.iconName" class="absolute -right-5 -bottom-8 h-full z-10" />
+        <icon :name="link.iconName" class="absolute -right-2 -bottom-5 w-28 h-28 h-full z-10" />
       </div>
       <div class="bg-[#4AB75F] rounded-4xl col-span-4 !text-white p-5 cursor-pointer">
         <div>Все товары</div>

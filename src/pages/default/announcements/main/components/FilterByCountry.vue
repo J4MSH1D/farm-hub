@@ -63,15 +63,9 @@ const data = [
 </script>
 <template>
   <div class="flex flex-col gap-2 w-full py-6">
-    <div class="flex justify-between w-full cursor-pointer">
+    <div class="flex justify-between w-full cursor-pointer" @click="isCountry = !isCountry">
       <h5 class="font-semibold text-sm">Country of origin</h5>
-      <icon
-        name="up-arrow_black"
-        is-svg
-        class="w-3 h-4 transform transition duration-300 ease-linear"
-        :class="{ 'rotate-180': !isCountry }"
-        @click="isCountry = !isCountry"
-      />
+      <icon name="up-arrow_black" is-svg class="w-3 h-4 transform transition duration-300 ease-linear" :class="{ 'rotate-180': !isCountry }" />
     </div>
     <a-checkbox-group v-if="isCountry" v-model:value="checkCountry" :options="data" :disabled="data.disabled" class="mt-2 flex flex-col gap-2 w-full">
       <template #label="{ label, total }">

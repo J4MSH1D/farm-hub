@@ -11,15 +11,9 @@ function handleChange() {
 <template>
   <!-- Price -->
   <div class="flex flex-col gap-2 w-full py-6">
-    <div class="flex justify-between w-full cursor-pointer">
+    <div class="flex justify-between w-full cursor-pointer" @click="isPrice = !isPrice">
       <h5 class="font-semibold text-sm">Price</h5>
-      <icon
-        name="up-arrow_black"
-        is-svg
-        class="w-3 h-4 transform transition duration-300 ease-linear"
-        :class="{ 'rotate-180': !isPrice }"
-        @click="isPrice = !isPrice"
-      />
+      <icon name="up-arrow_black" is-svg class="w-3 h-4 transform transition duration-300 ease-linear" :class="{ 'rotate-180': !isPrice }" />
     </div>
     <div v-if="isPrice" class="flex flex-col gap-4">
       <a-slider :step="100000" :min="0" :max="100000000" v-model:value="inputRange" range />

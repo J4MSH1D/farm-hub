@@ -22,12 +22,15 @@ import {
         <SettingsList />
 
         <!-- Filters -->
-        <div class="flex flex-col divide-y bg-white p-4 rounded-xl mb-10 max-w-72">
-          <FilterByAnnoun />
-          <FilterByState />
-          <FilterByPhoto />
-          <FilterByPrice />
-          <FilterByCountry />
+        <div class="flex flex-col gap-6 bg-white rounded-xl max-w-72 overflow-hidden">
+          <div class="flex flex-col divide-y p-4">
+            <FilterByAnnoun />
+            <FilterByState />
+            <FilterByPhoto />
+            <FilterByPrice />
+            <FilterByCountry />
+          </div>
+          <Reset />
         </div>
       </div>
 

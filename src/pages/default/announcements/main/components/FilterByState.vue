@@ -25,15 +25,9 @@ const data = [
 </script>
 <template>
   <div class="flex flex-col gap-2 w-full py-6">
-    <div class="flex justify-between w-full cursor-pointer">
+    <div class="flex justify-between w-full cursor-pointer" @click="isState = !isState">
       <h5 class="font-semibold text-sm">State</h5>
-      <icon
-        name="up-arrow_black"
-        is-svg
-        class="w-3 h-4 transform transition duration-300 ease-linear"
-        :class="{ 'rotate-180': !isState }"
-        @click="isState = !isState"
-      />
+      <icon name="up-arrow_black" is-svg class="w-3 h-4 transform transition duration-300 ease-linear" :class="{ 'rotate-180': !isState }" />
     </div>
     <a-radio-group v-if="isState" v-model:value="stateValue" class="flex flex-col gap-2">
       <a-radio v-for="item in data" :key="item.id" :style="radioStyle" :value="item.value"

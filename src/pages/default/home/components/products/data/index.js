@@ -1,17 +1,17 @@
 const links = [
   {
     name: "Посадочные материалы",
-    iconName: "tractor.png",
+    iconName: "home_planting.png",
     span: 8,
   },
   {
     name: "Удобрения",
-    iconName: "compressor.png",
+    iconName: "home_frezze.png",
     span: 5,
   },
   {
     name: "Средства для защиты растений",
-    iconName: "cow_head.png",
+    iconName: "home_protected.png",
     span: 5,
   },
   // {
