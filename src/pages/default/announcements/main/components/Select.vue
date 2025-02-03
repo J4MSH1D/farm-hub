@@ -5,7 +5,7 @@ const value1 = ref("1");
 const options1 = ref([
   {
     value: "1",
-    label: "By popularity",
+    label: "New",
   },
   {
     value: "2",

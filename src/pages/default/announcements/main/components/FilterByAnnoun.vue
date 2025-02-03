@@ -42,7 +42,7 @@ const data = [
       <icon name="up-arrow_black" is-svg class="w-3 h-4 transform transition duration-300 ease-linear" :class="{ 'rotate-180': !isAnnoun }" />
     </div>
     <a-radio-group v-if="isAnnoun" v-model:value="annoounValue" class="flex flex-col gap-2">
-      <a-radio v-for="item in data" :key="item.id" :style="radioStyle" :value="item.value"
+      <a-radio v-for="item in data" :key="item.id" class="radioStyle" :value="item.value"
         >{{ item.label }}
         <span class="text-sm text-zinc-500">{{ item.total }}</span>
       </a-radio>
