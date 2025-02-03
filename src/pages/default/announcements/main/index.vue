@@ -1,5 +1,16 @@
 <script setup>
-import { SettingsList, Filter, Select, ServiseProducts, Banner } from "./components";
+import {
+  SettingsList,
+  FilterByPrice,
+  FilterByCountry,
+  FilterByAnnoun,
+  FilterByState,
+  FilterByPhoto,
+  Select,
+  ServiseProducts,
+  Banner,
+  Reset,
+} from "./components";
 </script>
 <template>
   <div class="flex flex-col gap-10">
@@ -7,8 +18,17 @@ import { SettingsList, Filter, Select, ServiseProducts, Banner } from "./compone
     <div class="mt-2 flex gap-4">
       <!-- Links of service -->
       <div class="flex flex-col gap-4">
+        <!-- Category Lists -->
         <SettingsList />
-        <Filter />
+
+        <!-- Filters -->
+        <div class="flex flex-col divide-y bg-white p-4 rounded-xl mb-10 max-w-72">
+          <FilterByAnnoun />
+          <FilterByState />
+          <FilterByPhoto />
+          <FilterByPrice />
+          <FilterByCountry />
+        </div>
       </div>
 
       <!-- Content of service -->
