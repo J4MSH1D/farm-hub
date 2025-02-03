@@ -75,6 +75,15 @@ const links = [
     },
   },
   {
+    path: "/cards/credit-card",
+    name: "Cards/CreditCard",
+    component: () => lazyLoad("default/cards/credit-card"),
+    meta: {
+      title: "CreditCard",
+      permissions: [],
+    },
+  },
+  {
     path: "/job",
     name: "Job",
     component: () => lazyLoad("default/job"),
