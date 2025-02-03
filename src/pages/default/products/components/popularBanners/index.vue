@@ -1,14 +1,14 @@
 <script setup>
 const banners = [
   {
-    link: "/applications/breeding",
-    title: "Подборка селекционных семян и племенных животных",
+    link: "/agrotechnologies",
+    title: "Решение для теплиц на основе ИИ",
     image: "https://s56442.cdn.ngenix.net/img/1280/290/resize/rshb/landings/landing/Banner_Desktop-1_1.png",
     buttonTitle: "Подробнее",
   },
   {
-    link: "/leasing",
-    title: "С/х техника в лизинг под 0%",
+    link: "/government-supply",
+    title: "Гранты и субсидии от государства",
     image: "https://s56442.cdn.ngenix.net/img/1280/290/resize/rshb/landings/landing/Banner_Desktop.png",
     buttonTitle: "Подать заявку",
   },
@@ -24,7 +24,9 @@ const banners = [
         <!-- banner-content -->
         <div class="relative h-full w-1/2 flex flex-col items-start justify-between min-h-[180px]">
           <h3 class="text-xl text-white font-medium">{{ item.title }}</h3>
-          <button class="border-2 border-white rounded-full text-white text-sm font-medium py-3 px-6">{{ item.buttonTitle }}</button>
+          <router-link :to="item.link" class="border-2 border-white rounded-full text-white text-sm font-medium py-3 px-6">{{
+            item.buttonTitle
+          }}</router-link>
         </div>
       </div>
     </div>

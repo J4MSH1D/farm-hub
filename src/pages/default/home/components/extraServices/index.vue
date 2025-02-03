@@ -14,7 +14,7 @@
       <div class="flex justify-between items-start relative z-10">
         <div>
           <div class="text-2xl">Бесплатный поиск сотрудников</div>
-          <div class="mt-2">на Бесплатный поиск сотрудников в сельскохозяйственной отрасли</div>
+          <div class="mt-2">Бесплатный поиск сотрудников в сельскохозяйственной отрасли</div>
         </div>
         <arrowButton color="#6F75E2" />
       </div>

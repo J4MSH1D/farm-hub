@@ -38,9 +38,9 @@ onMounted(async () => {
     <div>
       <div class="text-center">
         <div class="font-medium text-xl">Авторизация в сервисах</div>
-        <div class="mt-5 font-bold text-3xl">Управляйте агробизнесом <span class="font-bold text-3xl text-mainGreen">на своей ферме</span></div>
-        <div class="mt-5 text-gray-400">Управляйте несколькими личными аккаунтами одновременно: «Ваше хозяйство», «Ваш дом», «Работа».</div>
-        <div class="mt-5 text-gray-400"><router-link to="/" class="underline">Вернуться в главную страницу</router-link></div>
+        <div class="mt-5 font-bold text-2xl">Управляйте своим бизнесом на <span class="font-bold text-3xl text-mainGreen">Mening tomorqam</span></div>
+        <div class="mt-5 text-gray-400">Управляйте своим аккаунтом: "Товары", "Услуги", "Работа"</div>
+        <div class="mt-5 text-gray-400"><router-link to="/" class="underline">Вернуться на главную страницу</router-link></div>
       </div>
     </div>
     <div class="bg-white rounded-3xl py-10 px-20">

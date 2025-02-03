@@ -2,13 +2,36 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 
-const mediaList = Array(10).fill({
-  id: 1,
-  created_at: new Date(2023, 5, 28),
-  topic: "Свиноводство",
-  image: "https://s56442.cdn.ngenix.net/img/305/160/resize/rshb/landings/landing/ausn.jpeg",
-  description: "Микробизнесу в помощь, или Внимание на АУСН – автоматизированную упрощенную систему налогообложения в Россельхозбанке",
-});
+const mediaList = [
+  {
+    id: 1,
+    created_at: new Date(2023, 5, 28),
+    topic: "Выращивание",
+    image: "https://i.ytimg.com/vi/HwNdO0gg9es/sddefault.jpg",
+    description: "Проект по выращиванию лимонов",
+  },
+  {
+    id: 1,
+    created_at: new Date(2023, 5, 28),
+    topic: "Выращивание",
+    image: "https://i.ytimg.com/vi/RLt-WcZLrsE/sddefault.jpg",
+    description: "Проект по выращиванию малины",
+  },
+  {
+    id: 1,
+    created_at: new Date(2023, 5, 28),
+    topic: "Выращивание",
+    image: "https://i.ytimg.com/vi/g1ugbetS1V8/sddefault.jpg",
+    description: "Проект по выращиванию винограда",
+  },
+  {
+    id: 1,
+    created_at: new Date(2023, 5, 28),
+    topic: "Выращивание",
+    image: "https://i.ytimg.com/vi/Jr75JOQLN8s/sddefault.jpg",
+    description: "Проект по выращиванию мандаринов",
+  },
+];
 
 function getDate(dateString) {
   return new Intl.DateTimeFormat("ru-RU", {

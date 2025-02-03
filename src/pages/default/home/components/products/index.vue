@@ -4,9 +4,7 @@ import links from "./data";
 <template>
   <div class="my-10 container bg-white py-10 rounded-xl">
     <div class="text-3xl font-medium">Товары для сельского хозяйства</div>
-    <div class="mt-5 text-xl text-gray-400 max-w-[700px]">
-      Покупайте товары с финансовой поддержкой от BRB-Банка на целевой площадке для фермеров в вашем регионе
-    </div>
+    <div class="mt-5 text-xl text-gray-400 max-w-[700px]">Покупайте товары на целевой площадке в вашем регионе</div>
     <div class="mt-5 grid grid-cols-22 gap-5">
       <div
         v-for="link in links"

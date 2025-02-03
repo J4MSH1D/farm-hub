@@ -12,7 +12,7 @@
 		<div class="relative h-[80px] w-full z-10 px-20 pt-4 rounded-b-2xl">
 			<div class="absolute bg-white/20 blur-md inset-0" style="backdrop-filter: blur(40px)"></div>
 			<div class="relative z-20" style="">
-				<button class="text-white rounded-full py-4 px-8 border-2 border-white">Post a service</button>
+				<router-link to="/announcements" class="inline-block text-white rounded-full py-4 px-8 border-2 border-white">Post a service</router-link>
 			</div>
 		</div>
 	</div>
