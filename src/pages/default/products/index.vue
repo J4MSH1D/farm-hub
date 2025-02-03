@@ -15,10 +15,10 @@ import {
 <template>
   <NavigationTabs />
   <MainBanner />
+  <PopularCategories />
   <SpecialOffers />
   <LeasingBanner />
   <LocalProducts />
-  <PopularCategories />
   <PopularBanners />
   <UsefulServices />
   <MediaList />

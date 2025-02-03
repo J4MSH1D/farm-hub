@@ -3,18 +3,23 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 const services = [
   {
-    link: "biznes-s-nulya",
-    title: "Начните свой бизнес с нуля",
+    link: "/work",
+    title: "Разместите своё объявление",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_3.png",
   },
   {
-    link: "rabota-v-selskom-hozyaystve",
-    title: "Работа в сельском хозяйстве",
+    link: "/video",
+    title: "Бизнес-план по выращиванию фруктов и овощей",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_2_1.png",
   },
   {
-    link: "mapa-s-х-predpriyatij",
-    title: "Карта с/х предприятий gfdgfds gdsfgsf gdfsgsdf gsdf",
+    link: "/video",
+    title: "Проекты тепличного хозяйства",
+    image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Frame5330258_2.png",
+  },
+  {
+    link: "/work",
+    title: "Работа в сельском хозяйстве",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Frame5330258_2.png",
   },
 ];
