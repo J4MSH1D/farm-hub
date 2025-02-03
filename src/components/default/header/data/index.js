@@ -216,7 +216,7 @@ export const quickLinks = [
   {
     icon: "edit-list300",
     label: "Закупки",
-    path: "/",
+    method: "toggleRequest",
   },
   // {
   // 	icon: "chart-column300",

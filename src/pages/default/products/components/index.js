@@ -4,7 +4,6 @@ export { default as SpecialOffers } from "./specialOffers/index.vue";
 export { default as LeasingBanner } from "./leasingBanner/index.vue";
 export { default as LocalProducts } from "./localProducts/index.vue";
 export { default as PopularCategories } from "./popularCategories/index.vue";
-export { default as PopularBrands } from "./popularBrands/index.vue";
 export { default as PopularBanners } from "./popularBanners/index.vue";
 export { default as UsefulServices } from "./usefulServices/index.vue";
 export { default as MediaList } from "./mediaList/index.vue";

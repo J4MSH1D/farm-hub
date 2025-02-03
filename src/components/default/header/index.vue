@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
   <div class="pb-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[150px]">
     <div class="h-[30px] bg-yellow-500 flex items-center mb-4">
-      <Vue3Marquee :pause-on-hover="true" :duration="100">
+      <Vue3Marquee :pause-on-hover="true" :duration="100" class="overflow-hidden">
         <p v-for="i in 15" class="mx-7 text-white">Сайт находится в режиме разработки</p>
       </Vue3Marquee>
     </div>
@@ -70,10 +70,18 @@ onMounted(() => {
         <!-- Quick links -->
         <div class="flex items-center gap-5 m-0">
           <template v-for="item in quickLinks">
-            <router-link :to="item.path" class="group flex flex-col items-center">
-              <icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
-              <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ item.label }}</span>
-            </router-link>
+            <template v-if="item.path">
+              <router-link :to="item.path" class="group flex flex-col items-center">
+                <icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
+                <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ item.label }}</span>
+              </router-link>
+            </template>
+            <template v-else>
+              <span @click="store.commit(item.method)" class="group flex flex-col items-center cursor-pointer">
+                <icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
+                <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ item.label }}</span>
+              </span>
+            </template>
           </template>
           <template v-if="store.getters.user">
             <router-link to="/profile/root" class="group flex flex-col items-center">
