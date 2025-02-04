@@ -16,7 +16,7 @@ const links = [
     children: [
       {
         name: "Льготные кредиты и субсидии",
-        name: "Льготные кредиты и субсидии",
+        path: "/government-supply",
         children: [
           {
             name: "Подобрать кредит по параметрам",
@@ -36,127 +36,79 @@ const links = [
         ],
       },
       {
-        name: "Счета и платежи",
+        name: "Услуги банка",
         children: [
           {
-            name: "Расчетные счета",
-            path: "/current-accounts",
-            // soon: true,
+            name: "Оборотный кредит",
+            path: "/turnover-loan",
+            soon: true,
           },
           {
-            name: "Рецепты для бизнеса",
-            path: "/receipe-for-business",
-            // soon: true,
+            name: "Инвестиционный кредит",
+            path: "/investment-loan",
+            soon: true,
           },
           {
-            name: "Интернет-эквайринг",
-            path: "/internet-acquiring",
-            // soon: true,
+            name: "Кредиты для малого бизнеса",
+            path: "/credit-for-small-business",
+            soon: true,
+          },
+          {
+            name: "Поддержка развития молодёжного и женского предпринимательства ",
+            path: "/support-for-young-and-women-enterpreneurs",
+            soon: true,
           },
         ],
       },
       {
-        name: "Кредиты для бизнеса",
+        name: "Услуги банка",
         children: [
           {
-            name: "Инвестиционные кредиты",
-            path: "/investment-loans",
-            // soon: true,
-          },
-          {
-            name: "Овердрафты",
+            name: "-Открытие расчетного счёта",
             path: "/overdrafts",
-            // soon: true,
+            soon: true,
           },
           {
-            name: "Кредиты для фермеров",
-            path: "/loans-for-farmers",
-            // soon: true,
+            name: "-Открытие банковской карты",
+            path: "/opening-a-bank-card",
+            soon: true,
+          },
+          {
+            name: "-Регистрация бизнеса",
+            path: "/registration-of-businesses",
+            soon: true,
+          },
+        ],
+      },
+      {
+        name: "Финансирование поставщиков",
+        name: "Финансирование поставщиков",
+        children: [
+          {
+            name: "-Факторинг",
+            path: "/factoring",
+            soon: true,
           },
         ],
       },
       {
         name: "Лизинг",
+        path: "/leasing",
         children: [
           {
             name: "-Лизинг сельхозтехники",
-            path: "/leasing-farm-equipment",
-            soon: true,
+            path: "/leasing",
+            soon: false,
           },
           {
             name: "-Лизинг оборудования",
-            path: "/leasing-equipment",
-            soon: true,
+            path: "/leasing",
+            soon: false,
           },
           {
-            name: "Лизинг Спец/техники",
-            path: "/spec-equipment-leasing",
-            soon: true,
-          },
-          {
-            name: "Экспресс-лизинг",
-            path: "/express-leasing",
-            // soon: true,
-          },
-          {
-            name: "Лизинг для сельского хозяйства",
-            path: "/leasing-for-agriculture",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Лизинг",
-        children: [
-          {
-            name: "Стабильный депозит на 1 день",
-            path: "/stable-deposit-for-1-day",
-            // soon: true,
-          },
-          {
-            name: "Операционный депозит",
-            path: "/operational-deposit",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Бизнес-карты",
-        children: [
-          {
-            name: "Карта фермера",
-            path: "/farmers-map",
-            // soon: true,
-          },
-          {
-            name: "Бизнес-карта с кредитным лимитом",
-            path: "/business-card-with-credit-limit",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Страхование",
-        children: [
-          {
-            name: "Страхование КАСКО",
-            path: "/casco-insurance",
-            // soon: true,
-          },
-          {
-            name: "Страхование животных «Смарт Фермер»",
-            path: "/pet-insurance-smart-farmer",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Меры поддержки",
-        children: [
-          {
-            name: "Гранты и субсидии от государства",
-            path: "/grant-and-subsidies-from-the-state",
-            // soon: true,
+            name: "-Лизинг Спец/техники",
+            path: "/leasing",
+            soon: false,
           },
         ],
       },
@@ -197,34 +149,34 @@ const links = [
       {
         name: "Объявления Местных производителей",
         path: "/place-an",
-        soon: false,
+        // soon: true,
       },
       {
         name: "Объявления Экспортёров",
         path: "/about-service",
-        soon: false,
+        // soon: true,
       },
       {
         name: "Объявления Импортёров",
         path: "/about-import",
-        soon: false,
+        // soon: true,
       },
     ],
   },
   {
     name: "Агротехнологии",
     path: "/agrotechnology",
-    // soon: true,
+    soon: false,
     children: [
       {
         name: "Решение для теплиц на основе ИИ",
         path: "/agrotechnology",
-        // soon: true,
+        soon: false,
       },
       {
         name: "ТН ВЭД коды 2022",
         path: "/agrotechnology/business",
-        // soon: true,
+        soon: false,
       },
       {
         name: "Средства защиты растений",

@@ -9,7 +9,7 @@ const modules = [Navigation];
 <template>
   <div class="container my-10 bg-white py-10 rounded-xl">
     <div class="flex justify-between items-center">
-      <div class="text-3xl">Лучшие предложения</div>
+      <div class="text-3xl">{{ $t("home_best_title") }}</div>
       <ArrowButton />
     </div>
     <div class="mt-10">
@@ -21,15 +21,15 @@ const modules = [Navigation];
               <div class="h-[100px]">
                 <span class="px-4 py-1 rounded-full text-[10px] text-white bg-[#F72B1D]">{{ item.discount }} %</span>
                 <div class="text-lg font-medium pt-1">
-                  {{ item.name }}
+                  {{ $t(item.name) }}
                 </div>
               </div>
               <div class="mt-2 flex justify-between items-center">
                 <div class="flex flex-col">
                   <span class="text-[#F72B1D] text-lg"
-                    >{{ (Number(item.price) - (Number(item.price) * item.discount) / 100).toLocaleString() }} UZS</span
+                    >{{ (Number(item.price) - (Number(item.price) * item.discount) / 100).toLocaleString() }} {{ $t("uzs") }}</span
                   >
-                  <span class="text-[#ACB3B9] text-md line-through">{{ Number(item.price).toLocaleString() }} UZS</span>
+                  <span class="text-[#ACB3B9] text-md line-through">{{ Number(item.price).toLocaleString() }} {{ $t("uzs") }}</span>
                 </div>
                 <a-button type="primary" class="flex justify-center items-center" shape="circle" size="large">
                   <icon name="cart" is-svg class="text-white" />

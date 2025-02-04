@@ -113,9 +113,12 @@ onMounted(() => {
                 <div class="border bg-white rounded-xl px-4 py-3">
                   <div v-if="link.children && link.children.some(e => e.children)" class="grid grid-cols-2 gap-5 justify-start max-w-[900px]">
                     <div v-for="innerLink in link.children">
-                      <span class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </span>
+                      <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
                       <div v-for="childrenLink in innerLink.children" class="my-3">
-                        <span class="*hoverGreen text-sm text-gray-500">{{ childrenLink.name }} <soon is-small /></span>
+                        <span class="*hoverGreen text-sm text-gray-500" v-if="childrenLink.soon"
+                          >{{ childrenLink.name }} <soon is-small v-if="childrenLink.soon"
+                        /></span>
+                        <router-link :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{ childrenLink.name }}</router-link>
                       </div>
                     </div>
                   </div>

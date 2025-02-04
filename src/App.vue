@@ -4,7 +4,7 @@ import Controller from "./layouts/controller/index.vue";
 </script>
 
 <template>
-	<Controller>
-		<RouterView />
-	</Controller>
+  <Controller>
+    <RouterView />
+  </Controller>
 </template>

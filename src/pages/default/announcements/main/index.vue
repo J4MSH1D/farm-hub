@@ -7,13 +7,13 @@ import {
   FilterByState,
   FilterByPhoto,
   Select,
-  ServiseProducts,
+  AnnounProducts,
   Banner,
   Reset,
 } from "./components";
 </script>
 <template>
-  <div class="flex flex-col gap-10">
+  <div class="flex flex-col gap-10 mb-10">
     <Banner />
     <div class="mt-2 flex gap-4">
       <!-- Links of service -->
@@ -37,7 +37,7 @@ import {
       <!-- Content of service -->
       <div class="flex-1 flex flex-col gap-4">
         <Select />
-        <ServiseProducts />
+        <AnnounProducts />
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 <script setup>
+import regions from "@/enums/regions";
 import { ref } from "vue";
 
 const steps = ["Заполните онлайн - заявку, дождитесь звонка", "Согласуйте условия и подпишите договор", "Получите предмет лизинга"];
@@ -18,23 +19,6 @@ function validator(rule, value) {
 const formRules = Object.keys(form.value).reduce((acc, curr) => {
   return { ...acc, [curr]: [{ required: true, validator, trigger: "blur" }] };
 }, {});
-
-const regions = {
-  tashkent_city: "Ташкент (город)",
-  tashkent: "Ташкентская область",
-  andijan: "Андижанская область",
-  bukhara: "Бухарская область",
-  fergana: "Ферганская область",
-  jizzakh: "Джизакская область",
-  namangan: "Наманганская область",
-  navoiy: "Навоийская область",
-  qashqadaryo: "Кашкадарьинская область",
-  samarqand: "Самаркандская область",
-  surxondaryo: "Сурхандарьинская область",
-  sirdaryo: "Сырдарьинская область",
-  khorezm: "Хорезмская область",
-  karakalpakstan: "Республика Каракалпакстан",
-};
 </script>
 
 <template>
