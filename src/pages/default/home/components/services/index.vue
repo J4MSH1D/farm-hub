@@ -9,19 +9,19 @@ const modules = [Navigation];
 const activeTab = ref("Sales");
 
 const tabsList = [
-  { name: "Сбыт продукции", value: "Sales" },
-  { name: "Услуги банка", value: "Bank" },
-  { name: "Льготное кредитование", value: "Lending" },
-  { name: "Начинающим своё дело", value: "Beginning" },
+  { name: "home_services_1", value: "Sales" },
+  { name: "home_services_2", value: "Bank" },
+  { name: "home_services_3", value: "Lending" },
+  { name: "home_services_4", value: "Beginning" },
 ];
 </script>
 <template>
   <div class="container bg-white py-10 rounded-xl my-10 relative">
     <div class="flex justify-between items-start relative z-30">
       <div>
-        <div class="text-3xl font-medium">Услуги для вашего бизнеса</div>
+        <div class="text-3xl font-medium">{{ $t("home_services_title") }}</div>
         <div class="mt-5 text-xl text-gray-400 max-w-[900px]">
-          Мы собрали лучшие отраслевые решения, которые помогут вашему бизнесу выйти на новый уровень
+          {{ $t("home_services_description") }}
         </div>
       </div>
       <div>
@@ -36,7 +36,7 @@ const tabsList = [
           :class="{ 'bg-black !text-white': tab.value === activeTab }"
           @click="activeTab = tab.value"
         >
-          {{ tab.name }}
+          {{ $t(tab.name) }}
         </span>
       </div>
     </div>
@@ -51,7 +51,7 @@ const tabsList = [
                 </div>
               </template>
             </div>
-            <div>{{ link.name }}</div>
+            <div>{{ $t(link.name) }}</div>
           </swiper-slide>
         </template>
       </swiper>

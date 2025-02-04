@@ -22,6 +22,9 @@ import store from "./store";
 
 // EIMZO
 import VueEImzoPlugin from "./plugins/vue-eimzo";
+import I18NextVue from "i18next-vue";
+import i18next from "i18next";
+import "./plugins/i18n";
 
 // App
 const app = createApp(App);
@@ -32,5 +35,6 @@ app.component("ArrowButton", rightArrowButton);
 app.use(VueEImzoPlugin);
 app.use(router);
 app.use(store);
+app.use(I18NextVue, { i18next });
 
 app.mount("#app");
