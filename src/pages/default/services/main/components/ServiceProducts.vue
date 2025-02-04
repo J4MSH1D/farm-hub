@@ -50,7 +50,9 @@ const current = ref(1);
         </div>
       </div>
     </div>
-    <a-pagination v-model:current="current" :total="data.length" />
+    <div class="flex justify-center mt-3 mb-6">
+      <a-pagination v-model:current="current" :total="data.length" />
+    </div>
   </div>
 </template>
 <style scoped>

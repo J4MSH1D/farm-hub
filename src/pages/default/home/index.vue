@@ -3,6 +3,9 @@ import { Hero, Products, GovernmentSupport, Services, StartingBusiness, NewInMon
 </script>
 <template>
   <div>
+    <!-- <div class="container flex items-center gap-3 py-4">
+      <h1>{{ t("hello") }}</h1>
+    </div> -->
     <Hero />
     <Products />
     <GovernmentSupport />

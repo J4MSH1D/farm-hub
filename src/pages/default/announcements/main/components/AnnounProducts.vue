@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import data from "../data/productData";
+const current = ref(1);
 import { convertDate } from "@/utils/dateFormatter";
 </script>
 <template>
@@ -24,5 +25,8 @@ import { convertDate } from "@/utils/dateFormatter";
         <p class="text-sm text-gray-400">{{ convertDate(item.date, "cus", "ru") }}</p>
       </div>
     </div>
+  </div>
+  <div class="flex justify-center mt-6">
+    <a-pagination v-model:current="current" :total="data.length" />
   </div>
 </template>
