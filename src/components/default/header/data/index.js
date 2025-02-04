@@ -80,17 +80,17 @@ const links = [
           {
             name: "Лизинг сельхозтехники",
             path: "/leasing-agricultural-machinery",
-            soon: true,
+            // soon: true,
           },
           {
             name: "Лизинг оборудования",
             path: "/equipment-leasing",
-            soon: true,
+            // soon: true,
           },
           {
             name: "Лизинг Спец/техники",
             path: "/spec-equipment-leasing",
-            soon: true,
+            // soon: true,
           },
           {
             name: "Экспресс-лизинг",
@@ -196,34 +196,34 @@ const links = [
       {
         name: "Объявления Местных производителей",
         path: "/place-an",
-        soon: false,
+        // soon: true,
       },
       {
         name: "Объявления Экспортёров",
         path: "/about-service",
-        soon: false,
+        // soon: true,
       },
       {
         name: "Объявления Импортёров",
         path: "/about-import",
-        soon: false,
+        // soon: true,
       },
     ],
   },
   {
     name: "Агротехнологии",
     path: "/agrotechnology",
-    // soon: true,
+    soon: false,
     children: [
       {
         name: "Решение для теплиц на основе ИИ",
         path: "/agrotechnology",
-        // soon: true,
+        soon: false,
       },
       {
         name: "ТН ВЭД коды 2023",
         path: "/agrotechnology/business",
-        // soon: true,
+        soon: false,
       },
       {
         name: "Средства защиты растений",
