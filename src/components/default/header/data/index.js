@@ -100,14 +100,23 @@ const links = [
           },
         ],
       },
-
       {
         name: "Лизинг",
         children: [
           {
-            name: "-Услуги страхования",
+            name: "-Лизинг сельхозтехники",
             path: "/leasing",
-            soon: false,
+            soon: true,
+          },
+          {
+            name: "-Лизинг оборудования",
+            path: "/leasing-equipment",
+            soon: true,
+          },
+          {
+            name: "-Лизинг Спец/техники",
+            path: "/leasing-special-equipment",
+            soon: true,
           },
         ],
       },
