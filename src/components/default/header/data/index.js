@@ -106,7 +106,7 @@ const links = [
           {
             name: "-Лизинг сельхозтехники",
             path: "/leasing",
-            soon: true,
+            soon: false,
           },
           {
             name: "-Лизинг оборудования",
