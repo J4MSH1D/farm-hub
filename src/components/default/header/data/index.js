@@ -200,6 +200,28 @@ const links = [
       },
     ],
   },
+  {
+    name: "Медиа",
+    path: "/media",
+    soon: false,
+    children: [
+      {
+        name: "Новости",
+        path: "/media/news",
+        soon: false,
+      },
+      {
+        name: "Статьи",
+        path: "/media/articles",
+        soon: false,
+      },
+      {
+        name: "Видео",
+        path: "/media/videos",
+        soon: false,
+      },
+    ],
+  },
 ];
 
 export default links;
