@@ -115,7 +115,10 @@ onMounted(() => {
                     <div v-for="innerLink in link.children">
                       <span class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </span>
                       <div v-for="childrenLink in innerLink.children" class="my-3">
-                        <span class="*hoverGreen text-sm text-gray-500">{{ childrenLink.name }} <soon is-small /></span>
+                        <span class="*hoverGreen text-sm text-gray-500" v-if="childrenLink.soon"
+                          >{{ childrenLink.name }} <soon is-small v-if="childrenLink.soon"
+                        /></span>
+                        <router-link :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{ childrenLink.name }}</router-link>
                       </div>
                     </div>
                   </div>

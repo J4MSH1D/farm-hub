@@ -52,7 +52,7 @@ const creditPurposeOptions = {
           <div class="mt-4">
             <span class="text-xs text-zinc-500">Цель кредита</span>
             <a-select class="w-full mt-1" v-model:value="filter.purpose" placeholder="Цель кредита">
-              <a-select-option v-for="(itemKey, itemValue) in creditPurposeOptions" :value="itemKey">{{ itemValue }}</a-select-option>
+              <a-select-option v-for="(item, key) in creditPurposeOptions" :value="key">{{ item }}</a-select-option>
             </a-select>
             <!-- info -->
             <p class="text-xs text-zinc-500 mt-3">

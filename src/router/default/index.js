@@ -84,6 +84,25 @@ const links = [
     },
   },
   {
+    path: "/loans",
+    name: "Loans",
+    meta: {
+      title: "Loans",
+      permissions: [],
+    },
+    children: [
+      {
+        path: "agricultural-development-loans",
+        name: "AgriculturalDevelopmentLoans",
+        component: () => lazyLoad("default/loans/agricultural-development-loans"),
+        meta: {
+          title: "AgriculturalDevelopmentLoans",
+          permissions: [],
+        },
+      },
+    ],
+  },
+  {
     path: "/job",
     name: "Job",
     component: () => lazyLoad("default/job"),

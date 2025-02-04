@@ -1,6 +1,6 @@
 <script setup>
 import { provide, reactive } from "vue";
-import { MainBanner, CreditParams, CreditList, CreditSteps, ApplicationForm, FAQ } from "./components";
+import { MainBanner, CreditParams, CreditList, CreditSteps, ApplicationForm, SupportGoals } from "./components";
 
 const filter = reactive({
   amount: 0,
@@ -15,9 +15,9 @@ provide("filter", filter);
 
 <template>
   <MainBanner />
+  <SupportGoals />
   <CreditParams />
   <CreditList />
   <CreditSteps />
   <ApplicationForm />
-  <FAQ />
 </template>

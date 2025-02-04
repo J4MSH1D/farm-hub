@@ -16,61 +16,88 @@ const links = [
     children: [
       {
         name: "Льготные кредиты и субсидии",
+        name: "Льготные кредиты и субсидии",
         children: [
           {
-            name: "Подобрать кредит по параметрам",
-            path: "/loans-from-parametres",
-            // soon: true,
+            name: "-Подобрать кредит по параметрам",
+            path: "/government-supply",
+            soon: true,
           },
           {
-            name: "Льготное кредитование сельхозпроизводителей",
-            path: "/loans-for-farm-servicers",
-            // soon: true,
+            name: "-Льготное кредитование сельхозпроизводителей",
+            path: "/loans/agricultural-development-loans",
+            soon: true,
           },
           {
-            name: "Кредиты для АПК",
-            path: "/apk-loans",
-            // soon: true,
+            name: "-Кредит на приобретение сельхозтехники",
+            path: "/loans-for-farm-equipment",
+            soon: true,
+          },
+          {
+            name: "-Льготное кредитование возобновляемых источников энергии",
+            path: "/loans-for-renewable-energy",
+            soon: true,
+          },
+          {
+            name: "-Субсидии",
+            path: "/subsidies",
+            soon: true,
           },
         ],
       },
       {
-        name: "Счета и платежи",
+        name: "Услуги банка",
         children: [
           {
-            name: "Расчетные счета",
-            path: "/current-accounts",
-            // soon: true,
+            name: "-Оборотный кредит",
+            path: "/turnover-loan",
+            soon: true,
           },
           {
-            name: "Рецепты для бизнеса",
-            path: "/receipe-for-business",
-            // soon: true,
+            name: "-Инвестиционный кредит",
+            path: "/investment-loan",
+            soon: true,
           },
           {
-            name: "Интернет-эквайринг",
-            path: "/internet-acquiring",
-            // soon: true,
+            name: "-Кредиты для малого бизнеса",
+            path: "/credit-for-small-business",
+            soon: true,
+          },
+          {
+            name: "-Поддержка развития молодёжного и женского предпринимательства ",
+            path: "/support-for-young-and-women-enterpreneurs",
+            soon: true,
           },
         ],
       },
       {
-        name: "Кредиты для бизнеса",
+        name: "Услуги банка",
         children: [
           {
-            name: "Инвестиционные кредиты",
-            path: "/investment-loans",
-            // soon: true,
-          },
-          {
-            name: "Овердрафты",
+            name: "-Открытие расчетного счёта",
             path: "/overdrafts",
-            // soon: true,
+            soon: true,
           },
           {
-            name: "Кредиты для фермеров",
-            path: "/loans-for-farmers",
-            // soon: true,
+            name: "-Открытие банковской карты",
+            path: "/opening-a-bank-card",
+            soon: true,
+          },
+          {
+            name: "-Регистрация бизнеса",
+            path: "/registration-of-businesses",
+            soon: true,
+          },
+        ],
+      },
+      {
+        name: "Финансирование поставщиков",
+        name: "Финансирование поставщиков",
+        children: [
+          {
+            name: "-Факторинг",
+            path: "/factoring",
+            soon: true,
           },
         ],
       },
@@ -78,84 +105,19 @@ const links = [
         name: "Лизинг",
         children: [
           {
-            name: "Лизинг сельхозтехники",
-            path: "/leasing-agricultural-machinery",
-            // soon: true,
+            name: "-Лизинг сельхозтехники",
+            path: "/leasing",
+            soon: false,
           },
           {
-            name: "Лизинг оборудования",
-            path: "/equipment-leasing",
-            // soon: true,
+            name: "-Лизинг оборудования",
+            path: "/leasing-equipment",
+            soon: true,
           },
           {
-            name: "Лизинг Спец/техники",
-            path: "/spec-equipment-leasing",
-            // soon: true,
-          },
-          {
-            name: "Экспресс-лизинг",
-            path: "/express-leasing",
-            // soon: true,
-          },
-          {
-            name: "Лизинг для сельского хозяйства",
-            path: "/leasing-for-agriculture",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Финансирование поставщиков",
-        children: [
-          {
-            name: "Стабильный депозит на 1 день",
-            path: "/stable-deposit-for-1-day",
-            // soon: true,
-          },
-          {
-            name: "Операционный депозит",
-            path: "/operational-deposit",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Бизнес-карты",
-        children: [
-          {
-            name: "Карта фермера",
-            path: "/farmers-map",
-            // soon: true,
-          },
-          {
-            name: "Бизнес-карта с кредитным лимитом",
-            path: "/business-card-with-credit-limit",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Страхование",
-        children: [
-          {
-            name: "Страхование КАСКО",
-            path: "/casco-insurance",
-            // soon: true,
-          },
-          {
-            name: "Страхование животных «Смарт Фермер»",
-            path: "/pet-insurance-smart-farmer",
-            // soon: true,
-          },
-        ],
-      },
-      {
-        name: "Меры поддержки",
-        children: [
-          {
-            name: "Гранты и субсидии от государства",
-            path: "/grant-and-subsidies-from-the-state",
-            // soon: true,
+            name: "-Лизинг Спец/техники",
+            path: "/leasing-special-equipment",
+            soon: true,
           },
         ],
       },

@@ -18,7 +18,7 @@
         </div>
         <div class="max-w-[250px]">
           <h3 class="text-lg text-zinc-900 font-semibold mt-5">Заполните онлайн-заявку</h3>
-          <p class="text-sm text-zinc-500 font-light mt-3">Наш менеджер зарезервирует счёт и подготовит необходимые документы</p>
+          <p class="text-sm text-zinc-500 font-light mt-3">Сотрудник банка свяжеться с вами для уточнения деталей</p>
         </div>
       </li>
       <!-- 2-qadam -->
@@ -33,7 +33,9 @@
         </div>
         <div class="max-w-[250px]">
           <h3 class="text-lg text-zinc-900 font-semibold mt-5">Предоставьте документы</h3>
-          <p class="text-sm text-zinc-500 font-light mt-3">Заполнить и проверить документы помогут в офисе Россельхозбанка в вашем регионе</p>
+          <p class="text-sm text-zinc-500 font-light mt-3">
+            После связи с сотрудником отправьте требуемые документы посредством чата с сотрудником банка
+          </p>
         </div>
       </li>
       <!-- 3-qadam -->
@@ -47,7 +49,7 @@
         </div>
         <div class="max-w-[250px]">
           <h3 class="text-lg text-zinc-900 font-semibold mt-5">Получите кредит</h3>
-          <p class="text-sm text-zinc-500 font-light mt-3">На одобрение уйдёт от 3 рабочих дней</p>
+          <p class="text-sm text-zinc-500 font-light mt-3">На получение ответа от банка уйдет от 3 рабочих дней</p>
         </div>
       </li>
     </ul>

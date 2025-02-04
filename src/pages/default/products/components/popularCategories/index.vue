@@ -25,9 +25,6 @@ const topCategories = [
     title: "Средства защиты  растений",
     image: "https://s56442.cdn.ngenix.net/img/305/240/resize/rshb/landings/landing/Frame_1321316485.png",
   },
-];
-
-const discounts = [
   {
     id: "vse-skidki-na-traktory",
     title: "Все скидки на тракторы",
@@ -41,18 +38,8 @@ const discounts = [
     <h2 class="text-2xl font-semibold">Популярные категории</h2>
 
     <!-- Top categories -->
-    <div class="grid grid-cols-4 gap-5 py-6">
+    <div class="grid grid-cols-3 gap-5 py-6">
       <div v-for="item in topCategories" :key="item.id" class="relative min-h-[240px] rounded-xl overflow-hidden px-4 py-6">
-        <router-link :to="`/catalog/${item.id}`">
-          <img :src="item.image" :alt="item.title" class="absolute inset-0 w-full h-full object-cover" />
-          <p class="relative text-lg text-white font-semibold">{{ item.title }}</p>
-        </router-link>
-      </div>
-    </div>
-
-    <!-- Discounts -->
-    <div class="grid grid-cols-4 gap-5 py-6">
-      <div v-for="item in discounts" :key="item.id" class="relative min-h-[240px] rounded-xl overflow-hidden px-4 py-6">
         <router-link :to="`/catalog/${item.id}`">
           <img :src="item.image" :alt="item.title" class="absolute inset-0 w-full h-full object-cover" />
           <p class="relative text-lg text-white font-semibold">{{ item.title }}</p>

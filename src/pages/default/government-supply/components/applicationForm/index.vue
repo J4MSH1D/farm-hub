@@ -1,7 +1,7 @@
 <script setup>
+import regions from "@/enums/regions";
 import { ref } from "vue";
 
-const isBrbClient = ref(false);
 const form = ref({
   phone: null,
   creditAmount: null,
@@ -20,37 +20,11 @@ function validator(rule, value) {
 const formRules = Object.keys(form.value).reduce((acc, curr) => {
   return { ...acc, [curr]: [{ required: true, validator, trigger: "blur" }] };
 }, {});
-
-const regions = {
-  tashkent_city: "Ташкент (город)",
-  tashkent: "Ташкентская область",
-  andijan: "Андижанская область",
-  bukhara: "Бухарская область",
-  fergana: "Ферганская область",
-  jizzakh: "Джизакская область",
-  namangan: "Наманганская область",
-  navoiy: "Навоийская область",
-  qashqadaryo: "Кашкадарьинская область",
-  samarqand: "Самаркандская область",
-  surxondaryo: "Сурхандарьинская область",
-  sirdaryo: "Сырдарьинская область",
-  khorezm: "Хорезмская область",
-  karakalpakstan: "Республика Каракалпакстан",
-};
 </script>
 
 <template>
   <div class="container py-8">
     <div class="max-w-[900px] mx-auto">
-      <div class="flex items-stretch gap-8">
-        <button class="text-zinc-900 border-b-3 border-transparent py-6" :class="{ 'border-green-500': !isBrbClient }" @click="isBrbClient = false">
-          Еще нет счёта в BRB
-        </button>
-        <button class="text-zinc-900 border-b-3 border-transparent py-6" :class="{ 'border-green-500': isBrbClient }" @click="isBrbClient = true">
-          Я клиент BRB
-        </button>
-      </div>
-
       <!-- Form -->
       <div class="rounded-2xl bg-white overflow-hidden mt-3">
         <div class="border-b border-gray-200 p-8">
@@ -75,14 +49,14 @@ const regions = {
               <a-input v-model:value="form.companyName" placeholder="Название компании или ИНН*" />
             </a-form-item>
             <a-form-item has-feedback name="INN">
-              <a-input v-model:value="form.INN" placeholder="ИНН*" />
+              <a-input v-model:value="form.INN" placeholder="ИНН компании*" />
             </a-form-item>
             <a-form-item has-feedback name="email">
               <a-input v-model:value="form.email" placeholder="Эл.почта*" />
             </a-form-item>
             <a-form-item has-feedback name="region" class="col-span-2">
               <a-select v-model:value="form.region" placeholder="Субъект Узбекистана*">
-                <a-select-option v-for="(itemValue, itemKey) in regions" :value="itemKey">{{ itemValue }}</a-select-option>
+                <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
               </a-select>
             </a-form-item>
 
