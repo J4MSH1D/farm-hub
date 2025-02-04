@@ -15,12 +15,12 @@ const links = [
     children: [
       {
         name: "Льготные кредиты и субсидии",
-        name: "Льготные кредиты и субсидии",
+        path: "/government-supply",
         children: [
           {
             name: "-Подобрать кредит по параметрам",
             path: "/government-supply",
-            soon: true,
+            soon: false,
           },
           {
             name: "-Льготное кредитование сельхозпроизводителей",
@@ -102,6 +102,7 @@ const links = [
       },
       {
         name: "Лизинг",
+        path: "/leasing",
         children: [
           {
             name: "-Лизинг сельхозтехники",
@@ -110,13 +111,13 @@ const links = [
           },
           {
             name: "-Лизинг оборудования",
-            path: "/leasing-equipment",
-            soon: true,
+            path: "/leasing",
+            soon: false,
           },
           {
             name: "-Лизинг Спец/техники",
-            path: "/leasing-special-equipment",
-            soon: true,
+            path: "/leasing",
+            soon: false,
           },
         ],
       },
