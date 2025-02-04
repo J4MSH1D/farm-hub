@@ -1,4 +1,5 @@
 <script setup>
+import regions from "@/enums/regions";
 import { ref } from "vue";
 
 const form = ref({
@@ -19,23 +20,6 @@ function validator(rule, value) {
 const formRules = Object.keys(form.value).reduce((acc, curr) => {
   return { ...acc, [curr]: [{ required: true, validator, trigger: "blur" }] };
 }, {});
-
-const regions = [
-  "Республика Каракалпакстан",
-  "Город Ташкент",
-  "Андижанская область",
-  "Ферганская область",
-  "Наманганская область",
-  "Ташкентская область",
-  "Джизакская область",
-  "Сырдарьинская область",
-  "Самаркандская область",
-  "Бухарская область",
-  "Хорезмская область",
-  "Кашкадарьинская область",
-  "Сурхандарьинская область",
-  "Навоийская область",
-];
 </script>
 
 <template>
@@ -50,7 +34,7 @@ const regions = [
         <div class="max-w-[700px] py-14 px-4 mx-auto">
           <a-form :model="form" :rules="formRules" class="grid grid-cols-2 gap-x-5" size="large">
             <a-form-item has-feedback name="phone">
-              <a-input v-model:value="form.phone" prefix="+998" placeholder="+998 (__) ___ __ __*" />
+              <a-input v-model:value="form.phone" prefix="+998" placeholder="(__) ___ __ __*" />
             </a-form-item>
             <a-form-item has-feedback name="creditAmount">
               <a-input v-model:value="form.creditAmount" placeholder="Сумма кредита, сум*" />
