@@ -59,7 +59,9 @@ function getTotalPayment(item) {
 
         <!-- buttons -->
         <div class="flex flex-col justify-center gap-4 border-l border-gray-200 pl-20 ml-25">
-          <button class="w-[200px] py-3 px-4 rounded-full text-sm text-white font-medium bg-green-600">Оформить кредит</button>
+          <a :href="item.link" target="_blank" class="text-center w-[200px] py-3 px-4 rounded-full text-sm text-white font-medium bg-green-600"
+            >Оформить кредит</a
+          >
           <button class="w-[200px] py-3 px-4 rounded-full text-sm text-zinc-900 font-medium border-2 border-gray-200">Подробнее</button>
         </div>
       </li>
