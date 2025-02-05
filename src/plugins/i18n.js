@@ -3,7 +3,6 @@ import I18NextHttpBackend from "i18next-http-backend";
 
 import uz from "../localization/uz.json";
 import ru from "../localization/ru.json";
-import en from "../localization/en.json";
 
 i18next.use(I18NextHttpBackend).init({
   lng: "ru",
@@ -14,9 +13,6 @@ i18next.use(I18NextHttpBackend).init({
     },
     ru: {
       translation: ru,
-    },
-    en: {
-      translation: en,
     },
   },
   debug: true,

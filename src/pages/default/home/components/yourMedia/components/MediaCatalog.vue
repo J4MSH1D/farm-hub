@@ -29,7 +29,7 @@ const classes = {
         :class="item.id === current.id ? 'bg-black text-white' : 'bg-[#ECEDEF] text-black'"
         @click="handleCatalog(item)"
       >
-        {{ item.name }}
+        {{ $t(item.name) }}
       </button>
     </div>
 
@@ -50,7 +50,7 @@ const classes = {
               <icon v-if="item.isVideo" name="play-white.png" class="w-14 h-14 absolute" />
             </div>
             <div class="flex flex-col justify-between">
-              <span class="px-4 py-1 rounded-full text-xs w-min text-white" :class="classes[item.name]">{{ $t(item.name) }}</span>
+              <span class="px-4 py-1 rounded-full text-xs max-w-min text-white" :class="classes[item.name]">{{ $t(item.name) }}</span>
               <h4 class="text-md font-medium mb-0">{{ $t(item.title) }}</h4>
               <p class="text-xs text-gray-400 mb-0">{{ item.date }}</p>
             </div>

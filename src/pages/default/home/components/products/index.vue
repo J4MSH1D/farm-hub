@@ -15,7 +15,7 @@ import links from "./data";
         <icon :name="link.iconName" class="absolute -right-2 -bottom-5 w-28 h-28 h-full z-10" />
       </div>
       <div class="bg-[#4AB75F] rounded-4xl col-span-4 !text-white p-5 cursor-pointer">
-        <div>Все товары</div>
+        <div>{{ $t("Все товары") }}</div>
         <div class="flex justify-end mt-10">
           <ArrowButton />
         </div>

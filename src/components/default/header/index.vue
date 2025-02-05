@@ -5,22 +5,25 @@ import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { Vue3Marquee } from "vue3-marquee";
 import soon from "../main/soon.vue";
+import regions from "@/enums/regions";
+import { useTranslation } from "i18next-vue";
 
 const route = useRoute();
 const router = useRouter();
+const { i18next } = useTranslation();
+const language = computed(() => i18next.language);
 const inputData = ref("");
 const selectValue = ref("Product");
+const region = ref("Город Ташкент");
 const catalogueOpen = ref(false);
 const catalogueType = ref("products");
 const catalogueSection = ref(null);
 const catelogueShowMore = ref({});
 const store = useStore();
 
-const catalogueSectionContent = computed(() => {
-  const section = catalogueSection.value.categories;
-  const halfLength = Math.ceil(section.length / 2);
-  if (section) return [section.slice(0, halfLength), section.slice(halfLength)];
-});
+function changeLanguage(lang) {
+  i18next.changeLanguage(lang);
+}
 
 watch(catalogueOpen, value => {
   if (value) document.body.style.overflow = "hidden";
@@ -56,7 +59,7 @@ onMounted(() => {
           <span class="text-white">Каталог</span>
         </button>
         <!-- searchbar (input) -->
-        <div class="flex-grow">
+        <div class="flex-grow flex items-center gap-4">
           <a-input-group compact class="!flex">
             <a-select v-model:value="selectValue" class="min-w-[145px]" size="large">
               <a-select-option value="Product">Товары</a-select-option>
@@ -65,8 +68,18 @@ onMounted(() => {
               <a-select-option value="Media">Медиа</a-select-option>
             </a-select>
             <a-input placeholder="Поиск" v-model:value="inputData" size="large" class="w-full" />
+            <a-select class="max-w-[150px] w-full" size="large" v-model="region" default-value="Город Ташкент">
+              <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+            </a-select>
           </a-input-group>
+
+          <!-- language (select) -->
+          <a-select class="max-w-[100px] w-full" size="large" v-model:value="language" @change="changeLanguage">
+            <a-select-option value="uz">UZ</a-select-option>
+            <a-select-option value="ru">Русский</a-select-option>
+          </a-select>
         </div>
+
         <!-- Quick links -->
         <div class="flex items-center gap-5 m-0">
           <template v-for="item in quickLinks">
@@ -150,8 +163,11 @@ onMounted(() => {
   </div>
 
   <!-- KATALOGLAR -->
-  <div class="fixed inset-0 top-auto z-90 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto" v-if="catalogueOpen">
-    <div class="container py-8">
+  <div
+    class="fixed inset-0 top-auto z-90 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
+    v-if="catalogueOpen"
+  >
+    <div class="container py-8 flex-grow flex flex-col">
       <div class="flex items-center gap-2">
         <button
           class="bg-gray-200 text-gray-500 rounded-full py-2 px-4 text-sm"
@@ -168,72 +184,33 @@ onMounted(() => {
           Услуги
         </button>
       </div>
-      <div class="mt-5 flex gap-5">
-        <!-- Kategoriyalar Nomi (list) -->
-        <div class="max-w-[300px] w-full">
-          <button
-            v-for="category in catalogue[catalogueType]"
-            class="group flex items-center justify-between w-full py-4 px-5 rounded-full hover:bg-gray-50"
-            :key="category.id"
-            :class="{ 'bg-gray-50 active': catalogueSection?.id === category.id }"
-            @click="
-              if (!category.link) catalogueSection = category;
-              else router.push(category.link);
-            "
-          >
-            <div class="flex items-center gap-4">
-              <icon
-                :name="category.icon"
-                is-svg-raw
-                class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500"
-                :class="{ 'fill-green-500': catalogueSection?.id === category.id }"
-              />
-              <p
-                class="m-0 pointer-events-none text-left text-base font-light group-hover:text-green-500"
-                :class="{ 'text-green-500': catalogueSection?.id === category.id }"
-              >
-                {{ category.categoryName }}
-              </p>
+      <div class="mt-5 flex items-start gap-5 w-full flex-grow overflow-y-auto">
+        <div class="flex flex-col w-full">
+          <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
+            <div>
+              <span class="text-2xl font-medium">
+                {{ section.categoryName }}
+              </span>
             </div>
-            <icon
-              name="chevron-right400"
-              is-svg-raw
-              class="h-4 w-4 fill-[#171A1C] group-hover:fill-green-500"
-              :class="{ 'fill-green-500': catalogueSection?.id === category.id }"
-              v-if="!category.link"
-            />
-          </button>
-        </div>
-
-        <!-- Kategoriya Kontenti (category-content) -->
-        <div v-if="catalogueSection">
-          <p>
-            <router-link :to="catalogueSection.link" class="text-2xl font-medium *hoverGreen">{{ catalogueSection.categoryName }}</router-link>
-            <span class="italic text-gray-500 text-sm ml-3">{{ Number(catalogueSection.total).toLocaleString("uz") }} products</span>
-          </p>
-
-          <!-- category-items -->
-          <div class="mt-5 pb-20 flex gap-16 w-full">
-            <div class="flex-1 max-w-[300px]" v-for="section in catalogueSectionContent">
-              <div v-for="category in section" class="mb-5">
-                <router-link :to="category.link" class="font-medium m-0 *hoverGreen">{{ category.title }}</router-link>
-                <ul class="flex flex-col gap-1 m-0 mt-4" v-if="category.items">
-                  <li v-for="item in category.items.slice(0, !catelogueShowMore[category.title] ? 5 : undefined)">
-                    <router-link :to="item.link" class="text-sm font-light text-gray-500 *hoverGreen">{{ item.label }}</router-link>
-                  </li>
-                </ul>
-                <div
-                  class="text-green-500 text-sm cursor-pointer select-none"
-                  v-if="category.items.length > 5"
-                  @click="catelogueShowMore[category.title] = !catelogueShowMore[category.title]"
-                >
-                  <span v-if="catelogueShowMore[category.title]">Свернуть</span>
-                  <span v-else>Показать ещё</span>
-                </div>
+            <div class="grid grid-cols-4 w-full gap-10 mt-10">
+              <div
+                v-for="item in section.categories"
+                class="cursor-pointer border rounded-xl p-3 min-h-190px relative flex flex-col justify-center items-center transition hover:(shadow drop-shadow)"
+              >
+                <template v-if="item.image">
+                  <icon :name="item.image" class="h-130px" />
+                </template>
+                <div class="font-bold text-xl text-center mt-3 text-center">{{ item.title }}</div>
               </div>
             </div>
+            <!-- <pre>
+              {{ section }}
+            </pre> -->
           </div>
         </div>
+        <!-- <pre>
+          {{ catalogue[catalogueType] }}
+        </pre> -->
       </div>
     </div>
   </div>

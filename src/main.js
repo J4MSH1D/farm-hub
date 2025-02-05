@@ -13,6 +13,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import icon from "./components/global/icon.vue";
 import rightArrowButton from "./components/global/rightArrowButton.vue";
+import banner from "./components/global/banner.vue";
 
 // Router
 import router from "./router";
@@ -31,6 +32,7 @@ const app = createApp(App);
 
 app.component("Icon", icon);
 app.component("ArrowButton", rightArrowButton);
+app.component("banner", banner);
 
 app.use(VueEImzoPlugin);
 app.use(router);
