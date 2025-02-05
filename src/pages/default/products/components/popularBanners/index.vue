@@ -23,9 +23,9 @@ const banners = [
         <img :src="item.image" alt="" class="absolute inset-0 h-full w-full object-cover" />
         <!-- banner-content -->
         <div class="relative h-full w-1/2 flex flex-col items-start justify-between min-h-[180px]">
-          <h3 class="text-xl text-white font-medium">{{ item.title }}</h3>
+          <h3 class="text-xl text-white font-medium">{{ $t(item.title) }}</h3>
           <router-link :to="item.link" class="border-2 border-white rounded-full text-white text-sm font-medium py-3 px-6">{{
-            item.buttonTitle
+            $t(item.buttonTitle)
           }}</router-link>
         </div>
       </div>

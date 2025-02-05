@@ -10,10 +10,10 @@ const modules = [Navigation];
   <div class="w-full h-[500px] bg-[#3174F6] rounded-4xl relative py-10 pl-10 text-white overflow-hidden">
     <img src="@/assets/images/png/mediaBanner.png" class="w-full h-full absolute top-0 left-0" />
     <div class="flex justify-between pr-10">
-      <h2 class="text-3xl font-medium">Своё Медиа</h2>
+      <h2 class="text-3xl font-medium">{{ $t("home_media_title") }}</h2>
       <ArrowButton color="#3174F6" />
     </div>
-    <p class="pr-10 text-2xl mt-6">Своё Медиа - Новости, полезные статьи и видео</p>
+    <p class="pr-10 text-2xl mt-6">{{ $t("home_media_discription") }}</p>
     <icon name="media_slider.png" class="absolute right-10 -bottom-10" />
     <div class="mt-10">
       <swiper :slidesPerView="'auto'" :navigation="true" :modules="modules" :spaceBetween="30" class="mySwiper">
@@ -26,7 +26,7 @@ const modules = [Navigation];
 
               <div class="flex flex-col justify-between">
                 <div class="bg-[#FB6514] py-1.5 px-2 rounded-full text-xs text-white inline-block w-14 flex items-center justify-center">Live</div>
-                <h4 class="text-lg font-normal mb-0">{{ item.title }}</h4>
+                <h4 class="text-lg font-normal mb-0 line-clamp-2">{{ $t(item.title) }}</h4>
                 <p class="text-sm text-gray-400 mb-0">{{ item.date }}</p>
               </div>
             </div>

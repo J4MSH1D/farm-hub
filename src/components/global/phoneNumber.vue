@@ -1,5 +1,5 @@
 <template>
-  <a-input :class="class" :size="size" v-model:value="phoneNumber" placeholder="99-999-99-99" :maxlength="12" prefix="+998" />
+  <a-input :class="class" :size="size" v-model:value="phoneNumber" placeholder="(__)-___-__-__" :maxlength="12" prefix="+998" />
 </template>
 
 <script setup>

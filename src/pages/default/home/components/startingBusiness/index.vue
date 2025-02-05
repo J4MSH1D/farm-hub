@@ -3,8 +3,8 @@
     <div class="px-10 py-8 rounded-4xl background relative z-40 overflow-hidden">
       <div class="relative z-20 text-white flex justify-between items-center">
         <div>
-          <div class="text-3xl">Как начать свой бизнес с нуля</div>
-          <div class="mt-2">Бизнес-план по выращиванию фруктов и овощей</div>
+          <div class="text-3xl">{{ $t("home_start_title") }}</div>
+          <div class="mt-2">{{ $t("home_start_description") }}</div>
         </div>
         <div>
           <arrowButton color="#4481eb"></arrowButton>

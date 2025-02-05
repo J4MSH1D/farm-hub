@@ -21,16 +21,18 @@ const banner = {
       <div class="relative">
         <!-- banner-content-top -->
         <div class="min-h-[220px] w-1/3 px-10 py-6">
-          <h1 class="text-3xl text-white font-medium">{{ banner.title }}</h1>
-          <p class="text-sm text-white mt-5">{{ banner.subtitle }}</p>
+          <h1 class="text-3xl text-white font-medium">{{ $t(banner.title) }}</h1>
+          <p class="text-sm text-white mt-5">{{ $t(banner.subtitle) }}</p>
         </div>
         <!-- banner-content-bottom -->
         <div class="flex items-center gap-5 w-full px-10 py-4" style="backdrop-filter: blur(40px)">
-          <button class="text-sm text-white font-medium border-2 border-white rounded-full px-7 py-3">{{ banner.buttonTitle }}</button>
+          <button class="text-sm text-white font-medium border-2 border-white rounded-full px-7 py-3">
+            {{ $t(banner.buttonTitle) }}
+          </button>
           <div class="flex items-center gap-8">
             <div v-for="item in banner.infoList" class="flex items-center justify-between gap-2">
               <span class="text-2xl text-white font-semibold">{{ item.number }}</span>
-              <span class="text-sm text-white">{{ item.text }}</span>
+              <span class="text-sm text-white">{{ $t(item.text) }}</span>
             </div>
           </div>
         </div>

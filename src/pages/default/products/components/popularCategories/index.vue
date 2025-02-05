@@ -7,7 +7,7 @@ const topCategories = [
   },
   {
     id: "fermerskoe-oboruvodanie",
-    title: "Фермерское  оборудование",
+    title: "Фермерское оборудование",
     image: "https://s56442.cdn.ngenix.net/img/305/240/resize/rshb/landings/landing/Frame_10692975.png",
   },
   {
@@ -22,7 +22,7 @@ const topCategories = [
   },
   {
     id: "sredstva-zaschity-rastreniy",
-    title: "Средства защиты  растений",
+    title: "Средства защиты растений",
     image: "https://s56442.cdn.ngenix.net/img/305/240/resize/rshb/landings/landing/Frame_1321316485.png",
   },
   {
@@ -35,14 +35,14 @@ const topCategories = [
 
 <template>
   <div class="container py-8">
-    <h2 class="text-2xl font-semibold">Популярные категории</h2>
+    <h2 class="text-2xl font-semibold">{{ $t("Популярные категории") }}</h2>
 
     <!-- Top categories -->
     <div class="grid grid-cols-3 gap-5 py-6">
       <div v-for="item in topCategories" :key="item.id" class="relative min-h-[240px] rounded-xl overflow-hidden px-4 py-6">
         <router-link :to="`/catalog/${item.id}`">
-          <img :src="item.image" :alt="item.title" class="absolute inset-0 w-full h-full object-cover" />
-          <p class="relative text-lg text-white font-semibold">{{ item.title }}</p>
+          <img :src="item.image" :alt="$t(item.title)" class="absolute inset-0 w-full h-full object-cover" />
+          <p class="relative text-lg text-white font-semibold">{{ $t(item.title) }}</p>
         </router-link>
       </div>
     </div>

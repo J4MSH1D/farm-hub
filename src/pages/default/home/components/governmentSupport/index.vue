@@ -3,8 +3,8 @@
     <div class="px-10 py-8 rounded-4xl background relative">
       <div class="relative z-20 text-white flex justify-between items-center">
         <div>
-          <div class="text-3xl">Господдержка для фермеров</div>
-          <div class="mt-2">Информационная система рассмотрения вопросов предоставления субсидий производителям сельскохозяйственной продукции</div>
+          <div class="text-3xl">{{ $t("home_goverment_title") }}</div>
+          <div class="mt-2">{{ $t("home_goverment_description") }}</div>
         </div>
         <div>
           <arrowButton color="#f83600"></arrowButton>

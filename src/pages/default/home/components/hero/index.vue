@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Autoplay } from "swiper/modules";
 import section1 from "./components/section1.vue";
 import section2 from "./components/section2.vue";
-// import section3 from "./components/section3.vue";
 import section4 from "./components/section4.vue";
 
 const slides = [
@@ -16,10 +15,6 @@ const slides = [
     id: 2,
     component: section2,
   },
-  // {
-  // 	id: 3,
-  // 	component: section3,
-  // },
   {
     id: 4,
     component: section4,
@@ -28,16 +23,17 @@ const slides = [
 
 const modules = [Pagination, Autoplay];
 </script>
+<!-- :autoplay="{
+  delay: 10000,
+  disableOnInteraction: false,
+}" -->
+
 <template>
   <div class="container relative overflow-hidden mt-10 !text-white px-0">
     <swiper
       :loop="true"
       :pagination="{
         clickable: true,
-      }"
-      :autoplay="{
-        delay: 10000,
-        disableOnInteraction: false,
       }"
       :slides-per-view="1"
       :space-between="50"
@@ -51,6 +47,11 @@ const modules = [Pagination, Autoplay];
 
 <style>
 .swiper-pagination-bullet {
+  transition: all 0.3s ease;
   background-color: #fff !important;
+}
+.swiper-pagination-bullet-active {
+  width: 50px;
+  border-radius: 10px;
 }
 </style>

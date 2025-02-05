@@ -1,6 +1,6 @@
 export { default as SettingsList } from "./SettingsList.vue";
 export { default as Select } from "./Select.vue";
-export { default as ServiseProducts } from "./ServiceProducts.vue";
+export { default as AnnounProducts } from "./AnnounProducts.vue";
 export { default as Banner } from "./Banner.vue";
 export { default as FilterByPrice } from "./FilterByPrice.vue";
 export { default as FilterByCountry } from "./FilterByCountry.vue";

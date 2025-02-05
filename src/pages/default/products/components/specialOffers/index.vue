@@ -1,6 +1,7 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
+import { t } from "i18next";
 
 const offersList = [
   {
@@ -82,7 +83,7 @@ function getPercentage(price, price_old) {
 <template>
   <div class="container py-8">
     <div class="flex items-center justify-between">
-      <h2 class="text-2xl font-semibold">Спецпредложения</h2>
+      <h2 class="text-2xl font-semibold">{{ $t("Спецпредложения") }}</h2>
       <!-- slider-buttons -->
       <div class="flex items-center justify-end gap-2">
         <button class="specialOffers-button-prev bg-white rounded-full shadow-lg p-1.5">
@@ -115,10 +116,10 @@ function getPercentage(price, price_old) {
           >
             <span class="absolute w-2 h-2 left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 rotate-45 bg-gray-500" />
             <p class="text-xs font-light leading-[1.8] text-white">
-              Специальные условия для покупки техники с использованием государственной поддержки
+              {{ $t("Специальные условия для покупки техники с использованием государственной поддержки") }}
             </p>
           </div>
-          <span class="bg-sky-100 text-[9px] text-blue-500 font-bold uppercase rounded p-1 px-1.5 cursor-pointer">EXPRESS-LEASING</span>
+          <span class="bg-sky-100 text-[9px] text-blue-500 font-bold uppercase rounded p-1 px-1.5 cursor-pointer">{{ $t("Экспресс-лизинг") }}</span>
         </div>
 
         <!-- title -->
