@@ -61,28 +61,29 @@ watch(route, () => {
               <a-select-option value="Media">Медиа</a-select-option>
             </a-select>
             <a-input placeholder="Поиск" v-model:value="inputData" size="large" class="w-full" />
-            <!-- regions -->
-            <a-select
-              class="max-w-[150px] w-full"
-              size="large"
-              v-model="region"
-              default-value="Город Ташкент"
-              :get-popup-container="trigger => trigger.parentNode"
-            >
-              <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
-            </a-select>
           </a-input-group>
+
+          <!-- regions -->
+          <a-select
+            class="regions-select max-w-[200px] w-full"
+            size="large"
+            v-model="region"
+            default-value="Все"
+            :get-popup-container="trigger => trigger.parentNode"
+          >
+            <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+          </a-select>
 
           <!-- language (select) -->
           <a-select
-            class="max-w-[100px] w-full"
+            class="w-[70px]"
             size="large"
             v-model:value="language"
             @change="changeLanguage"
             :get-popup-container="trigger => trigger.parentNode"
           >
             <a-select-option value="uz">UZ</a-select-option>
-            <a-select-option value="ru">Русский</a-select-option>
+            <a-select-option value="ru">RU</a-select-option>
           </a-select>
         </div>
 
@@ -225,5 +226,15 @@ watch(route, () => {
 <style>
 .overlayClass {
   padding-top: 10px;
+}
+
+.regions-select .ant-select-selector {
+  background-color: #10b981 !important;
+}
+.regions-select .ant-select-selection-item {
+  color: white !important;
+}
+.regions-select .ant-select-arrow {
+  color: white !important;
 }
 </style>
