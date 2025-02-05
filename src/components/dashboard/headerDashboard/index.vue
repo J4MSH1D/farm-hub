@@ -52,7 +52,7 @@ function logOut() {
                   <span class="text-zinc-500">Настройки аккаунта</span>
                 </div>
               </a-menu-item>
-              <a-menu-item>
+              <a-menu-item @click="logOut">
                 <div class="flex items-center gap-2 py-1">
                   <icon name="sign-out400" is-svg-raw class="h-4 w-4 fill-red-600" />
                   <span class="text-red-600">Выйти</span>
