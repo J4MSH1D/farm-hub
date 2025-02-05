@@ -22,8 +22,8 @@ function changeLanguage(lang) {
   i18next.changeLanguage(lang);
 }
 
-watch(catalogueOpen, value => {
-  if (value) document.body.style.overflow = "hidden";
+watch([catalogueOpen, route], () => {
+  if (catalogueOpen.value) document.body.style.overflow = "hidden";
   else document.body.style.overflow = "auto";
 });
 

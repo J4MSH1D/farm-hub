@@ -22,7 +22,7 @@ const creditSteps = [
     <ul class="flex justify-between mt-10">
       <li v-for="(item, index) in creditSteps" class="relative px-4 flex flex-col items-start">
         <div
-          class="mx-auto relative z-10 h-[100px] aspect-square flex items-center justify-center bg-white rounded-2xl text-2xl text-zinc-500 font-semibold"
+          class="mx-auto relative z-10 h-[100px] aspect-square flex items-center justify-center bg-white rounded-2xl text-3xl text-zinc-500 font-semibold"
         >
           <span>{{ index + 1 }}</span>
         </div>
