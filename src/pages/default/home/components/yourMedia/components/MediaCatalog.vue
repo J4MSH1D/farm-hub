@@ -7,7 +7,7 @@ const current = ref(data[0]);
 
 function handleCatalog(item) {
   current.value = item;
-  console.log("current", current.value);
+  // console.log("current", current.value);
 }
 
 const classes = {

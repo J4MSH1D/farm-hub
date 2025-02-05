@@ -2,25 +2,55 @@ import { lazyLoad, layoutSetter } from "@/utils/router";
 const links = [
   {
     path: "/profile",
+    name: "Profile",
+    component: () => lazyLoad("dashboard/profile"),
+    meta: {
+      icon: {
+        name: "profile",
+        isSvg: true,
+      },
+      title: "Profile",
+      permissions: [1],
+    },
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: () => lazyLoad("dashboard/test"),
+    meta: {
+      icon: {
+        name: "test",
+        isSvg: true,
+      },
+      title: "Test",
+      permissions: [1],
+    },
     children: [
       {
-        path: "root",
-        name: "Profile",
-        component: () => lazyLoad("dashboard/profile/root"),
+        path: "test-1",
+        name: "test-1",
+        component: () => lazyLoad("dashboard/test/test-1"),
         meta: {
-          title: "Профиль",
+          icon: {
+            name: "test-1",
+            isSvg: true,
+          },
+          title: "Test-1",
           permissions: [1],
         },
       },
       {
-        path: "",
-        name: "",
+        path: "test-2",
+        name: "test-2",
+        component: () => lazyLoad("dashboard/test/test-2"),
         meta: {
-          icon: "profile",
+          icon: {
+            name: "test-2",
+            isSvg: true,
+          },
+          title: "Test-2",
+          permissions: [1],
         },
-        children: [
-          {}
-        ]
       },
     ],
   },
