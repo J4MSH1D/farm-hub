@@ -10,8 +10,8 @@ const banner = {
     <div class="relative rounded-xl overflow-hidden p-5">
       <img :src="banner.image" alt="" class="absolute inset-0 h-full w-full object-cover" />
       <div class="relative h-full flex items-center justify-between min-h-[70px]">
-        <h3 class="text-xl text-white font-medium">{{ banner.title }}</h3>
-        <button class="border-2 border-white rounded-full text-white text-sm font-medium py-3 px-6">Все предложения</button>
+        <h3 class="text-xl text-white font-medium">{{ $t(banner.title ) }}</h3>
+        <button class="border-2 border-white rounded-full text-white text-sm font-medium py-3 px-6">{{ $t("Все предложения") }}</button>
       </div>
     </div>
   </div>

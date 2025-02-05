@@ -13,6 +13,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import icon from "./components/global/icon.vue";
 import rightArrowButton from "./components/global/rightArrowButton.vue";
+import banner from "./components/global/banner.vue";
 
 // Router
 import router from "./router";
@@ -22,15 +23,20 @@ import store from "./store";
 
 // EIMZO
 import VueEImzoPlugin from "./plugins/vue-eimzo";
+import I18NextVue from "i18next-vue";
+import i18next from "i18next";
+import "./plugins/i18n";
 
 // App
 const app = createApp(App);
 
 app.component("Icon", icon);
 app.component("ArrowButton", rightArrowButton);
+app.component("banner", banner);
 
 app.use(VueEImzoPlugin);
 app.use(router);
 app.use(store);
+app.use(I18NextVue, { i18next });
 
 app.mount("#app");

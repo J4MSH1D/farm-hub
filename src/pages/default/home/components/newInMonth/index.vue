@@ -3,13 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 
 import data from "./data";
+import { t } from "i18next";
 
 const modules = [Navigation];
 </script>
 <template>
   <div class="container my-10 bg-white py-10 rounded-xl">
     <div class="flex justify-between items-center">
-      <div class="text-3xl">Новинки месяца</div>
+      <div class="text-3xl">{{ $t("home_new_title") }}</div>
       <ArrowButton />
     </div>
     <div class="mt-10">
@@ -20,14 +21,14 @@ const modules = [Navigation];
             <div class="px-3 mt-3">
               <div class="h-[120px]">
                 <div class="text-lg font-medium">
-                  {{ item.name }}
+                  {{ $t(item.name) }}
                 </div>
                 <div class="mt-2">
                   {{ item.shortDescription }}
                 </div>
               </div>
               <div class="mt-3 flex justify-between items-center">
-                <span class="text-[#1CCB01] text-xl">{{ item.price }}</span>
+                <span class="text-[#1CCB01] text-xl">{{ item.price }} {{ $t("uzs") }}</span>
                 <ArrowButton />
               </div>
             </div>

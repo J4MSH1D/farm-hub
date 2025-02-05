@@ -83,6 +83,26 @@ const links = [
       permissions: [],
     },
   },
+
+  {
+    path: "/loans",
+    name: "Loans",
+    meta: {
+      title: "Loans",
+      permissions: [],
+    },
+    children: [
+      {
+        path: "agricultural-development-loans",
+        name: "AgriculturalDevelopmentLoans",
+        component: () => lazyLoad("default/loans/agricultural-development-loans"),
+        meta: {
+          title: "AgriculturalDevelopmentLoans",
+          permissions: [],
+        },
+      },
+    ],
+  },
   {
     path: "/job",
     name: "Job",
@@ -221,6 +241,52 @@ const links = [
         component: () => lazyLoad("default/announcements/aboutService"),
         meta: {
           title: "Announcements about services",
+          permissions: [],
+        },
+      },
+    ],
+  },
+  {
+    path: "/media",
+    name: "Media",
+    meta: {
+      title: "Media",
+      permissions: [],
+    },
+    children: [
+      {
+        path: "",
+        name: "MediaPage",
+        component: () => lazyLoad("default/media"),
+        meta: {
+          title: "Media",
+          permissions: [],
+        },
+      },
+      {
+        path: "articles",
+        name: "Media/Articles",
+        component: () => lazyLoad("default/media/articles"),
+        meta: {
+          title: "Articles",
+          permissions: [],
+        },
+      },
+      {
+        path: "news",
+        name: "Media/News",
+        component: () => lazyLoad("default/media/news"),
+        meta: {
+          title: "News",
+          permissions: [],
+        },
+      },
+      {
+        path: "videos",
+        name: "Media/Videos",
+        component: () => lazyLoad("default/media/videos"),
+        meta: {
+          title: "Videos",
           permissions: [],
         },
       },

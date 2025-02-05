@@ -1,16 +1,16 @@
 const links = [
   {
-    name: "Посадочные материалы",
+    name: "home_product_1",
     iconName: "home_planting.png",
     span: 8,
   },
   {
-    name: "Удобрения",
+    name: "home_product_2",
     iconName: "home_frezze.png",
     span: 5,
   },
   {
-    name: "Средства для защиты растений",
+    name: "home_product_3",
     iconName: "home_protected.png",
     span: 5,
   },

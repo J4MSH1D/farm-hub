@@ -15,6 +15,7 @@ async function getAllKeys() {
 }
 
 async function sign() {
+  router.push("/profile/root");
   try {
     await signWithEsiId(selectedValue.value);
     let user = keys.value.find(key => key["esiId"] === selectedValue.value),
@@ -22,8 +23,8 @@ async function sign() {
         ...user,
         permissions: [1, 2, 3],
       };
-    // storage.set("accessToken", JSON.stringify(storedData));
-    // router.push("/profile/root");
+    storage.set("accessToken", JSON.stringify(storedData));
+    router.push("/profile/root");
   } catch {
     message.error("Ошибка подписи с ключом E-IMZO");
   }

@@ -46,7 +46,7 @@ function getDate(dateString) {
   <div class="container py-8 pb-40">
     <div class="flex items-center justify-between">
       <!-- section-title -->
-      <h2 class="text-2xl font-semibold">Смотрите и читайте на Своё Медиа</h2>
+      <h2 class="text-2xl font-semibold">{{ $t("Смотрите и читайте на Своё Медиа") }}</h2>
       <!-- slider-buttons -->
       <div class="flex items-center justify-end gap-2">
         <button class="mediaList-button-prev bg-white rounded-full shadow-lg p-1.5">
