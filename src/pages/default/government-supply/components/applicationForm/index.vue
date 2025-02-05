@@ -1,4 +1,5 @@
 <script setup>
+import banks from "@/enums/banks";
 import regions from "@/enums/regions";
 import { ref } from "vue";
 
@@ -11,6 +12,7 @@ const form = ref({
   INN: null,
   email: null,
   region: null,
+  bank: null,
 });
 
 function validator(rule, value) {
@@ -57,6 +59,11 @@ const formRules = Object.keys(form.value).reduce((acc, curr) => {
             <a-form-item has-feedback name="region" class="col-span-2">
               <a-select v-model:value="form.region" placeholder="Субъект Узбекистана*">
                 <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+              </a-select>
+            </a-form-item>
+            <a-form-item has-feedback name="bank" class="col-span-2">
+              <a-select v-model:value="form.bank" placeholder="Выберите банк*">
+                <a-select-option v-for="item in banks" :value="item">{{ item }}</a-select-option>
               </a-select>
             </a-form-item>
 

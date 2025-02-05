@@ -206,19 +206,75 @@ const links = [
     soon: true,
     children: [
       {
-        name: "Новости",
-        path: "/media/news",
-        soon: true,
-      },
-      {
         name: "Статьи",
         path: "/media/articles",
         soon: true,
+        children: [
+          {
+            name: "Дехканское хозяйство",
+            path: "/media/articles/dehkan",
+            soon: true,
+          },
+          {
+            name: "Государственная регистрация дехканского хозяйства",
+            path: "/media/articles/dehkan-registration",
+            soon: true,
+          },
+          {
+            name: "Наследование приусадебного земельного участка",
+            path: "/media/articles/inheritance",
+            soon: true,
+          },
+          {
+            name: "Трудовой стаж в дехканском хозяйстве",
+            path: "/media/articles/work-experience",
+            soon: true,
+          },
+        ],
+      },
+      {
+        name: "Новости",
+        path: "/media/news",
+        soon: true,
+        children: [
+          {
+            name: "Для развития дехканских хозяйств и приусадебного земледелия создадут отдельный совет",
+            link: "https://www.gazeta.uz/ru/2025/01/31/lands/",
+          },
+          {
+            name: "Выдвинуты новые инициативы по выращиванию продукции на приусадебных и дехканских землях",
+            link: "https://president.uz/ru/lists/view/7845",
+          },
+          {
+            name: "Выращивать сельхозпродукцию в Узбекистане будут у многоэтажек и на внутренних улицах махаллей",
+            link: "https://www.gazeta.uz/ru/2025/01/04/agricultural-products/",
+          },
+        ],
       },
       {
         name: "Видео",
         path: "/media/videos",
         soon: true,
+        children: [
+          {
+            name: "Проект по выращиванию лимонов",
+            link: "https://youtu.be/HwNdO0gg9es",
+          },
+          {
+            name: "Проект по выращиванию малины",
+            link: "https://youtu.be/RLt-WcZLrsE",
+          },
+          {
+            name: "Проект по выращиванию винограда",
+            link: "https://youtu.be/HwNdO0gg9es",
+            soon: true,
+          },
+          {
+            name: "Проект по выращиванию мандаринов",
+            link: "https://youtu.be/HwNdO0gg9es",
+            soon: true,
+          },
+        ],
       },
     ],
   },

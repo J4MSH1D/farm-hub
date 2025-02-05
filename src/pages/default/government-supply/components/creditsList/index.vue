@@ -31,7 +31,7 @@ function getTotalPayment(item) {
   <div class="container py-8">
     <ul>
       <li v-for="item in filteredCredits" class="flex justify-between bg-white rounded-xl p-8 mb-5">
-        <div class="grid grid-cols-[40%,30%,30%] w-full px-5">
+        <div class="grid grid-cols-[40%,30%,30%] justify-items-center w-full px-5">
           <h3 class="text-lg text-zinc-900 font-medium">{{ item.name?.[locale] }}</h3>
           <!-- credit-info -->
           <ul class="flex flex-col gap-3" style="list-style-type: disc">
