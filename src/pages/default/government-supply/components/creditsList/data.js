@@ -39,7 +39,7 @@ export const credits = [
       uz: `Eksportoldi moliyalashtirish`,
       ru: `Предэкспортное финансирование`,
     },
-    interest: { from: 0, to: 27 },
+    interest: 27,
     payment: 0,
     duration: { from: 0, to: 12 },
     minRate: null,

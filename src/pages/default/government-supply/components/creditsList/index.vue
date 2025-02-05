@@ -31,7 +31,7 @@ function getTotalPayment(item) {
   <div class="container py-8">
     <ul>
       <li v-for="item in filteredCredits" class="flex justify-between bg-white rounded-xl p-8 mb-5">
-        <div class="flex justify-between w-full">
+        <div class="grid grid-cols-[40%,30%,30%] w-full px-5">
           <h3 class="text-lg text-zinc-900 font-medium">{{ item.name?.[locale] }}</h3>
           <!-- credit-info -->
           <ul class="flex flex-col gap-3" style="list-style-type: disc">
@@ -58,7 +58,7 @@ function getTotalPayment(item) {
         </div>
 
         <!-- buttons -->
-        <div class="flex flex-col justify-center gap-4 border-l border-gray-200 pl-20 ml-25">
+        <div class="flex flex-col justify-center gap-4 border-l border-gray-200 pl-20">
           <a :href="item.link" target="_blank" class="text-center w-[200px] py-3 px-4 rounded-full text-sm text-white font-medium bg-green-600"
             >Оформить кредит</a
           >
