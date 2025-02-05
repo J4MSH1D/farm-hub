@@ -9,15 +9,6 @@ function handleCatalog(item) {
   current.value = item;
   // console.log("current", current.value);
 }
-
-const classes = {
-  Бизнес: "bg-[#3174F6]",
-  Animals: "bg-[#8B37DF]",
-  Live: "bg-[#FB6514]",
-  Useful: "bg-[#95A0A9]",
-  Производство: "bg-[#76C83A]",
-  EduBrb: "bg-green-500",
-};
 </script>
 
 <template>
@@ -50,8 +41,7 @@ const classes = {
               <img :src="item.img" :alt="item.title" class="min-w-[200px] max-w-[200px] h-28 object-cover rounded-lg" />
               <icon v-if="item.isVideo" name="play-white.png" class="w-14 h-14 absolute" />
             </div>
-            <div class="flex flex-col justify-between">
-              <span class="px-4 py-1 rounded-full text-xs max-w-min text-white" :class="classes[item.name]">{{ $t(item.name) }}</span>
+            <div class="flex flex-col justify-around">
               <h4 class="text-md font-medium mb-0">{{ $t(item.title) }}</h4>
               <p class="text-xs text-gray-400 mb-0">{{ item.date }}</p>
             </div>

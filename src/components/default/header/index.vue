@@ -82,8 +82,8 @@ watch(route, () => {
             @change="changeLanguage"
             :get-popup-container="trigger => trigger.parentNode"
           >
-            <a-select-option value="uz">UZ</a-select-option>
-            <a-select-option value="ru">RU</a-select-option>
+            <a-select-option value="uz">uz</a-select-option>
+            <a-select-option value="ru">ru</a-select-option>
           </a-select>
         </div>
 
