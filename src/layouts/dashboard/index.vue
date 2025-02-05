@@ -55,7 +55,9 @@ onMounted(() => {
   <a-layout class="min-h-screen">
     <a-layout-sider :trigger="null" collapsible class="!bg-white !min-w-[320px]">
       <div class="text-white flex items-center py-2">
-        <icon name="logo" isSvg />
+        <router-link to="/">
+          <icon name="logo" isSvg />
+        </router-link>
       </div>
       <a-menu theme="light" mode="inline" v-model:selectedKeys="activeLinks">
         <template v-for="link in links" :key="link.path">
