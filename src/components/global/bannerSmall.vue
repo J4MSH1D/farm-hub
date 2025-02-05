@@ -1,26 +1,27 @@
 <script setup>
-import { computed } from "vue";
-
 const props = defineProps({
   color: String,
-  leafLeft: String,
-  leafRight: String,
+  leafColor: String,
+  cusClass: String,
 });
 </script>
 
 <template>
-  <div class="relative p-10 rounded-3xl overflow-hidden min-h-[300px]" :style="backgr">
+  <div class="relative rounded-3xl overflow-hidden overflow-hidden" :class="cusClass" :style="`background-color: ${color}`">
     <!-- Banner content -->
     <div class="relative z-10">
       <slot />
     </div>
+    <div class="absolute right-0 bottom-0 z-10">
+      <arrowButton :color="color"></arrowButton>
+    </div>
 
     <!-- Right leaf -->
     <div class="absolute right-0 top-0 z-0">
-      <svg width="470" height="332" viewBox="0 0 470 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="370" height="150" viewBox="0 0 470 332" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M475.452 55.2554C479.16 191.052 328.393 267.858 227.139 240.974C139.063 217.589 76.4568 56.4737 87.1416 -122.74C88.7403 -149.555 91.9798 -176.775 97.0204 -204C335.638 -129.166 471.744 -80.5407 475.452 55.2554Z"
-          :fill="lightLeafColor"
+          :fill="leafColor"
         />
         <g style="mix-blend-mode: multiply">
           <path
@@ -43,10 +44,10 @@ const props = defineProps({
 
     <!-- Left leaf -->
     <div class="absolute left-10 bottom-0 z-0">
-      <svg width="523" height="332" viewBox="0 0 523 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="323" height="232" viewBox="0 0 523 332" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M475.452 259.255C479.16 395.052 328.393 471.858 227.139 444.974C139.063 421.589 76.4568 260.474 87.1416 81.2599C88.7403 54.4449 91.9798 27.2247 97.0204 0C335.638 74.8336 471.744 123.459 475.452 259.255Z"
-          :fill="boldLeafColor"
+          :fill="leafColor"
           fill-opacity="0.1"
         />
         <g style="mix-blend-mode: multiply">

@@ -176,7 +176,7 @@ const links = [
       {
         name: "ТН ВЭД коды 2022",
         path: "/agrotechnology/business",
-        soon: false,
+        soon: true,
       },
       {
         name: "Средства защиты растений",
@@ -203,22 +203,22 @@ const links = [
   {
     name: "Медиа",
     path: "/media",
-    soon: false,
+    soon: true,
     children: [
       {
         name: "Новости",
         path: "/media/news",
-        soon: false,
+        soon: true,
       },
       {
         name: "Статьи",
         path: "/media/articles",
-        soon: false,
+        soon: true,
       },
       {
         name: "Видео",
         path: "/media/videos",
-        soon: false,
+        soon: true,
       },
     ],
   },

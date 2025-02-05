@@ -1,13 +1,11 @@
-<script setup></script>
 <template>
-  <div class="rounded-xl bg-gradient-to-r from-[#A6CE39] to-[#248341] h-[120px] flex justify-around p-6 items-center">
-    <div class="flex flex-col justify-evenly h-full text-white">
-      <p class="text-xl">Найти стажера для компании или предприятия</p>
-      <p class="text-sm">Все, что вам нужно сделать, это разместить вакансию, и заинтересованные кандидаты откликнутся сами.</p>
+  <bannerSmall color="#468f46" leafColor="#75d241" cusClass="p-10">
+    <div class="relative flex flex-col gap-10">
+      <div class="flex flex-col justify-evenly h-full text-white">
+        <p class="text-xl">Найти стажера для компании или предприятия</p>
+        <p class="text-sm">Все, что вам нужно сделать, это разместить вакансию, и заинтересованные кандидаты откликнутся сами.</p>
+      </div>
+      <img src="@/assets/images/png/job-banner-2.png" alt="banner image" class="w-32 absolute right-30 -top-10" />
     </div>
-    <img src="@/assets/images/png/job-banner-2.png" alt="banner image" class="w-32" />
-    <button class="text-white rounded-full py-4 px-8 border-2 transition duration-300 ease-linear border-white hover:border-gray-500">
-      Разместить вакансию
-    </button>
-  </div>
+  </bannerSmall>
 </template>

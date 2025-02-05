@@ -44,6 +44,11 @@ const backgroundColors = {
     lightLeafColor: "#55d4bd",
     boldLeafColor: "#8fffeb",
   },
+  agro: {
+    background: "linear-gradient(to right, #61c025, #61c025)",
+    lightLeafColor: "#79c549",
+    boldLeafColor: "#458540",
+  },
 };
 
 const backgroundColorStyle = computed(() => backgroundColors[props.backgroundColor] || backgroundColors.lightBlue);
