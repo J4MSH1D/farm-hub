@@ -52,7 +52,7 @@ watch(route, () => {
           <span class="text-white">Каталог</span>
         </button>
         <!-- searchbar (input) -->
-        <div class="flex-grow flex items-center gap-3">
+        <div class="flex-grow flex items-center gap-4">
           <a-input-group compact class="!flex">
             <a-select v-model:value="selectValue" class="min-w-[145px]" size="large" :get-popup-container="trigger => trigger.parentNode">
               <a-select-option value="Product">Товары</a-select-option>
@@ -68,7 +68,7 @@ watch(route, () => {
             class="regions-select max-w-[200px] w-full"
             size="large"
             v-model="region"
-            default-value="Город Ташкент"
+            default-value="Все"
             :get-popup-container="trigger => trigger.parentNode"
           >
             <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
@@ -123,17 +123,19 @@ watch(route, () => {
         <div v-for="link in links">
           <div v-if="link.children">
             <a-dropdown placement="bottomLeft" overlayClassName="pt-5" :get-popup-container="trigger => trigger.parentNode">
-              <a-badge class="*hoverGreen" :count="link.soon ? $t('Скоро') : undefined" size="small">
+              <template v-if="link.soon">
+                <span class="*hoverGreen relative">{{ link.name }} <soon /></span>
+              </template>
+              <template v-else>
                 <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
-              </a-badge>
-
+              </template>
               <template #overlay>
                 <div class="border bg-white rounded-xl px-4 py-3">
                   <div v-if="link.children && link.children.some(e => e.children)" class="grid grid-cols-2 gap-5 justify-start max-w-[900px]">
                     <div v-for="innerLink in link.children">
                       <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
                       <div v-for="childrenLink in innerLink.children" class="my-3">
-                        <span class="*hoverGreen text-sm text-gray-500" v-if="childrenLink.soon"
+                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon"
                           >{{ childrenLink.name }} <soon is-small v-if="childrenLink.soon"
                         /></span>
                         <router-link :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{ childrenLink.name }}</router-link>
@@ -143,7 +145,7 @@ watch(route, () => {
                   <div v-else>
                     <div v-for="innerLink in link.children" class="py-1 my-3">
                       <template v-if="innerLink.soon">
-                        <span class="*hoverGreen text-md my-1">{{ innerLink.name }} <soon /></span>
+                        <span class="*hoverGreen text-md my-1 relative">{{ innerLink.name }} <soon /></span>
                       </template>
                       <template v-else>
                         <router-link :to="innerLink.path" class="*hoverGreen text-md my-1">{{ innerLink.name }}</router-link>
@@ -156,14 +158,10 @@ watch(route, () => {
           </div>
           <div v-else>
             <template v-if="link.soon">
-              <a-badge class="*hoverGreen" :count="$t('Скоро')" size="small">
-                <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
-              </a-badge>
+              <span class="bg-gray-200 py-2 px-3 rounded-full">{{ link.name }}</span>
             </template>
             <template v-else>
-              <a-badge class="*hoverGreen" size="small">
-                <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
-              </a-badge>
+              <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
             </template>
           </div>
         </div>

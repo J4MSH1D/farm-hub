@@ -19,7 +19,7 @@ const filteredCredits = computed(() => {
 });
 
 function getMonthlyPayment(item) {
-  return Number((getTotalPayment(item) / item.duration).toFixed());
+  return Number((getTotalPayment(item) / item.duration.to).toFixed());
 }
 
 function getTotalPayment(item) {
@@ -37,7 +37,7 @@ function getTotalPayment(item) {
           <ul class="flex flex-col gap-3" style="list-style-type: disc">
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.preferentialRate">Льготная ставка от {{ item.preferentialRate }}%</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.interest">Ставка от {{ item.interest }}%</li>
-            <li class="credit-info-item text-sm text-zinc-900" v-if="item.duration">Срок до {{ item.duration }} месяцев</li>
+            <li class="credit-info-item text-sm text-zinc-900" v-if="item.duration">Срок до {{ item.duration.to }} месяцев</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.simplifiedDocuments">Упрощённый список документов</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.minRate">Ставка от {{ item.minRate }} %</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.partiallySecured">Частично обеспеченный</li>

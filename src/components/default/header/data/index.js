@@ -2,17 +2,17 @@ const links = [
   {
     name: "Товары",
     path: "/products",
-    // soon: true,
+    soon: false,
   },
   {
     name: "Услуги",
     path: "/services",
-    // soon: true,
+    soon: false,
   },
   {
     name: "Господдержка",
     path: "/government-supply",
-    // soon: true,
+    soon: false,
     children: [
       {
         name: "Льготные кредиты и субсидии",
@@ -20,18 +20,18 @@ const links = [
         children: [
           {
             name: "Подобрать кредит по параметрам",
-            path: "/loans-from-parametres",
-            // soon: true,
+            path: "/government-supply",
+            soon: false,
           },
           {
             name: "Льготное кредитование сельхозпроизводителей",
             path: "/loans-for-farm-servicers",
-            // soon: true,
+            soon: true,
           },
           {
             name: "Кредиты для АПК",
             path: "/apk-loans",
-            // soon: true,
+            soon: true,
           },
         ],
       },
@@ -64,17 +64,17 @@ const links = [
         name: "Услуги банка",
         children: [
           {
-            name: "-Открытие расчетного счёта",
+            name: "Открытие расчетного счёта",
             path: "/overdrafts",
             soon: true,
           },
           {
-            name: "-Открытие банковской карты",
+            name: "Открытие банковской карты",
             path: "/opening-a-bank-card",
             soon: true,
           },
           {
-            name: "-Регистрация бизнеса",
+            name: "Регистрация бизнеса",
             path: "/registration-of-businesses",
             soon: true,
           },
@@ -85,7 +85,7 @@ const links = [
         name: "Финансирование поставщиков",
         children: [
           {
-            name: "-Факторинг",
+            name: "Факторинг",
             path: "/factoring",
             soon: true,
           },
@@ -96,17 +96,17 @@ const links = [
         path: "/leasing",
         children: [
           {
-            name: "-Лизинг сельхозтехники",
+            name: "Лизинг сельхозтехники",
             path: "/leasing",
             soon: false,
           },
           {
-            name: "-Лизинг оборудования",
+            name: "Лизинг оборудования",
             path: "/leasing",
             soon: false,
           },
           {
-            name: "-Лизинг Спец/техники",
+            name: "Лизинг Спец/техники",
             path: "/leasing",
             soon: false,
           },
@@ -117,52 +117,52 @@ const links = [
   {
     name: "Работа",
     path: "/job",
-    soon: true,
+    soon: false,
     children: [
       {
         name: "Работодателям",
         path: "/job",
-        // soon: true,
+        soon: false,
       },
       {
         name: "Соискателям",
         path: "/job/applicants",
-        // soon: true,
+        soon: true,
       },
       {
         name: "Разместить вакансию",
         path: "/post-a-avacancy",
-        // soon: true,
+        soon: true,
       },
       {
         name: "Разместить резюме",
         path: "/post-a-resume",
-        // soon: true,
+        soon: true,
       },
     ],
   },
-  {
-    name: "Объявления",
-    path: "/announcements",
-    soon: false,
-    children: [
-      {
-        name: "Объявления Местных производителей",
-        path: "/place-an",
-        // soon: true,
-      },
-      {
-        name: "Объявления Экспортёров",
-        path: "/about-service",
-        // soon: true,
-      },
-      {
-        name: "Объявления Импортёров",
-        path: "/about-import",
-        // soon: true,
-      },
-    ],
-  },
+  // {
+  //   name: "Объявления",
+  //   path: "/announcements",
+  //   soon: false,
+  //   children: [
+  //     {
+  //       name: "Объявления Местных производителей",
+  //       path: "/place-an",
+  // soon: true,
+  //     },
+  //     {
+  //       name: "Объявления Экспортёров",
+  //       path: "/about-service",
+  // soon: true,
+  //     },
+  //     {
+  //       name: "Объявления Импортёров",
+  //       path: "/about-import",
+  // soon: true,
+  //     },
+  //   ],
+  // },
   {
     name: "Агротехнологии",
     path: "/agrotechnology",
@@ -181,22 +181,22 @@ const links = [
       {
         name: "Средства защиты растений",
         path: "",
-        // soon: true,
+        soon: true,
       },
       {
         name: "Стимуляторы роста",
         path: "",
-        // soon: true,
+        soon: true,
       },
       {
         name: "Биологические фунгициды",
         path: "",
-        // soon: true,
+        soon: true,
       },
       {
         name: "Деструкторы пожнивных остатков",
         path: "",
-        // soon: true,
+        soon: true,
       },
     ],
   },
