@@ -29,7 +29,7 @@ watch(phoneNumber, newVal => {
 
   // Emit the cleaned and formatted value
 
-  console.log(phoneNumber.value);
+  // console.log(phoneNumber.value);
 
   emit("update:modelValue", phoneNumber.value);
 });

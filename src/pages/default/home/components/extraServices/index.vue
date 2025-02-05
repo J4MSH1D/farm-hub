@@ -1,24 +1,32 @@
 <template>
   <div class="container my-10 bg-white py-10 rounded-xl grid grid-cols-2 gap-x-5 text-white">
-    <div class="px-8 py-10 rounded-4xl background1 relative">
+    <div class="px-8 py-10 rounded-4xl bg-[#3cca2f] relative">
       <div class="flex justify-between items-start relative z-10">
         <div>
           <div class="text-2xl">{{ $t("home_extra_title_1") }}</div>
-          <div class="mt-2">{{ $t("home_extra_discription_1") }}</div>
+          <div class="mt-2 max-w-2/3">{{ $t("home_extra_discription_1") }}</div>
         </div>
+      </div>
+      <div class="absolute right-0 bottom-0 z-20">
         <arrowButton />
       </div>
-      <icon name="gradient" is-svg class="absolute right-0 top-0 h-full z-0" />
+      <icon name="home_extra_1.png" class="absolute right-10 top-0 h-full z-20" />
+      <icon name="home_banner_11" is-svg class="absolute right-0 top-0 h-full z-0" />
+      <icon name="home_banner_12" is-svg class="absolute left-10 top-0 h-full z-0" />
     </div>
-    <div class="px-8 py-10 rounded-4xl background2 relative">
+    <div class="px-8 py-10 rounded-4xl bg-[#8b3bda] relative">
       <div class="flex justify-between items-start relative z-10">
         <div>
           <div class="text-2xl">{{ $t("home_extra_title_2") }}</div>
-          <div class="mt-2">{{ $t("home_extra_discription_2") }}</div>
+          <div class="mt-2 max-w-2/3">{{ $t("home_extra_discription_2") }}</div>
         </div>
+      </div>
+      <div class="absolute right-0 bottom-0 z-20">
         <arrowButton color="#6F75E2" />
       </div>
-      <icon name="gradient" is-svg class="absolute right-0 top-0 h-full z-0" />
+      <icon name="home_extra_2.png" class="absolute right-10 top-0 h-full z-20" />
+      <icon name="home_banner_31" is-svg class="absolute right-0 top-0 h-full z-0" />
+      <icon name="home_banner_32" is-svg class="absolute left-10 top-0 h-full z-0" />
     </div>
   </div>
 </template>

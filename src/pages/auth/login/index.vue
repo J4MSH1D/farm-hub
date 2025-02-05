@@ -15,6 +15,7 @@ async function getAllKeys() {
 }
 
 async function sign() {
+  router.push("/profile/root");
   try {
     await signWithEsiId(selectedValue.value);
     let user = keys.value.find(key => key["esiId"] === selectedValue.value),

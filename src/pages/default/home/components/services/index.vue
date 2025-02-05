@@ -16,7 +16,7 @@ const tabsList = [
 ];
 </script>
 <template>
-  <div class="container bg-white py-10 rounded-xl my-10 relative">
+  <div class="container bg-white py-10 rounded-xl my-10 relative overflow-hidden">
     <div class="flex justify-between items-start relative z-30">
       <div>
         <div class="text-3xl font-medium">{{ $t("home_services_title") }}</div>
@@ -56,7 +56,7 @@ const tabsList = [
         </template>
       </swiper>
     </div>
-    <icon name="cms.png" class="absolute h-1/2 top-10 right-[10%] z-0" />
+    <icon name="cms.png" class="absolute w-1/3 top-0 right-[10%] z-0" />
   </div>
 </template>
 <style>
