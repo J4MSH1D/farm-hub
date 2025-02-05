@@ -11,7 +11,7 @@ function logOut() {
 </script>
 
 <template>
-  <header class="w-full py-5 z-90 bg-white border-b">
+  <header class="w-full py-5 z-90 bg-white">
     <div class="container flex items-center justify-between">
       <div class="flex items-center gap-3">
         <a-input-search />

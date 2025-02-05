@@ -12,6 +12,16 @@ const links = [
           permissions: [1],
         },
       },
+      {
+        path: "",
+        name: "",
+        meta: {
+          icon: "profile",
+        },
+        children: [
+          {}
+        ]
+      },
     ],
   },
 ];
