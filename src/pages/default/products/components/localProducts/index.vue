@@ -109,7 +109,7 @@ const data = [
   <div class="container py-8">
     <div class="flex items-center justify-between">
       <!-- section-title -->
-      <h2 class="text-2xl font-semibold">Товары местного производства</h2>
+      <h2 class="text-2xl font-semibold">{{ $t("Товары местного производства") }}</h2>
       <!-- slider-buttons -->
       <div class="flex items-center justify-end gap-2">
         <button class="localProducts-button-prev bg-white rounded-full shadow-lg p-1.5">
@@ -141,10 +141,10 @@ const data = [
           >
             <span class="absolute w-2 h-2 left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 rotate-45 bg-gray-500" />
             <p class="text-xs font-light leading-[1.8] text-white">
-              Специальные условия для покупки техники с использованием государственной поддержки
+              {{ $t("Специальные условия для покупки техники с использованием государственной поддержки") }}
             </p>
           </div>
-          <span class="bg-sky-100 text-[10px] text-blue-500 font-bold uppercase rounded p-1 px-1.5 cursor-pointer">EXPRESS-LEASING</span>
+          <span class="bg-sky-100 text-[10px] text-blue-500 font-bold uppercase rounded p-1 px-1.5 cursor-pointer">{{ $t("Экспресс-лизинг") }}</span>
         </div>
         <!-- title -->
         <router-link :to="`/products/${item.id}`" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ item.title }}</router-link>
@@ -161,6 +161,7 @@ const data = [
     </swiper>
   </div>
 </template>
+
 <style scoped>
 .cus-shadow {
   transition: all 0.3s linear;

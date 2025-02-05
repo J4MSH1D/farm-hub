@@ -9,7 +9,6 @@ import regions from "@/enums/regions";
 import { useTranslation } from "i18next-vue";
 
 const route = useRoute();
-const router = useRouter();
 const { i18next } = useTranslation();
 const language = computed(() => i18next.language);
 const inputData = ref("");
@@ -17,8 +16,6 @@ const selectValue = ref("Product");
 const region = ref("Город Ташкент");
 const catalogueOpen = ref(false);
 const catalogueType = ref("products");
-const catalogueSection = ref(null);
-const catelogueShowMore = ref({});
 const store = useStore();
 
 function changeLanguage(lang) {
@@ -32,10 +29,6 @@ watch(catalogueOpen, value => {
 
 watch(route, () => {
   catalogueOpen.value = false;
-});
-
-onMounted(() => {
-  catalogueSection.value = catalogue.products[0];
 });
 </script>
 <template>
@@ -61,20 +54,33 @@ onMounted(() => {
         <!-- searchbar (input) -->
         <div class="flex-grow flex items-center gap-4">
           <a-input-group compact class="!flex">
-            <a-select v-model:value="selectValue" class="min-w-[145px]" size="large">
+            <a-select v-model:value="selectValue" class="min-w-[145px]" size="large" :get-popup-container="trigger => trigger.parentNode">
               <a-select-option value="Product">Товары</a-select-option>
               <a-select-option value="Services">Услуги</a-select-option>
               <a-select-option value="Article">Обяъвления</a-select-option>
               <a-select-option value="Media">Медиа</a-select-option>
             </a-select>
             <a-input placeholder="Поиск" v-model:value="inputData" size="large" class="w-full" />
-            <a-select class="max-w-[150px] w-full" size="large" v-model="region" default-value="Город Ташкент">
+            <!-- regions -->
+            <a-select
+              class="max-w-[150px] w-full"
+              size="large"
+              v-model="region"
+              default-value="Город Ташкент"
+              :get-popup-container="trigger => trigger.parentNode"
+            >
               <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
             </a-select>
           </a-input-group>
 
           <!-- language (select) -->
-          <a-select class="max-w-[100px] w-full" size="large" v-model:value="language" @change="changeLanguage">
+          <a-select
+            class="max-w-[100px] w-full"
+            size="large"
+            v-model:value="language"
+            @change="changeLanguage"
+            :get-popup-container="trigger => trigger.parentNode"
+          >
             <a-select-option value="uz">UZ</a-select-option>
             <a-select-option value="ru">Русский</a-select-option>
           </a-select>
@@ -115,7 +121,7 @@ onMounted(() => {
       <div class="flex mt-5 gap-5">
         <div v-for="link in links">
           <div v-if="link.children">
-            <a-dropdown placement="bottomLeft" overlayClassName="pt-5">
+            <a-dropdown placement="bottomLeft" overlayClassName="pt-5" :get-popup-container="trigger => trigger.parentNode">
               <template v-if="link.soon">
                 <span class="*hoverGreen">{{ link.name }} <soon /></span>
               </template>

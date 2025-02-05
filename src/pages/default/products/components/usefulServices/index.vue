@@ -28,7 +28,7 @@ const services = [
 <template>
   <div class="container py-8">
     <!-- section-title -->
-    <h2 class="text-2xl font-semibold">Полезные сервисы</h2>
+    <h2 class="text-2xl font-semibold">{{ $t("Полезные сервисы") }}</h2>
 
     <!-- Slider -->
     <swiper :slides-per-view="4" class="mt-5" space-between="20" auto-height="true">
@@ -36,7 +36,7 @@ const services = [
         <router-link :to="`/products/${item.id}`" class="h-full flex flex-col items-start justify-between p-5">
           <div class="flex items-center justify-between gap-5">
             <!-- service-title -->
-            <p class="text-xl text-zinc-900 font-medium">{{ item.title }}</p>
+            <p class="text-xl text-zinc-900 font-medium">{{ $t(item.title) }}</p>
             <!-- service-image -->
             <div class="min-w-15 h-15 bg-slate-100">
               <img :src="item.image" alt="" class="h-full w-full object-contain border border-white" />
@@ -44,7 +44,7 @@ const services = [
           </div>
 
           <!-- service-button -->
-          <button class="text-sm border-2 border-gray-200 rounded-full px-5 py-2 mt-14 hover:(border-green-800)">Перейти</button>
+          <button class="text-sm border-2 border-gray-200 rounded-full px-5 py-2 mt-14 hover:(border-green-800)">{{ $t("Перейти") }}</button>
         </router-link>
       </swiper-slide>
     </swiper>
