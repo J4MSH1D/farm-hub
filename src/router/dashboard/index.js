@@ -12,6 +12,15 @@ const links = [
           permissions: [1],
         },
       },
+      {
+        path: "transactions",
+        name: "Transactions",
+        component: () => lazyLoad("dashboard/profile/transactions"),
+        meta: {
+          title: "Сделки",
+          permissions: [1],
+        },
+      },
     ],
   },
 ];

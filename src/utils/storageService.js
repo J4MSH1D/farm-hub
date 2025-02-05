@@ -3,8 +3,9 @@ const storage = {
     localStorage.setItem(key, value);
   },
 
-  get: key => {
-    return localStorage.getItem(key);
+  get: (key, parse) => {
+    if (parse) return JSON.parse(localStorage.getItem(key));
+    else localStorage.getItem(key);
   },
 
   remove: key => {

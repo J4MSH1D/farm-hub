@@ -5,6 +5,7 @@ const store = createStore({
   state: () => ({
     user: storage.getUser(),
     requestModal: false,
+    darkTheme: storage.get("darkTheme", true) || false,
   }),
   getters: {
     user: state => state.user,
@@ -15,6 +16,9 @@ const store = createStore({
     },
     toggleRequest(state) {
       state.requestModal = !state.requestModal;
+    },
+    toggleTheme(state) {
+      state.darkTheme = !state.darkTheme;
     },
   },
 });
