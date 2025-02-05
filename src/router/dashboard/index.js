@@ -29,22 +29,22 @@ const links = [
     ],
   },
   {
-    path: "/products",
-    name: "Products",
-    component: () => lazyLoad("dashboard/products"),
+    path: "/productDash",
+    name: "",
+    component: () => lazyLoad("dashboard/"),
     meta: {
       icon: {
-        name: "products",
+        name: "",
         isSvg: true,
       },
-      title: "Products",
+      title: "",
       permissions: [1],
     },
     children: [
       {
         path: "addProduct",
         name: "AddProduct",
-        component: () => lazyLoad("dashboard/products/addProduct"),
+        component: () => lazyLoad("dashboard/productDash/addProduct"),
         meta: {
           icon: {
             name: "addProduct",
@@ -57,7 +57,7 @@ const links = [
       {
         path: "added",
         name: "Added",
-        component: () => lazyLoad("dashboard/products/added"),
+        component: () => lazyLoad("dashboard/productDash/added"),
         meta: {
           icon: {
             name: "added",

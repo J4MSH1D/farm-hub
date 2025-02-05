@@ -123,7 +123,7 @@ watch(route, () => {
           <div v-if="link.children">
             <a-dropdown placement="bottomLeft" overlayClassName="pt-5" :get-popup-container="trigger => trigger.parentNode">
               <template v-if="link.soon">
-                <span class="*hoverGreen">{{ link.name }} <soon /></span>
+                <span class="*hoverGreen relative">{{ link.name }} <soon /></span>
               </template>
               <template v-else>
                 <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
@@ -134,7 +134,7 @@ watch(route, () => {
                     <div v-for="innerLink in link.children">
                       <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
                       <div v-for="childrenLink in innerLink.children" class="my-3">
-                        <span class="*hoverGreen text-sm text-gray-500" v-if="childrenLink.soon"
+                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon"
                           >{{ childrenLink.name }} <soon is-small v-if="childrenLink.soon"
                         /></span>
                         <router-link :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{ childrenLink.name }}</router-link>
@@ -144,7 +144,7 @@ watch(route, () => {
                   <div v-else>
                     <div v-for="innerLink in link.children" class="py-1 my-3">
                       <template v-if="innerLink.soon">
-                        <span class="*hoverGreen text-md my-1">{{ innerLink.name }} <soon /></span>
+                        <span class="*hoverGreen text-md my-1 relative">{{ innerLink.name }} <soon /></span>
                       </template>
                       <template v-else>
                         <router-link :to="innerLink.path" class="*hoverGreen text-md my-1">{{ innerLink.name }}</router-link>
