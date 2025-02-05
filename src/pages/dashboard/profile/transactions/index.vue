@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from "vue";
 import { tableColumns, tableData } from "./data";
-import { dateFormatter, timeFormatter } from "@/utils/internalization";
+import { dateFormatter, numberFormatter, timeFormatter } from "@/utils/internalization";
 
 const table = reactive({
   data: tableData,
@@ -40,8 +40,13 @@ const table = reactive({
     </div>
 
     <div class="mt-8">
-      <a-table :columns="table.columns" :data-source="table.data" :pagination="table.pagination" :loading="loading" :scroll="{ x: '100%' }">
+      <a-table :columns="table.columns" :data-source="table.data" :pagination="table.pagination" :loading="loading" :scroll="{ x: 'max-content' }">
+        <template #name="{ text }">{{ $t(text) }}</template>
         <template #date="{ text }">{{ dateFormatter(text) }} {{ timeFormatter(text) }}</template>
+        <template #price="{ text }">{{ numberFormatter(text) }} {{ $t("сум") }}</template>
+        <template #sum="{ text }">{{ numberFormatter(text) }} {{ $t("сум") }}</template>
+        <template #subject="{ text }">{{ $t(text) }}</template>
+        <template #status="{ text }">{{ $t(text) }}</template>
       </a-table>
     </div>
   </div>

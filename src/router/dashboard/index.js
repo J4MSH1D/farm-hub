@@ -29,47 +29,6 @@ const links = [
     ],
   },
   {
-    path: "/products",
-    name: "Products",
-    component: () => lazyLoad("dashboard/products"),
-    meta: {
-      icon: {
-        name: "products",
-        isSvg: true,
-      },
-      title: "Products",
-      permissions: [1],
-    },
-    children: [
-      {
-        path: "addProduct",
-        name: "AddProduct",
-        component: () => lazyLoad("dashboard/products/addProduct"),
-        meta: {
-          icon: {
-            name: "addProduct",
-            isSvg: true,
-          },
-          title: "AddProduct",
-          permissions: [1],
-        },
-      },
-      {
-        path: "added",
-        name: "Added",
-        component: () => lazyLoad("dashboard/products/added"),
-        meta: {
-          icon: {
-            name: "added",
-            isSvg: true,
-          },
-          title: "Added",
-          permissions: [1],
-        },
-      },
-    ],
-  },
-  {
     path: "/test",
     name: "test",
     component: () => lazyLoad("dashboard/test"),

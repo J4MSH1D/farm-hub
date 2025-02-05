@@ -52,7 +52,7 @@ watch(route, () => {
           <span class="text-white">Каталог</span>
         </button>
         <!-- searchbar (input) -->
-        <div class="flex-grow flex items-center gap-4">
+        <div class="flex-grow flex items-center gap-3">
           <a-input-group compact class="!flex">
             <a-select v-model:value="selectValue" class="min-w-[145px]" size="large" :get-popup-container="trigger => trigger.parentNode">
               <a-select-option value="Product">Товары</a-select-option>
@@ -61,28 +61,29 @@ watch(route, () => {
               <a-select-option value="Media">Медиа</a-select-option>
             </a-select>
             <a-input placeholder="Поиск" v-model:value="inputData" size="large" class="w-full" />
-            <!-- regions -->
-            <a-select
-              class="max-w-[150px] w-full"
-              size="large"
-              v-model="region"
-              default-value="Город Ташкент"
-              :get-popup-container="trigger => trigger.parentNode"
-            >
-              <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
-            </a-select>
           </a-input-group>
+
+          <!-- regions -->
+          <a-select
+            class="regions-select max-w-[200px] w-full"
+            size="large"
+            v-model="region"
+            default-value="Город Ташкент"
+            :get-popup-container="trigger => trigger.parentNode"
+          >
+            <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+          </a-select>
 
           <!-- language (select) -->
           <a-select
-            class="max-w-[100px] w-full"
+            class="w-[70px]"
             size="large"
             v-model:value="language"
             @change="changeLanguage"
             :get-popup-container="trigger => trigger.parentNode"
           >
             <a-select-option value="uz">UZ</a-select-option>
-            <a-select-option value="ru">Русский</a-select-option>
+            <a-select-option value="ru">RU</a-select-option>
           </a-select>
         </div>
 
@@ -122,12 +123,10 @@ watch(route, () => {
         <div v-for="link in links">
           <div v-if="link.children">
             <a-dropdown placement="bottomLeft" overlayClassName="pt-5" :get-popup-container="trigger => trigger.parentNode">
-              <template v-if="link.soon">
-                <span class="*hoverGreen">{{ link.name }} <soon /></span>
-              </template>
-              <template v-else>
+              <a-badge class="*hoverGreen" :count="link.soon ? $t('Скоро') : undefined" size="small">
                 <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
-              </template>
+              </a-badge>
+
               <template #overlay>
                 <div class="border bg-white rounded-xl px-4 py-3">
                   <div v-if="link.children && link.children.some(e => e.children)" class="grid grid-cols-2 gap-5 justify-start max-w-[900px]">
@@ -157,10 +156,14 @@ watch(route, () => {
           </div>
           <div v-else>
             <template v-if="link.soon">
-              <span class="bg-gray-200 py-2 px-3 rounded-full">{{ link.name }}</span>
+              <a-badge class="*hoverGreen" :count="$t('Скоро')" size="small">
+                <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+              </a-badge>
             </template>
             <template v-else>
-              <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+              <a-badge class="*hoverGreen" size="small">
+                <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
+              </a-badge>
             </template>
           </div>
         </div>
@@ -225,5 +228,15 @@ watch(route, () => {
 <style>
 .overlayClass {
   padding-top: 10px;
+}
+
+.regions-select .ant-select-selector {
+  background-color: #10b981 !important;
+}
+.regions-select .ant-select-selection-item {
+  color: white !important;
+}
+.regions-select .ant-select-arrow {
+  color: white !important;
 }
 </style>

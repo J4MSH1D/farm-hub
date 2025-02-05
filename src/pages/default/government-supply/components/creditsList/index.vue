@@ -1,21 +1,11 @@
 <script setup>
 import { computed, inject } from "vue";
+import { credits } from "./data";
+import { useTranslation } from "i18next-vue";
 
 const filter = inject("filter");
-
-const credits = Array(10).fill({
-  id: 1,
-  name: "Кредит микро АПК",
-  interest: 5.417,
-  payment: 0,
-  duration: 18,
-  minRate: null,
-  partiallySecured: false,
-  noCollateral: false,
-  preferentialRate: 6.8,
-  simplifiedDocuments: false,
-  maxAmount: 30000000,
-});
+const { i18next } = useTranslation();
+const locale = computed(() => i18next.language);
 
 const filteredCredits = computed(() => {
   return credits.filter(item => {
@@ -42,10 +32,11 @@ function getTotalPayment(item) {
     <ul>
       <li v-for="item in filteredCredits" class="flex justify-between bg-white rounded-xl p-8 mb-5">
         <div class="flex justify-between w-full">
-          <h3 class="text-lg text-zinc-900 font-medium">{{ item.name }}</h3>
+          <h3 class="text-lg text-zinc-900 font-medium">{{ item.name?.[locale] }}</h3>
           <!-- credit-info -->
           <ul class="flex flex-col gap-3" style="list-style-type: disc">
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.preferentialRate">Льготная ставка от {{ item.preferentialRate }}%</li>
+            <li class="credit-info-item text-sm text-zinc-900" v-if="item.interest">Ставка от {{ item.interest }}%</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.duration">Срок до {{ item.duration }} месяцев</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.simplifiedDocuments">Упрощённый список документов</li>
             <li class="credit-info-item text-sm text-zinc-900" v-if="item.minRate">Ставка от {{ item.minRate }} %</li>

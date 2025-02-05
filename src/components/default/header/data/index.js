@@ -117,7 +117,7 @@ const links = [
   {
     name: "Работа",
     path: "/job",
-    // soon: true,
+    soon: true,
     children: [
       {
         name: "Работодателям",

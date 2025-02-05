@@ -1,56 +1,63 @@
+import i18next from "i18next";
+
+const { t } = i18next;
+
 export const tableColumns = [
   {
-    title: "№ Сделки",
+    title: t("№ Сделки"),
     dataIndex: "transaction_no",
-    width: "300px",
+    width: "120px",
   },
   {
-    title: "Наименование товара",
+    title: t("Наименование товара"),
     dataIndex: "name",
-    width: "500px",
+    width: "280px",
+    slots: { customRender: "name" },
   },
   {
-    title: "Дата",
+    title: t("Дата"),
     dataIndex: "date",
-    width: "400px",
+    width: "180px",
     slots: { customRender: "date" },
   },
   {
-    title: "Количество",
+    title: t("Количество"),
     dataIndex: "quantity",
-    width: "300px",
   },
   {
-    title: "Цена",
+    title: t("Цена"),
     dataIndex: "price",
-    width: "300px",
+    width: "200px",
+    slots: { customRender: "price" },
   },
   {
-    title: "Сумма",
+    title: t("Сумма"),
     dataIndex: "sum",
-    width: "300px",
+    width: "200px",
+    slots: { customRender: "sum" },
   },
   {
-    title: "Субьект",
+    title: t("Субьект"),
     dataIndex: "subject",
-    width: "300px",
+    width: "250px",
+    slots: { customRender: "subject" },
   },
   {
-    title: "С гарантией",
+    title: t("С гарантией"),
     dataIndex: "with_guarantee",
-    width: "300px",
   },
   {
-    title: "Статус",
+    title: t("Статус"),
     dataIndex: "status",
-    width: "300px",
+    width: "150px",
+    slots: { customRender: "status" },
   },
 ];
 
 export const tableData = Array(30).fill({
   transaction_no: 1874,
   name: "Трактор",
-  date: new Date(2024, 5, 24),
+  date: new Date(2024, 5, 24, 15, 30),
   quantity: 5,
   price: 150000000,
   sum: 750000000,
