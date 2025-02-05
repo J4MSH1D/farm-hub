@@ -16,6 +16,7 @@ const classes = {
   Live: "bg-[#FB6514]",
   Useful: "bg-[#95A0A9]",
   Производство: "bg-[#76C83A]",
+  EduBrb: "bg-green-500",
 };
 </script>
 

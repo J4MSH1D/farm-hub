@@ -14,6 +14,7 @@ import App from "./App.vue";
 import icon from "./components/global/icon.vue";
 import rightArrowButton from "./components/global/rightArrowButton.vue";
 import banner from "./components/global/banner.vue";
+import bannerSmall from "./components/global/bannerSmall.vue";
 
 // Router
 import router from "./router";
@@ -33,6 +34,7 @@ const app = createApp(App);
 app.component("Icon", icon);
 app.component("ArrowButton", rightArrowButton);
 app.component("banner", banner);
+app.component("bannerSmall", bannerSmall);
 
 app.use(VueEImzoPlugin);
 app.use(router);

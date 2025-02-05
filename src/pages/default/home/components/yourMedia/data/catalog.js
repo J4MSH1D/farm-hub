@@ -61,6 +61,44 @@ const data = [
       },
     ],
   },
+  {
+    id: 104,
+    name: "Видео",
+    children: [
+      {
+        id: 2,
+        name: "EduBrb",
+        title: "Разведение кроликов-матерей",
+        date: "03.12.2024",
+        img: "https://i.ytimg.com/vi/qQHdLw6EIUo/sddefault.jpg",
+        isVideo: true,
+      },
+      {
+        id: 2,
+        name: "EduBrb",
+        title: "B2B и сложные методы продаж",
+        date: "03.12.2024",
+        img: "https://edu.brb-biznes.uz/gateway/api-fm/images/198ccb8a-63dd-4e7b-b387-1d0d77704f50.png",
+        isVideo: true,
+      },
+      {
+        id: 2,
+        name: "EduBrb",
+        title: "Делаем гнездо для кролика",
+        date: "03.12.2024",
+        img: "https://i.ytimg.com/vi/pHXbPWuzMHY/sddefault.jpg",
+        isVideo: true,
+      },
+      {
+        id: 2,
+        name: "EduBrb",
+        title: "'Развитие бизнеса' Аббаса Ризкиева",
+        date: "03.12.2024",
+        img: "https://edu.brb-biznes.uz/gateway/api-fm/images/442543d6-9cfb-42bc-be90-7961b306c0d2.png",
+        isVideo: true,
+      },
+    ],
+  },
 ];
 
 export default data;
