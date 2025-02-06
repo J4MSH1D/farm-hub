@@ -1,4 +1,4 @@
-import { storeKeys } from "@/enums/localStorage/index";
+import { storeKeys } from "@/enums/storage/index";
 import { StoreService } from "../storage";
 
 class AuthService extends StoreService {
