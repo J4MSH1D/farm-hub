@@ -1,15 +1,15 @@
 <script setup>
 const creditSteps = [
   {
-    title: "Получить кредит для бизнеса за 3 дня",
-    description: "Упрощённая система оценки платёжеспособности ИП при заявке на кредит до 10 млн ₽",
-  },
-  {
     title: "Заполните онлайн-заявку",
     description: "Сотрудник банка свяжеться с вами для уточнения деталей",
   },
   {
     title: "Предоставьте документы",
+    description: "После связи с сотрудником отправьте требуемые документы посредством чата с сотрудником банка",
+  },
+  {
+    title: "Получите кредит",
     description: "На получение ответа от банка уйдет от 3 рабочих дней",
   },
 ];
@@ -27,8 +27,8 @@ const creditSteps = [
           <span>{{ index + 1 }}</span>
         </div>
         <div class="max-w-[250px]">
-          <h3 class="text-lg text-zinc-900 text-center font-semibold mt-6">{{ $t(item.title) }}</h3>
-          <p class="text-sm text-zinc-500 text-center font-light mt-3">
+          <h3 class="text-lg text-zinc-900 font-semibold mt-6 text-center">{{ $t(item.title) }}</h3>
+          <p class="text-sm text-zinc-500 font-light mt-3 text-center">
             {{ $t(item.description) }}
           </p>
         </div>

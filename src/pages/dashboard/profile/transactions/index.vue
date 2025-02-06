@@ -6,7 +6,7 @@ import { dateFormatter, numberFormatter, timeFormatter } from "@/utils/internali
 const table = reactive({
   data: tableData,
   columns: tableColumns,
-  pagination: 0,
+  // pagination: 0,
   loading: false,
 });
 </script>
@@ -40,13 +40,13 @@ const table = reactive({
     </div>
 
     <div class="mt-8">
-      <a-table :columns="table.columns" :data-source="table.data" :pagination="table.pagination" :loading="loading" :scroll="{ x: 'max-content' }">
-        <template #name="{ text }">{{ $t(text) }}</template>
-        <template #date="{ text }">{{ dateFormatter(text) }} {{ timeFormatter(text) }}</template>
-        <template #price="{ text }">{{ numberFormatter(text) }} {{ $t("сум") }}</template>
-        <template #sum="{ text }">{{ numberFormatter(text) }} {{ $t("сум") }}</template>
-        <template #subject="{ text }">{{ $t(text) }}</template>
-        <template #status="{ text }">{{ $t(text) }}</template>
+      <a-table
+        :columns="table.columns"
+        :data-source="table.data"
+        :pagination="table.pagination"
+        :loading="table.loading"
+        :scroll="{ x: 'max-content' }"
+      >
       </a-table>
     </div>
   </div>

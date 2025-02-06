@@ -49,6 +49,11 @@ const backgroundColors = {
     lightLeafColor: "#79c549",
     boldLeafColor: "#458540",
   },
+  services: {
+    background: "linear-gradient(to right, #448540, #2C6E4A)",
+    lightLeafColor: "#3E7959",
+    boldLeafColor: "#62C025",
+  },
 };
 
 const backgroundColorStyle = computed(() => backgroundColors[props.backgroundColor] || backgroundColors.lightBlue);

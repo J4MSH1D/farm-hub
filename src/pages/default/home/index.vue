@@ -1,9 +1,22 @@
 <script setup>
-import { Hero, Products, GovernmentSupport, Services, StartingBusiness, NewInMonth, ExtraServices, BestOffers, YourMedia } from "./components";
+import {
+  Hero,
+  UseLinks,
+  Products,
+  GovernmentSupport,
+  Services,
+  StartingBusiness,
+  NewInMonth,
+  ExtraServices,
+  BestOffers,
+  YourMedia,
+  LizingMurabaxa,
+} from "./components";
 </script>
 <template>
   <div>
     <Hero />
+    <UseLinks />
     <Products />
     <GovernmentSupport />
     <Services />
@@ -12,5 +25,6 @@ import { Hero, Products, GovernmentSupport, Services, StartingBusiness, NewInMon
     <ExtraServices />
     <BestOffers />
     <YourMedia />
+    <LizingMurabaxa />
   </div>
 </template>

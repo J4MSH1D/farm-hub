@@ -7,6 +7,7 @@ import { Vue3Marquee } from "vue3-marquee";
 import soon from "../main/soon.vue";
 import regions from "@/enums/regions";
 import { useTranslation } from "i18next-vue";
+import languageSelect from "@/components/global/languageSelect.vue";
 
 const route = useRoute();
 const { i18next } = useTranslation();
@@ -75,16 +76,7 @@ watch(route, () => {
           </a-select>
 
           <!-- language (select) -->
-          <a-select
-            class="w-[70px]"
-            size="large"
-            v-model:value="language"
-            @change="changeLanguage"
-            :get-popup-container="trigger => trigger.parentNode"
-          >
-            <a-select-option value="uz">uz</a-select-option>
-            <a-select-option value="ru">ru</a-select-option>
-          </a-select>
+          <languageSelect size="large" />
         </div>
 
         <!-- Quick links -->
@@ -131,10 +123,10 @@ watch(route, () => {
               </template>
               <template #overlay>
                 <div class="border bg-white rounded-xl px-4 py-3">
-                  <div v-if="link.children && link.children.some(e => e.children)" class="grid grid-cols-2 gap-5 justify-start max-w-[900px]">
-                    <div v-for="innerLink in link.children">
+                  <div v-if="link.children && link.children.some(e => e.children)" class="columns-2 gap-5 justify-start max-w-[900px]">
+                    <div v-for="innerLink in link.children" class="py-3" style="break-inside: avoid">
                       <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
-                      <div v-for="childrenLink in innerLink.children" class="my-3">
+                      <div v-for="childrenLink in innerLink.children" class="mt-3">
                         <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon">
                           {{ childrenLink.name }}
                           <soon is-small v-if="childrenLink.soon" />

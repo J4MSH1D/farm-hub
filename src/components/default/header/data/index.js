@@ -12,7 +12,7 @@ const links = [
   {
     name: "Господдержка",
     path: "/government-supply",
-    soon: false,
+    // Льготные кредиты и субсидии
     children: [
       {
         name: "Льготные кредиты и субсидии",
@@ -25,90 +25,127 @@ const links = [
           },
           {
             name: "Льготное кредитование сельхозпроизводителей",
-            path: "/loans-for-farm-servicers",
+            path: "",
             soon: true,
           },
           {
-            name: "Кредиты для АПК",
-            path: "/apk-loans",
+            name: "Кредит на приобретение сельхозтехники",
+            path: "",
+            soon: true,
+          },
+          {
+            name: "Льготное кредитование возобновляемых источников энергии",
+            path: "",
+            soon: true,
+          },
+          {
+            name: "Субсидии",
+            path: "",
             soon: true,
           },
         ],
       },
+      // Кредиты для бизнеса
       {
-        name: "Услуги банка",
+        name: "Кредиты для бизнеса",
+        path: "/credit-for-business",
+        soon: true,
         children: [
           {
             name: "Оборотный кредит",
-            path: "/turnover-loan",
-            soon: true,
+            path: "",
+            soon: false,
           },
           {
             name: "Инвестиционный кредит",
-            path: "/investment-loan",
+            path: "",
             soon: true,
           },
           {
             name: "Кредиты для малого бизнеса",
-            path: "/credit-for-small-business",
+            path: "",
             soon: true,
           },
           {
-            name: "Поддержка развития молодёжного и женского предпринимательства ",
-            path: "/support-for-young-and-women-enterpreneurs",
+            name: "Поддержка развития молодёжного и женского предпринимательства",
+            path: "",
             soon: true,
           },
         ],
       },
+      // Услуги банка
       {
         name: "Услуги банка",
+        path: "/bank-services",
+        soon: true,
         children: [
           {
             name: "Открытие расчетного счёта",
-            path: "/overdrafts",
-            soon: true,
+            path: "",
+            soon: false,
           },
           {
             name: "Открытие банковской карты",
-            path: "/opening-a-bank-card",
+            path: "",
             soon: true,
           },
           {
             name: "Регистрация бизнеса",
-            path: "/registration-of-businesses",
+            path: "",
             soon: true,
           },
         ],
       },
+      // Финансирование поставщиков
       {
         name: "Финансирование поставщиков",
-        name: "Финансирование поставщиков",
+        path: "/supplier-financing",
+        soon: true,
         children: [
           {
             name: "Факторинг",
-            path: "/factoring",
+            path: "",
             soon: true,
           },
         ],
       },
+      // Лизинг
       {
         name: "Лизинг",
         path: "/leasing",
         children: [
           {
-            name: "Лизинг сельхозтехники",
+            name: "Подобрать лизинг по параметрам",
             path: "/leasing",
             soon: false,
+          },
+          {
+            name: "Лизинг сельхозтехники",
+            path: "",
+            soon: true,
           },
           {
             name: "Лизинг оборудования",
-            path: "/leasing",
-            soon: false,
+            path: "",
+            soon: true,
           },
           {
             name: "Лизинг Спец/техники",
-            path: "/leasing",
-            soon: false,
+            path: "",
+            soon: true,
+          },
+        ],
+      },
+      // Страхование
+      {
+        name: "Страхование",
+        path: "/insurance",
+        soon: true,
+        children: [
+          {
+            name: "Услуги страхования",
+            path: "",
+            soon: true,
           },
         ],
       },

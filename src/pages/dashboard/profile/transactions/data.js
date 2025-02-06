@@ -12,13 +12,13 @@ export const tableColumns = [
     title: t("Наименование товара"),
     dataIndex: "name",
     width: "280px",
-    slots: { customRender: "name" },
+    // slots: { customRender: "name" },
   },
   {
     title: t("Дата"),
     dataIndex: "date",
     width: "180px",
-    slots: { customRender: "date" },
+    // slots: { customRender: "date" },
   },
   {
     title: t("Количество"),
@@ -28,19 +28,19 @@ export const tableColumns = [
     title: t("Цена"),
     dataIndex: "price",
     width: "200px",
-    slots: { customRender: "price" },
+    // slots: { customRender: "price" },
   },
   {
     title: t("Сумма"),
     dataIndex: "sum",
     width: "200px",
-    slots: { customRender: "sum" },
+    // slots: { customRender: "sum" },
   },
   {
     title: t("Субьект"),
     dataIndex: "subject",
     width: "250px",
-    slots: { customRender: "subject" },
+    // slots: { customRender: "subject" },
   },
   {
     title: t("С гарантией"),
@@ -50,7 +50,7 @@ export const tableColumns = [
     title: t("Статус"),
     dataIndex: "status",
     width: "150px",
-    slots: { customRender: "status" },
+    // slots: { customRender: "status" },
   },
 ];
 
