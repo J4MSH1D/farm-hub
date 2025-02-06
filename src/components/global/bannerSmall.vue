@@ -3,6 +3,8 @@ const props = defineProps({
   color: String,
   leafColor: String,
   cusClass: String,
+  toRouter: String,
+  link: String,
 });
 </script>
 
@@ -12,13 +14,16 @@ const props = defineProps({
     <div class="relative z-10">
       <slot />
     </div>
-    <div class="absolute right-0 bottom-0 z-10">
+    <router-link v-if="toRouter" :to="toRouter" class="absolute right-0 bottom-0 z-10">
       <arrowButton :color="color"></arrowButton>
-    </div>
+    </router-link>
+    <a v-else :href="link" target="_blank" class="absolute right-0 bottom-0 z-10">
+      <arrowButton :color="color"></arrowButton>
+    </a>
 
     <!-- Right leaf -->
-    <div class="absolute right-0 top-0 z-0">
-      <svg width="370" height="150" viewBox="0 0 470 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="absolute right-0 -bottom-10 z-0">
+      <svg width="192" height="217" viewBox="0 0 470 332" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M475.452 55.2554C479.16 191.052 328.393 267.858 227.139 240.974C139.063 217.589 76.4568 56.4737 87.1416 -122.74C88.7403 -149.555 91.9798 -176.775 97.0204 -204C335.638 -129.166 471.744 -80.5407 475.452 55.2554Z"
           :fill="leafColor"
@@ -43,11 +48,11 @@ const props = defineProps({
     </div>
 
     <!-- Left leaf -->
-    <div class="absolute left-10 bottom-0 z-0">
-      <svg width="323" height="232" viewBox="0 0 523 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="absolute left-0 -bottom-20 z-0">
+      <svg width="241" height="273" viewBox="0 0 523 332" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M475.452 259.255C479.16 395.052 328.393 471.858 227.139 444.974C139.063 421.589 76.4568 260.474 87.1416 81.2599C88.7403 54.4449 91.9798 27.2247 97.0204 0C335.638 74.8336 471.744 123.459 475.452 259.255Z"
-          :fill="leafColor"
+          fill="white"
           fill-opacity="0.1"
         />
         <g style="mix-blend-mode: multiply">

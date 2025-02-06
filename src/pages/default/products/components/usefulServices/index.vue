@@ -15,7 +15,7 @@ const services = [
   {
     link: "/video",
     title: "Проекты тепличного хозяйства",
-    image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Frame5330258_2.png",
+    image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Group_2792_2.png",
   },
   {
     link: "/work",

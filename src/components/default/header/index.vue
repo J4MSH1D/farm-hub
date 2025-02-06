@@ -7,6 +7,7 @@ import { Vue3Marquee } from "vue3-marquee";
 import soon from "../main/soon.vue";
 import regions from "@/enums/regions";
 import { useTranslation } from "i18next-vue";
+import languageSelect from "@/components/global/languageSelect.vue";
 
 const route = useRoute();
 const { i18next } = useTranslation();
@@ -22,8 +23,8 @@ function changeLanguage(lang) {
   i18next.changeLanguage(lang);
 }
 
-watch(catalogueOpen, value => {
-  if (value) document.body.style.overflow = "hidden";
+watch([catalogueOpen, route], () => {
+  if (catalogueOpen.value) document.body.style.overflow = "hidden";
   else document.body.style.overflow = "auto";
 });
 
@@ -75,16 +76,7 @@ watch(route, () => {
           </a-select>
 
           <!-- language (select) -->
-          <a-select
-            class="w-[70px]"
-            size="large"
-            v-model:value="language"
-            @change="changeLanguage"
-            :get-popup-container="trigger => trigger.parentNode"
-          >
-            <a-select-option value="uz">uz</a-select-option>
-            <a-select-option value="ru">ru</a-select-option>
-          </a-select>
+          <languageSelect size="large" />
         </div>
 
         <!-- Quick links -->
@@ -135,10 +127,16 @@ watch(route, () => {
                     <div v-for="innerLink in link.children">
                       <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
                       <div v-for="childrenLink in innerLink.children" class="my-3">
-                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon"
-                          >{{ childrenLink.name }} <soon is-small v-if="childrenLink.soon"
-                        /></span>
-                        <router-link :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{ childrenLink.name }}</router-link>
+                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon">
+                          {{ childrenLink.name }}
+                          <soon is-small v-if="childrenLink.soon" />
+                        </span>
+                        <a :href="childrenLink.link" target="_blank" class="*hoverGreen text-sm text-gray-500" v-else-if="childrenLink.link">{{
+                          childrenLink.name
+                        }}</a>
+                        <router-link :href="childrenLink.path" :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{
+                          childrenLink.name
+                        }}</router-link>
                       </div>
                     </div>
                   </div>
