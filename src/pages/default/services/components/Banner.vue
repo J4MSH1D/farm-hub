@@ -1,19 +1,18 @@
-<script setup></script>
-
 <template>
-	<div class="w-full h-[320px] rounded-3xl mt-10 relative flex flex-col justify-between overflow-hidden">
-		<img src="@/assets/images/png/banner_service.png" class="w-full h-full absolute top-0 right-0 transform origin-top-right" />
-		<div class="px-4 xl:px-20 pt-6 z-10 flex flex-col lg:gap-6">
-			<h2 class="text-xl lg:text-2xl font-medium text-white">Services for your business</h2>
-			<p class="text-md lg:text-xl text-white lg:w-1/2">
-				We are ready to provide you with the best provide you with the best services for your we have a team of experts
-			</p>
-		</div>
-		<div class="relative h-[80px] w-full z-10 px-20 pt-4 rounded-b-2xl">
-			<div class="absolute bg-white/20 blur-md inset-0" style="backdrop-filter: blur(40px)"></div>
-			<div class="relative z-20" style="">
-				<router-link to="/announcements" class="inline-block text-white rounded-full py-4 px-8 border-2 border-white">Post a service</router-link>
-			</div>
-		</div>
-	</div>
+  <div class="relative mt-10 overflow-hidden rounded-3xl">
+    <banner backgroundColor="services">
+      <div class="relative z-20 flex flex-col gap-4 min-h-[300px]">
+        <h2 class="text-xl lg:text-3xl font-medium text-white leading-10">Ваше хозяйство — наша забота</h2>
+        <p class="text-lg text-white">Полный спектр услуг для вашего участка, оптимизируйте работу своего хозяйства с нашими услугами</p>
+      </div>
+      <router-link to="" class="inline-block bg-white text-[#2C6E4A] rounded-tl-4xl rounded-br-4xl py-4 px-12 ml-10">{{
+        $t("Разместить услугу")
+      }}</router-link>
+    </banner>
+    <icon name="services-banner-1.png" class="absolute right-20 top-0 h-full z-10" />
+    <!-- <div class="absolute h-[90px] w-full z-10 px-20 bottom-0 pt-5 rounded-b-2xl">
+      <div class="absolute bg-white/20 blur-md inset-0" style="backdrop-filter: blur(8px)"></div>
+      <div class="relative z-20"></div>
+    </div> -->
+  </div>
 </template>

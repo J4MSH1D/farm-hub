@@ -15,7 +15,7 @@ i18next.use(I18NextHttpBackend).init({
       translation: ru,
     },
   },
-  debug: true,
+  debug: false,
 });
 
 export default i18next;

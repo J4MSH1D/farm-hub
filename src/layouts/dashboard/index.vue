@@ -3,6 +3,7 @@ import { useRoute, useRouter } from "vue-router";
 import dashboard from "@/router/dashboard";
 import { onMounted, ref } from "vue";
 import Header from "../../components/dashboard/headerDashboard/index.vue";
+import { authService } from "@/services/auth";
 
 const route = useRoute();
 const router = useRouter();
@@ -30,9 +31,9 @@ function setLinks(array) {
 
       // Faqat mavjud elementlarni qaytaramiz
       if (elem.meta && elem.meta.notVisible) return null;
-      // if (authService.CheckPermission(elem.meta.permissions)) return elem;
+      if (authService.CheckPermission(elem.meta.permissions)) return elem;
       // authservice qo'shilishi bilan bu o'chiriladi
-      if (elem.meta.permissions) return elem;
+      // if (elem.meta.permissions) return elem;
       else return null;
     })
     .filter(e => !!e);

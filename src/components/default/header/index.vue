@@ -7,6 +7,7 @@ import { Vue3Marquee } from "vue3-marquee";
 import soon from "../main/soon.vue";
 import regions from "@/enums/regions";
 import { useTranslation } from "i18next-vue";
+import languageSelect from "@/components/global/languageSelect.vue";
 
 const route = useRoute();
 const { i18next } = useTranslation();
@@ -75,16 +76,7 @@ watch(route, () => {
           </a-select>
 
           <!-- language (select) -->
-          <a-select
-            class="w-[70px]"
-            size="large"
-            v-model:value="language"
-            @change="changeLanguage"
-            :get-popup-container="trigger => trigger.parentNode"
-          >
-            <a-select-option value="uz">uz</a-select-option>
-            <a-select-option value="ru">ru</a-select-option>
-          </a-select>
+          <languageSelect size="large" />
         </div>
 
         <!-- Quick links -->

@@ -27,8 +27,8 @@ const creditSteps = [
           <span>{{ index + 1 }}</span>
         </div>
         <div class="max-w-[250px]">
-          <h3 class="text-lg text-zinc-900 text-center font-semibold mt-6">{{ $t(item.title) }}</h3>
-          <p class="text-sm text-zinc-500 text-center font-light mt-3">
+          <h3 class="text-lg text-zinc-900 font-semibold mt-6 text-center">{{ $t(item.title) }}</h3>
+          <p class="text-sm text-zinc-500 font-light mt-3 text-center">
             {{ $t(item.description) }}
           </p>
         </div>
