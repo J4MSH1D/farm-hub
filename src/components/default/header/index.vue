@@ -1,17 +1,14 @@
 <script setup>
-import { computed, onMounted, ref, watch } from "vue";
+import { onUnmounted, ref, watch } from "vue";
 import links, { catalogue, quickLinks } from "./data/index";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 import { Vue3Marquee } from "vue3-marquee";
 import soon from "../main/soon.vue";
 import regions from "@/enums/regions";
-import { useTranslation } from "i18next-vue";
 import languageSelect from "@/components/global/languageSelect.vue";
 
 const route = useRoute();
-const { i18next } = useTranslation();
-const language = computed(() => i18next.language);
 const inputData = ref("");
 const selectValue = ref("Product");
 const region = ref("Город Ташкент");
@@ -19,13 +16,13 @@ const catalogueOpen = ref(false);
 const catalogueType = ref("products");
 const store = useStore();
 
-function changeLanguage(lang) {
-  i18next.changeLanguage(lang);
-}
-
 watch([catalogueOpen, route], () => {
   if (catalogueOpen.value) document.body.style.overflow = "hidden";
   else document.body.style.overflow = "auto";
+});
+
+onUnmounted(() => {
+  document.body.style.overflow = "auto";
 });
 
 watch(route, () => {
@@ -96,7 +93,7 @@ watch(route, () => {
             </template>
           </template>
           <template v-if="store.getters.user">
-            <router-link to="/profile/transactions" class="group flex flex-col items-center">
+            <router-link to="/dashboard/my-transactions" class="group flex flex-col items-center">
               <icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
               <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">Профиль</span>
             </router-link>

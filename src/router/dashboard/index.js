@@ -1,112 +1,48 @@
 import { lazyLoad, layoutSetter } from "@/utils/router";
 const links = [
   {
-    path: "/profile",
-    name: "Profile",
-    component: () => lazyLoad("dashboard/profile"),
+    path: "/dashboard",
+    name: "Dashboard",
     meta: {
-      icon: {
-        name: "profile",
-        isSvg: true,
-      },
-      title: "Profile",
       permissions: [1],
     },
+    // Мои Транзакции
     children: [
       {
-        path: "transactions",
-        name: "Transactions",
-        component: () => lazyLoad("dashboard/profile/transactions"),
+        path: "my-transactions",
+        name: "MyTransactions",
         meta: {
-          icon: {
-            name: "profile",
-            isSvg: true,
-          },
-          title: "Сделки",
+          title: "Мои сделки",
           permissions: [1],
         },
-      },
-    ],
-  },
-  {
-    path: "/productDash",
-    name: "",
-    component: () => lazyLoad("dashboard/"),
-    meta: {
-      icon: {
-        name: "",
-        isSvg: true,
-      },
-      title: "",
-      permissions: [1],
-    },
-    children: [
-      {
-        path: "addProduct",
-        name: "AddProduct",
-        component: () => lazyLoad("dashboard/productDash/addProduct"),
-        meta: {
-          icon: {
-            name: "addProduct",
-            isSvg: true,
+        children: [
+          {
+            path: "",
+            name: "Transactions",
+            component: () => lazyLoad("dashboard/my-transactions/transactions"),
+            meta: {
+              icon: {
+                name: "transactions",
+                isSvg: true,
+              },
+              title: "Сделки",
+              permissions: [1],
+            },
           },
-          title: "AddProduct",
-          permissions: [1],
-        },
-      },
-      {
-        path: "added",
-        name: "Added",
-        component: () => lazyLoad("dashboard/productDash/added"),
-        meta: {
-          icon: {
-            name: "added",
-            isSvg: true,
+          {
+            path: "my-addresses",
+            name: "MyAddresses",
+            component: () => lazyLoad("dashboard/my-transactions/my-addresses"),
+            meta: {
+              icon: {
+                name: "my-addresses",
+                isSvg: true,
+              },
+              title: "Мои адреса",
+              permissions: [1],
+            },
           },
-          title: "Added",
-          permissions: [1],
-        },
-      },
-    ],
-  },
-  {
-    path: "/test",
-    name: "test",
-    component: () => lazyLoad("dashboard/test"),
-    meta: {
-      icon: {
-        name: "test",
-        isSvg: true,
-      },
-      title: "Test",
-      permissions: [1],
-    },
-    children: [
-      {
-        path: "test-1",
-        name: "test-1",
-        component: () => lazyLoad("dashboard/test/test-1"),
-        meta: {
-          icon: {
-            name: "test-1",
-            isSvg: true,
-          },
-          title: "Test-1",
-          permissions: [1],
-        },
-      },
-      {
-        path: "test-2",
-        name: "test-2",
-        component: () => lazyLoad("dashboard/test/test-2"),
-        meta: {
-          icon: {
-            name: "test-2",
-            isSvg: true,
-          },
-          title: "Test-2",
-          permissions: [1],
-        },
+        ],
       },
     ],
   },
