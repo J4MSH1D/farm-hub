@@ -1,15 +1,19 @@
 <script setup>
-import regions from "@/enums/regions";
 import { ref } from "vue";
+import regions from "@/enums/regions";
+import { IMaskDirective as vMask } from "vue-imask";
+import leasingCompanies from "@/enums/leasingCompanies";
 
-const steps = ["Заполните онлайн - заявку, дождитесь звонка", "Согласуйте условия и подпишите договор", "Получите предмет лизинга"];
-const policy = `Отправляя заявку, вы соглашаетесь на <a>обработку персональных данных</a> в соответствии с требованиями ФЗ "О персональных данных" и <a>политикой обработки персональных данных АО "BRB"</a>, а также на <a>информирование</a> о продуктах и услугах банка.`;
-
-const isBrbClient = ref(false);
 const form = ref({
-  phone: null,
-  region: null,
+  phone: "",
+  creditAmount: null,
+  surname: null,
+  name: null,
+  companyName: null,
   INN: null,
+  email: null,
+  region: null,
+  leasingCompany: null,
 });
 
 function validator(rule, value) {
@@ -22,71 +26,66 @@ const formRules = Object.keys(form.value).reduce((acc, curr) => {
 </script>
 
 <template>
-  <div class="container py-8">
-    <div class="bg-white rounded-4xl shadow-sm px-6 py-20 overflow-hidden">
-      <h2 class="text-2xl text-center text-zinc-900 font-medium">Оформить экспресс-лизинг</h2>
+  <div class="container py-8 pb-20">
+    <h2 class="text-2xl text-center text-zinc-900 font-medium"></h2>
 
-      <div class="max-w-[900px] mx-auto mt-14">
-        <!-- Lizing protsessi -->
-        <ul class="relative z-10 flex items-start justify-center gap-10">
-          <li v-for="(item, index) in steps" :key="item" class="relative flex flex-col items-center flex-1">
-            <div class="z-10 h-[100px] w-[100px] bg-gray-100 rounded-3xl flex items-center justify-center text-2xl font-semibold text-zinc-500">
-              {{ index + 1 }}
-            </div>
-            <p class="z-10 text-lg text-zinc-900 text-center font-semibold mt-8">{{ item }}</p>
-            <!-- line -->
-            <hr
-              class="absolute border-0 top-[50px] left-1/2 w-full h-0.5 bg-gray-100 transform -translate-y-1/2"
-              :style="{ display: index !== steps.length - 1 ? 'block' : 'none' }"
-            />
-          </li>
-        </ul>
+    <!-- Form -->
+    <div class="max-w-[900px] mx-auto mt-14 z-10 rounded-2xl bg-white mt-3" style="box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07)">
+      <div class="border-b border-gray-200 p-8">
+        <h2 class="text-2xl text-zinc-900 text-center font-medium">{{ $t("Заполните заявку на получение лизинга") }}</h2>
+      </div>
 
-        <!-- Form-Container -->
-        <div class="relative z-10 flex items-stretch gap-8">
-          <button class="text-zinc-900 border-b-3 border-transparent py-6" :class="{ 'border-green-500': !isBrbClient }" @click="isBrbClient = false">
-            Еще нет счёта в BRB
-          </button>
-          <button class="text-zinc-900 border-b-3 border-transparent py-6" :class="{ 'border-green-500': isBrbClient }" @click="isBrbClient = true">
-            Я клиент BRB
-          </button>
-        </div>
+      <div class="max-w-[700px] py-14 px-4 mx-auto">
+        <a-form :model="form" :rules="formRules" class="grid grid-cols-2 gap-x-5" size="large">
+          <a-form-item has-feedback name="phone">
+            <a-input v-model:value="form.phone" prefix="+998" placeholder="(__) ___ __ __*" />
+          </a-form-item>
+          <a-form-item has-feedback name="creditAmount">
+            <a-input v-model:value="form.creditAmount" :placeholder="$t('Сумма лизинга, сум') + '*'" />
+          </a-form-item>
+          <a-form-item has-feedback name="surname">
+            <a-input v-model:value="form.surname" :placeholder="$t('Фамилия') + '*'" />
+          </a-form-item>
+          <a-form-item has-feedback name="name">
+            <a-input v-model:value="form.name" :placeholder="$t('Имя') + '*'" />
+          </a-form-item>
+          <a-form-item has-feedback name="companyName" class="col-span-2">
+            <a-input v-model:value="form.companyName" :placeholder="$t('Название компании') + '*'" />
+          </a-form-item>
+          <a-form-item has-feedback name="INN">
+            <a-input v-model:value="form.INN" :placeholder="$t('ИНН компании') + '*'" />
+          </a-form-item>
+          <a-form-item has-feedback name="email">
+            <a-input v-model:value="form.email" :placeholder="$t('Эл.почта') + '*'" />
+          </a-form-item>
+          <a-form-item has-feedback name="region" class="col-span-2">
+            <a-select v-model:value="form.region" :placeholder="$t('Субъект Узбекистана') + '*'">
+              <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+            </a-select>
+          </a-form-item>
+          <a-form-item has-feedback name="bank" class="col-span-2">
+            <a-select v-model:value="form.leasingCompany" :placeholder="$t('Выберите лизинговую компанию') + '*'">
+              <a-select-option v-for="item in leasingCompanies" :value="item">{{ item }}</a-select-option>
+            </a-select>
+          </a-form-item>
 
-        <!-- Form -->
-        <div class="relative">
-          <div class="relative z-10 bg-white rounded-2xl mt-4" style="box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07)">
-            <div class="border-b border-gray-200 p-8">
-              <h2 class="text-2xl text-zinc-900 text-center font-medium">Оформить экспресс-лизинг</h2>
-            </div>
+          <p class="text-xs text-zinc-500 mb-5">* {{ $t("Все поля обязательные") }}</p>
 
-            <div class="max-w-[700px] py-14 px-4 mx-auto">
-              <a-form :model="form" :rules="formRules" class="grid grid-cols-2 gap-5" size="large">
-                <a-form-item has-feedback name="phone">
-                  <a-input v-model:value="form.phone" prefix="+998" placeholder="(__) ___ __ __*" />
-                </a-form-item>
-                <a-form-item has-feedback name="region">
-                  <a-select v-model:value="form.region" placeholder="Субъект Узбекистана*">
-                    <a-select-option v-for="(itemValue, itemKey) in regions" :value="itemKey">{{ itemValue }}</a-select-option>
-                  </a-select>
-                </a-form-item>
-                <a-form-item has-feedback name="INN" class="col-span-2">
-                  <a-input v-model:value="form.INN" placeholder="ИНН*" />
-                </a-form-item>
+          <a-form-item has-feedback class="col-span-2 m-0">
+            <a-checkbox>
+              {{ $t("Даю своё") }}
+              <router-link to="/" class="text-green-500">{{ $t("согласие на обработку персональных данных") }}</router-link>
+              {{ $t("и подтверждаю своё согласие") }}
+              <router-link to="/" class="text-green-500">{{ $t("с правилами") }}</router-link>
+            </a-checkbox>
+          </a-form-item>
 
-                <!-- submit-btn -->
-                <a-form-item>
-                  <a-button type="primary" html-type="submit" class="w-full !rounded-full" size="large">Отправить заявку</a-button>
-                </a-form-item>
-                <!-- Policy text -->
-                <div class="policy-text text-[10px] leading-[1.5] text-zinc-500" v-html="policy" />
-              </a-form>
-              <p class="text-xs text-zinc-500 mb-5">* Все поля обязательные</p>
-            </div>
-          </div>
-          <!-- form-background-blur -->
-          <div class="absolute left-0 top-0 max-w-[400px] aspect-square w-full bg-blue-200" style="filter: blur(100px)" />
-          <div class="absolute right-0 bottom-0 max-w-[400px] aspect-square w-full bg-blue-200" style="filter: blur(100px)" />
-        </div>
+          <a-form-item class="mt-5">
+            <a-button type="primary" html-type="submit" class="w-full !rounded-full" size="large">
+              {{ $t("Отправить заявку") }}
+            </a-button>
+          </a-form-item>
+        </a-form>
       </div>
     </div>
   </div>

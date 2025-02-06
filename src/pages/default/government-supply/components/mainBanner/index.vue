@@ -3,7 +3,7 @@ import Banner from "@/components/global/banner.vue";
 
 const bannerData = {
   title: "Развитие животноводства",
-  subtitle: "Идеальное финансовое решение для малого бизнеса и фермерских хозяйств!",
+  subtitle: "Финансовое решение для дехканских хозяйств и владельцам приусадебных территорий",
   link: "https://brb.uz/ru/kredity/chorvachilikni-rivojlantirish-krediti",
 };
 </script>

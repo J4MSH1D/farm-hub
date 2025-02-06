@@ -15,6 +15,7 @@
     "i18next-vue": "^5.0.0",
     "swiper": "^11.2.1",
     "vue": "^3.5.13",
+    "vue-imask": "^7.6.1",
     "vue-router": "^4.5.0",
     "vue3-marquee": "^4.2.2",
     "vuex": "^4.0.2"
