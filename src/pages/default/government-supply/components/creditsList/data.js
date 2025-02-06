@@ -14,6 +14,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 60000000,
+    info: [
+      { uz: "Kredit stavkasi - yillik 20%", ru: "Кредитная ставка - ежегодная 20%" },
+      { uz: "Kredit miqdori 60 mln so'mgacha", ru: "Кредитная сумма 60 млн. сум" },
+      { uz: "Kredit muddati - 5 yil", ru: "Срок кредита - 5 лет" },
+    ],
     link: "https://nbu.uz/jismoniy-shaxslarga-kreditlar/national-green",
   },
   {
@@ -31,6 +36,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 40000000,
+    info: [
+      { uz: "Kredit foiz stavkasi 25%", ru: "Кредитная ставка 25%" },
+      { uz: "Kredit miqdori 40 mln so'mgacha", ru: "Кредитная сумма до 40 млн. сум" },
+      { uz: "Kredit muddati - 36 oygacha", ru: "Срок кредита - до 36 месецев" },
+    ],
     link: "https://sqb.uz/uz/individuals/credits/tomorqa-texnikasi-uz/",
   },
   {
@@ -48,6 +58,10 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: null,
+    info: [
+      { uz: "Kredit foiz stavkasi 27%", ru: "Кредитная ставка 27%" },
+      { uz: "Kredit muddati - 12 oygacha", ru: "Срок кредита - до 12 месецев" },
+    ],
     link: "https://www.asakabank.uz/uz/corporate-customers/home",
   },
   {
@@ -65,7 +79,12 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 100000000,
-    link: "",
+    info: [
+      { uz: "Kredit foiz stavkasi 19.5%", ru: "Кредитная ставка 19.5%" },
+      { uz: "Kredit miqdori 100 mln so'mgacha", ru: "Кредитная сумма до 100 млн. сум" },
+      { uz: "Muddati - 60 oy (imtiyozli davr - 6 oy)", ru: "Срок - 60 месяцев (льготный период - 6 месяцев)" },
+    ],
+    link: "https://agrobank.uz/uz/business/loans/green-energy-b2b",
   },
   {
     id: 6,
@@ -82,6 +101,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 6500000000,
+    info: [
+      { uz: "Kredit foizi 6.5%, Milliy valyutada 19%", ru: "Процентная ставка по кредиту 6,5%, 19% в национальной валюте" },
+      { uz: "Kredit summasi 500 000 AQSH dollarigacha", ru: "Кредитная сумма до 500 000 долларов США" },
+      { uz: "Kredit muddati - 120 oygacha", ru: "Срок кредита - до 120 месяцев" },
+    ],
     link: "",
   },
   {
@@ -99,6 +123,14 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 1298400000,
+    info: [
+      {
+        uz: "Kredit foizi AQSH dollarida 6.5%, Milliy valyutada 19%",
+        ru: "Процентная ставка по кредиту в долларах США 6.5%, 19% в национальной валюте",
+      },
+      { uz: "Kredit summasi 100 000 AQSH dollarigacha", ru: "Кредитная сумма до 100 000 долларов США" },
+      { uz: "Muddati - 60 oygacha", ru: "Срок - до 60 месяцев" },
+    ],
     link: "",
   },
   {
@@ -109,13 +141,21 @@ export const credits = [
     },
     interest: 21,
     payment: 0,
-    duration: { from: 0, to: 60 },
+    duration: { from: 0, to: 120 },
     minRate: null,
     partiallySecured: false,
     noCollateral: false,
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 1298400000,
+    info: [
+      { uz: "Yillik foiz stavkasi 19%", ru: "Ежегодная ставка 19%" },
+      { uz: "Miqdori - 1 mln. yevro ekvivalentigacha", ru: "Сумма - до 1 млн. евро эквивалента" },
+      {
+        uz: "Muddati - Investitsiya loyihalari uchun – 120 oygacha;	Aylanma mablag‘lar uchun – 18 oygacha",
+        ru: "Срок - до 120 месяцев для инвестиционных проектов; до 18 месяцев для вложений",
+      },
+    ],
     link: "https://brb.uz/kreditlar/chorvachilikni-rivojlantirish-krediti",
   },
   {
@@ -133,7 +173,12 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 4546487855,
-    link: "00000",
+    info: [
+      { uz: "Foiz stavkasi 10% dan", ru: "Ставка от 10%" },
+      { uz: "Kredit miqdori - 350 min AQSH dollari", ru: "Кредитная сумма - до 350 долларов США" },
+      { uz: "Muddati - 10 yilgacha", ru: "Срок - до 10 лет" },
+    ],
+    link: "https://mkbank.uz/uz/corporate/crediting/ifadmoder/",
   },
   {
     id: 10,
@@ -150,6 +195,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 5000000000,
+    info: [
+      { uz: "Foiz stavkasi 20.5%", ru: "Ставка 20.5%" },
+      { uz: "Kredit miqdori - 5 mlrd so'mgacha", ru: "Кредитная сумма - до 5 млрд. сум" },
+      { uz: "Muddati - 60 oygacha", ru: "Срок - до 60 месяцев" },
+    ],
     link: "https://mkbank.uz/uz/corporate/crediting/green-energy-3469/",
   },
   {
@@ -167,6 +217,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: null,
+    info: [
+      { uz: "Foiz stavkasi 4%", ru: "Ставка 4%" },
+      { uz: "Kredit miqdori - loyiha qiymatidan", ru: "Сумма кредита - от стоимости проекта" },
+      { uz: "Muddati - 12 oygacha", ru: "Срок - до 12 месяцев" },
+    ],
     link: "https://mkbank.uz/uz/corporate/crediting/export-promotion-agency/",
   },
   {
@@ -184,6 +239,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 300000000,
+    info: [
+      { uz: "Foiz stavkasi 19% dan", ru: "Ставка от 19%" },
+      { uz: "Kredit miqdori - 300 mln. so’mgacha", ru: "Кредитная сумма - до 300 млн. сум" },
+      { uz: "Muddati - 84 oygacha", ru: "Срок - до 84 месяцев" },
+    ],
     link: "https://mkbank.uz/uz/corporate/crediting/imkoniyat-kredit/",
   },
   {
@@ -201,6 +261,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: null,
+    info: [
+      { uz: "Foiz stavkasi 25% dan", ru: "Ставка от 25%" },
+      { uz: "Kredit miqdori - loyiha qiymatidan", ru: "Сумма кредита - от стоимости проекта" },
+      { uz: "Muddati - 60 oygacha", ru: "Срок - до 60 месяцев" },
+    ],
     link: "https://mkbank.uz/uz/corporate/crediting/qishloq-xo-jaligini-rivojlantirish-uchun/",
   },
   {
@@ -218,6 +283,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 340000000,
+    info: [
+      { uz: "Yillik foiz stavkasi - Bazaviy stavka + 4.0%", ru: "Ежегодная ставка - Базовая ставка + 4.0%" },
+      { uz: "Kredit miqdori - 340 mln. so’mgacha", ru: "Кредитная сумма - до 340 млн. сум" },
+      { uz: "Muddati - 3 yilgacha", ru: "Срок - до 3 лет" },
+    ],
     link: "https://aloqabank.uz/uz/corporate/crediting/microloan-passport/",
   },
   {
@@ -235,6 +305,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: 1500000000,
+    info: [
+      { uz: "Yillik foiz stavkasi - 20.5% dan", ru: "Ежегодная ставка от 20.5%" },
+      { uz: "Kredit miqdori - 1,5 mlrd. so’mgacha", ru: "Кредитная сумма - до 1,5 млрд. сум" },
+      { uz: "Muddati - 36 oygacha", ru: "Срок - до 36 месяцев" },
+    ],
     link: "https://aloqabank.uz/uz/corporate/crediting/muqobil-energiya-modulli-krediti/",
   },
   {
@@ -252,6 +327,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: null,
+    info: [
+      { uz: "Foiz stavkasi - 4% gacha", ru: "Cтавка - до 4%" },
+      { uz: "Kredit miqdori - Shartnomaga asosan", ru: "Кредитная сумма - в соответствии с договором" },
+      { uz: "Muddati - 12 oygacha", ru: "Срок - до 12 месяцев" },
+    ],
     link: "https://turonbank.uz/uz/corporate/crediting/eksport/",
   },
   {
@@ -269,23 +349,11 @@ export const credits = [
     preferentialRate: null,
     simplifiedDocuments: false,
     maxAmount: null,
-    link: "https://turonbank.uz/uz/corporate/crediting/ecopanel/",
-  },
-  {
-    id: 18,
-    name: {
-      uz: `ECOPANEL`,
-      ru: `ECOPANEL`,
-    },
-    interest: 20.5,
-    payment: 0,
-    duration: { from: 0, to: 60 },
-    minRate: null,
-    partiallySecured: false,
-    noCollateral: false,
-    preferentialRate: null,
-    simplifiedDocuments: false,
-    maxAmount: null,
+    info: [
+      { uz: "Foiz stavkasi - 20,5% gacha", ru: "Cтавка - до 20,5%" },
+      { uz: "Kredit miqdori - Shartnomaga asosan", ru: "Кредитная сумма - в соответствии с договором" },
+      { uz: "Muddati - 60 oygacha", ru: "Срок - до 60 месяцев" },
+    ],
     link: "https://turonbank.uz/uz/corporate/crediting/ecopanel/",
   },
 ];

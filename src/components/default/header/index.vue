@@ -22,8 +22,8 @@ function changeLanguage(lang) {
   i18next.changeLanguage(lang);
 }
 
-watch(catalogueOpen, value => {
-  if (value) document.body.style.overflow = "hidden";
+watch([catalogueOpen, route], () => {
+  if (catalogueOpen.value) document.body.style.overflow = "hidden";
   else document.body.style.overflow = "auto";
 });
 
@@ -135,10 +135,16 @@ watch(route, () => {
                     <div v-for="innerLink in link.children">
                       <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
                       <div v-for="childrenLink in innerLink.children" class="my-3">
-                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon"
-                          >{{ childrenLink.name }} <soon is-small v-if="childrenLink.soon"
-                        /></span>
-                        <router-link :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{ childrenLink.name }}</router-link>
+                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon">
+                          {{ childrenLink.name }}
+                          <soon is-small v-if="childrenLink.soon" />
+                        </span>
+                        <a :href="childrenLink.link" target="_blank" class="*hoverGreen text-sm text-gray-500" v-else-if="childrenLink.link">{{
+                          childrenLink.name
+                        }}</a>
+                        <router-link :href="childrenLink.path" :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{
+                          childrenLink.name
+                        }}</router-link>
                       </div>
                     </div>
                   </div>

@@ -59,7 +59,7 @@ const boldLeafColor = computed(() => backgroundColors[props.backgroundColor]["bo
 <template>
   <div class="relative p-10 rounded-3xl overflow-hidden min-h-[300px]" :style="backgroundColorStyle">
     <!-- Banner content -->
-    <div class="relative z-10">
+    <div class="relative z-10 overhi">
       <slot />
     </div>
 
