@@ -1,5 +1,5 @@
 <template>
-  <bannerSmall color="#4297fc" leafColor="#a1ccff" cusClass="p-10 mb-10">
+  <bannerSmall color="#4297fc" leafColor="#55A1FC" cusClass="p-10 mb-10">
     <div class="relative flex flex-col gap-10">
       <p class="text-xl w-1/2 text-white">
         Размещение вакансий и просмотр контактов резюме бесплатно для зарегистрированных пользователей. Никаких ограничений. Правда

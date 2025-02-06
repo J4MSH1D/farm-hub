@@ -56,10 +56,9 @@ const smallLinks = [
     color: "#63AAFD",
     leafColor: "#6FAFFA",
     cusClass: "",
-    toRouter: "",
+    toRouter: "/media",
     label: "Медиа",
     image: "home_link_5.png",
-    isSoon: true,
   },
 ];
 </script>
