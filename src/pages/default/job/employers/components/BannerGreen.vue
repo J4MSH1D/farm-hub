@@ -1,5 +1,5 @@
 <template>
-  <bannerSmall color="#468f46" leafColor="#75d241" cusClass="p-10">
+  <bannerSmall color="#468f46" leafColor="#589A58" cusClass="p-10">
     <div class="relative flex flex-col gap-10">
       <div class="flex flex-col justify-evenly h-full text-white">
         <p class="text-xl">Найти стажера для компании или предприятия</p>

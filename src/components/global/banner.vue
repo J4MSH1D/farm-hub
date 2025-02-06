@@ -54,6 +54,11 @@ const backgroundColors = {
     lightLeafColor: "#3E7959",
     boldLeafColor: "#62C025",
   },
+  media: {
+    background: "linear-gradient(to right, #118DC1, #63AAFD)",
+    lightLeafColor: "#6FAFFA",
+    boldLeafColor: "#6FAFFA",
+  },
 };
 
 const backgroundColorStyle = computed(() => backgroundColors[props.backgroundColor] || backgroundColors.lightBlue);
