@@ -131,10 +131,10 @@ watch(route, () => {
               </template>
               <template #overlay>
                 <div class="border bg-white rounded-xl px-4 py-3">
-                  <div v-if="link.children && link.children.some(e => e.children)" class="grid grid-cols-2 gap-5 justify-start max-w-[900px]">
-                    <div v-for="innerLink in link.children">
+                  <div v-if="link.children && link.children.some(e => e.children)" class="columns-2 gap-5 justify-start max-w-[900px]">
+                    <div v-for="innerLink in link.children" class="py-3" style="break-inside: avoid">
                       <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
-                      <div v-for="childrenLink in innerLink.children" class="my-3">
+                      <div v-for="childrenLink in innerLink.children" class="mt-3">
                         <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon">
                           {{ childrenLink.name }}
                           <soon is-small v-if="childrenLink.soon" />
