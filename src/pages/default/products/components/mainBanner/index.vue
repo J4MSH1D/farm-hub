@@ -19,13 +19,13 @@ const banner = {
   <div class="container py-8">
     <Banner class="p-0">
       <!-- banner-content-top -->
-      <div class="min-h-[220px] w-1/3 px-10 py-6">
+      <div class="min-h-[250px] w-1/3 px-10 py-6">
         <h1 class="text-3xl text-white font-medium">{{ $t(banner.title) }}</h1>
         <p class="text-sm text-white mt-5">{{ $t(banner.subtitle) }}</p>
       </div>
       <!-- banner-content-bottom -->
       <div class="flex items-center gap-5 w-full px-10 py-4" style="backdrop-filter: blur(40px)">
-        <button class="text-sm text-white font-medium border-2 border-white rounded-full px-7 py-3">
+        <button class="text-sm text-white font-medium border-2 border-white rounded-tl-3xl rounded-br-3xl px-7 py-3">
           {{ $t(banner.buttonTitle) }}
         </button>
         <div class="flex items-center gap-8">

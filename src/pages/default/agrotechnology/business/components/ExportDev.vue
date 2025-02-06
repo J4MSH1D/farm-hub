@@ -2,51 +2,62 @@
 const data = [
   {
     id: 1,
-    name: "Решение для теплиц ",
-    img: "https://s56442.cdn.ngenix.net/img/0/0/resize/rshb/landings/cms_images/Frame%201321317254%20(2).png",
+    name: "Решение для теплиц",
+    img: "agro_1.png",
     link: "",
-    path: "",
   },
   {
     id: 2,
-    name: "Средства защиты растений",
-    img: "https://s56442.cdn.ngenix.net/img/0/0/resize/rshb/landings/cms_images/Frame%201321317256.png",
-    link: "https://epauzb.uz/",
+    name: "Средстьва защиты растений",
+    img: "agro_2.png",
+    link: "",
   },
   {
     id: 3,
     name: "Стимуляторы роста",
-    img: "https://s56442.cdn.ngenix.net/img/0/0/resize/rshb/landings/cms_images/Frame%201321317254%20(1)_1.png",
+    img: "agro_3.png",
     link: "",
   },
   {
     id: 4,
-    name: "Биологические фунгициды",
-    img: "https://s56442.cdn.ngenix.net/img/0/0/resize/rshb/landings/cms_images/Frame%201321317253%20(1)_1.png",
+    name: "Прогнозирование спроса",
+    img: "agro_4.png",
     link: "",
   },
   {
     id: 5,
-    name: "Деструкторы пожнивных остатков",
-    img: "https://s56442.cdn.ngenix.net/img/0/0/resize/rshb/landings/cms_images/Frame%201321317253_2.png",
+    name: "Биологиские фунгициды",
+    img: "agro_5.png",
     link: "",
   },
   {
     id: 6,
-    name: " Прогнозирование спроса",
-    img: "https://s56442.cdn.ngenix.net/img/0/0/resize/rshb/landings/cms_images/Frame%201321317257.png",
+    name: "Деструкторы пожнивных остатков",
+    img: "agro_6.png",
     link: "",
   },
 ];
 </script>
 <template>
-  <div class="flex flex-col gap-6 my-6">
-    <h2 class="text-3xl font-semibold">Каталог</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
-      <div class="flex items-center gap-4 p-6 bg-white rounded-xl cursor-pointer" v-for="item in data" :key="item.id">
-        <img :src="item.img" :alt="item.name" class="w-24 h-24 object-cover" />
-        <span class="text-md font-semibold"> {{ item.name }}</span>
+  <div class="flex flex-col items-center gap-6 my-6">
+    <h2 class="text-3xl font-semibold w-full">Каталог</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-full">
+      <div class="grid grid-cols-3 gap-4 p-6 bg-white rounded-xl cursor-pointer" v-for="item in data" :key="item.id">
+        <div class="w-24 h-24 bg-[#EBEEED] rounded-full p-2">
+          <icon :name="item.img" :alt="item.name" class="w-full h-full object-cover" />
+        </div>
+        <div class="col-span-2 flex flex-col justify-between items-end">
+          <p class="text-sm text-center">{{ $t(item.name) }}</p>
+          <a-button class="!rounded-tl-2xl !rounded-br-2xl !rounded-bl-none !rounded-tr-none w-24">
+            {{ $t("Видеть") }}
+          </a-button>
+        </div>
       </div>
     </div>
+
+    <button class="rounded-full py-4 px-8 border-2 border-gray-200 my-4 transition duration-300 ease-linear hover:border-gray-500">
+      Узнать больше
+    </button>
   </div>
 </template>

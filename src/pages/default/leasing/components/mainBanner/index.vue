@@ -22,6 +22,11 @@ const bannerData = {
           </button>
           <div class="text-3xl text-white font-semibold mt-10">{{ $t(bannerData.title) }}</div>
           <div class="text-sm text-white leading-[1.8] mt-6">{{ $t(bannerData.subtitle) }}</div>
+          <router-link
+            href="/leasing"
+            class="inline-block text-white text-sm border-2 border-gray-200 rounded-tl-3xl rounded-br-3xl py-3 px-6 mt-8 hover:(border-gray-300)"
+            >{{ $t("Оставить заявку") }}</router-link
+          >
         </div>
         <!-- bannerData-image -->
         <icon :name="bannerData.image" alt="" class="h-[280px] object-contain" />
