@@ -3,22 +3,22 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 const services = [
   {
-    link: "/work",
+    link: "/job",
     title: "Разместите своё объявление",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_3.png",
   },
   {
-    link: "/video",
+    link: "/media",
     title: "Бизнес-план по выращиванию фруктов и овощей",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/file_22-2_2_1.png",
   },
   {
-    link: "/video",
+    link: "/media",
     title: "Проекты тепличного хозяйства",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Group_2792_2.png",
   },
   {
-    link: "/work",
+    link: "/job",
     title: "Работа в сельском хозяйстве",
     image: "https://s56442.cdn.ngenix.net/img/60/60/resize//rshb/landings/landing/Frame5330258_2.png",
   },
@@ -33,7 +33,7 @@ const services = [
     <!-- Slider -->
     <swiper :slides-per-view="4" class="mt-5" space-between="20" auto-height="true">
       <swiper-slide v-for="item in services" style="height: 100%" class="bg-white rounded-xl overflow-hidden hover:(shadow-xl) last:(mr-0)">
-        <router-link :to="`/products/${item.id}`" class="h-full flex flex-col items-start justify-between p-5">
+        <router-link :to="item.link" class="h-full flex flex-col items-start justify-between p-5">
           <div class="flex items-center justify-between gap-5">
             <!-- service-title -->
             <p class="text-xl text-zinc-900 font-medium">{{ $t(item.title) }}</p>
