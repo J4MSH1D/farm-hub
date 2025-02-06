@@ -40,7 +40,7 @@ function setLinks(array) {
 }
 
 function initData() {
-  let result = setLinks(dashboard);
+  let result = setLinks(dashboard[0].children);
   links.value = result;
 }
 
@@ -56,15 +56,15 @@ onMounted(() => {
   <a-layout class="min-h-screen">
     <a-layout-sider :trigger="null" collapsible class="!bg-white !min-w-[320px]">
       <div class="text-white flex items-center py-2">
-        <router-link to="/">
-          <icon name="logo" isSvg />
+        <router-link to="/" class="inline-block px-4 py-2">
+          <icon name="logo" isSvg class="h-11" />
         </router-link>
       </div>
       <a-menu theme="light" mode="inline" v-model:selectedKeys="activeLinks">
         <template v-for="link in links" :key="link.path">
           <a-sub-menu v-if="link.children" :key="link.path">
             <template #title>{{ link.meta.title }}</template>
-            <a-menu-item v-for="elem in link.children" :key="link.path + '/' + elem.path" @click="goTo(link.path + '/' + elem.path)">{{
+            <a-menu-item v-for="elem in link.children" :key="link.path + '/' + elem.path" @click="goTo(`/dashboard/${link.path}/${elem.path}`)">{{
               elem.meta.title
             }}</a-menu-item>
           </a-sub-menu>

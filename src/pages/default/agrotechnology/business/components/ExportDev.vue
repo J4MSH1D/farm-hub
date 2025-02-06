@@ -3,37 +3,37 @@ const data = [
   {
     id: 1,
     name: "Решение для теплиц",
-    img: "job_1.png",
+    img: "agro_1.png",
     link: "",
   },
   {
     id: 2,
     name: "Средстьва защиты растений",
-    img: "job_2.png",
+    img: "agro_2.png",
     link: "",
   },
   {
     id: 3,
     name: "Стимуляторы роста",
-    img: "job_3.png",
+    img: "agro_3.png",
     link: "",
   },
   {
     id: 4,
     name: "Прогнозирование спроса",
-    img: "job_4.png",
+    img: "agro_4.png",
     link: "",
   },
   {
     id: 5,
     name: "Биологиские фунгициды",
-    img: "job_5.png",
+    img: "agro_5.png",
     link: "",
   },
   {
     id: 6,
     name: "Деструкторы пожнивных остатков",
-    img: "job_6.png",
+    img: "agro_6.png",
     link: "",
   },
 ];
@@ -47,9 +47,9 @@ const data = [
         <div class="w-24 h-24 bg-[#EBEEED] rounded-full p-2">
           <icon :name="item.img" :alt="item.name" class="w-full h-full object-cover" />
         </div>
-        <div class="col-span-2 flex flex-col justify-between">
-          <p class="text-md">{{ $t(item.name) }}</p>
-          <a-button class="!rounded-tl-2xl !rounded-br-2xl !rounded-bl-none !rounded-tr-none w-32">
+        <div class="col-span-2 flex flex-col justify-between items-end">
+          <p class="text-sm text-center">{{ $t(item.name) }}</p>
+          <a-button class="!rounded-tl-2xl !rounded-br-2xl !rounded-bl-none !rounded-tr-none w-24">
             {{ $t("Видеть") }}
           </a-button>
         </div>

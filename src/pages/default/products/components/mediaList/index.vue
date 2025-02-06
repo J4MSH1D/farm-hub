@@ -4,42 +4,42 @@ import { Navigation } from "swiper/modules";
 
 const mediaList = [
   {
-    id: 1,
-    created_at: new Date(2023, 5, 28),
-    topic: "Выращивание",
-    image: "https://i.ytimg.com/vi/HwNdO0gg9es/sddefault.jpg",
-    description: "Проект по выращиванию лимонов",
+    id: 41,
+    name: "EduBrb",
+    title: "Проект по выращиванию лимонов",
+    date: "03.12.2024",
+    img: "https://i.ytimg.com/vi/HwNdO0gg9es/sddefault.jpg",
+    isVideo: true,
+    link: "https://www.youtube.com/watch?v=HwNdO0gg9es",
   },
   {
-    id: 1,
-    created_at: new Date(2023, 5, 28),
-    topic: "Выращивание",
-    image: "https://i.ytimg.com/vi/RLt-WcZLrsE/sddefault.jpg",
-    description: "Проект по выращиванию малины",
+    id: 42,
+    name: "EduBrb",
+    title: "Проект по выращиванию малины",
+    date: "03.12.2024",
+    img: "https://i.ytimg.com/vi/RLt-WcZLrsE/sddefault.jpg",
+    isVideo: true,
+    link: "https://youtu.be/RLt-WcZLrsE",
   },
   {
-    id: 1,
-    created_at: new Date(2023, 5, 28),
-    topic: "Выращивание",
-    image: "https://i.ytimg.com/vi/g1ugbetS1V8/sddefault.jpg",
-    description: "Проект по выращиванию винограда",
+    id: 43,
+    name: "EduBrb",
+    title: "Проект по выращиванию голубики",
+    date: "03.12.2024",
+    img: "https://i.ytimg.com/vi/3hd7qjupKfI/sddefault.jpg",
+    isVideo: true,
+    link: "https://youtu.be/3hd7qjupKfI",
   },
   {
-    id: 1,
-    created_at: new Date(2023, 5, 28),
-    topic: "Выращивание",
-    image: "https://i.ytimg.com/vi/Jr75JOQLN8s/sddefault.jpg",
-    description: "Проект по выращиванию мандаринов",
+    id: 44,
+    name: "EduBrb",
+    title: "Проект по выращиванию клубники",
+    date: "03.12.2024",
+    img: "https://i.ytimg.com/vi/vCNmOdnogZc/sddefault.jpg",
+    isVideo: true,
+    link: "https://youtu.be/vCNmOdnogZc",
   },
 ];
-
-function getDate(dateString) {
-  return new Intl.DateTimeFormat("ru-RU", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(dateString);
-}
 </script>
 
 <template>
@@ -62,25 +62,19 @@ function getDate(dateString) {
     <swiper
       :modules="[Navigation]"
       :slides-per-view="4"
-      :space-between="20"
+      :space-between="10"
       :navigation="{ nextEl: '.mediaList-button-next', prevEl: '.mediaList-button-prev' }"
       class="mt-5"
     >
       <swiper-slide v-for="item in mediaList" :key="item">
-        <router-link
-          :to="`svoe-media/articles/${item.id}`"
-          class="grid grid-rows-2 max-h-[360px] h-full bg-white rounded-xl overflow-hidden hover:(shadow-2xl)"
-        >
-          <img :src="item.image" :alt="item.title" class="w-full h-full object-cover" />
+        <a :href="item.link" target="_blank" class="flex flex-col max-h-[360px] bg-white rounded-xl overflow-hidden hover:(shadow-2xl)">
+          <img :src="item.img" :alt="item.title" class="w-full h-full object-cover" />
           <!-- media-content -->
-          <div class="flex flex-col justify-between px-4 py-5">
-            <div>
-              <span class="text-[10px] text-zinc-500 font-bold uppercase rounded bg-gray-100 py-1.5 px-2" v-if="item.topic">{{ item.topic }}</span>
-              <p class="text-sm text-zinc-900 mt-5 line-clamp-3">{{ item.description }}</p>
-            </div>
-            <span class="text-xs text-zinc-500 mt-5">{{ getDate(item.created_at) }}</span>
+          <div class="flex flex-col gap-5 justify-between p-4">
+            <p class="text-md text-zinc-900 line-clamp-3 h-9">{{ item.title }}</p>
+            <span class="text-xs text-zinc-500">{{ item.date }}</span>
           </div>
-        </router-link>
+        </a>
       </swiper-slide>
     </swiper>
   </div>

@@ -5,18 +5,6 @@ const filter = inject("filter");
 
 const minAmount = 100000;
 const maxAmount = 50000000;
-const creditPurposeOptions = {
-  all: "Все варианты",
-  agriculture_equipment: "Покупка сельхозтехники и оборудования",
-  land_acquisition: "Приобретение земель с/х назначения",
-  construction_modernization: "Строительство новых и модернизация с/х предприятий",
-  processing_storage: "Создание предприятий переработки, хранения с/х продукции",
-  seasonal_work: "Проведение сезонных работ (покупка семян, СЗР, ГСМ, кормов)",
-  breeding_livestock: "Приобретение племенного и товарного молодняка с/х животных",
-  fattening_livestock: "Приобретение молодняка сельхозживотных на откорм",
-  fish_stock: "Приобретение рыбопосадочного материала",
-  loan_refinancing: "Рефинансирование кредитов других банков",
-};
 </script>
 
 <template>
@@ -53,9 +41,7 @@ const creditPurposeOptions = {
           <!-- Kredit Maqsadi (input) -->
           <div class="mt-4">
             <span class="text-xs text-zinc-500">{{ $t("Цель кредита") }}</span>
-            <a-select class="w-full mt-1" v-model:value="filter.purpose" :placeholder="$t('Цель кредита')">
-              <a-select-option v-for="(item, key) in creditPurposeOptions" :value="key">{{ $t(item) }}</a-select-option>
-            </a-select>
+            <a-select class="w-full mt-1" v-model:value="filter.purpose" :placeholder="$t('Цель кредита')"> </a-select>
             <!-- info -->
             <p class="text-xs text-zinc-500 mt-3">
               * {{ $t("Предложение носит информационный характер и не является публичной офертой. Все расчёты предварительные.") }}
