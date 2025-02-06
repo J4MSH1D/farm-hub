@@ -76,7 +76,7 @@ const topCategories = [
         :style="{ background: item.background }"
       >
         <router-link :to="`/catalog/${item.id}`">
-          <p class="relative text-lg text-white font-semibold">{{ item.title[locale] }}</p>
+          <p class="relative text-2xl text-white font-semibold max-w-[250px]">{{ item.title[locale] }}</p>
           <icon :name="item.image" alt="" class="absolute h-[80%] right-6 bottom-2" />
           <icon name="product-category-leaf.png" alt="" class="absolute h-[80%] left-6 bottom-0" />
         </router-link>
