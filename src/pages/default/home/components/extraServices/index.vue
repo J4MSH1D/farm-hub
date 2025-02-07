@@ -3,8 +3,10 @@
     <div class="px-8 py-10 rounded-4xl bg-[#3cca2f] relative">
       <div class="flex justify-between items-start relative z-10">
         <div>
-          <div class="text-2xl">{{ $t("home_extra_title_1") }}</div>
-          <div class="mt-2 max-w-2/3">{{ $t("home_extra_discription_1") }}</div>
+          <div class="text-2xl">{{ $t("Объявления") }}</div>
+          <div class="mt-2 max-w-2/3">
+            {{ $t("Покупайте товары и услуги для сельского хозяйства и размещайте предложения на доске частных объявлений") }}
+          </div>
         </div>
       </div>
       <div class="absolute right-0 bottom-0 z-20">
@@ -17,8 +19,8 @@
     <div class="px-8 py-10 rounded-4xl bg-[#8b3bda] relative">
       <div class="flex justify-between items-start relative z-10">
         <div>
-          <div class="text-2xl">{{ $t("home_extra_title_2") }}</div>
-          <div class="mt-2 max-w-2/3">{{ $t("home_extra_discription_2") }}</div>
+          <div class="text-2xl">{{ $t("Бесплатный поиск сотрудников") }}</div>
+          <div class="mt-2 max-w-2/3">{{ $t("Бесплатный поиск сотрудников в сельскохозяйственной отрасли") }}</div>
         </div>
       </div>
       <div class="absolute right-0 bottom-0 z-20">

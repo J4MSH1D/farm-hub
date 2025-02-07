@@ -27,12 +27,12 @@ const linksList = [
       <li v-for="item in linksList" class="flex flex-col items-start justify-between bg-white rounded-xl px-6 py-8">
         <div>
           <img :src="item.image" alt="" class="h-[150px] object-contain" />
-          <h3 class="text-xl text-zinc-900 font-semibold mt-5">{{ item.title }}</h3>
+          <h3 class="text-xl text-zinc-900 font-semibold mt-5">{{ $t(item.title) }}</h3>
           <ul class="list flex flex-col gap-3 mt-4">
-            <li v-for="child in item.info" class="text-sm">{{ child }}</li>
+            <li v-for="child in item.info" class="text-sm">{{ $t(child) }}</li>
           </ul>
         </div>
-        <button class="text-xs text-zinc-900 border border-gray-300 rounded-full py-2.5 px-6 mt-8">Подробнее</button>
+        <button class="text-xs text-zinc-900 border border-gray-300 rounded-full py-2.5 px-6 mt-8">{{ $t("Подробнее") }}</button>
       </li>
     </ul>
   </div>

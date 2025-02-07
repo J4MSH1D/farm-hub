@@ -24,8 +24,8 @@ const infoList = [
       <li v-for="item in infoList" class="flex gap-5 bg-white rounded-xl px-6 py-8">
         <img :src="item.image" alt="" class="max-w-[80px] w-full object-contain" />
         <div>
-          <h3 class="text-2xl text-zinc-900 font-semibold">{{ item.title }}</h3>
-          <div v-html="item.description" class="text-zinc-900 leading-[1.6] mt-3" />
+          <h3 class="text-2xl text-zinc-900 font-semibold">{{ $t(item.title) }}</h3>
+          <div :v-html="$t(item.description)" class="text-zinc-900 leading-[1.6] mt-3" />
         </div>
       </li>
     </ul>

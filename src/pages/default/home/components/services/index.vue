@@ -9,10 +9,10 @@ const modules = [Navigation];
 const activeTab = ref("Sales");
 
 const tabsList = [
-  { name: "home_services_1", value: "Sales" },
-  { name: "home_services_2", value: "Bank" },
-  { name: "home_services_3", value: "Lending" },
-  { name: "home_services_4", value: "Beginning" },
+  { name: "Сбыт продукции", value: "Sales" },
+  { name: "Услуги банка", value: "Bank" },
+  { name: "Льготное кредитование", value: "Lending" },
+  { name: "Начинающим своё дело", value: "Beginning" },
 ];
 </script>
 <template>
