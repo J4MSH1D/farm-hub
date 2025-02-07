@@ -68,7 +68,14 @@ const mediaList = [
     >
       <swiper-slide v-for="item in mediaList" :key="item">
         <a :href="item.link" target="_blank" class="flex flex-col max-h-[360px] bg-white rounded-xl overflow-hidden hover:(shadow-2xl)">
-          <img :src="item.img" :alt="item.title" class="w-full h-full object-cover" />
+          <div class="relative">
+            <img :src="item.img" :alt="item.title" class="w-full h-full object-cover" />
+            <icon
+              v-if="item.isVideo"
+              name="play-white.png"
+              class="w-16 h-16 absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
           <!-- media-content -->
           <div class="flex flex-col gap-5 justify-between p-4">
             <p class="text-md text-zinc-900 line-clamp-3 h-9">{{ item.title }}</p>
