@@ -7,7 +7,7 @@ const links = [
     component: () => lazyLoad("dashboard/bin"),
     meta: {
       title: "Мои сделки",
-      permissions: [1000],
+      permissions: [20000],
     },
   },
   {
@@ -16,7 +16,7 @@ const links = [
     component: () => lazyLoad("dashboard/favorites"),
     meta: {
       title: "Мои сделки",
-      permissions: [1000],
+      permissions: [20000],
     },
   },
   {
@@ -25,7 +25,7 @@ const links = [
     component: () => lazyLoad("dashboard/my-applications"),
     meta: {
       title: "Мои сделки",
-      permissions: [1000],
+      permissions: [20000],
     },
   },
 ];
