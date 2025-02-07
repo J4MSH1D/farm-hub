@@ -37,7 +37,7 @@ watch(route, () => {
   <div class="pb-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[110px]">
     <div class="h-[30px] bg-yellow-500 flex items-center mb-4">
       <Vue3Marquee :pause-on-hover="true" :duration="100" class="overflow-hidden">
-        <p v-for="i in 15" class="mx-7 text-white">Сайт находится в режиме разработки</p>
+        <p v-for="i in 15" class="mx-7 text-white">{{ $t("Сайт находится в режиме разработки") }}</p>
       </Vue3Marquee>
     </div>
     <div class="container">
@@ -51,18 +51,18 @@ watch(route, () => {
           @click="catalogueOpen = !catalogueOpen"
         >
           <icon name="category300" is-svg-raw class="h-4 w-4 fill-white" />
-          <span class="text-white">Каталог</span>
+          <span class="text-white">{{ $t("Каталог") }}</span>
         </button>
         <!-- searchbar (input) -->
         <div class="flex-grow flex items-center gap-4">
           <a-input-group compact class="!flex">
             <a-select v-model:value="selectValue" class="min-w-[145px]" size="large" :get-popup-container="trigger => trigger.parentNode">
-              <a-select-option value="Product">Товары</a-select-option>
-              <a-select-option value="Services">Услуги</a-select-option>
-              <a-select-option value="Article">Обяъвления</a-select-option>
-              <a-select-option value="Media">Медиа</a-select-option>
+              <a-select-option value="Product">{{ $t("Товары") }}</a-select-option>
+              <a-select-option value="Services">{{ $t("Услуги") }}</a-select-option>
+              <a-select-option value="Article">{{ $t("Обяъвления") }}</a-select-option>
+              <a-select-option value="Media">{{ $t("Медиа") }}</a-select-option>
             </a-select>
-            <a-input placeholder="Поиск" v-model:value="inputData" size="large" class="w-full" />
+            <a-input :placeholder="$t('Поиск')" v-model:value="inputData" size="large" class="w-full" />
           </a-input-group>
 
           <!-- regions -->
@@ -73,7 +73,7 @@ watch(route, () => {
             default-value="Все"
             :get-popup-container="trigger => trigger.parentNode"
           >
-            <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+            <a-select-option v-for="item in regions" :value="item">{{ $t(item) }}</a-select-option>
           </a-select>
 
           <!-- language (select) -->
@@ -86,26 +86,26 @@ watch(route, () => {
             <template v-if="item.path">
               <router-link :to="item.path" class="group flex flex-col items-center">
                 <icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
-                <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ item.label }}</span>
+                <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ $t(item.label) }} </span>
               </router-link>
             </template>
             <template v-else>
               <span @click="store.commit(item.method)" class="group flex flex-col items-center cursor-pointer">
                 <icon :name="item.icon" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
-                <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ item.label }}</span>
+                <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ $t(item.label) }}</span>
               </span>
             </template>
           </template>
           <template v-if="store.getters.user">
             <router-link :to="permission ? '/my-transactions' : '/structures'" class="group flex flex-col items-center">
               <icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
-              <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">Профиль</span>
+              <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ $t("Профиль") }}</span>
             </router-link>
           </template>
           <template v-else>
             <router-link to="/auth/login" class="group flex flex-col items-center">
               <icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
-              <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">Вход</span>
+              <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ $t("Вход") }}</span>
             </router-link>
           </template>
         </div>
