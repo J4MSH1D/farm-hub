@@ -42,21 +42,16 @@ const columns = [
   {
     title: "Ru",
     dataIndex: "ru",
-    filters: [
-      { text: "Bo'shlari'", value: "empty" },
-      { text: "To'liqlari", value: "filled" },
-    ],
+    filters: [{ text: "Bo'shlari'", value: "empty" }],
     onFilter: (value, record) => (value === "empty" ? !record.ru || record.ru.trim() === "" : record.ru && record.ru.trim() !== ""),
-    width: "20%",
+    width: "30%",
   },
   {
     title: "Uz",
     dataIndex: "uz",
-    filters: [
-      { text: "Bo'shlari'", value: "empty" },
-      { text: "To'liqlari", value: "filled" },
-    ],
+    filters: [{ text: "Bo'shlari'", value: "empty" }],
     onFilter: (value, record) => (value === "empty" ? !record.uz || record.uz.trim() === "" : record.uz && record.uz.trim() !== ""),
+    width: "30%",
   },
 
   {
@@ -93,7 +88,7 @@ onMounted(async () => {
   <a-table :columns="columns" :data-source="data">
     <template #bodyCell="{ column, text, record }">
       <template v-if="['code', 'ru', 'uz', 'cyrl', 'eng'].includes(column.dataIndex)">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 justify-between">
           <a-input v-if="editableData[record.id]" v-model:value="editableData[record.id][column.dataIndex]" style="margin: -5px 0" />
           <template v-else>
             {{ text }}
@@ -110,9 +105,9 @@ onMounted(async () => {
             </a-popconfirm>
           </span>
           <span v-else class="flex gap-4">
-            <a-button @click="edit(record.id)">Edit</a-button>
+            <a-button type="primary" @click="edit(record.id)">Edit</a-button>
             <a-popconfirm title="Sure to delete?" @confirm="delete record.id">
-              <a-button danger @click="Delete(record.id)">Delete</a-button>
+              <a-button type="primary" danger @click="Delete(record.id)">Delete</a-button>
             </a-popconfirm>
           </span>
         </div>
