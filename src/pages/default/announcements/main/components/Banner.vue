@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mt-30 container">
+  <div class="relative mt-30 container p-0">
     <banner backgroundColor="announ">
       <div class="relative flex flex-col gap-4">
         <h2 class="text-3xl font-semibold text-white">{{ $t("announ_banner") }}</h2>

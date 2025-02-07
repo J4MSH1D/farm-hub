@@ -15,6 +15,7 @@ const region = ref("Город Ташкент");
 const catalogueOpen = ref(false);
 const catalogueType = ref("products");
 const store = useStore();
+const alignItems = ref("left");
 
 watch([catalogueOpen, route], () => {
   if (catalogueOpen.value) document.body.style.overflow = "hidden";
@@ -111,25 +112,12 @@ watch(route, () => {
 
   <!-- KATALOGLAR -->
   <div
-    class="fixed inset-0 top-auto z-90 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
+    class="fixed inset-0 top-auto z-20 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
     v-if="catalogueOpen"
   >
     <div class="container py-8 flex-grow flex flex-col">
       <div class="flex items-center gap-2">
-        <button
-          class="bg-gray-200 text-gray-500 rounded-full py-2 px-4 text-sm"
-          :class="{ 'bg-[#000] text-white': catalogueType === 'products' }"
-          @click="catalogueType = 'products'"
-        >
-          Товары
-        </button>
-        <button
-          class="bg-gray-200 text-gray-500 rounded-full py-2 px-4 text-sm"
-          :class="{ 'bg-[#000] text-white': catalogueType === 'services' }"
-          @click="catalogueType = 'services'"
-        >
-          Услуги
-        </button>
+        <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
       </div>
       <div class="mt-5 flex items-start gap-5 w-full flex-grow overflow-y-auto">
         <div class="flex flex-col w-full">
@@ -176,5 +164,20 @@ watch(route, () => {
 }
 .regions-select .ant-select-arrow {
   color: white !important;
+}
+.custom-segmented {
+  :deep(.ant-segmented-item) {
+    margin: 0 5px !important;
+    transition: all 0.3s;
+  }
+
+  :deep(.ant-segmented-item-selected) {
+    background-color: #1890ff;
+    color: white;
+  }
+
+  :deep(.ant-segmented-thumb) {
+    background-color: transparent;
+  }
 }
 </style>
