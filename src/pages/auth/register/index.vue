@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, reactive } from "vue";
 import { useEimzo } from "@/composables/eimzo";
 import { message } from "ant-design-vue";
 import storage from "@/utils/storageService";
@@ -8,15 +8,18 @@ import { useRouter } from "vue-router";
 const { getAllUserKeys, signWithEsiId } = useEimzo(),
   keys = ref([]),
   selectedValue = ref(null),
-  router = useRouter();
+  router = useRouter(),
+  userData = reactive({
+    selectedUser: null,
+  });
 
 async function getAllKeys() {
   keys.value = await getAllUserKeys();
 }
 
-async function sign() {
+const onFinish = async values => {
   try {
-    await signWithEsiId(selectedValue.value);
+    await signWithEsiId(userData.selectedUser);
     let user = keys.value.find(key => key["esiId"] === selectedValue.value),
       storedData = {
         ...user,
@@ -27,7 +30,10 @@ async function sign() {
   } catch {
     message.error("Ошибка подписи с ключом E-IMZO");
   }
-}
+};
+const onFinishFailed = errorInfo => {
+  console.log("Failed:", errorInfo);
+};
 
 onMounted(async () => {
   await getAllKeys();
@@ -43,19 +49,19 @@ onMounted(async () => {
         <div class="mt-5 text-gray-400"><router-link to="/" class="underline">Вернуться на главную страницу</router-link></div>
       </div>
     </div>
-    <div class="bg-white rounded-3xl py-10 px-20">
+    <a-form :model="userData" autocomplete="off" @finish="onFinish" @finishFailed="onFinishFailed" class="bg-white rounded-3xl py-10 px-20">
       <div class="text-center font-medium text-2xl">Войдите в личный кабинет</div>
-      <div class="my-5">
-        <a-select v-model:value="selectedValue" class="w-full" size="large" placeholder="Выберите ключ E-IMZO">
+      <a-form-item name="selectedUser" :rules="[{ required: true, message: 'Выберите ключ E-IMZO!' }]" class="mt-5">
+        <a-select v-model:value="userData.selectedUser" class="w-full" size="large" placeholder="Выберите ключ E-IMZO">
           <a-select-option v-for="key in keys" :value="key['esiId']">{{ key["CN"] }}</a-select-option>
         </a-select>
-      </div>
-      <div class="my-5">
-        <a-button size="large" @click="sign" class="min-w-full" type="primary">Авторизоваться</a-button>
-      </div>
+      </a-form-item>
+      <a-form-item class="my-5">
+        <a-button html-type="submit" size="large" class="min-w-full" type="primary">Авторизоваться</a-button>
+      </a-form-item>
       <div class="mt-10 text-center">
-        <router-link to="/auth/register" class="underline text-gray-400 text-sm">Нет аккаунта? Регистрация</router-link>
+        <router-link to="/auth/login" class="underline text-gray-400 text-sm">Есть аккаунт? Вход</router-link>
       </div>
-    </div>
+    </a-form>
   </div>
 </template>
