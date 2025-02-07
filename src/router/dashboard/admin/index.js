@@ -19,6 +19,15 @@ const links = [
     },
     component: () => lazyLoad("dashboard/translations"),
   },
+  {
+    path: "/users",
+    name: "Users",
+    meta: {
+      title: "Пользователи",
+      permissions: [10000],
+    },
+    component: () => lazyLoad("dashboard/users"),
+  },
 ];
 
 export default links;

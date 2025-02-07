@@ -44,11 +44,11 @@ watch(updateUserForm, value => {
 
 async function handleEditClick(record) {
   const response = await roleService.GetById(record.id);
-  const permissions = response.permissions.map(e => e.id);
-  if (response) {
-    updateUserForm.value = { ...record, permissions };
-    updateUserModal.value = true;
-  }
+  const permissions = response?.permissions.map(e => e.id);
+  if (permissions) updateUserForm.value = { ...record, permissions };
+  else updateUserForm.value = { ...record, permissions: [] };
+
+  updateUserModal.value = true;
 }
 
 async function getAll() {
