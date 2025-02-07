@@ -11,6 +11,7 @@ import {
   BestOffers,
   YourMedia,
   LizingMurabaxa,
+  MapStatistics,
 } from "./components";
 </script>
 <template>
@@ -26,5 +27,6 @@ import {
     <BestOffers />
     <YourMedia />
     <LizingMurabaxa />
+    <MapStatistics />
   </div>
 </template>

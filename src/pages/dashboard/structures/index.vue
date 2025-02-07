@@ -7,6 +7,7 @@ const data = ref([]),
   open = ref(false),
   allPermnissions = ref([]),
   newUserData = reactive({
+    name: "",
     permissions: [],
   });
 
