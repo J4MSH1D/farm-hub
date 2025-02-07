@@ -8,8 +8,8 @@ import { authService } from "@/services/auth";
 const route = useRoute();
 const router = useRouter();
 const links = ref([]);
-const activeSubMenu = ref([route.matched[1].name]);
-const activeMenuItem = ref([route.matched[2].name]);
+const activeSubMenu = ref([route.matched[0].name]);
+const activeMenuItem = ref([route.matched[1].name]);
 
 function setLinks(array) {
   return array
@@ -41,7 +41,7 @@ function setLinks(array) {
 }
 
 function initData() {
-  let result = setLinks(dashboard[0].children);
+  let result = setLinks(dashboard);
   links.value = result;
 }
 

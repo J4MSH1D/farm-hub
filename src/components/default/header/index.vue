@@ -93,7 +93,7 @@ watch(route, () => {
             </template>
           </template>
           <template v-if="store.getters.user">
-            <router-link to="/dashboard/my-transactions" class="group flex flex-col items-center">
+            <router-link to="/my-transactions" class="group flex flex-col items-center">
               <icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
               <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">Профиль</span>
             </router-link>
