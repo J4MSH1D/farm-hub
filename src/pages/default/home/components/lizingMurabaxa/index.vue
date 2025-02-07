@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+  <div class="container p-0 mb-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
     <div class="flex flex-col gap-3 bg-white rounded-3xl p-6 border-2">
       <h2 class="text-xl">{{ $t("Будьте в курсе!") }}</h2>
       <p class="text-sm text-gray-500">{{ $t("Подпишитесь на рассылку, чтобы получать информацию о выгодных акциях и актуальных новостях") }}</p>
@@ -8,7 +8,7 @@
         <a-button type="primary" class="">{{ $t("Подписаться") }}</a-button>
       </div>
     </div>
-    <bannerSmall color="#468f46" leafColor="#75d241" cusClass="px-10 py-14" link="https://taibaleasing.com/operativnyj-lizing/">
+    <bannerSmall color="#468f46" leafColor="#75d241" cusClass="px-10 py-12" link="https://taibaleasing.com/operativnyj-lizing/">
       <div class="relative flex flex-col gap-10">
         <div class="flex flex-col gap-4 justify-evenly h-full text-white">
           <p class="text-xl">{{ $t("Лизинг Мурабаха") }}</p>

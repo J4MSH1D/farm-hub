@@ -69,9 +69,7 @@ const creditPurposeOptions = {
         </div>
 
         <div class="flex flex-col gap-5 px-10">
-          <a-checkbox v-model:checked="filter.noCollateral">{{ $t("Без залога") }}</a-checkbox>
-          <a-checkbox v-model:checked="filter.preferentialRate">{{ $t("Льготная ставка") }}</a-checkbox>
-          <a-checkbox v-model:checked="filter.simplifiedDocuments">{{ $t("Упрощённый список документов") }}</a-checkbox>
+          <icon name="lizing-banner-1.png" />
         </div>
       </div>
     </div>

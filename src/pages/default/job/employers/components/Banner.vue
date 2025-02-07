@@ -1,6 +1,6 @@
 <template>
   <div class="relative mt-10">
-    <banner backgroundColor="blue">
+    <banner backgroundColor="job">
       <div class="relative">
         <div class="text-2xl font-semibold text-white pt-20">{{ $t("job_banner_text") }}</div>
       </div>

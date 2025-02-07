@@ -1,44 +1,14 @@
 <script setup>
-import {
-  SettingsList,
-  FilterByPrice,
-  FilterByCountry,
-  FilterByAnnoun,
-  FilterByState,
-  FilterByPhoto,
-  Select,
-  AnnounProducts,
-  Banner,
-  Reset,
-} from "./components";
+import Banner from "./components/Banner.vue";
+import HeaderAnnoun from "./components/HeaderAnnoun.vue";
+import Tabs from "./components/Tabs.vue";
+import PlaceSale from "./components/PlaceSale.vue";
 </script>
 <template>
-  <div class="flex flex-col gap-10 mb-10">
+  <div class="flex flex-col">
+    <HeaderAnnoun />
     <Banner />
-    <div class="mt-2 flex gap-4">
-      <!-- Links of service -->
-      <div class="flex flex-col gap-4">
-        <!-- Category Lists -->
-        <SettingsList />
-
-        <!-- Filters -->
-        <div class="flex flex-col gap-6 bg-white rounded-xl max-w-72 overflow-hidden">
-          <div class="flex flex-col divide-y p-4">
-            <FilterByAnnoun />
-            <FilterByState />
-            <FilterByPhoto />
-            <FilterByPrice />
-            <FilterByCountry />
-          </div>
-          <Reset />
-        </div>
-      </div>
-
-      <!-- Content of service -->
-      <div class="flex-1 flex flex-col gap-4">
-        <Select />
-        <AnnounProducts />
-      </div>
-    </div>
+    <Tabs />
+    <PlaceSale />
   </div>
 </template>

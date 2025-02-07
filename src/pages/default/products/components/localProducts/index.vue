@@ -134,18 +134,7 @@ const data = [
         <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square bg-gray-200">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </router-link>
-        <!-- Express-leasing -->
-        <div class="group relative invisible mt-3" :class="{ '!visible': item.express_leasing }">
-          <div
-            class="absolute left-1/2 bottom-[calc(100%+8px)] transform -translate-x-1/2 max-w-[140px] w-full bg-gray-500 rounded-md pointer-events-none invisible opacity-0 duration-200 p-2 group-hover:(opacity-100 visible)"
-          >
-            <span class="absolute w-2 h-2 left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 rotate-45 bg-gray-500" />
-            <p class="text-xs font-light leading-[1.8] text-white">
-              {{ $t("Специальные условия для покупки техники с использованием государственной поддержки") }}
-            </p>
-          </div>
-          <span class="bg-sky-100 text-[10px] text-blue-500 font-bold uppercase rounded p-1 px-1.5 cursor-pointer">{{ $t("Экспресс-лизинг") }}</span>
-        </div>
+
         <!-- title -->
         <router-link :to="`/products/${item.id}`" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ item.title }}</router-link>
         <!-- product_type -->

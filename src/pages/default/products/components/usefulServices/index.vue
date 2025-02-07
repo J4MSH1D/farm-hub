@@ -5,22 +5,22 @@ const services = [
   {
     link: "",
     title: "Разместите своё объявление",
-    image: "",
+    image: "home_ser_1.png",
   },
   {
     link: "",
     title: "Бизнес-план по выращиванию фруктов и овощей",
-    image: "",
+    image: "home_ser_2.png",
   },
   {
     link: "",
     title: "Проекты тепличного хозяйства",
-    image: "",
+    image: "home_ser_3.png",
   },
   {
     link: "",
     title: "Работа в сельском хозяйстве",
-    image: "",
+    image: "home_ser_4.png",
   },
 ];
 </script>
@@ -32,7 +32,15 @@ const services = [
 
     <!-- Slider -->
     <ul class="grid grid-cols-4 gap-5 mt-4">
-      <li v-for="item in services" class="list-item rounded-xl bg-white p-2 flex flex-col"></li>
+      <li v-for="item in services" class="list-item rounded-xl bg-white p-4 flex flex-col">
+        <icon :name="item.image" class="w-full h-auto object-contain" />
+        <div class="flex flex-col justify-between gap-8 py-4">
+          <p class="text-xl font-medium h-12">{{ $t(item.title) }}</p>
+          <router-link :to="item.link">
+            <a-button size="large">{{ $t("Видеть") }}</a-button>
+          </router-link>
+        </div>
+      </li>
     </ul>
   </div>
 </template>
