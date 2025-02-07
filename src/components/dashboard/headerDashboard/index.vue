@@ -21,7 +21,7 @@ function logOut() {
 </script>
 
 <template>
-  <header class="w-full z-90 bg-white">
+  <header class="w-full z-90 bg-white border-b border-gray-200">
     <div class="flex items-center justify-between px-5">
       <!-- left -->
       <div class="flex items-center gap-3">
