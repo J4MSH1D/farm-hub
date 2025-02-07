@@ -3,8 +3,8 @@
     <div class="px-10 py-10 rounded-3xl background relative z-40 overflow-hidden">
       <div class="relative z-20 text-white flex justify-between items-center">
         <div class="flex flex-col gap-2">
-          <div class="text-3xl">{{ $t("home_start_title") }}</div>
-          <div class="mt-2">{{ $t("home_start_description") }}</div>
+          <div class="text-3xl">{{ $t("Как начать свой бизнес с нуля") }}</div>
+          <div class="mt-2">{{ $t("Бизнес-план по выращиванию фруктов и овощей") }}</div>
         </div>
       </div>
       <div class="absolute right-0 bottom-0">

@@ -11,9 +11,9 @@ const modules = [Navigation];
     <icon name="home_banner_12" is-svg class="w-full h-full absolute top-0 left-0" />
     <div class="absolute right-0 bottom-0"><ArrowButton color="#3174F6" /></div>
     <div class="flex justify-between pr-10">
-      <h2 class="text-3xl font-medium">{{ $t("home_media_title") }}</h2>
+      <h2 class="text-3xl font-medium">{{ $t("Своё Медиа") }}</h2>
     </div>
-    <p class="pr-10 text-2xl mt-6">{{ $t("home_media_discription") }}</p>
+    <p class="pr-10 text-2xl mt-6">{{ $t("Своё Медиа - Новости, полезные статьи и видео") }}</p>
     <icon name="media_slider.png" class="absolute right-10 -bottom-10" />
     <div class="mt-10">
       <swiper :slidesPerView="'auto'" :navigation="true" :modules="modules" :spaceBetween="30" class="mySwiper">

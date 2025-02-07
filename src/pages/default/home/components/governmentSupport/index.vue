@@ -3,8 +3,14 @@
     <div class="px-10 py-10 rounded-3xl background relative">
       <div class="relative z-20 text-white flex justify-between items-center">
         <div class="flex flex-col gap-2">
-          <div class="text-3xl">{{ $t("home_goverment_title") }}</div>
-          <div class="mt-2 max-w-4/5">{{ $t("home_goverment_description") }}</div>
+          <div class="text-3xl">{{ $t("Господдержка для фермеров") }}</div>
+          <div class="mt-2 max-w-4/5">
+            {{
+              $t(
+                "Узнайте о льготах и субсидиях от государства для малого и среднего фермерского бизнеса (заменить на:Информационная система рассмотрения вопросов предоставления субсидий производителям сельскохозяйственной продукции."
+              )
+            }}
+          </div>
         </div>
       </div>
       <div class="absolute right-0 bottom-0">

@@ -146,6 +146,7 @@ onMounted(() => {
                   @mouseover="hoveringIndex = index"
                   @mouseleave="hoveringIndex = null"
                   :to="item.isSoon ? undefined : item.path"
+                  v-if="item.path"
                 >
                   <p
                     class="text-lg"
@@ -161,6 +162,19 @@ onMounted(() => {
                     </span>
                   </p>
                 </router-link>
+                <a
+                  v-else
+                  class="text-lg"
+                  :style="{
+                    color: hoveringIndex === index ? activeLink.color : '#00000099',
+                    textShadow: hoveringIndex === index ? `0px 4px 8px ${activeLink.color}` : 'none',
+                    transition: 'color 0.3s ease-in-out, text-shadow 0.3s ease-in-out',
+                  }"
+                  :href="item.link"
+                  target="_blank"
+                >
+                  {{ $t(item.name) }}</a
+                >
               </div>
             </div>
             <!-- /Actice Children is Children -->

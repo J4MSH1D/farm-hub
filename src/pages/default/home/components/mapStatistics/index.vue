@@ -58,7 +58,6 @@ async function getData() {
   years.value = reponse.data[0]["data"].map(e => Object.keys(e)[0]);
   selectedYear.value = years.value[0];
   data.value = reponse.data;
-  console.log(data.value);
 }
 
 async function changedType() {
