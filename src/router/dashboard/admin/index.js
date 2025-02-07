@@ -24,7 +24,7 @@ const links = [
     name: "Users",
     meta: {
       title: "Пользователи",
-      permissions: [10000],
+      permissions: [6000],
     },
     component: () => lazyLoad("dashboard/users"),
   },

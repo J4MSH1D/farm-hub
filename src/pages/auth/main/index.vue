@@ -5,6 +5,7 @@ import { authApiService } from "@/services/AuthService";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import storage from "@/utils/storageService";
+import { authService } from "@/services/auth";
 
 const userData = reactive({ login: "", password: "" }),
   store = useStore(),
@@ -14,7 +15,11 @@ const onFinish = async values => {
   const response = await authApiService.LoginWithEmail(userData);
   await store.dispatch("getUser");
   storage.set("accessToken", response.content.accessToken);
-  router.push("/structures");
+  if (authService.CheckOnePermission(10000)) {
+    router.push("/translations");
+  } else {
+    router.push("/structures");
+  }
 };
 const onFinishFailed = errorInfo => {
   console.log("Failed:", errorInfo);
