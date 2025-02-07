@@ -16,6 +16,11 @@ class AuthService extends StoreService {
       : [];
   }
 
+  CheckOnePermission(permission) {
+    const permissions = this.GetUserPermissions();
+    return permissions.includes(permission);
+  }
+
   GetPermissions() {
     return this.GetUserPermissions().length ? this.GetUserPermissions() : [];
   }
