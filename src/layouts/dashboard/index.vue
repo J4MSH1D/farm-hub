@@ -56,24 +56,48 @@ onMounted(() => {
 <template>
   <a-layout class="h-screen">
     <!-- Sidebar -->
-    <a-layout-sider :trigger="null" collapsible class="!bg-white !min-w-[320px] border-r border-gray-200">
-      <div class="text-white flex items-center py-2">
-        <router-link to="/" class="inline-block px-4 py-2">
-          <icon name="logo" isSvg class="h-11" />
-        </router-link>
+    <a-layout-sider :trigger="null" collapsible class="!h-full overflow-hidden !bg-white !min-w-[320px] border-r border-gray-200">
+      <div class="dashboard-layout-content flex flex-col justify-between h-full overflow-y-auto">
+        <div class="flex-1 flex flex-col">
+          <div class="text-white flex items-center py-2">
+            <router-link to="/" class="inline-block px-4 py-2">
+              <icon name="logo" isSvg class="h-11" />
+            </router-link>
+          </div>
+          <!-- sidebar-links -->
+          <div class="flex-1 overflow-y-auto">
+            <a-menu style="border: none" theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
+              <template v-for="link in links">
+                <a-sub-menu v-if="link.children" :key="link.name">
+                  <template #title>{{ link.meta.title }}</template>
+                  <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
+                    {{ elem.meta.title }}
+                  </a-menu-item>
+                </a-sub-menu>
+                <a-menu-item v-else @click="goTo(link.path)">{{ link.meta.title }} </a-menu-item>
+              </template>
+            </a-menu>
+          </div>
+        </div>
+
+        <!-- sidebar-bottom-links -->
+        <div class="py-5 px-2 flex flex-col gap-1">
+          <router-link to="" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
+            <icon name="trash400" is-svg-raw class="h-4.5 w-4.5 fill-red-500" />
+            <span class="text-zinc-900">{{ $t("Корзина") }}</span>
+          </router-link>
+          <router-link to="" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
+            <icon name="star400" is-svg-raw class="h-4.5 w-4.5 fill-yellow-500" />
+            <span class="text-zinc-900">{{ $t("Избранное") }}</span>
+          </router-link>
+          <router-link to="" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
+            <icon name="apps400" is-svg-raw class="h-4.5 w-4.5 fill-blue-500" />
+            <span class="text-zinc-900">{{ $t("Мои гос.заявки") }}</span>
+          </router-link>
+        </div>
       </div>
-      <a-menu style="border: none" theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
-        <template v-for="link in links">
-          <a-sub-menu v-if="link.children" :key="link.name">
-            <template #title>{{ link.meta.title }}</template>
-            <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
-              {{ elem.meta.title }}
-            </a-menu-item>
-          </a-sub-menu>
-          <a-menu-item v-else @click="goTo(link.path)">{{ link.meta.title }} </a-menu-item>
-        </template>
-      </a-menu>
     </a-layout-sider>
+
     <!-- Content -->
     <a-layout>
       <a-layout-header style="padding: 0; height: auto">
