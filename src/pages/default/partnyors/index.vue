@@ -1,3 +1,3 @@
 <template>
-  <div>partnyors</div>
+  <div>{{ $t("Партнёры") }}</div>
 </template>

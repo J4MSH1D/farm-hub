@@ -9,3 +9,4 @@ export { default as StartingBusiness } from "./startingBusiness/index.vue";
 export { default as YourMedia } from "./yourMedia/index.vue";
 export { default as LizingMurabaxa } from "./lizingMurabaxa/index.vue";
 export { default as UseLinks } from "./useLinks/index.vue";
+export { default as MapStatistics } from "./mapStatistics/index.vue";

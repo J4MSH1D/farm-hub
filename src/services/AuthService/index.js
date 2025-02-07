@@ -23,6 +23,11 @@ class AuthApiService extends ApiService {
   async Logout() {
     await this.api.get("/Auth/Logout");
   }
+
+  async LoginWithEmail(data) {
+    const response = await this.api.post("/Auth/LoginByEmail", data);
+    return response;
+  }
 }
 
 const authApiService = new AuthApiService();

@@ -78,7 +78,7 @@ const mediaList = [
           </div>
           <!-- media-content -->
           <div class="flex flex-col gap-5 justify-between p-4">
-            <p class="text-md text-zinc-900 line-clamp-3 h-9">{{ item.title }}</p>
+            <p class="text-md text-zinc-900 line-clamp-3 h-9">{{ $t(item.title) }}</p>
             <span class="text-xs text-zinc-500">{{ item.date }}</span>
           </div>
         </a>

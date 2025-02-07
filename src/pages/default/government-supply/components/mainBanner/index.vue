@@ -10,7 +10,7 @@ const bannerData = {
 
 <template>
   <div class="container py-8">
-    <Banner class="p-0" background-color="violet">
+    <Banner class="p-0" :background-color="$t('violet')">
       <div class="relative rounded-b-3xl overflow-hidden">
         <div class="relative">
           <div class="py-14 px-10 max-w-[640px]">

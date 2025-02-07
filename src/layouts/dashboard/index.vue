@@ -67,21 +67,23 @@ onMounted(() => {
           <!-- sidebar-links -->
           <div class="flex-1 overflow-y-auto">
             <a-menu style="border: none" theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
-              <template v-for="link in links">
+              <template v-for="(link, index) in links">
                 <a-sub-menu v-if="link.children" :key="link.name">
                   <template #title>{{ link.meta.title }}</template>
                   <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
                     {{ elem.meta.title }}
                   </a-menu-item>
                 </a-sub-menu>
-                <a-menu-item v-else @click="goTo(link.path)">{{ link.meta.title }} </a-menu-item>
+                <div v-else :key="index">
+                  <a-menu-item @click="navigate(link.name)" :key="link.name">{{ link.meta.title }} </a-menu-item>
+                </div>
               </template>
             </a-menu>
           </div>
         </div>
 
         <!-- sidebar-bottom-links -->
-        <div class="py-5 px-2 flex flex-col gap-1">
+        <div class="py-5 px-2 flex flex-col gap-1" v-if="authService.CheckOnePermission(3000)">
           <router-link to="/bin" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
             <icon name="trash400" is-svg-raw class="h-4.5 w-4.5 fill-red-500" />
             <span class="text-zinc-900">{{ $t("Корзина") }}</span>
