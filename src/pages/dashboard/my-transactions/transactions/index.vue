@@ -11,6 +11,7 @@ const table = reactive({
   loading: false,
 });
 
+const activeTab = ref("products");
 const userType = ref("vendor");
 const guarantee = ref("withGuarantee");
 </script>
@@ -21,8 +22,10 @@ const guarantee = ref("withGuarantee");
 
     <div class="flex items-center justify-between gap-5">
       <div class="flex gap-3 mt-5">
-        <a-button size="large">{{ $t("Товары") }}</a-button>
-        <a-button size="large">{{ $t("Услуги") }}</a-button>
+        <a-radio-group size="large" v-model:value="activeTab">
+          <a-radio-button size="large" value="products">{{ $t("Товары") }}</a-radio-button>
+          <a-radio-button size="large" value="services">{{ $t("Услуги") }}</a-radio-button>
+        </a-radio-group>
       </div>
 
       <a-button size="large">

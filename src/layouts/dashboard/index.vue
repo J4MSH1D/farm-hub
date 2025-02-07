@@ -8,7 +8,8 @@ import { authService } from "@/services/auth";
 const route = useRoute();
 const router = useRouter();
 const links = ref([]);
-const activeLinks = ref([route.fullPath]);
+const activeSubMenu = ref([route.matched[1].name]);
+const activeMenuItem = ref([route.matched[2].name]);
 
 function setLinks(array) {
   return array
@@ -44,8 +45,8 @@ function initData() {
   links.value = result;
 }
 
-function goTo(path) {
-  router.push(path);
+function navigate(name) {
+  router.push({ name });
 }
 
 onMounted(() => {
@@ -53,31 +54,35 @@ onMounted(() => {
 });
 </script>
 <template>
-  <a-layout class="min-h-screen">
-    <a-layout-sider :trigger="null" collapsible class="!bg-white !min-w-[320px]">
+  <a-layout class="h-screen">
+    <!-- Sidebar -->
+    <a-layout-sider :trigger="null" collapsible class="!bg-white !min-w-[320px] border-r border-gray-200">
       <div class="text-white flex items-center py-2">
         <router-link to="/" class="inline-block px-4 py-2">
           <icon name="logo" isSvg class="h-11" />
         </router-link>
       </div>
-      <a-menu theme="light" mode="inline" v-model:selectedKeys="activeLinks">
-        <template v-for="link in links" :key="link.path">
-          <a-sub-menu v-if="link.children" :key="link.path">
+      <a-menu style="border: none" theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
+        <template v-for="link in links">
+          <a-sub-menu v-if="link.children" :key="link.name">
             <template #title>{{ link.meta.title }}</template>
-            <a-menu-item v-for="elem in link.children" :key="link.path + '/' + elem.path" @click="goTo(`/dashboard/${link.path}/${elem.path}`)">{{
-              elem.meta.title
-            }}</a-menu-item>
+            <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
+              {{ elem.meta.title }}
+            </a-menu-item>
           </a-sub-menu>
           <a-menu-item v-else @click="goTo(link.path)">{{ link.meta.title }} </a-menu-item>
         </template>
       </a-menu>
     </a-layout-sider>
+    <!-- Content -->
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
+      <a-layout-header style="padding: 0; height: auto">
         <Header />
       </a-layout-header>
-      <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
-        <RouterView />
+      <a-layout-content class="overflow-y-auto p-4 py-7">
+        <div class="bg-white rounded-lg py-7">
+          <RouterView />
+        </div>
       </a-layout-content>
     </a-layout>
   </a-layout>

@@ -21,8 +21,9 @@ function logOut() {
 </script>
 
 <template>
-  <header class="w-full z-90 bg-white">
-    <div class="container flex items-center justify-between">
+  <header class="w-full z-90 bg-white border-b border-gray-200">
+    <div class="flex items-center justify-between px-5">
+      <!-- left -->
       <div class="flex items-center gap-3">
         <a-input-search :placeholder="$t('Поиск по сайту')" />
         <a-button @click="toggleTheme()">
