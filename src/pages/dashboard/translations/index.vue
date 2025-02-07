@@ -28,6 +28,10 @@ const cancel = id => {
   delete editableData[id];
 };
 
+async function Delete(id) {
+  await langService.Delete(id);
+}
+
 const columns = [
   {
     title: "Code",
@@ -38,13 +42,21 @@ const columns = [
   {
     title: "Ru",
     dataIndex: "ru",
-    filters: [{ text: "Yo'qlari", value: "" }],
+    filters: [
+      { text: "Bo'shlari'", value: "empty" },
+      { text: "To'liqlari", value: "filled" },
+    ],
+    onFilter: (value, record) => (value === "empty" ? !record.ru || record.ru.trim() === "" : record.ru && record.ru.trim() !== ""),
     width: "20%",
   },
   {
     title: "Uz",
     dataIndex: "uz",
-    filters: [{ text: "Yo'qlari", value: "" }],
+    filters: [
+      { text: "Bo'shlari'", value: "empty" },
+      { text: "To'liqlari", value: "filled" },
+    ],
+    onFilter: (value, record) => (value === "empty" ? !record.uz || record.uz.trim() === "" : record.uz && record.uz.trim() !== ""),
   },
 
   {
@@ -94,11 +106,14 @@ onMounted(async () => {
           <span v-if="editableData[record.id]" class="flex gap-4">
             <a-typography-link @click="save(record.id)">Save</a-typography-link>
             <a-popconfirm title="Sure to cancel?" @confirm="cancel(record.id)">
-              <a>Cancel</a>
+              <a-button>Cancel</a-button>
             </a-popconfirm>
           </span>
-          <span v-else>
-            <a @click="edit(record.id)">Edit</a>
+          <span v-else class="flex gap-4">
+            <a-button @click="edit(record.id)">Edit</a-button>
+            <a-popconfirm title="Sure to delete?" @confirm="delete record.id">
+              <a-button danger @click="Delete(record.id)">Delete</a-button>
+            </a-popconfirm>
           </span>
         </div>
       </template>

@@ -14,6 +14,11 @@ class LangService extends ApiService {
     const response = await this.api.put("/api/Translation/Update", data);
     return response["content"];
   }
+
+  async Delete(id) {
+    const response = await this.api.delete("/api/Translation/Delete", { params: { id } });
+    return response["content"];
+  }
 }
 
 const langService = new LangService();
