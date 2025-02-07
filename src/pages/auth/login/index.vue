@@ -23,7 +23,7 @@ async function sign() {
     const response = await authApiService.LoginByEimzo({ signature });
     await store.dispatch("getUser");
     storage.set("accessToken", response.content.accessToken);
-    router.push("/dashboard/my-transactions");
+    router.push("/my-transactions");
   } catch {
     message.error("Ошибка подписи с ключом E-IMZO");
   }
