@@ -24,14 +24,18 @@ const onFinishFailed = errorInfo => {
   <div class="container my-40 grid grid-cols-2 gap-30">
     <div>
       <div class="text-center">
-        <div class="font-medium text-xl">Авторизация в сервисах</div>
-        <div class="mt-5 font-bold text-2xl">Управляйте своим бизнесом на <span class="font-bold text-3xl text-mainGreen">Mening tomorqam</span></div>
-        <div class="mt-5 text-gray-400">Управляйте своим аккаунтом: "Товары", "Услуги", "Работа"</div>
-        <div class="mt-5 text-gray-400"><router-link to="/" class="underline">Вернуться на главную страницу</router-link></div>
+        <div class="font-medium text-xl">{{ $t("Авторизация в сервисах") }}</div>
+        <div class="mt-5 font-bold text-2xl">
+          {{ $t("Управляйте своим бизнесом на") }} <span class="font-bold text-3xl text-mainGreen">Mening tomorqam</span>
+        </div>
+        <div class="mt-5 text-gray-400">{{ $t("Управляйте своим аккаунтом: 'Товары', 'Услуги', 'Работа'") }}</div>
+        <div class="mt-5 text-gray-400">
+          <router-link to="/" class="underline">{{ $t("Вернуться на главную страницу") }}</router-link>
+        </div>
       </div>
     </div>
     <a-form :model="userData" autocomplete="off" @finish="onFinish" @finishFailed="onFinishFailed" class="bg-white rounded-3xl py-10 px-20">
-      <div class="text-center font-medium text-2xl">Войдите в личный кабинет</div>
+      <div class="text-center font-medium text-2xl">{{ $t("Войдите в личный кабинет") }}</div>
       <a-form-item name="login" :rules="[{ required: true, message: 'Вводите логин!' }]" class="mt-5">
         <a-input size="large" v-model:value="userData.login" placeholder="Логин" />
       </a-form-item>
@@ -39,7 +43,7 @@ const onFinishFailed = errorInfo => {
         <a-input-password size="large" v-model:value="userData.password" placeholder="Пароль" autocomplete="on" />
       </a-form-item>
       <a-form-item class="mt-10">
-        <a-button class="w-full" type="primary" size="large" html-type="submit">Авторизоваться</a-button>
+        <a-button class="w-full" type="primary" size="large" html-type="submit">{{ $t("Авторизоваться") }}</a-button>
       </a-form-item>
     </a-form>
   </div>

@@ -37,8 +37,8 @@ const descriptionList = [
   <ul class="grid grid-cols-3 gap-5">
     <li v-for="item in descriptionList" :key="item.title" class="bg-slate-100 rounded-xl p-10">
       <img :src="item.image" alt="" />
-      <h3 class="text-lg text-sinc-900 font-semibold mt-5">{{ item.title }}</h3>
-      <p class="text-sm text-zinc-500 mt-3">{{ item.description }}</p>
+      <h3 class="text-lg text-zinc-900 font-semibold mt-5">{{ $t(item.title) }}</h3>
+      <p class="text-sm text-zinc-500 mt-3">{{ $t(item.description) }}</p>
     </li>
   </ul>
 </template>

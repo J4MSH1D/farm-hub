@@ -14,7 +14,7 @@ const isLoading = ref(false);
         v-model:value="value"
         @focus="isLoading = true"
         @blur="isLoading = false"
-        placeholder="input search loading with enterButton"
+        placeholder="Ввод поиска загрузка с кнопкой ввода"
         :loading="isLoading"
         enter-button
       />

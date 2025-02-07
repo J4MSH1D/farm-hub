@@ -74,35 +74,7 @@ const links = [
       permissions: [],
     },
   },
-  {
-    path: "/cards/credit-card",
-    name: "Cards/CreditCard",
-    component: () => lazyLoad("default/cards/credit-card"),
-    meta: {
-      title: "CreditCard",
-      permissions: [],
-    },
-  },
 
-  {
-    path: "/loans",
-    name: "Loans",
-    meta: {
-      title: "Loans",
-      permissions: [],
-    },
-    children: [
-      {
-        path: "agricultural-development-loans",
-        name: "AgriculturalDevelopmentLoans",
-        component: () => lazyLoad("default/loans/agricultural-development-loans"),
-        meta: {
-          title: "AgriculturalDevelopmentLoans",
-          permissions: [],
-        },
-      },
-    ],
-  },
   {
     path: "/job",
     name: "Job",
