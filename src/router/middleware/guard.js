@@ -8,14 +8,14 @@ export async function mainGuard(to, from, next) {
 
   if (user) {
     if (to.name === "Login") {
-      return next({ path: "/dashboard/my-transactions" });
+      return next({ path: "/my-transactions" });
     }
     if (redirecingPagePermissions.length && !redirecingPagePermissions.some(permission => userPermissions.includes(permission))) {
       return next({ path: "/" });
     }
   } else {
     if (to.name !== "Login" && to.meta?.layout === "dashboard") {
-      return next({ name: "Login" });
+      return next({ path: "/auth/login" });
     }
   }
   next();

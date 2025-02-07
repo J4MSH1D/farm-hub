@@ -27,7 +27,7 @@ const onFinish = async values => {
     const response = await authApiService.RegisterByEimzo(data);
     await store.dispatch("getUser");
     storage.set("accessToken", response.content.accessToken);
-    router.push("/dashboard/my-transactions");
+    router.push("/my-transactions");
   } catch (err) {
     console.log(err);
     message.error("Ошибка подписи с ключом E-IMZO");
