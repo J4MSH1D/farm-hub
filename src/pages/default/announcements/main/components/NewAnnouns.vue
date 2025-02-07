@@ -84,20 +84,22 @@ const data = [
       class="mt-5"
       space-between="20"
     >
-      <swiper-slide v-for="item in data" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 my-4 cus-shadow r last:(mr-0)">
+      <swiper-slide v-for="item in data" :key="item" class="max-w-[220px] bg-white rounded-xl p-4 my-4 cus-shadow last:mr-0">
         <!-- image -->
         <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square bg-gray-200">
           <img :src="item.image" :alt="item.title" class="w-full h-full object-contain" />
         </router-link>
 
         <!-- title -->
-        <router-link :to="`/products/${item.id}`" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ item.title }}</router-link>
+        <router-link :to="`/products/${item.id}`" class="text-sm text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</router-link>
+
         <!-- product_type -->
-        <span class="text-xs text-zinc-400 line-clamp-2 mt-2 h-8">{{ item.product_type }}</span>
+        <span class="text-xs text-zinc-400 line-clamp-2 mt-2 h-8">{{ $t(item.product_type) }}</span>
+
         <!-- price -->
         <div class="flex items-center justify-between gap-2 mt-4">
           <div class="relative flex items-center">
-            <p class="text-sm text-zinc-900 font-medium">{{ Number(item.price).toLocaleString("ru-RU") }} UZS</p>
+            <p class="text-sm text-zinc-900 font-medium">{{ Number(item.price).toLocaleString("ru-RU") }} {{ $t("UZS") }}</p>
           </div>
           <icon name="heart300" is-svg-raw class="h-3.5 w-3.5 cursor-pointer" />
         </div>
