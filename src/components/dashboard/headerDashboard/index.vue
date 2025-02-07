@@ -4,17 +4,20 @@ import storage from "@/utils/storageService";
 import LanguageSelect from "@/components/global/languageSelect.vue";
 import { useStore } from "vuex";
 import { computed } from "vue";
+import { authApiService } from "@/services/AuthService";
 
 const router = useRouter();
 const store = useStore();
 const user = computed(() => store.getters.user);
+const company = computed(() => store.getters.company);
 const darkTheme = computed(() => store.state.darkTheme);
 
 function toggleTheme() {
   store.commit("toggleTheme");
 }
 
-function logOut() {
+async function logOut() {
+  await authApiService.Logout();
   storage.logOut();
   router.push("/auth/login");
 }
@@ -49,7 +52,9 @@ function logOut() {
             </div>
             <div>
               <p class="text-xs text-zinc-500">{{ $t("Реквизиты") }}</p>
-              <p class="text-sm text-zinc-900 line-clamp-1">{{ user["CN"] }}</p>
+              <p v-if="user && user['firstName'] && user['lastName']" class="text-sm text-zinc-900 line-clamp-1">
+                {{ `${user["firstName"]} ${user["lastName"]}` }}
+              </p>
             </div>
           </div>
 

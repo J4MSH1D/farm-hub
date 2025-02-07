@@ -4,11 +4,14 @@ import { useEimzo } from "@/composables/eimzo";
 import { message } from "ant-design-vue";
 import storage from "@/utils/storageService";
 import { useRouter } from "vue-router";
+import { authApiService } from "@/services/AuthService";
+import { useStore } from "vuex";
 
 const { getAllUserKeys, signWithEsiId } = useEimzo(),
   keys = ref([]),
   selectedValue = ref(null),
-  router = useRouter();
+  router = useRouter(),
+  store = useStore();
 
 async function getAllKeys() {
   keys.value = await getAllUserKeys();
@@ -16,13 +19,10 @@ async function getAllKeys() {
 
 async function sign() {
   try {
-    await signWithEsiId(selectedValue.value);
-    let user = keys.value.find(key => key["esiId"] === selectedValue.value),
-      storedData = {
-        ...user,
-        permissions: [1, 2, 3],
-      };
-    storage.set("accessToken", JSON.stringify(storedData));
+    const signature = await signWithEsiId(selectedValue.value);
+    const response = await authApiService.LoginByEimzo({ signature });
+    await store.dispatch("getUser");
+    storage.set("accessToken", response.content.accessToken);
     router.push("/dashboard/my-transactions");
   } catch {
     message.error("Ошибка подписи с ключом E-IMZO");

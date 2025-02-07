@@ -11,12 +11,6 @@ class StoreService {
   Set(key, val) {
     this.store.setItem(key, val);
   }
-  LogOut() {
-    let keys = ["token", "permissions", "structure", "isAdmin"];
-    keys.forEach(e => {
-      this.Remove(e);
-    });
-  }
 }
 
 const storeService = new StoreService();

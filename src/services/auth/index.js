@@ -1,5 +1,6 @@
 import { storeKeys } from "@/enums/storage/index";
 import { StoreService } from "../storage";
+import { jwtDecode } from "jwt-decode";
 
 class AuthService extends StoreService {
   constructor() {
@@ -7,8 +8,12 @@ class AuthService extends StoreService {
   }
 
   GetUserPermissions() {
-    let token = JSON.parse(this.Get(storeKeys.token));
-    return token ? token.permissions : [];
+    let token = this.Get(storeKeys.token);
+    return token
+      ? jwtDecode(token)
+          .permissions.split(", ")
+          .map(e => Number(e))
+      : [];
   }
 
   GetPermissions() {

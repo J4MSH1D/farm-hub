@@ -4,7 +4,7 @@ const links = [
     path: "/dashboard",
     name: "Dashboard",
     meta: {
-      permissions: [1],
+      permissions: [1000],
     },
     children: [
       // ============= Мои Транзакции =============
@@ -13,7 +13,7 @@ const links = [
         name: "Dashboard/MyTransactions",
         meta: {
           title: "Мои сделки",
-          permissions: [1],
+          permissions: [1000],
         },
         children: [
           {
@@ -26,7 +26,7 @@ const links = [
                 isSvg: true,
               },
               title: "Сделки",
-              permissions: [1],
+              permissions: [1000],
             },
           },
           {
@@ -39,7 +39,7 @@ const links = [
                 isSvg: true,
               },
               title: "Мои адреса",
-              permissions: [1],
+              permissions: [1000],
             },
           },
         ],
@@ -51,7 +51,7 @@ const links = [
         name: "Dashboard/MyProducts",
         meta: {
           title: "Мои Товары",
-          permissions: [1],
+          permissions: [1000],
         },
         children: [
           {
@@ -64,7 +64,7 @@ const links = [
                 isSvg: true,
               },
               title: "Добавить товар",
-              permissions: [1],
+              permissions: [1000],
             },
           },
           {
@@ -77,7 +77,7 @@ const links = [
                 isSvg: true,
               },
               title: "Добавленные",
-              permissions: [1],
+              permissions: [1000],
             },
           },
         ],
