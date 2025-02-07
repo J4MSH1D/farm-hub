@@ -2,15 +2,6 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 
-// const offersList = Array(10).fill({
-//   id: 1,
-//   title: "Семена томата Pink Parallel",
-//   product_type: "agrokontinent_fergana",
-//   image:
-//     "https://agrobaza.uz/upload/company/000/000/086/proposals/2022/07/29/semena-tomata-pink-parallel-pomidor-uruglari-semena-tomata-2022-07-29-01-10-02-621225-f0f38503124b5b975b9d74745d832488.webp?_=ozb9y",
-//   price: 22500,
-//   express_leasing: true,
-// });
 const data = [
   {
     id: 1,

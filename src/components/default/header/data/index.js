@@ -371,6 +371,7 @@ export const catalogue = {
       categoryName: "Сельхозтехника",
       link: null,
       total: 20036,
+      icon: "tractor700",
       categories: [
         {
           title: "Тракторы",
@@ -916,23 +917,130 @@ export const catalogue = {
     },
   ],
   services: [
-    { id: Symbol(), categoryName: "Полевые работы", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Уборка урожая", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Услуги по подготовке семян", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Услуги по переработке", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Ремонт и сервисное обслуживание", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Аренда с/х и спецтехники", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Проектирование и строительство с/х объектов", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Складские услуги", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Услуги лабораторий", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Информационные услуги", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Бухгалтерские услуги", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Юридические услуги", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Образовательные услуги", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Услуги для животноводства", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Услуги логистики", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Вывоз мусора и утилизация отходов", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Санитарная обработка", link: null, icon: "tractor700" },
-    { id: Symbol(), categoryName: "Услуги фасовки, упаковки, разлива", link: null, icon: "tractor700" },
+    {
+      id: Symbol(),
+      name: "Услуги тракториста",
+      img: "service-1.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги механизатора",
+      img: "service-2.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги рабочих по уходу за животными",
+      img: "service-3.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги рабочих по сбору урожая",
+      img: "service-4.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги агронома",
+      img: "service-5.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги планирование посевов",
+      img: "service-6.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги внесения удобрений",
+      img: "service-7.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги по защите растений",
+      img: "service-8.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги специалистов по внедрению новых технологий в растениеводстве",
+      img: "service-9.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги Ветеринара",
+      img: "service-10.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги Технолога",
+      img: "service-11.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги по подготовке семян",
+      img: "service-12.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги по ремонту и сервисному обслуживанию",
+      img: "service-13.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги аренды с/х и спецтехники",
+      img: "service-14.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги по проектированию и постройке теплиц",
+      img: "service-15.png",
+    },
+    {
+      id: Symbol(),
+      name: "Складские услуги",
+      img: "service-16.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги лабораторий",
+      img: "service-17.png",
+    },
+    {
+      id: Symbol(),
+      name: "Бухгалтерские услуги",
+      img: "service-18.png",
+    },
+    {
+      id: Symbol(),
+      name: "Юридические услуги",
+      img: "service-19.png",
+    },
+    {
+      id: Symbol(),
+      name: "Образовательные услуги",
+      img: "service-20.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги логистики",
+      img: "service-21.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги по вывозу мусора и утилизации отходов",
+      img: "service-22.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги по санитарной обработке",
+      img: "service-23.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги фасовки, упаковки, разлива",
+      img: "service-24.png",
+    },
+    {
+      id: Symbol(),
+      name: "Услуги страхования",
+      img: "service-25.png",
+    },
   ],
 };

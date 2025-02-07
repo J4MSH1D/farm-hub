@@ -7,6 +7,8 @@ import { Vue3Marquee } from "vue3-marquee";
 import soon from "../main/soon.vue";
 import regions from "@/enums/regions";
 import languageSelect from "@/components/global/languageSelect.vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from "swiper/modules";
 
 const route = useRoute();
 const inputData = ref("");
@@ -15,6 +17,7 @@ const region = ref("Город Ташкент");
 const catalogueOpen = ref(false);
 const catalogueType = ref("products");
 const store = useStore();
+const alignItems = ref("left");
 
 watch([catalogueOpen, route], () => {
   if (catalogueOpen.value) document.body.style.overflow = "hidden";
@@ -111,27 +114,28 @@ watch(route, () => {
 
   <!-- KATALOGLAR -->
   <div
-    class="fixed inset-0 top-auto z-90 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
+    class="fixed inset-0 top-auto z-20 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
     v-if="catalogueOpen"
   >
     <div class="container py-8 flex-grow flex flex-col">
       <div class="flex items-center gap-2">
-        <button
-          class="bg-gray-200 text-gray-500 rounded-full py-2 px-4 text-sm"
-          :class="{ 'bg-[#000] text-white': catalogueType === 'products' }"
-          @click="catalogueType = 'products'"
-        >
-          Товары
-        </button>
-        <button
-          class="bg-gray-200 text-gray-500 rounded-full py-2 px-4 text-sm"
-          :class="{ 'bg-[#000] text-white': catalogueType === 'services' }"
-          @click="catalogueType = 'services'"
-        >
-          Услуги
-        </button>
+        <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
       </div>
-      <div class="mt-5 flex items-start gap-5 w-full flex-grow overflow-y-auto">
+      <div v-if="catalogueType === 'services'" class="mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div
+            v-for="item in catalogue[catalogueType]"
+            :key="item"
+            class="flex flex-col justify-between gap-6 bg-[#f5f7f9] rounded-2xl p-6 cursor-pointer"
+          >
+            <h5 class="text-xl font-semibold">{{ $t(item.name) }}</h5>
+            <div class="flex justify-end">
+              <icon :name="item.img" class="h-32 w-auto object-contain" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-else class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
         <div class="flex flex-col w-full">
           <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
             <div>
@@ -150,14 +154,8 @@ watch(route, () => {
                 <div class="font-bold text-xl text-center mt-3 text-center">{{ item.title }}</div>
               </div>
             </div>
-            <!-- <pre>
-              {{ section }}
-            </pre> -->
           </div>
         </div>
-        <!-- <pre>
-          {{ catalogue[catalogueType] }}
-        </pre> -->
       </div>
     </div>
   </div>
@@ -176,5 +174,20 @@ watch(route, () => {
 }
 .regions-select .ant-select-arrow {
   color: white !important;
+}
+.custom-segmented {
+  :deep(.ant-segmented-item) {
+    margin: 0 5px !important;
+    transition: all 0.3s;
+  }
+
+  :deep(.ant-segmented-item-selected) {
+    background-color: #1890ff;
+    color: white;
+  }
+
+  :deep(.ant-segmented-thumb) {
+    background-color: transparent;
+  }
 }
 </style>
