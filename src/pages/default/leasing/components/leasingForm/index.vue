@@ -72,10 +72,7 @@ const formRules = Object.keys(form.value).reduce((acc, curr) => {
 
           <a-form-item has-feedback class="col-span-2 m-0">
             <a-checkbox>
-              {{ $t("Даю своё") }}
-              <router-link to="/" class="text-green-500">{{ $t("согласие на обработку персональных данных") }}</router-link>
-              {{ $t("и подтверждаю своё согласие") }}
-              <router-link to="/" class="text-green-500">{{ $t("с правилами") }}</router-link>
+              {{ $t("Даю своё согласие на обработку персональных данных и подтверждаю своё согласие с правилами") }}
             </a-checkbox>
           </a-form-item>
 
