@@ -1,7 +1,6 @@
 <script setup>
 import { useTranslation } from "i18next-vue";
 import { computed } from "vue";
-import { type } from "windicss/utils";
 
 const { i18next } = useTranslation();
 const language = computed(() => i18next.language);
