@@ -67,14 +67,16 @@ onMounted(() => {
           <!-- sidebar-links -->
           <div class="flex-1 overflow-y-auto">
             <a-menu style="border: none" theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
-              <template v-for="link in links">
+              <template v-for="(link, index) in links">
                 <a-sub-menu v-if="link.children" :key="link.name">
                   <template #title>{{ link.meta.title }}</template>
                   <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
                     {{ elem.meta.title }}
                   </a-menu-item>
                 </a-sub-menu>
-                <a-menu-item v-else @click="goTo(link.path)">{{ link.meta.title }} </a-menu-item>
+                <div v-else :key="index">
+                  <a-menu-item @click="navigate(link.name)" :key="link.name">{{ link.meta.title }} </a-menu-item>
+                </div>
               </template>
             </a-menu>
           </div>

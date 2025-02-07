@@ -1,4 +1,6 @@
 import { lazyLoad, layoutSetter } from "@/utils/router";
+import adminLinks from "./admin";
+
 const links = [
   // ============= Мои Транзакции =============
   {
@@ -6,7 +8,7 @@ const links = [
     name: "Dashboard/MyTransactions",
     meta: {
       title: "Мои сделки",
-      permissions: [1000],
+      permissions: [3000],
     },
     children: [
       {
@@ -19,7 +21,7 @@ const links = [
             isSvg: true,
           },
           title: "Сделки",
-          permissions: [1000],
+          permissions: [3000],
         },
       },
       {
@@ -32,7 +34,7 @@ const links = [
             isSvg: true,
           },
           title: "Мои адреса",
-          permissions: [1000],
+          permissions: [3000],
         },
       },
     ],
@@ -44,7 +46,7 @@ const links = [
     name: "Dashboard/MyProducts",
     meta: {
       title: "Мои Товары",
-      permissions: [1000],
+      permissions: [2000],
     },
     children: [
       {
@@ -57,7 +59,7 @@ const links = [
             isSvg: true,
           },
           title: "Добавить товар",
-          permissions: [1000],
+          permissions: [2000],
         },
       },
       {
@@ -70,7 +72,7 @@ const links = [
             isSvg: true,
           },
           title: "Добавленные",
-          permissions: [1000],
+          permissions: [2001],
         },
       },
     ],
@@ -82,7 +84,7 @@ const links = [
     name: "Dashboard/Announcements",
     meta: {
       title: "Объявления",
-      permissions: [1000],
+      permissions: [20000],
     },
     children: [
       {
@@ -95,7 +97,7 @@ const links = [
             isSvg: true,
           },
           title: "Товары",
-          permissions: [1000],
+          permissions: [20000],
         },
       },
       {
@@ -108,7 +110,7 @@ const links = [
             isSvg: true,
           },
           title: "Услуга",
-          permissions: [1000],
+          permissions: [20000],
         },
       },
       {
@@ -121,7 +123,7 @@ const links = [
             isSvg: true,
           },
           title: "Вакансии",
-          permissions: [1000],
+          permissions: [20000],
         },
       },
       {
@@ -134,7 +136,7 @@ const links = [
             isSvg: true,
           },
           title: "Разместить объявление",
-          permissions: [1000],
+          permissions: [20000],
         },
       },
     ],
@@ -146,7 +148,7 @@ const links = [
     name: "Dashboard/Clearing",
     meta: {
       title: "Клиринг",
-      permissions: [1000],
+      permissions: [20000],
     },
     children: [
       {
@@ -159,7 +161,7 @@ const links = [
             isSvg: true,
           },
           title: "Информация",
-          permissions: [1000],
+          permissions: [20000],
         },
       },
     ],
@@ -171,7 +173,7 @@ const links = [
     name: "Dashboard/Requisites",
     meta: {
       title: "Реквизиты",
-      permissions: [1000],
+      permissions: [3000],
     },
     children: [
       {
@@ -184,7 +186,7 @@ const links = [
             isSvg: true,
           },
           title: "Реквизиты",
-          permissions: [1000],
+          permissions: [3000],
         },
       },
       {
@@ -197,7 +199,7 @@ const links = [
             isSvg: true,
           },
           title: "Добавить карту",
-          permissions: [1000],
+          permissions: [3000],
         },
       },
       {
@@ -210,11 +212,14 @@ const links = [
             isSvg: true,
           },
           title: "Открыть виртуальную карту",
-          permissions: [1000],
+          permissions: [3000],
         },
       },
     ],
   },
+
+  // ============= Admin Links =============
+  ...adminLinks,
 ];
 
 layoutSetter(links, "dashboard");

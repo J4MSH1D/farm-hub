@@ -1,11 +1,20 @@
 <script setup>
 import { message } from "ant-design-vue";
 import { reactive } from "vue";
+import { authApiService } from "@/services/AuthService";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import storage from "@/utils/storageService";
 
-const userData = reactive({ login: "", password: "" });
+const userData = reactive({ login: "", password: "" }),
+  store = useStore(),
+  router = useRouter();
 
-const onFinish = values => {
-  console.log("Success:", values);
+const onFinish = async values => {
+  const response = await authApiService.LoginWithEmail(userData);
+  await store.dispatch("getUser");
+  storage.set("accessToken", response.content.accessToken);
+  router.push("/structures");
 };
 const onFinishFailed = errorInfo => {
   console.log("Failed:", errorInfo);
