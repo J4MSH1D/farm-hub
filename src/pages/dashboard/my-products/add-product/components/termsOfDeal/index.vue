@@ -11,11 +11,11 @@ const form = inject("form");
     <a-form class="flex-1 grid auto-cols-max grid-cols-4 gap-x-5 gap-y-2 mt-3">
       <!-- Тип гарантии -->
       <a-form-item :label="$t('Тип гарантии')" :labelCol="{ span: 24 }">
-        <a-select :placeholder="$t('Тип гарантии')" v-model="form.guaranteeType" />
+        <a-select :placeholder="$t('Тип гарантии')" v-model="form.guaranteeType" :get-popup-container="trigger => trigger.parentNode" />
       </a-form-item>
       <!-- Срок оплаты -->
       <a-form-item :label="$t('Срок оплаты')" :labelCol="{ span: 24 }">
-        <a-select :placeholder="$t('Срок оплаты')" v-model="form.paymentDeadline" />
+        <a-select :placeholder="$t('Срок оплаты')" v-model="form.paymentDeadline" :get-popup-container="trigger => trigger.parentNode" />
       </a-form-item>
       <!-- Срок поставки -->
       <a-form-item :label="$t('Срок поставки')" :labelCol="{ span: 24 }">
@@ -27,7 +27,7 @@ const form = inject("form");
       </a-form-item>
       <!-- Наличие сертификата (заключения, лицензии, экспертизы) -->
       <a-form-item class="col-span-2" :label="$t('Наличие сертификата (заключения, лицензии, экспертизы)')" :labelCol="{ span: 24 }">
-        <a-select :placeholder="$t('Наличие сертификата')" v-model="form.certificate" />
+        <a-select :placeholder="$t('Наличие сертификата')" v-model="form.certificate" :get-popup-container="trigger => trigger.parentNode" />
       </a-form-item>
     </a-form>
   </section>
