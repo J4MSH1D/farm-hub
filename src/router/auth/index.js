@@ -13,6 +13,24 @@ const links = [
           permissions: [],
         },
       },
+      {
+        name: "Register",
+        path: "register",
+        component: () => lazyLoad("auth/register"),
+        meta: {
+          title: "Mening tomorqam - Регистрация",
+          permissions: [],
+        },
+      },
+      {
+        name: "Login-Main",
+        path: "main",
+        component: () => lazyLoad("auth/main"),
+        meta: {
+          title: "Mening tomorqam - Вход",
+          permissions: [],
+        },
+      },
     ],
   },
 ];

@@ -5,14 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "preview": "vite preview"
   },
   "dependencies": {
     "ant-design-vue": "^4.2.6",
+    "axios": "^1.7.9",
     "i18next": "^24.2.2",
     "i18next-http-backend": "^3.0.2",
     "i18next-vue": "^5.0.0",
+    "jwt-decode": "^4.0.0",
     "swiper": "^11.2.1",
     "vue": "^3.5.13",
     "vue-imask": "^7.6.1",

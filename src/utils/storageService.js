@@ -5,7 +5,7 @@ const storage = {
 
   get: (key, parse) => {
     if (parse) return JSON.parse(localStorage.getItem(key));
-    else localStorage.getItem(key);
+    else return localStorage.getItem(key);
   },
 
   remove: key => {
@@ -13,7 +13,7 @@ const storage = {
   },
 
   getUser: () => {
-    return localStorage.getItem("accessToken") ? JSON.parse(localStorage.getItem("accessToken")) : null;
+    return localStorage.getItem("accessToken") ? localStorage.getItem("accessToken") : null;
   },
 
   logOut: () => {
