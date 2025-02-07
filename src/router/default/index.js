@@ -292,6 +292,15 @@ const links = [
       },
     ],
   },
+  {
+    path: "/partnyors",
+    name: "Parnyors",
+    component: () => lazyLoad("default/partnyors"),
+    meta: {
+      title: "Parnyors",
+      permissions: [],
+    },
+  },
 ];
 
 layoutSetter(links, "default");

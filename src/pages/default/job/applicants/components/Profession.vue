@@ -74,7 +74,7 @@ const data = [
         <div class="col-span-2 flex flex-col justify-between items-end">
           <p class="text-lg leading-5 text-center">{{ $t(item.name) }}</p>
           <a-button class="!rounded-tl-2xl !rounded-br-2xl !rounded-bl-none !rounded-tr-none w-20">
-            {{ $t("Видеть") }}
+            {{ $t("Перейти") }}
           </a-button>
         </div>
       </div>

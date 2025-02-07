@@ -1,12 +1,19 @@
 const upperLinks = [
   {
     name: "О компании",
+    link: "/",
   },
   {
     name: "О проетке Менинг томорқам",
+    link: "",
+  },
+  {
+    name: "Обратная связь",
+    isModal: true,
   },
   {
     name: "Партнеры",
+    link: "/partners",
   },
 ];
 
@@ -86,7 +93,6 @@ const bottomLinks = [
       },
     ],
   },
-
   {
     name: "Работа",
     children: [
