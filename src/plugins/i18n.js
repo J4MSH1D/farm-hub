@@ -11,7 +11,7 @@ i18next
   .use(I18NextHttpBackend)
   .use(LanguageDetector)
   .init({
-    saveMissing: Boolean(Number(saveMissingStatus)),
+    // saveMissing: Boolean(Number(saveMissingStatus)),
     fallbackLng: locale,
     detection: {
       order: ["localStorage", "sessionStorage", "queryString"],
@@ -24,9 +24,10 @@ i18next
       customHeaders: {
         "ngrok-skip-browser-warning": "69420",
       },
-      parse: async function (data) {
+      parse: function (data) {
         const parseData = JSON.parse(data);
         const defaultLang = parseData["content"];
+        console.log(defaultLang);
         return defaultLang;
       },
       parsePayload: function (namespace, key, fallbackValue) {
