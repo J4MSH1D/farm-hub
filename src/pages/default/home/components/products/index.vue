@@ -11,7 +11,7 @@ import links from "./data";
         class="bg-[#F6F7F8] rounded-4xl h-[130px] p-5 relative overflow-hidden cursor-pointer"
         :style="{ gridColumn: `span ${link.span} / span ${link.span}` }"
       >
-        <div class="relative z-20">{{ $t(`${link.name}`) }}</div>
+        <div class="z-10">{{ $t(`${link.name}`) }}</div>
         <icon :name="link.iconName" class="absolute -right-2 -bottom-5 w-28 h-28 h-full z-10" />
       </div>
       <div class="bg-[#4AB75F] rounded-4xl col-span-4 !text-white p-5 cursor-pointer">

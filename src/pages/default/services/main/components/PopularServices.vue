@@ -30,8 +30,8 @@ import data from "../data/popServices";
     >
       <swiper-slide v-for="item in data" :key="item" class="max-w-[320px] bg-white rounded-xl p-4 my-4 cus-shadow last:(mr-0)">
         <!-- image -->
-        <router-link :to="`/products/${item.id}`" class="block border border-gray-200 aspect-square bg-gray-200 w-full h-48">
-          <img :src="item.image" :alt="item.title" class="w-full h-full object-cover" />
+        <router-link class="block w-full h-36">
+          <icon :name="item.image" class="w-full h-full object-contain" />
         </router-link>
         <!-- Express-leasing -->
         <div class="group relative invisible" :class="{ '!visible': item.express_leasing }">
@@ -46,7 +46,7 @@ import data from "../data/popServices";
           <span class="bg-sky-100 text-[10px] text-blue-500 font-bold uppercase rounded p-1 px-1.5 cursor-pointer">{{ $t("Экспресс-лизинг") }}</span>
         </div>
         <!-- title -->
-        <router-link :to="`/products/${item.id}`" class="text-lg leading-5 text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</router-link>
+        <router-link class="text-lg leading-5 text-zinc-900 line-clamp-2 mt-4 h-10">{{ $t(item.title) }}</router-link>
         <!-- product_type -->
         <span class="text-sm leading-4 text-zinc-400 mt-2" :class="!item.price ? 'line-clamp-8 h-32' : 'line-clamp-5  h-20'">{{
           item.product_type

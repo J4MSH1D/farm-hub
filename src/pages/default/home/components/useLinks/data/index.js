@@ -305,7 +305,7 @@ const smallLinks = [
     color: "#63AAFD",
     leafColor: "#6FAFFA",
     cusClass: "",
-    toRouter: "/media",
+    toRouter: "",
     label: "Медиа",
     image: "home_link_5.png",
     isSoon: false,
@@ -399,7 +399,7 @@ const smallLinks = [
     color: "#A2A4F8",
     leafColor: "#A8AAF6",
     cusClass: "",
-    toRouter: "/bank-services",
+    toRouter: "",
     label: "Услуги банка",
     image: "product-banner-3.png",
     isSoon: false,
@@ -407,13 +407,13 @@ const smallLinks = [
       {
         name: "Услуги банка",
         path: "/bank-services",
-        isSoon: false,
+        isSoon: true,
         isActive: true,
         children: [
           {
             name: "Открытие расчетного счёта",
             path: "/bank-services",
-            isSoon: false,
+            isSoon: true,
           },
           {
             name: "Открытие банковской карты",
