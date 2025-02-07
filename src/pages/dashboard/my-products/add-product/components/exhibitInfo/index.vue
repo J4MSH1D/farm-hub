@@ -16,7 +16,7 @@ const form = inject("form");
         </a-form-item>
         <!-- Ед.измерения -->
         <a-form-item :label="$t('Ед.измерения')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Ед.измерения')" v-model="form.unit" />
+          <a-select :placeholder="$t('Ед.измерения')" v-model="form.unit" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Цена за единицу -->
         <a-form-item :label="$t('Цена за единицу')" :labelCol="{ span: 24 }">
@@ -32,15 +32,15 @@ const form = inject("form");
         </a-form-item>
         <!-- Тип контракта -->
         <a-form-item :label="$t('Тип контракта')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Тип контракта')" v-model="form.contractType" />
+          <a-select :placeholder="$t('Тип контракта')" v-model="form.contractType" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Валюта контракта -->
         <a-form-item :label="$t('Валюта контракта')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Валюта контракта')" v-model="form.contractCurrency" />
+          <a-select :placeholder="$t('Валюта контракта')" v-model="form.contractCurrency" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Условия поставки -->
         <a-form-item :label="$t('Условия поставки')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Условия поставки')" v-model="form.termsOfDelivery" />
+          <a-select :placeholder="$t('Условия поставки')" v-model="form.termsOfDelivery" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
       </div>
 

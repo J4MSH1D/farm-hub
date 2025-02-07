@@ -79,7 +79,7 @@ onMounted(() => {
       <a-layout-header style="padding: 0; height: auto">
         <Header />
       </a-layout-header>
-      <a-layout-content class="overflow-y-auto p-4 py-7">
+      <a-layout-content class="dashboard-layout-content overflow-y-scroll p-4 py-7">
         <div class="bg-white rounded-lg py-7">
           <RouterView />
         </div>
@@ -87,3 +87,19 @@ onMounted(() => {
     </a-layout>
   </a-layout>
 </template>
+
+<style scoped>
+.dashboard-layout-content::-webkit-scrollbar {
+  width: 7px;
+}
+.dashboard-layout-content::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.dashboard-layout-content::-webkit-scrollbar-thumb {
+  background: rgb(107, 182, 107);
+  border-radius: 10px;
+}
+.dashboard-layout-content::-webkit-scrollbar-thumb:hover {
+  background: rgb(95, 209, 95);
+}
+</style>

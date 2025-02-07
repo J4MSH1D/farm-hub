@@ -16,15 +16,15 @@ const form = inject("form");
         </a-form-item>
         <!-- Выберите категорию -->
         <a-form-item :label="$t('Выберите категорию')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Выберите категорию')" v-model="form.category" />
+          <a-select :placeholder="$t('Выберите категорию')" v-model="form.category" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Наименование сорта -->
         <a-form-item :label="$t('Наименование сорта')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Наименование сорта')" v-model="form.sortName" />
+          <a-select :placeholder="$t('Наименование сорта')" v-model="form.sortName" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Тип сорта -->
         <a-form-item :label="$t('Тип сорта')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Тип сорта')" v-model="form.sortType" />
+          <a-select :placeholder="$t('Тип сорта')" v-model="form.sortType" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Марка товара -->
         <a-form-item :label="$t('Марка товара')" :labelCol="{ span: 24 }">
@@ -32,7 +32,7 @@ const form = inject("form");
         </a-form-item>
         <!-- Упаковка -->
         <a-form-item :label="$t('Упаковка')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Упаковка')" v-model="form.package" />
+          <a-select :placeholder="$t('Упаковка')" v-model="form.package" :get-popup-container="trigger => trigger.parentNode" />
         </a-form-item>
         <!-- Производитель -->
         <a-form-item :label="$t('Производитель')" :labelCol="{ span: 24 }">
@@ -40,7 +40,11 @@ const form = inject("form");
         </a-form-item>
         <!-- Страна производителя -->
         <a-form-item :label="$t('Страна производителя')" :labelCol="{ span: 24 }">
-          <a-select :placeholder="$t('Страна производителя')" v-model="form.manufacturerCountry" />
+          <a-select
+            :placeholder="$t('Страна производителя')"
+            v-model="form.manufacturerCountry"
+            :get-popup-container="trigger => trigger.parentNode"
+          />
         </a-form-item>
       </div>
 
