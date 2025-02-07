@@ -30,6 +30,10 @@ class RoleService extends ApiService {
     const response = await this.api.put("/Role/Update", { name, permissions, id });
     return response["content"];
   }
+  async Delete(id) {
+    const response = await this.api.delete("/Role/Delete", { params: { id } });
+    return response["content"];
+  }
 }
 
 const roleService = new RoleService();
