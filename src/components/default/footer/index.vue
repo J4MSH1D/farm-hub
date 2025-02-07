@@ -11,8 +11,8 @@ import { upperLinks, bottomLinks } from "./data";
         </span>
         <span class="text-sm text-gray-500 *hoverGreen" v-for="link in upperLinks">{{ link.name }}</span>
       </div>
-      <div class="py-8 columns-4 justify-items-center">
-        <div v-for="link in bottomLinks" class="flex-1 py-3" style="break-inside: avoid">
+      <div class="py-8 columns-5 justify-items-center">
+        <div v-for="link in bottomLinks" class="flex-1 py-3 min-w-[150px]" style="break-inside: avoid">
           <div class="mb-2">
             <span class="text-black text-sm">{{ link.name }}</span>
           </div>

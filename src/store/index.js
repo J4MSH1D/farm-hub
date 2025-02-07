@@ -19,6 +19,7 @@ const store = createStore({
     },
     toggleTheme(state) {
       state.darkTheme = !state.darkTheme;
+      storage.set("darkTheme", state.darkTheme);
     },
   },
 });

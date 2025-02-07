@@ -9,6 +9,7 @@ const route = useRoute();
 const router = useRouter();
 const links = ref([]);
 const activeLinks = ref([route.fullPath]);
+console.log(route.fullPath)
 
 function setLinks(array) {
   return array
