@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 import { t } from "i18next";
+import Favorite from "@/components/global/favorite.vue";
 
 const offersList = [
   {
@@ -123,7 +124,7 @@ function getPercentage(price, price_old) {
               >-{{ getPercentage(item.price, item.price_old) }}%</span
             >
           </div>
-          <icon name="heart300" is-svg-raw class="h-3.5 w-3.5 cursor-pointer" />
+          <Favorite :id="item.id" />
         </div>
         <!-- price_old -->
         <del class="h-5 text-[10px] text-zinc-400 mt-1" :class="{ invisible: !item.price_old }"

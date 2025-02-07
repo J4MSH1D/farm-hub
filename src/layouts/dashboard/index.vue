@@ -8,8 +8,8 @@ import { authService } from "@/services/auth";
 const route = useRoute();
 const router = useRouter();
 const links = ref([]);
-const activeSubMenu = ref([route.matched[0].name]);
-const activeMenuItem = ref([route.matched[1].name]);
+const activeSubMenu = ref([route.matched[0]?.name]);
+const activeMenuItem = ref([route.matched[1]?.name]);
 
 function setLinks(array) {
   return array
@@ -82,15 +82,15 @@ onMounted(() => {
 
         <!-- sidebar-bottom-links -->
         <div class="py-5 px-2 flex flex-col gap-1">
-          <router-link to="" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
+          <router-link to="/bin" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
             <icon name="trash400" is-svg-raw class="h-4.5 w-4.5 fill-red-500" />
             <span class="text-zinc-900">{{ $t("Корзина") }}</span>
           </router-link>
-          <router-link to="" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
+          <router-link to="/favorites" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
             <icon name="star400" is-svg-raw class="h-4.5 w-4.5 fill-yellow-500" />
             <span class="text-zinc-900">{{ $t("Избранное") }}</span>
           </router-link>
-          <router-link to="" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
+          <router-link to="/my-applications" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
             <icon name="apps400" is-svg-raw class="h-4.5 w-4.5 fill-blue-500" />
             <span class="text-zinc-900">{{ $t("Мои гос.заявки") }}</span>
           </router-link>
