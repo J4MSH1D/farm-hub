@@ -83,7 +83,7 @@ onMounted(() => {
         </div>
 
         <!-- sidebar-bottom-links -->
-        <div class="py-5 px-2 flex flex-col gap-1">
+        <div class="py-5 px-2 flex flex-col gap-1" v-if="authService.CheckOnePermission(3000)">
           <router-link to="/bin" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100">
             <icon name="trash400" is-svg-raw class="h-4.5 w-4.5 fill-red-500" />
             <span class="text-zinc-900">{{ $t("Корзина") }}</span>
