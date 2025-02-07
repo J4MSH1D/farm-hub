@@ -10,7 +10,6 @@ const liked = ref(false);
 
 onMounted(() => {
   const likes = storage.get("likes", true) || {};
-  console.log(likes);
   liked.value = likes[props.id];
 });
 
