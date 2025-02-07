@@ -98,33 +98,7 @@ const smallLinks = [
           },
         ],
       },
-      // Услуги банка
-      {
-        name: "Услуги банка",
-        path: "/bank-services",
-        isSoon: true,
-        isActive: false,
-        children: [
-          {
-            name: "Открытие расчетного счёта",
-            path: "",
-            isSoon: false,
-            isActive: false,
-          },
-          {
-            name: "Открытие банковской карты",
-            path: "",
-            isSoon: true,
-            isActive: false,
-          },
-          {
-            name: "Регистрация бизнеса",
-            path: "",
-            isSoon: true,
-            isActive: false,
-          },
-        ],
-      },
+
       // Финансирование поставщиков
       {
         name: "Финансирование поставщиков",
@@ -410,6 +384,11 @@ const smallLinks = [
         isSoon: true,
         isActive: true,
         children: [
+          {
+            name: "Факторинг",
+            link: "https://brb-faktoring.uz/",
+            isSoon: false,
+          },
           {
             name: "Открытие расчетного счёта",
             path: "/bank-services",
