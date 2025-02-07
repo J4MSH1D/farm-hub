@@ -63,6 +63,11 @@ async function getAllPermissions() {
   console.log(response);
 }
 
+async function deleteUser(item) {
+  const response = await roleService.Delete(item.id);
+  if (response) getAll();
+}
+
 async function updateUser() {
   const response = await roleService.Update(updateUserForm.value);
   if (response) {
@@ -94,7 +99,7 @@ const columns = [
   {
     title: "Действия",
     dataIndex: "actions",
-    width: 150,
+    width: 240,
   },
 ];
 </script>
@@ -110,7 +115,10 @@ const columns = [
           {{ text }}
         </template>
         <template v-if="column.dataIndex === 'actions'">
-          <a-button type="primary" @click="handleEditClick(record)">{{ $t("Изменить") }}</a-button>
+          <div class="flex gap-2">
+            <a-button type="primary" @click="handleEditClick(record)">{{ $t("Изменить") }}</a-button>
+            <a-button @click="deleteUser(record)" class="bg-red-500 text-white !hover:(text-white border-white)">{{ $t("Удалить") }}</a-button>
+          </div>
         </template>
       </template>
     </a-table>
