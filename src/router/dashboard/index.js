@@ -6,11 +6,11 @@ const links = [
     meta: {
       permissions: [1],
     },
-    // Мои Транзакции
     children: [
+      // ============= Мои Транзакции =============
       {
         path: "my-transactions",
-        name: "MyTransactions",
+        name: "Dashboard/MyTransactions",
         meta: {
           title: "Мои сделки",
           permissions: [1],
@@ -18,7 +18,7 @@ const links = [
         children: [
           {
             path: "",
-            name: "Transactions",
+            name: "Dashboard/MyTransactions/Transactions",
             component: () => lazyLoad("dashboard/my-transactions/transactions"),
             meta: {
               icon: {
@@ -31,7 +31,7 @@ const links = [
           },
           {
             path: "my-addresses",
-            name: "MyAddresses",
+            name: "Dashboard/MyTransactions/MyAddresses",
             component: () => lazyLoad("dashboard/my-transactions/my-addresses"),
             meta: {
               icon: {
@@ -39,6 +39,44 @@ const links = [
                 isSvg: true,
               },
               title: "Мои адреса",
+              permissions: [1],
+            },
+          },
+        ],
+      },
+
+      // ============= Мои Товары =============
+      {
+        path: "my-products",
+        name: "Dashboard/MyProducts",
+        meta: {
+          title: "Мои Товары",
+          permissions: [1],
+        },
+        children: [
+          {
+            path: "add-product",
+            name: "Dashboard/MyProducts/AddProduct",
+            component: () => lazyLoad("dashboard/my-products/add-product"),
+            meta: {
+              icon: {
+                name: "add-product",
+                isSvg: true,
+              },
+              title: "Добавить товар",
+              permissions: [1],
+            },
+          },
+          {
+            path: "added",
+            name: "Dashboard/MyProducts/Added",
+            component: () => lazyLoad("dashboard/my-products/added"),
+            meta: {
+              icon: {
+                name: "added-products",
+                isSvg: true,
+              },
+              title: "Добавленные",
               permissions: [1],
             },
           },

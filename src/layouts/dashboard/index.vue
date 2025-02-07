@@ -8,8 +8,8 @@ import { authService } from "@/services/auth";
 const route = useRoute();
 const router = useRouter();
 const links = ref([]);
-const activeLinks = ref([route.fullPath]);
-console.log(route.fullPath)
+const activeSubMenu = ref([route.matched[1].name]);
+const activeMenuItem = ref([route.matched[2].name]);
 
 function setLinks(array) {
   return array
@@ -45,8 +45,8 @@ function initData() {
   links.value = result;
 }
 
-function goTo(path) {
-  router.push(path);
+function navigate(name) {
+  router.push({ name });
 }
 
 onMounted(() => {
@@ -61,13 +61,13 @@ onMounted(() => {
           <icon name="logo" isSvg class="h-11" />
         </router-link>
       </div>
-      <a-menu theme="light" mode="inline" v-model:selectedKeys="activeLinks">
-        <template v-for="link in links" :key="link.path">
-          <a-sub-menu v-if="link.children" :key="link.path">
+      <a-menu theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
+        <template v-for="link in links">
+          <a-sub-menu v-if="link.children" :key="link.name">
             <template #title>{{ link.meta.title }}</template>
-            <a-menu-item v-for="elem in link.children" :key="link.path + '/' + elem.path" @click="goTo(`/dashboard/${link.path}/${elem.path}`)">{{
-              elem.meta.title
-            }}</a-menu-item>
+            <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
+              {{ elem.meta.title }}
+            </a-menu-item>
           </a-sub-menu>
           <a-menu-item v-else @click="goTo(link.path)">{{ link.meta.title }} </a-menu-item>
         </template>

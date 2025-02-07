@@ -22,7 +22,7 @@ function logOut() {
 
 <template>
   <header class="w-full z-90 bg-white">
-    <div class="container flex items-center justify-between">
+    <div class="flex items-center justify-between px-5">
       <!-- left -->
       <div class="flex items-center gap-3">
         <a-input-search :placeholder="$t('Поиск по сайту')" />

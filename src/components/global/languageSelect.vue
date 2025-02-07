@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-  <a-select v-model:value="language" @change="changeLanguage" :size="size">
+  <a-select v-model:value="language" @change="changeLanguage" :size="size" :get-popup-container="trigger => trigger.parentNode">
     <a-select-option value="uz">
       <div class="flex items-center gap-2">
         <icon name="uzbek-flag-rounded" is-svg-raw class="h-4 w-4" />
