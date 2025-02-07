@@ -36,7 +36,7 @@ const formRules = Object.keys(form.value).reduce((acc, curr) => {
         <div class="max-w-[700px] py-14 px-4 mx-auto">
           <a-form :model="form" :rules="formRules" class="grid grid-cols-2 gap-x-5" size="large">
             <a-form-item has-feedback name="phone">
-              <a-input v-model:value="form.phone" prefix="+998" placeholder="(__) ___ __ __*" />
+              <a-input v-model:value="form.phone" prefix="+998" :placeholder="$t('(__) ___ __ __') + '*'" />
             </a-form-item>
             <a-form-item has-feedback name="creditAmount">
               <a-input v-model:value="form.creditAmount" :placeholder="$t('Сумма лизинга, сум') + '*'" />
@@ -58,12 +58,12 @@ const formRules = Object.keys(form.value).reduce((acc, curr) => {
             </a-form-item>
             <a-form-item has-feedback name="region" class="col-span-2">
               <a-select v-model:value="form.region" :placeholder="$t('Субъект Узбекистана') + '*'">
-                <a-select-option v-for="item in regions" :value="item">{{ item }}</a-select-option>
+                <a-select-option v-for="item in regions" :key="item" :value="item">{{ $t(item) }}</a-select-option>
               </a-select>
             </a-form-item>
             <a-form-item has-feedback name="bank" class="col-span-2">
               <a-select v-model:value="form.bank" :placeholder="$t('Выберите банк') + '*'">
-                <a-select-option v-for="item in banks" :value="item">{{ item }}</a-select-option>
+                <a-select-option v-for="item in banks" :key="item" :value="item">{{ $t(item) }}</a-select-option>
               </a-select>
             </a-form-item>
 
@@ -78,7 +78,7 @@ const formRules = Object.keys(form.value).reduce((acc, curr) => {
               </a-checkbox>
             </a-form-item>
 
-            <a-form-item class="mt-6">
+            <a-form-item class="mt-6 col-span-2">
               <a-button type="primary" html-type="submit" class="w-full !rounded-full" size="large">{{ $t("Отправить заявку") }}</a-button>
             </a-form-item>
           </a-form>

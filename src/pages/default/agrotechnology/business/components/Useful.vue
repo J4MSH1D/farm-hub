@@ -32,7 +32,7 @@ const data = [
 </script>
 <template>
   <div class="flex flex-col gap-6 my-6">
-    <h2 class="text-3xl font-semibold">Useful links</h2>
+    <h2 class="text-3xl font-semibold">{{ $t("Полезные ссылки") }}</h2>
     <div class="flex justify-between w-full gap-6">
       <div
         v-for="(item, index) in data"
@@ -40,8 +40,8 @@ const data = [
         class="w-full h-3 rounded-3xl flex h-54 p-6 rounded-xl bg-gradient-to-tr relative overflow-hidden"
         :class="`from-[${item.bg_1}] to-[${item.bg_2}]`"
       >
-        <span class="text-lg text-white z-10"> {{ item.text }} </span>
-        <img :src="item.img" :alt="item.text" class="object-cover absolute -bottom-4 -right-4 rounded-xl p-4 w-44 h-44" />
+        <span class="text-lg text-white z-10"> {{ $t(item.text) }} </span>
+        <img :src="item.img" :alt="$t(item.text)" class="object-cover absolute -bottom-4 -right-4 rounded-xl p-4 w-44 h-44" />
       </div>
     </div>
   </div>

@@ -17,14 +17,14 @@ const banner = {
             <div class="rounded-full bg-white border-2 border-gray-200 p-3">
               <icon name="arrow-left-small600" is-svg-raw class="w-5 h-5 fill-black" />
             </div>
-            <span class="text-sm text-zinc-500">Вернуться</span>
+            <span class="text-sm text-zinc-500">{{ $t("Вернуться") }}</span>
           </button>
           <!-- title -->
-          <div class="text-3xl text-sinc-900 font-semibold mt-10">{{ banner.title }}</div>
+          <div class="text-3xl text-zinc-900 font-semibold mt-10">{{ $t(banner.title) }}</div>
           <!-- subtitle -->
-          <div class="text-sm text-zinc-500 leading-[1.8] mt-6">{{ banner.subtitle }}</div>
+          <div class="text-sm text-zinc-500 leading-[1.8] mt-6">{{ $t(banner.subtitle) }}</div>
           <!-- Oformit (button) -->
-          <button class="bg-green-500 rounded-full text-white text-sm py-3 px-7 mt-8">Оформить карту</button>
+          <button class="bg-green-500 rounded-full text-white text-sm py-3 px-7 mt-8">{{ $t("Оформить карту") }}</button>
         </div>
         <!-- banner-image -->
         <div class="flex-grow max-w-[350px]">
