@@ -1,10 +1,9 @@
 <script setup>
-import { onUnmounted, ref, watch } from "vue";
-import links, { catalogue, quickLinks } from "./data/index";
+import { computed, onUnmounted, ref, watch } from "vue";
+import { catalogue, quickLinks } from "./data/index";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 import { Vue3Marquee } from "vue3-marquee";
-import soon from "../main/soon.vue";
 import regions from "@/enums/regions";
 import languageSelect from "@/components/global/languageSelect.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -96,7 +95,7 @@ watch(route, () => {
             </template>
           </template>
           <template v-if="store.getters.user">
-            <router-link to="/my-transactions" class="group flex flex-col items-center">
+            <router-link :to="permission ? '/structures' : '/my-transactions'" class="group flex flex-col items-center">
               <icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
               <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">Профиль</span>
             </router-link>
