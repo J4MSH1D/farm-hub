@@ -301,6 +301,15 @@ const links = [
       permissions: [],
     },
   },
+  {
+    path: "/bank-services",
+    name: "Bank Services",
+    component: () => lazyLoad("default/bankServices"),
+    meta: {
+      title: "Bank services",
+      permissions: [],
+    },
+  },
 ];
 
 layoutSetter(links, "default");

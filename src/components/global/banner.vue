@@ -39,7 +39,7 @@ const backgroundColors = {
     lightLeafColor: "#0ba360",
     boldLeafColor: "#3cba92",
   },
-  blue: {
+  announ: {
     background: "linear-gradient(to right, #3bbfa7, #6ffee5)",
     lightLeafColor: "#55d4bd",
     boldLeafColor: "#8fffeb",
@@ -58,6 +58,16 @@ const backgroundColors = {
     background: "linear-gradient(to right, #118DC1, #63AAFD)",
     lightLeafColor: "#6FAFFA",
     boldLeafColor: "#6FAFFA",
+  },
+  bankService: {
+    background: "linear-gradient(to right, #AE7BFB, #DAC1FF)",
+    lightLeafColor: "#C098FD",
+    boldLeafColor: "#DAC1FF",
+  },
+  job: {
+    background: "linear-gradient(to right, #F67020, #F78D42)",
+    lightLeafColor: "#F19A5E",
+    boldLeafColor: "#F6F6F6",
   },
 };
 

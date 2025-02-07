@@ -203,7 +203,7 @@ const smallLinks = [
         name: "Работодателям",
         path: "/job",
         isSoon: false,
-        isActive: false,
+        isActive: true,
       },
       {
         name: "Соискателям",
@@ -229,26 +229,26 @@ const smallLinks = [
     color: "#4BC7B1",
     leafColor: "#5AC9B6",
     cusClass: "",
-    toRouter: "",
+    toRouter: "/announcements",
     label: "Объявления",
     image: "home_link_7.png",
     isSoon: false,
     children: [
       {
         name: "Объявления Местных производителей",
-        path: "/place-an",
-        isSoon: true,
-        isActive: false,
+        path: "/announcements",
+        isSoon: false,
+        isActive: true,
       },
       {
         name: "Объявления Экспортёров",
-        path: "/about-service",
+        path: "",
         isSoon: true,
         isActive: false,
       },
       {
         name: "Объявления Импортёров",
-        path: "/about-import",
+        path: "",
         isSoon: true,
         isActive: false,
       },
@@ -267,7 +267,7 @@ const smallLinks = [
         name: "Решение для теплиц на основе ИИ",
         path: "/agrotechnology",
         isSoon: false,
-        isActive: false,
+        isActive: true,
       },
       {
         name: "ТН ВЭД коды 2022",
@@ -351,14 +351,17 @@ const smallLinks = [
           {
             name: "Для развития дехканских хозяйств и приусадебного земледелия создадут отдельный совет",
             link: "https://www.gazeta.uz/ru/2025/01/31/lands/",
+            isSoon: true,
           },
           {
             name: "Выдвинуты новые инициативы по выращиванию продукции на приусадебных и дехканских землях",
             link: "https://president.uz/ru/lists/view/7845",
+            isSoon: true,
           },
           {
             name: "Выращивать сельхозпродукцию в Узбекистане будут у многоэтажек и на внутренних улицах махаллей",
             link: "https://www.gazeta.uz/ru/2025/01/04/agricultural-products/",
+            isSoon: true,
           },
         ],
       },
@@ -371,22 +374,56 @@ const smallLinks = [
           {
             name: "Проект по выращиванию лимонов",
             link: "https://youtu.be/HwNdO0gg9es",
+            isSoon: false,
           },
           {
             name: "Проект по выращиванию малины",
             link: "https://youtu.be/RLt-WcZLrsE",
+            isSoon: false,
           },
           {
             name: "Проект по выращиванию винограда",
             link: "https://youtu.be/HwNdO0gg9es",
             isSoon: true,
-            isActive: false,
           },
           {
             name: "Проект по выращиванию мандаринов",
             link: "https://youtu.be/HwNdO0gg9es",
             isSoon: true,
-            isActive: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    color: "#A2A4F8",
+    leafColor: "#A8AAF6",
+    cusClass: "",
+    toRouter: "/bank-services",
+    label: "Услуги банка",
+    image: "product-banner-3.png",
+    isSoon: false,
+    children: [
+      {
+        name: "Услуги банка",
+        path: "/bank-services",
+        isSoon: false,
+        isActive: true,
+        children: [
+          {
+            name: "Открытие расчетного счёта",
+            path: "/bank-services",
+            isSoon: false,
+          },
+          {
+            name: "Открытие банковской карты",
+            path: "",
+            isSoon: true,
+          },
+          {
+            name: "Регистрация бизнеса",
+            path: "",
+            isSoon: true,
           },
         ],
       },

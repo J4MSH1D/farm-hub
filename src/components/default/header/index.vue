@@ -30,7 +30,7 @@ watch(route, () => {
 });
 </script>
 <template>
-  <div class="pb-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[150px]">
+  <div class="pb-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[110px]">
     <div class="h-[30px] bg-yellow-500 flex items-center mb-4">
       <Vue3Marquee :pause-on-hover="true" :duration="100" class="overflow-hidden">
         <p v-for="i in 15" class="mx-7 text-white">Сайт находится в режиме разработки</p>
@@ -104,61 +104,6 @@ watch(route, () => {
               <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">Вход</span>
             </router-link>
           </template>
-        </div>
-      </div>
-
-      <!-- Main links -->
-      <div class="flex mt-5 gap-5">
-        <div v-for="link in links">
-          <div v-if="link.children">
-            <a-dropdown placement="bottomLeft" overlayClassName="pt-5" :get-popup-container="trigger => trigger.parentNode">
-              <template v-if="link.soon">
-                <span class="*hoverGreen relative">{{ link.name }} <soon /></span>
-              </template>
-              <template v-else>
-                <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
-              </template>
-              <template #overlay>
-                <div class="border bg-white rounded-xl px-4 py-3">
-                  <div v-if="link.children && link.children.some(e => e.children)" class="columns-2 gap-5 justify-start max-w-[900px]">
-                    <div v-for="innerLink in link.children" class="py-3" style="break-inside: avoid">
-                      <router-link :to="innerLink.path" class="cursor-pointer *hoverGreen text-lg"> {{ innerLink.name }} </router-link>
-                      <div v-for="childrenLink in innerLink.children" class="mt-3">
-                        <span class="*hoverGreen text-sm text-gray-500 relative" v-if="childrenLink.soon">
-                          {{ childrenLink.name }}
-                          <soon is-small v-if="childrenLink.soon" />
-                        </span>
-                        <a :href="childrenLink.link" target="_blank" class="*hoverGreen text-sm text-gray-500" v-else-if="childrenLink.link">{{
-                          childrenLink.name
-                        }}</a>
-                        <router-link :href="childrenLink.path" :to="childrenLink.path" class="*hoverGreen text-sm text-gray-500" v-else>{{
-                          childrenLink.name
-                        }}</router-link>
-                      </div>
-                    </div>
-                  </div>
-                  <div v-else>
-                    <div v-for="innerLink in link.children" class="py-1 my-3">
-                      <template v-if="innerLink.soon">
-                        <span class="*hoverGreen text-md my-1 relative">{{ innerLink.name }} <soon /></span>
-                      </template>
-                      <template v-else>
-                        <router-link :to="innerLink.path" class="*hoverGreen text-md my-1">{{ innerLink.name }}</router-link>
-                      </template>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </a-dropdown>
-          </div>
-          <div v-else>
-            <template v-if="link.soon">
-              <span class="bg-gray-200 py-2 px-3 rounded-full">{{ link.name }}</span>
-            </template>
-            <template v-else>
-              <router-link :to="link.path" class="*hoverGreen">{{ link.name }}</router-link>
-            </template>
-          </div>
         </div>
       </div>
     </div>

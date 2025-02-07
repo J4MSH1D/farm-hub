@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import regions from "@/enums/regions";
-import { IMaskDirective as vMask } from "vue-imask";
 import leasingCompanies from "@/enums/leasingCompanies";
 
 const form = ref({

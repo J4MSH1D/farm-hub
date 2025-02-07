@@ -32,7 +32,7 @@ onMounted(() => {
           :toRouter="item.toRouter"
         >
           <div class="relative flex items-center pl-10 gap-10 h-48">
-            <p class="text-4xl text-white">{{ $t(item.label) }}</p>
+            <p class="text-4xl text-white" style="text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)">{{ $t(item.label) }}</p>
             <icon :name="item.image" class="h-40 absolute right-20 bottom-0" />
           </div>
         </bannerSmall>
@@ -41,7 +41,7 @@ onMounted(() => {
         <div v-for="(item, index) in smallLinks" :key="index" class="relative cursor-pointer" @click.stop="handleLinks(item)">
           <bannerSmall :color="item.color" :leafColor="item.leafColor" :cusClass="item.cusClass" :toRouter="item.toRouter">
             <div class="relative flex items-center pl-10gap-10 h-28">
-              <p class="text-2xl text-white">{{ $t(item.label) }}</p>
+              <p class="text-2xl text-white" style="text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)">{{ $t(item.label) }}</p>
               <icon :name="item.image" class="h-24 absolute right-20 bottom-0" />
             </div>
           </bannerSmall>
@@ -56,8 +56,12 @@ onMounted(() => {
         <Transition name="fade">
           <div
             v-if="activeLink?.children"
-            class="absolute top-full mt-10 w-full h-auto bg-white/10 z-50 rounded-2xl p-10 flex flex-col gap-5 shadow-2xl"
-            style="backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px)"
+            class="absolute top-full mt-4 w-full h-auto bg-white/10 z-50 rounded-2xl p-10 flex flex-col gap-5 shadow-2xl"
+            style="
+              backdrop-filter: blur(40px);
+              -webkit-backdrop-filter: blur(40px);
+              box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            "
           >
             <!-- Name and button -->
             <div class="flex justify-between items-center">
@@ -80,20 +84,55 @@ onMounted(() => {
                 v-for="(item, index) in activeLink.children"
                 :key="index"
                 @click="handleChildren(item)"
-                class="px-4 py-2 h-[80px] border rounded-xl cursor-pointer text-sm hover:bg-gray-100 transition ease-linear duration-300 relative flex items-center"
+                class="px-4 py-2 h-[80px] border rounded-2xl cursor-pointer text-sm hover:bg-gray-100 transition ease-linear duration-300 relative flex items-center relative"
                 :style="{
                   borderColor: activeLink.color,
                   backgroundColor: item.isActive ? activeLink.color : 'white',
+                  transition: 'all 0.3s linear',
                 }"
               >
                 <p
                   class="text-xl font-semibold max-w-4/5"
                   :style="{
                     color: item.isActive ? 'white' : '#00000099',
+                    textShadow: item.isActive ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : 'none',
+                    transition: 'all 0.3s linear',
                   }"
                 >
                   {{ $t(item.name) }}
                 </p>
+                <router-link :to="item.isSoon ? undefined : item.path" class="absolute right-0 bottom-0">
+                  <a-config-provider class="absolute right-0 bottom-0">
+                    <a-button
+                      class="bg-white flex justify-center items-center rounded-none !rounded-none !rounded-tl-3xl !rounded-br-2xl w-12 !h-12 !p-0"
+                      size="large"
+                      :style="{
+                        backgroundColor: item.isActive ? 'white' : activeLink.color,
+                      }"
+                    >
+                      <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_462_898)">
+                          <path
+                            d="M15.7114 9.9416C16.1912 10.5212 17.4794 10.9119 18.6595 11.1577C20.1795 11.4771 21.7456 11.5566 23.2816 11.3341C24.4332 11.1673 25.7316 10.8469 26.4771 10.2277M26.4771 10.2277C25.7316 10.8469 25.1761 12.0662 24.8 13.1681C24.2981 14.6395 24.0861 16.1957 24.1168 17.7494C24.1402 18.9572 24.2864 20.2989 24.7649 20.8769M26.4771 10.2277L7.76016 25.7724"
+                            :stroke="item.isActive ? activeLink.color : 'white'"
+                            stroke-width="2"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_462_898">
+                            <rect width="24.3302" height="24.3373" fill="white" transform="matrix(0.769288 -0.638902 0.637717 0.770271 0 16.3992)" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a-button>
+                  </a-config-provider>
+                </router-link>
+                <div
+                  v-if="item.isSoon"
+                  class="absolute top-2 left-6 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-20 -translate-x-1/2 -translate-y-1/2 px-4 py-1"
+                >
+                  {{ $t("Скоро") }}
+                </div>
               </div>
             </div>
             <!-- /Children -->
@@ -101,15 +140,26 @@ onMounted(() => {
             <!-- Actice Children is Children -->
 
             <div v-if="activeChildren?.children" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
-              <div v-for="(item, index) in activeChildren?.children" :key="index" :to="item.link">
+              <div v-for="(item, index) in activeChildren?.children" :key="index" :to="item.link" class="relative flex items-center">
                 <router-link
                   class="text-[#00000099] transition-colors duration-300"
-                  :style="{ color: hoveringIndex === index ? activeLink.color : '#00000099' }"
                   @mouseover="hoveringIndex = index"
                   @mouseleave="hoveringIndex = null"
-                  :to="item.link"
+                  :to="item.isSoon ? undefined : item.path"
                 >
-                  {{ item.name }}
+                  <p
+                    class="text-lg"
+                    :style="{
+                      color: hoveringIndex === index ? activeLink.color : '#00000099',
+                      textShadow: hoveringIndex === index ? `0px 4px 8px ${activeLink.color}` : 'none',
+                      transition: 'color 0.3s ease-in-out, text-shadow 0.3s ease-in-out',
+                    }"
+                  >
+                    {{ $t(item.name) }}
+                    <span v-if="item.isSoon" class="py-0.5 px-1 -top-2 rounded-full relative bg-[#ff4d4f] text-[10px] text-white absolute">
+                      Скоро
+                    </span>
+                  </p>
                 </router-link>
               </div>
             </div>
