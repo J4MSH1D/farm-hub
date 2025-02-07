@@ -13,6 +13,9 @@ const baseURL = import.meta.env.VITE_BASE_URL;
 const api = axios.create({
   baseURL,
   withCredentials: true,
+  headers: {
+    "ngrok-skip-browser-warning": "69420",
+  },
 });
 
 api.interceptors.request.use(
