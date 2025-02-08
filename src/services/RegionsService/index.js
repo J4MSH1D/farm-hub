@@ -15,8 +15,8 @@ class RegionsService extends ApiService {
     return response["content"];
   }
 
-  async GetByRegion(id) {
-    const response = await this.api.get("/api/District/GetByRegion", { params: { id } });
+  async GetByRegion(regionId) {
+    const response = await this.api.get("/api/District/GetByRegion", { params: { regionId } });
     return response["content"];
   }
 }

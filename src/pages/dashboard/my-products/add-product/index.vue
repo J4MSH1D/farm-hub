@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { productService } from "@/services/ProductService";
 import ImageUploader from "@/components/global/imageUploader.vue";
 import { message } from "ant-design-vue";
@@ -14,26 +14,28 @@ const regions = ref([]);
 const districts = ref([]);
 const categories = ref([]);
 
+const formRef = ref();
+
 const form = ref({
-  tradeId: 0,
+  tradeId: null,
   image: "",
   assets: "",
   title: "",
   description: "",
   amount: "",
-  categoryId: 0,
-  districtId: 0,
-  regionId: 0,
+  categoryId: null,
+  districtId: null,
+  regionId: null,
   address: "",
 });
 
 function saveAsDraft() {}
 
 async function createProduct() {
-  console.log(form.value);
   const response = await productService.Create(form.value);
   if (response) {
     form.value = {};
+    resetForm();
     message.success(t("Товар успешно добавлен!"));
   }
 }
@@ -48,15 +50,14 @@ async function getInfos() {
   trades.value = tradesRes;
 }
 
-watch(
-  () => form.regionId,
-  value => {
-    console.log(2);
-    // const response = await regionsService.GetByRegion(value);
-    // console.log(response);
-    // districts.value = districtsRes;
-  }
-);
+async function getDistricts(value) {
+  const response = await regionsService.GetByRegion(value);
+  districts.value = response;
+}
+
+function resetForm() {
+  formRef.value.resetFields();
+}
 
 onMounted(() => {
   getInfos();
@@ -72,7 +73,7 @@ const tradeTypes = {
   <div class="container pb-10">
     <h2 class="text-2xl text-zinc-900 font-semibold">{{ $t("Добавить товар") }}</h2>
 
-    <a-form class="grid grid-cols-2 gap-x-4 gap-y-2">
+    <a-form :ref="formRef" class="grid grid-cols-2 gap-x-4 gap-y-2">
       <!-- Наименование товара -->
       <a-form-item :label="$t('Наименование товара')" :labelCol="{ span: 24 }">
         <a-input :placeholder="$t('Наименование товара')" v-model:value="form.title" />
@@ -85,15 +86,26 @@ const tradeTypes = {
       <a-form-item class="col-span-2" :label="$t('Описание товара')" :labelCol="{ span: 24 }">
         <a-textarea v-model:value="form.description" :placeholder="$t('Описание товара')" :rows="10" style="resize: none" />
       </a-form-item>
+      <!-- Категория -->
+      <a-form-item :label="$t('Категория')" :labelCol="{ span: 24 }">
+        <a-select :placeholder="$t('Категория')" v-model:value="form.categoryId" :get-popup-container="trigger => trigger.parentNode">
+          <a-select-option v-for="item in categories" :key="item.id" :value="item.category.id">{{ item.category.name?.[locale] }}</a-select-option>
+        </a-select>
+      </a-form-item>
       <!-- Тип торговли -->
       <a-form-item :label="$t('Тип торговли')" :labelCol="{ span: 24 }">
         <a-select :placeholder="$t('Тип торговли')" v-model:value="form.tradeId" :get-popup-container="trigger => trigger.parentNode">
-          <a-select-option v-for="trade in trades" :key="trade.id" :value="trade.id">{{ tradeTypes[trade.name] }}</a-select-option>
+          <a-select-option v-for="item in trades" :key="item.id" :value="item.id">{{ tradeTypes[item.name] }}</a-select-option>
         </a-select>
       </a-form-item>
       <!-- Область -->
       <a-form-item :label="$t('Область')" :labelCol="{ span: 24 }">
-        <a-select :placeholder="$t('Область')" v-model:value="form.regionId" :get-popup-container="trigger => trigger.parentNode">
+        <a-select
+          :placeholder="$t('Область')"
+          v-model:value="form.regionId"
+          @change="val => getDistricts(val)"
+          :get-popup-container="trigger => trigger.parentNode"
+        >
           <a-select-option v-for="item in regions" :key="item.id" :value="item.id">{{ $t(item.name?.[locale]) }}</a-select-option>
         </a-select>
       </a-form-item>
