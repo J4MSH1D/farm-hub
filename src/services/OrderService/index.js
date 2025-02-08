@@ -5,7 +5,7 @@ class OrderService extends ApiService {
     super();
   }
   async GetAll() {
-    const params = { skip: 0, take: 100000 };
+    const params = { skip: 0, take: 300 };
     const response = await this.api.get("/Order/GetAll", { params });
     return response["content"];
   }

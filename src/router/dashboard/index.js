@@ -230,15 +230,15 @@ const links = [
   },
 
   // ============= Regions =============
-  {
-    path: "/regions",
-    name: "Dashboard/Regions",
-    component: () => lazyLoad("dashboard/regions"),
-    meta: {
-      title: "Regions",
-      permissions: [3000],
-    },
-  },
+  // {
+  //   path: "/regions",
+  //   name: "Dashboard/Regions",
+  //   component: () => lazyLoad("dashboard/regions"),
+  //   meta: {
+  //     title: "Regions",
+  //     permissions: [3000],
+  //   },
+  // },
 
   // ============= Admin Links =============
   ...adminLinks,
