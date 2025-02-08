@@ -218,6 +218,28 @@ const links = [
     ],
   },
 
+  // ============= Order =============
+  {
+    path: "/order",
+    name: "Dashboard/Order",
+    component: () => lazyLoad("dashboard/order"),
+    meta: {
+      title: "Ордер",
+      permissions: [3000],
+    },
+  },
+
+  // ============= Regions =============
+  {
+    path: "/regions",
+    name: "Dashboard/Regions",
+    component: () => lazyLoad("dashboard/regions"),
+    meta: {
+      title: "Regions",
+      permissions: [3000],
+    },
+  },
+
   // ============= Admin Links =============
   ...adminLinks,
 ];

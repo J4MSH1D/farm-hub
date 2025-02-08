@@ -9,6 +9,7 @@ import languageSelect from "@/components/global/languageSelect.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 import { authService } from "@/services/auth";
+import bgHeader from "@/assets/images/png/bg-header.png";
 
 const route = useRoute();
 const inputData = ref("");
@@ -44,7 +45,7 @@ watch(route, () => {
 </script>
 <template>
   <div
-    class="pb-5 shadow sticky top-0 z-90 h-[207px] flex flex-col items-center"
+    class="pb-5 shadowCus sticky top-0 z-90 h-[207px] flex flex-col items-center"
     :style="{ backgroundImage: `url(${bgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }"
   >
     <div class="h-[30px] bg-yellow-500 flex items-center mb-6">
@@ -175,6 +176,10 @@ watch(route, () => {
 </template>
 
 <style>
+.shadowCus {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
 .overlayClass {
   padding-top: 10px;
 }
