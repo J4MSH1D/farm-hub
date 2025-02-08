@@ -155,14 +155,14 @@ const columns = [
 
     <!-- Table -->
     <a-table :dataSource="data" :columns="columns">
-      <template v-slot:bodyCell="props">
-        <template v-if="props.column.dataIndex === 'name'">
-          <span>{{ props.record.category.name?.[locale] }}</span>
+      <template v-slot:bodyCell="{ record, column }">
+        <template v-if="column.dataIndex === 'name'">
+          <span>{{ record.category.name?.[locale] }}</span>
         </template>
-        <template v-if="props.column.dataIndex === 'actions'">
+        <template v-if="column.dataIndex === 'actions'">
           <div class="flex gap-2">
-            <a-button :loading="loading" danger type="primary" @click="deleteCategory(props.record.id)">{{ $t("Удалить") }}</a-button>
-            <a-button :loading="loading" class="bg-yellow-500 hover:(!bg-yellow-400)" type="primary" @click="setUpdateModal(props.record)">{{
+            <a-button :loading="loading" danger type="primary" @click="deleteCategory(record.id)">{{ $t("Удалить") }}</a-button>
+            <a-button :loading="loading" class="bg-yellow-500 hover:(!bg-yellow-400)" type="primary" @click="setUpdateModal(record)">{{
               $t("Изменить")
             }}</a-button>
           </div>

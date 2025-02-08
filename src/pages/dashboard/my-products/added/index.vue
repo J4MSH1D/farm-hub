@@ -1,8 +1,12 @@
 <script setup>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import { tableColumns, tableData } from "./data";
 import { dateFormatter, numberFormatter, timeFormatter } from "@/utils/internalization";
 import { ref } from "vue";
+import { productService } from "@/services/ProductService";
+
+const products = ref([]);
+const activeTab = ref("products");
 
 const table = reactive({
   data: tableData,
@@ -11,7 +15,15 @@ const table = reactive({
   loading: false,
 });
 
-const activeTab = ref("products");
+async function getProducts() {
+  const response = await productService.GetAll();
+  products.value = response;
+  console.log(response);
+}
+
+onMounted(() => {
+  getProducts();
+});
 </script>
 
 <template>

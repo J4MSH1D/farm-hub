@@ -2,35 +2,52 @@
 import { onMounted, provide, reactive, ref } from "vue";
 import { productService } from "@/services/ProductService";
 import ImageUploader from "@/components/global/imageUploader.vue";
+import { message } from "ant-design-vue";
+import { useTranslation } from "i18next-vue";
+import { categoryService } from "@/services/CategoryService";
+import { regionsService } from "@/services/RegionsService";
 
+const { t } = useTranslation();
 const trades = ref([]);
 const categories = ref([]);
 
-const form = reactive({
+const form = ref({
   tradeId: 0,
-  image: "string",
-  assets: "string",
-  title: "string",
-  description: "string",
+  image: null,
+  assets: null,
+  title: "",
+  description: "",
   amount: 0,
   categoryId: 0,
   districtId: 0,
   regionId: 0,
-  address: "string",
+  address: "",
 });
 
 function saveAsDraft() {}
 
-function sendForModernization() {}
+async function createProduct() {
+  const response = await productService.Create(form.value);
+  if (response) {
+    form.value = {};
+    message.success(t("Товар успешно добавлен!"));
+  }
+}
 
-async function getTrade() {
-  const response = await productService.GetTrade();
-  trades.value = response;
-  form.tradeId = response[0].id;
+async function getInfos() {
+  const tradesRes = await productService.GetTrade();
+  const categoriesRes = await categoryService.GetAll();
+  const regionsRes = await regionsService.GetAll();
+
+  console.log(categoriesRes);
+
+  categories.value = categoriesRes;
+  trades.value = tradesRes;
+  form.tradeId = tradesRes[0].id;
 }
 
 onMounted(() => {
-  getTrade();
+  getInfos();
 });
 
 provide("form", form);
@@ -55,7 +72,7 @@ provide("form", form);
       </a-form-item>
       <!-- Тип торговли -->
       <a-form-item :label="$t('Тип торговли')" :labelCol="{ span: 24 }">
-        <a-select :placeholder="$t('Тип торговли')" v-model="form.tradeId">
+        <a-select :placeholder="$t('Тип торговли')" v-model="form.tradeId" :get-popup-container="trigger => trigger.parentNode">
           <a-select-option v-for="trade in trades" :key="trade.id" :value="trade.id">{{ trade.name }}</a-select-option>
         </a-select>
       </a-form-item>
@@ -73,7 +90,7 @@ provide("form", form);
       </a-form-item>
       <!-- Добавить фото товара -->
       <a-form-item :label="$t('Добавить фото товара')" :labelCol="{ span: 24 }">
-        <ImageUploader v-model="form.image" />
+        <ImageUploader @upload="(_, base64) => (form.image = base64)" />
       </a-form-item>
     </a-form>
 
