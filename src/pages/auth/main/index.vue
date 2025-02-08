@@ -1,6 +1,6 @@
 <script setup>
 import { message } from "ant-design-vue";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { authApiService } from "@/services/AuthService";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
@@ -9,16 +9,22 @@ import { authService } from "@/services/auth";
 
 const userData = reactive({ login: "", password: "" }),
   store = useStore(),
-  router = useRouter();
+  router = useRouter(),
+  loading = ref(false);
 
 const onFinish = async values => {
-  const response = await authApiService.LoginWithEmail(userData);
-  await store.dispatch("getUser");
-  storage.set("accessToken", response.content.accessToken);
-  if (authService.CheckOnePermission(10000)) {
-    router.push("/translations");
-  } else {
-    router.push("/structures");
+  try {
+    loading.value = true;
+    const response = await authApiService.LoginWithEmail(userData);
+    await store.dispatch("getUser");
+    storage.set("accessToken", response.content.accessToken);
+    if (authService.CheckOnePermission(10000)) {
+      router.push("/translations");
+    } else {
+      router.push("/structures");
+    }
+  } finally {
+    loading.value = false;
   }
 };
 const onFinishFailed = errorInfo => {

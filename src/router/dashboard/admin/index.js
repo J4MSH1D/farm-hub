@@ -28,6 +28,15 @@ const links = [
     },
     component: () => lazyLoad("dashboard/users"),
   },
+  {
+    path: "/category-type",
+    name: "Category Type",
+    meta: {
+      title: "Категории",
+      permissions: [9000],
+    },
+    component: () => lazyLoad("dashboard/categoryType"),
+  },
 ];
 
 export default links;

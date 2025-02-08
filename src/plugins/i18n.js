@@ -27,7 +27,6 @@ i18next
       parse: function (data) {
         const parseData = JSON.parse(data);
         const defaultLang = parseData["content"];
-        console.log(defaultLang);
         return defaultLang;
       },
       parsePayload: function (namespace, key, fallbackValue) {
