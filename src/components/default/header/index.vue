@@ -128,14 +128,14 @@ watch(route, () => {
 
   <!-- KATALOGLAR -->
   <div
-    class="fixed inset-0 top-auto z-20 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
+    class="fixed inset-0 top-auto z-100 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
     v-if="catalogueOpen"
   >
     <div class="container py-8 flex-grow flex flex-col">
       <div class="flex items-center gap-2">
         <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
       </div>
-      <div v-if="catalogueType === 'services'" class="mt-10">
+      <div v-if="catalogueType === 'services'" class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
           <div
             v-for="item in catalogue[catalogueType]"
