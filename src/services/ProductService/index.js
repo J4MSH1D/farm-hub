@@ -21,11 +21,11 @@ class ProductService extends ApiService {
       assets,
       title,
       description,
-      amount,
       categoryId,
       districtId,
       regionId,
       address,
+      amount: Number(amount),
     });
     return response["content"];
   }
