@@ -19,6 +19,7 @@ const bannerData = {
               {{ $t(bannerData.subtitle) }}
             </p>
           </div>
+          <icon name="gos-banner-1.png" class="absolute right-40 top-0 h-full" />
           <div class="w-full bg-white/10 px-10 py-6 mt-10" style="backdrop-filter: blur(40px)">
             <a
               :href="bannerData.link"
