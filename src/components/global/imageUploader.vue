@@ -39,7 +39,7 @@ function deleteFile() {
     :multiple="false"
     :show-upload-list="false"
     :before-upload="() => false"
-    class="max-w-[500px] block mt-8"
+    class="max-w-[500px] mt-8"
   >
     <div class="grid grid-cols-2 gap-5 px-3" :class="contentClass">
       <!-- file-image -->
