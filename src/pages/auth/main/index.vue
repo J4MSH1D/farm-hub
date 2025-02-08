@@ -20,8 +20,10 @@ const onFinish = async values => {
     storage.set("accessToken", response.content.accessToken);
     if (authService.CheckOnePermission(10000)) {
       router.push("/translations");
-    } else {
+    } else if (authService.CheckOnePermission(6000)) {
       router.push("/structures");
+    } else {
+      router.push("/my-transactions");
     }
   } finally {
     loading.value = false;

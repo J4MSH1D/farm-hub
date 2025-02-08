@@ -54,13 +54,11 @@ async function handleEditClick(record) {
 async function getAll() {
   const response = await roleService.GetAll();
   data.value = response;
-  console.log(response);
 }
 
 async function getAllPermissions() {
   const response = await roleService.GetAllPermissions();
   allPermnissions.value = response;
-  console.log(response);
 }
 
 async function deleteUser(item) {
@@ -69,6 +67,7 @@ async function deleteUser(item) {
 }
 
 async function updateUser() {
+  console.log(updateUserForm.value);
   const response = await roleService.Update(updateUserForm.value);
   if (response) {
     updateUserModal.value = false;
