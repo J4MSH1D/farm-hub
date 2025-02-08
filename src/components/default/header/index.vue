@@ -9,7 +9,7 @@ import languageSelect from "@/components/global/languageSelect.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 import { authService } from "@/services/auth";
-
+import bgHeader from "@/assets/images/png/bg-header.png";
 const route = useRoute();
 const inputData = ref("");
 const selectValue = ref("Product");
@@ -34,13 +34,16 @@ watch(route, () => {
 });
 </script>
 <template>
-  <div class="pb-5 shadow rounded-b-5xl bg-white sticky top-0 z-90 h-[110px]">
-    <div class="h-[30px] bg-yellow-500 flex items-center mb-4">
+  <div
+    class="pb-5 shadow sticky top-0 z-90 h-[207px] flex flex-col items-center"
+    :style="{ backgroundImage: `url(${bgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }"
+  >
+    <div class="h-[30px] bg-yellow-500 flex items-center mb-6">
       <Vue3Marquee :pause-on-hover="true" :duration="100" class="overflow-hidden">
         <p v-for="i in 15" class="mx-7 text-white">{{ $t("Сайт находится в режиме разработки") }}</p>
       </Vue3Marquee>
     </div>
-    <div class="container">
+    <div class="container bg-white rounded-xl py-5">
       <div class="flex items-center justify-start gap-x-10">
         <router-link to="/">
           <icon name="logo" is-svg />
