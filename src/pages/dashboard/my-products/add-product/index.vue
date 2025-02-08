@@ -73,7 +73,7 @@ const tradeTypes = {
   <div class="container pb-10">
     <h2 class="text-2xl text-zinc-900 font-semibold">{{ $t("Добавить товар") }}</h2>
 
-    <a-form :ref="formRef" class="grid grid-cols-2 gap-x-4 gap-y-2">
+    <a-form ref="formRef" class="grid grid-cols-2 gap-x-4 gap-y-2">
       <!-- Наименование товара -->
       <a-form-item :label="$t('Наименование товара')" :labelCol="{ span: 24 }">
         <a-input :placeholder="$t('Наименование товара')" v-model:value="form.title" />
