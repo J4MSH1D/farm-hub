@@ -1,9 +1,9 @@
 <script setup>
 import { useTranslation } from "i18next-vue";
-import { computed } from "vue";
+import { ref } from "vue";
 
 const { i18next } = useTranslation();
-const language = computed(() => i18next.language);
+const language = ref(i18next.language);
 
 function changeLanguage(lang) {
   i18next.changeLanguage(lang);

@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onUnmounted, ref, watch } from "vue";
 import { catalogue, quickLinks } from "./data/index";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { Vue3Marquee } from "vue3-marquee";
 import regions from "@/enums/regions";
@@ -9,7 +9,7 @@ import languageSelect from "@/components/global/languageSelect.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 import { authService } from "@/services/auth";
-import bgHeader from "@/assets/images/png/bg-header.png";
+
 const route = useRoute();
 const inputData = ref("");
 const selectValue = ref("Product");
@@ -17,8 +17,17 @@ const region = ref("Город Ташкент");
 const catalogueOpen = ref(false);
 const catalogueType = ref("products");
 const store = useStore();
-const alignItems = ref("left");
-const permission = computed(() => authService.CheckOnePermission(3000));
+const router = useRouter();
+
+function navigateProfile() {
+  if (authService.CheckOnePermission(6000)) {
+    router.push("/structures");
+  } else if (authService.CheckOnePermission(10000)) {
+    router.push("/translations");
+  } else {
+    router.push("/my-transactions");
+  }
+}
 
 watch([catalogueOpen, route], () => {
   if (catalogueOpen.value) document.body.style.overflow = "hidden";
@@ -100,10 +109,10 @@ watch(route, () => {
             </template>
           </template>
           <template v-if="store.getters.user">
-            <router-link :to="permission ? '/my-transactions' : '/structures'" class="group flex flex-col items-center">
+            <button @click="navigateProfile" class="group flex flex-col items-center">
               <icon name="user300" is-svg-raw class="h-5 w-5 fill-[#171A1C] group-hover:fill-green-500" />
               <span class="text-xs m-0 mt-2 text-[#171A1C] font-bold group-hover:text-green-500">{{ $t("Профиль") }}</span>
-            </router-link>
+            </button>
           </template>
           <template v-else>
             <router-link to="/auth/login" class="group flex flex-col items-center">

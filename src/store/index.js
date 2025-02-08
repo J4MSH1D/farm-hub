@@ -38,7 +38,6 @@ const store = createStore({
 });
 
 if (storage.get("accessToken")) {
-  console.log("Include");
   store.dispatch("getUser");
 }
 

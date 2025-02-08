@@ -4,7 +4,8 @@ import { langService } from "@/services/LangService";
 import cloneDeep from "lodash/cloneDeep"; // cloneDeep ni import qilish kerak
 import { message } from "ant-design-vue"; // Ant Design Vue xabarnoma uchun
 
-const data = ref([]);
+const data = ref([]),
+  loading = ref(false);
 const editableData = reactive({});
 
 const edit = id => {
@@ -29,7 +30,9 @@ const cancel = id => {
 };
 
 async function Delete(id) {
+  loading.value = true;
   await langService.Delete(id);
+  loading.value = false;
 }
 
 const columns = [
@@ -62,20 +65,26 @@ const columns = [
 
 async function getAll() {
   try {
+    loading.value = true;
     const response = await langService.GetAll();
     data.value = response;
     console.log(response);
   } catch (error) {
     console.log(error);
+  } finally {
+    loading.value = false;
   }
 }
 
 const copyToClipboard = async text => {
   try {
+    loading.value = true;
     await navigator.clipboard.writeText(text);
     message.success("Copied to clipboard!");
   } catch (err) {
     message.error("Copy failed!");
+  } finally {
+    loading.value = false;
   }
 };
 
@@ -93,7 +102,7 @@ onMounted(async () => {
           <template v-else>
             {{ text }}
           </template>
-          <a-button v-if="text" @click="copyToClipboard(text)" size="small">Copy</a-button>
+          <a-button :loading="loading" v-if="text" @click="copyToClipboard(text)" size="small">Copy</a-button>
         </div>
       </template>
       <template v-else-if="column.dataIndex === 'operation'">
@@ -105,9 +114,9 @@ onMounted(async () => {
             </a-popconfirm>
           </span>
           <span v-else class="flex gap-4">
-            <a-button type="primary" @click="edit(record.id)">Edit</a-button>
+            <a-button :loading="loading" type="primary" @click="edit(record.id)">Edit</a-button>
             <a-popconfirm title="Sure to delete?" @confirm="delete record.id">
-              <a-button type="primary" danger @click="Delete(record.id)">Delete</a-button>
+              <a-button :loading="loading" type="primary" danger @click="Delete(record.id)">Delete</a-button>
             </a-popconfirm>
           </span>
         </div>

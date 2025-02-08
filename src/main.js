@@ -39,6 +39,6 @@ app.component("bannerSmall", bannerSmall);
 app.use(VueEImzoPlugin);
 app.use(router);
 app.use(store);
-app.use(I18NextVue, { i18next });
+app.use(I18NextVue, { i18next, rerenderOn: ["initialized", "languageChanged", "loaded"] });
 
 app.mount("#app");
