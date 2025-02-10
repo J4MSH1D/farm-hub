@@ -20,6 +20,21 @@ const catalogueType = ref("products");
 const store = useStore();
 const router = useRouter();
 
+const dataOptions = [
+  {
+    value: "products",
+    payload: {
+      name: "Products",
+    },
+  },
+  {
+    value: "services",
+    payload: {
+      name: "Services",
+    },
+  },
+];
+
 function navigateProfile() {
   if (authService.CheckOnePermission(6000)) {
     router.push("/structures");
@@ -132,7 +147,13 @@ watch(route, () => {
     >
       <div class="container py-8 flex-grow flex flex-col">
         <div class="flex items-center gap-2">
-          <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
+          <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="dataOptions">
+            <template #label="{ value: val, payload }">
+              <div style="padding: 4px 4px">
+                <div>{{ $t(payload.name) }}</div>
+              </div>
+            </template>
+          </a-segmented>
         </div>
         <div v-if="catalogueType === 'services'" class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
           <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
@@ -153,7 +174,7 @@ watch(route, () => {
             <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
               <div>
                 <span class="text-2xl font-medium">
-                  {{ section.categoryName }}
+                  {{ $t(section.categoryName) }}
                 </span>
               </div>
               <div class="grid grid-cols-4 w-full gap-10 mt-10">
@@ -164,7 +185,7 @@ watch(route, () => {
                   <template v-if="item.image">
                     <icon :name="item.image" class="h-130px" />
                   </template>
-                  <div class="font-bold text-xl text-center mt-3 text-center">{{ item.title }}</div>
+                  <div class="font-bold text-xl text-center mt-3 text-center">{{ $t(item.title) }}</div>
                 </div>
               </div>
             </div>

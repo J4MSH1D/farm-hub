@@ -3,13 +3,22 @@ import { orderService } from "@/services/OrderService";
 import { useTranslation } from "i18next-vue";
 import { onMounted, reactive, ref } from "vue";
 import { productService } from "@/services/ProductService";
-import { columnData } from "./data";
 import { dateFormatter, numberFormatter } from "@/utils/internalization";
 import { message, Modal } from "ant-design-vue";
 
 // Composables
 const { i18next } = useTranslation();
 const lang = i18next.language;
+
+const columnData = [
+  { key: "id", name: "id", title: "#", dataIndex: "id" },
+  { key: "products", name: "products", title: i18next.t("Продукты"), dataIndex: "products" },
+  { key: "fee", name: "fee", title: i18next.t("Плата за заказ"), dataIndex: "fee" },
+  { key: "orderDate", name: "orderDate", title: i18next.t("Дата заказа"), dataIndex: "orderDate" },
+  { key: "name", name: "name", title: i18next.t("Cтатус заказа"), dataIndex: "name" },
+  { key: "user", name: "user", title: i18next.t("Пользователь"), dataIndex: "user" },
+  { title: "", dataIndex: "options", width: "20%" },
+];
 
 // Refs
 const isModal = ref(false);
