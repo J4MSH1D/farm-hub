@@ -9,8 +9,8 @@ class ProductService extends ApiService {
     return response["content"];
   }
 
-  async GetAll() {
-    const response = await this.api.get("/Product/GetAll");
+  async GetAll(params) {
+    const response = await this.api.get("/Product/GetAll", { params });
     return response["content"];
   }
 

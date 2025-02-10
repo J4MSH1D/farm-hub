@@ -98,17 +98,23 @@ onMounted(async () => {
     <template #bodyCell="{ column, text, record }">
       <template v-if="['code', 'ru', 'uz', 'cyrl', 'eng'].includes(column.dataIndex)">
         <div class="flex items-center gap-2 justify-between">
-          <a-input v-if="editableData[record.id]" v-model:value="editableData[record.id][column.dataIndex]" style="margin: -5px 0" />
+          <a-textarea
+            v-if="editableData[record.id]"
+            :auto-size="{ minCols: 3, maxCols: 8 }"
+            v-model:value="editableData[record.id][column.dataIndex]"
+            style="margin: -5px 0"
+          />
           <template v-else>
             {{ text }}
           </template>
           <a-button :loading="loading" v-if="text" @click="copyToClipboard(text)" size="small">Copy</a-button>
         </div>
       </template>
+
       <template v-else-if="column.dataIndex === 'operation'">
         <div class="editable-row-operations">
           <span v-if="editableData[record.id]" class="flex gap-4">
-            <a-typography-link @click="save(record.id)">Save</a-typography-link>
+            <a-button @click="save(record.id)">Save</a-button>
             <a-popconfirm title="Sure to cancel?" @confirm="cancel(record.id)">
               <a-button>Cancel</a-button>
             </a-popconfirm>
