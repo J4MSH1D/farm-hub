@@ -114,7 +114,7 @@ onMounted(async () => {
       <template v-else-if="column.dataIndex === 'operation'">
         <div class="editable-row-operations">
           <span v-if="editableData[record.id]" class="flex gap-4">
-            <a-typography-link @click="save(record.id)">Save</a-typography-link>
+            <a-button @click="save(record.id)">Save</a-button>
             <a-popconfirm title="Sure to cancel?" @confirm="cancel(record.id)">
               <a-button>Cancel</a-button>
             </a-popconfirm>
