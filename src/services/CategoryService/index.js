@@ -11,16 +11,22 @@ class CategoryService extends ApiService {
   }
 
   async Delete(id) {
-    return await this.api.delete("/Category/Delete", { params: { id } });
+    const response = await this.api.delete("/Category/Delete", { params: { id } });
+    return response["content"];
   }
 
   async Create(data) {
-    console.log(data);
-    await this.api.post("/Category/Create", data);
+    const response = await this.api.post("/Category/Create", data);
+    return response["content"];
   }
 
   async Update(data) {
     await this.api.put("/Category/Update", data);
+  }
+
+  async GetById(id) {
+    const response = await this.api.get("/Category/GetById", { params: { id } });
+    return response["content"];
   }
 }
 
