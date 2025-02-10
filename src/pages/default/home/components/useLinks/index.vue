@@ -28,7 +28,7 @@ onMounted(() => {
           <div v-for="(item, index) in smallLinks" :key="index" class="relative cursor-pointer" @click.stop="handleLinks(item)">
             <bannerSmall :color="item.color" :leafColor="item.leafColor" :cusClass="item.cusClass" :toRouter="item.toRouter">
               <div class="relative flex items-center pl-10gap-10 h-20">
-                <p class="text-2xl text-white" style="text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)">{{ $t(item.label) }}</p>
+                <p class="text-2xl relative z-10 text-white" style="text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)">{{ $t(item.label) }}</p>
                 <icon :name="item.image" class="h-20 absolute right-14 bottom-0" />
               </div>
             </bannerSmall>
@@ -43,7 +43,7 @@ onMounted(() => {
           <Transition name="fade">
             <div
               v-if="activeLink?.children"
-              class="absolute top-full mt-4 w-full h-auto bg-white/10 z-50 rounded-2xl p-6 flex flex-col gap-5 shadow-2xl"
+              class="absolute top-full mt-4 w-full h-auto bg-white/10 z-50 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl"
               style="
                 backdrop-filter: blur(40px);
                 -webkit-backdrop-filter: blur(40px);
@@ -52,7 +52,7 @@ onMounted(() => {
             >
               <!-- Name and button -->
               <div class="flex justify-between items-center">
-                <p class="text-3xl font-semibold">{{ $t(activeLink.label) }}</p>
+                <p class="text-2xl font-semibold">{{ $t(activeLink.label) }}</p>
                 <a-button class="w-8 h-8 p-0 flex items-center justify-center bg-white" @click="activeLink = null">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -79,7 +79,7 @@ onMounted(() => {
                   }"
                 >
                   <p
-                    class="text-lg leading-5 font-semibold max-w-4/5"
+                    class="leading-5 font-semibold max-w-4/5"
                     :style="{
                       color: item.isActive ? 'white' : '#00000099',
                       textShadow: item.isActive ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : 'none',
@@ -121,7 +121,7 @@ onMounted(() => {
                   </router-link>
                   <div
                     v-if="item.isSoon"
-                    class="absolute top-2 left-6 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-20 -translate-x-[44px] -translate-y-[24px] px-4 py-1"
+                    class="absolute top-2 left-6 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-20 -translate-x-[40px] -translate-y-[18px] px-1 py-[2px]"
                   >
                     {{ $t("Скоро") }}
                   </div>
@@ -131,8 +131,13 @@ onMounted(() => {
 
               <!-- Actice Children is Children -->
 
-              <div v-if="activeChildren?.children" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
-                <div v-for="(item, index) in activeChildren?.children" :key="index" :to="item.link" class="relative flex items-center">
+              <div v-if="activeChildren?.children" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 mt-3">
+                <div
+                  v-for="(item, index) in activeChildren?.children"
+                  :key="index"
+                  :to="item.link"
+                  class="relative flex items-center border border-gray-300 px-5 h-[60px] rounded-full"
+                >
                   <router-link
                     class="text-[#00000099] transition-colors duration-300"
                     @mouseover="hoveringIndex = index"
@@ -141,7 +146,7 @@ onMounted(() => {
                     v-if="item.path"
                   >
                     <p
-                      class="text-lg"
+                      class="text-sm"
                       :style="{
                         color: hoveringIndex === index ? activeLink.color : '#00000099',
                         textShadow: hoveringIndex === index ? `0px 4px 8px ${activeLink.color}` : 'none',
@@ -156,7 +161,7 @@ onMounted(() => {
                   </router-link>
                   <a
                     v-else
-                    class="text-lg"
+                    class="text-sm"
                     :style="{
                       color: hoveringIndex === index ? activeLink.color : '#00000099',
                       textShadow: hoveringIndex === index ? `0px 4px 8px ${activeLink.color}` : 'none',

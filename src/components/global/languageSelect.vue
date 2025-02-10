@@ -15,7 +15,7 @@ defineProps({
 </script>
 
 <template>
-  <a-select class="min-w-[150px]" v-model:value="language" @change="changeLanguage" :size="size" :get-popup-container="trigger => trigger.parentNode">
+  <a-select class="min-w-[110px]" v-model:value="language" @change="changeLanguage" :size="size" :get-popup-container="trigger => trigger.parentNode">
     <a-select-option value="uz">
       <div class="flex items-center gap-2">
         <icon name="uzbek-flag-rounded" is-svg-raw class="h-4 w-4" />
@@ -30,7 +30,7 @@ defineProps({
     </a-select-option>
     <a-select-option value="en">
       <div class="flex items-center gap-2">
-        <icon name="eng-flag.png" class="h-4.5 w-4.5" />
+        <icon name="america-flag.png" class="h-4.5 w-4.5" />
         <span>Eng</span>
       </div>
     </a-select-option>
