@@ -45,7 +45,7 @@ watch(route, () => {
 </script>
 <template>
   <div
-    class="pb-5 shadowCus sticky top-0 h-[207px] flex flex-col items-center z-100"
+    class="pb-5 shadowCus sticky top-0 z-90 h-[207px] flex flex-col items-center overflow-hidden"
     :style="{ backgroundImage: `url(${bgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }"
   >
     <div class="h-[30px] bg-yellow-500 flex items-center mb-6">
@@ -53,7 +53,7 @@ watch(route, () => {
         <p v-for="i in 15" class="mx-7 text-white">{{ $t("Сайт находится в режиме разработки") }}</p>
       </Vue3Marquee>
     </div>
-    <div class="container bg-white rounded-xl py-5 z-10 relative">
+    <div class="container bg-white rounded-xl py-5">
       <div class="flex items-center justify-start gap-x-10">
         <router-link to="/">
           <icon name="logo" is-svg />
@@ -67,7 +67,7 @@ watch(route, () => {
           <span class="text-white">{{ $t("Каталог") }}</span>
         </button>
         <!-- searchbar (input) -->
-        <div class="flex-grow flex items-center gap-4 z-100 relative">
+        <div class="flex-grow flex items-center gap-4">
           <a-input-group compact class="!flex">
             <a-select v-model:value="selectValue" class="min-w-[145px]" size="large" :get-popup-container="trigger => trigger.parentNode">
               <a-select-option value="Product">{{ $t("Товары") }}</a-select-option>
@@ -124,44 +124,48 @@ watch(route, () => {
         </div>
       </div>
     </div>
-    <!-- KATALOGLAR -->
-    <div class="fixed inset-0 top-auto h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex" v-if="catalogueOpen">
-      <div class="container py-8 flex-grow flex flex-col">
-        <div class="flex items-center gap-2">
-          <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
-        </div>
-        <div v-if="catalogueType === 'services'" class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
-          <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
-            <div
-              v-for="item in catalogue[catalogueType]"
-              :key="item"
-              class="flex flex-col justify-between gap-6 bg-[#f5f7f9] rounded-2xl p-6 cursor-pointer"
-            >
-              <h5 class="text-xl font-semibold">{{ $t(item.name) }}</h5>
-              <div class="flex justify-end">
-                <icon :name="item.img" class="h-32 w-auto object-contain" />
-              </div>
+  </div>
+
+  <!-- KATALOGLAR -->
+  <div
+    class="fixed inset-0 top-auto z-100 h-[calc(100vh-130px-20px)] w-full bg-white rounded-t-5xl shadow-2xl overflow-y-auto flex"
+    v-if="catalogueOpen"
+  >
+    <div class="container py-8 flex-grow flex flex-col">
+      <div class="flex items-center gap-2">
+        <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
+      </div>
+      <div v-if="catalogueType === 'services'" class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div
+            v-for="item in catalogue[catalogueType]"
+            :key="item"
+            class="flex flex-col justify-between gap-6 bg-[#f5f7f9] rounded-2xl p-6 cursor-pointer"
+          >
+            <h5 class="text-xl font-semibold">{{ $t(item.name) }}</h5>
+            <div class="flex justify-end">
+              <icon :name="item.img" class="h-32 w-auto object-contain" />
             </div>
           </div>
         </div>
-        <div v-else class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
-          <div class="flex flex-col w-full">
-            <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
-              <div>
-                <span class="text-2xl font-medium">
-                  {{ section.categoryName }}
-                </span>
-              </div>
-              <div class="grid grid-cols-4 w-full gap-10 mt-10">
-                <div
-                  v-for="item in section.categories"
-                  class="cursor-pointer border rounded-xl p-3 min-h-190px relative flex flex-col justify-center items-center transition hover:(shadow drop-shadow)"
-                >
-                  <template v-if="item.image">
-                    <icon :name="item.image" class="h-130px" />
-                  </template>
-                  <div class="font-bold text-xl text-center mt-3 text-center">{{ item.title }}</div>
-                </div>
+      </div>
+      <div v-else class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
+        <div class="flex flex-col w-full">
+          <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
+            <div>
+              <span class="text-2xl font-medium">
+                {{ section.categoryName }}
+              </span>
+            </div>
+            <div class="grid grid-cols-4 w-full gap-10 mt-10">
+              <div
+                v-for="item in section.categories"
+                class="cursor-pointer border rounded-xl p-3 min-h-190px relative flex flex-col justify-center items-center transition hover:(shadow drop-shadow)"
+              >
+                <template v-if="item.image">
+                  <icon :name="item.image" class="h-130px" />
+                </template>
+                <div class="font-bold text-xl text-center mt-3 text-center">{{ item.title }}</div>
               </div>
             </div>
           </div>
@@ -189,19 +193,36 @@ watch(route, () => {
 .regions-select .ant-select-arrow {
   color: white !important;
 }
-.custom-segmented {
-  :deep(.ant-segmented-item) {
-    margin: 0 5px !important;
-    transition: all 0.3s;
-  }
 
-  :deep(.ant-segmented-item-selected) {
-    background-color: #1890ff;
-    color: white;
-  }
+.custom-segmented.ant-segmented {
+  background-color: #f5f7f9;
+}
 
-  :deep(.ant-segmented-thumb) {
-    background-color: transparent;
-  }
+.custom-segmented .ant-segmented-item {
+  color: #333;
+  transition: all 0.3s;
+  background-color: transparent;
+  margin: 0 4px;
+}
+
+.custom-segmented .ant-segmented-item-selected {
+  color: #fff;
+  background-color: #10b981;
+}
+
+.custom-segmented .ant-segmented-thumb {
+  background-color: #10b981;
+}
+
+/* Hover effekti */
+.custom-segmented .ant-segmented-item:hover {
+  color: #10b981;
+  background: transparent;
+}
+
+/* Faol element uchun hover effekti */
+.custom-segmented .ant-segmented-item-selected:hover {
+  color: #fff;
+  background-color: #0d7d58;
 }
 </style>

@@ -46,6 +46,15 @@ const links = [
     },
     component: () => lazyLoad("dashboard/category"),
   },
+  {
+    path: "/media-settings",
+    name: "Media Settings",
+    meta: {
+      title: "Настройки медиа",
+      permissions: [9000],
+    },
+    component: () => lazyLoad("dashboard/mediaSettings"),
+  },
 ];
 
 export default links;
