@@ -32,16 +32,16 @@ const links = [
     path: "/category-type",
     name: "Category Type",
     meta: {
-      title: "Подкатегории",
+      title: "Категории",
       permissions: [9000],
     },
     component: () => lazyLoad("dashboard/categoryType"),
   },
   {
     path: "/category",
-    name: "Category",
+    name: "Подкатегории",
     meta: {
-      title: "Категории",
+      title: "Подкатегории",
       permissions: [9000],
     },
     component: () => lazyLoad("dashboard/category"),
