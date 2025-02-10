@@ -19,25 +19,25 @@ defineProps({
     <a-select-option value="uz">
       <div class="flex items-center gap-2">
         <icon name="uzbek-flag-rounded" is-svg-raw class="h-4 w-4" />
-        <span>UZ</span>
+        <span>O'z</span>
       </div>
     </a-select-option>
     <a-select-option value="ru">
       <div class="flex items-center gap-2">
         <icon name="russian-flag-rounded" is-svg-raw class="h-4 w-4" />
-        <span>RU</span>
+        <span>Рус</span>
       </div>
     </a-select-option>
     <a-select-option value="en">
       <div class="flex items-center gap-2">
         <icon name="eng-flag.png" class="h-4.5 w-4.5" />
-        <span>EN</span>
+        <span>Eng</span>
       </div>
     </a-select-option>
     <a-select-option value="cyrl">
       <div class="flex items-center gap-2">
         <icon name="uzbek-flag-rounded" is-svg-raw class="h-4 w-4" />
-        <span>CYRL</span>
+        <span>Ўз</span>
       </div>
     </a-select-option>
   </a-select>
