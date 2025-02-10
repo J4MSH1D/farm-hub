@@ -43,7 +43,7 @@ onMounted(() => {
           <Transition name="fade">
             <div
               v-if="activeLink?.children"
-              class="absolute top-full mt-4 w-full h-auto bg-white/10 z-50 rounded-2xl p-10 flex flex-col gap-5 shadow-2xl"
+              class="absolute top-full mt-4 w-full h-auto bg-white/10 z-50 rounded-2xl p-6 flex flex-col gap-5 shadow-2xl"
               style="
                 backdrop-filter: blur(40px);
                 -webkit-backdrop-filter: blur(40px);
@@ -66,7 +66,7 @@ onMounted(() => {
               <!-- /Name and button -->
 
               <!-- Children  -->
-              <div class="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+              <div class="mt-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4">
                 <div
                   v-for="(item, index) in activeLink.children"
                   :key="index"
@@ -121,7 +121,7 @@ onMounted(() => {
                   </router-link>
                   <div
                     v-if="item.isSoon"
-                    class="absolute top-2 left-6 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-20 -translate-x-1/2 -translate-y-1/2 px-4 py-1"
+                    class="absolute top-2 left-6 bg-gray-300 rounded-full text-sm text-white z-10 transform -rotate-20 -translate-x-[44px] -translate-y-[24px] px-4 py-1"
                   >
                     {{ $t("Скоро") }}
                   </div>

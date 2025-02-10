@@ -27,7 +27,7 @@ async function deleteCategory(id) {
     await categoryService.Delete(id);
     await methods.refreshCategory();
   } finally {
-    isLoadingData.value = false;
+    loading.value = false;
   }
 }
 
@@ -58,8 +58,10 @@ const columns = [
         </template>
         <template v-if="column.dataIndex === 'actions'">
           <div class="flex gap-2">
-            <a-button danger type="primary" @click="deleteCategory(record.id)">{{ $t("Удалить") }}</a-button>
-            <a-button class="bg-yellow-500 hover:(!bg-yellow-400)" type="primary" @click="openEditModal(record)">{{ $t("Изменить") }}</a-button>
+            <a-button :loading="loading" danger type="primary" @click="deleteCategory(record.id)">{{ $t("Удалить") }}</a-button>
+            <a-button :loading="loading" class="bg-yellow-500 hover:(!bg-yellow-400)" type="primary" @click="openEditModal(record)">{{
+              $t("Изменить")
+            }}</a-button>
           </div>
         </template>
       </template>

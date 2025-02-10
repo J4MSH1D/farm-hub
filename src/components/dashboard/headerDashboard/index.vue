@@ -25,57 +25,38 @@ async function logOut() {
 
 <template>
   <header class="w-full z-90 bg-white border-b border-gray-200">
-    <div class="flex items-center justify-between px-5">
-      <!-- left -->
-      <div class="flex items-center gap-3">
-        <a-input-search :placeholder="$t('Поиск по сайту')" />
-        <a-button @click="toggleTheme()">
-          <div v-if="darkTheme" class="flex items-center gap-1.5">
-            <icon name="moon400" is-svg-raw class="w-4 h-4 fill-blue-300" />
-            <span>{{ $t("Тёмный") }}</span>
+    <div class="flex items-center justify-end gap-5 px-5">
+      <language-select />
+      <a-dropdown trigger="click" class="cursor-pointer select-none">
+        <div class="max-w-[250px] text-left flex items-center gap-2 border-l px-4 py-4">
+          <div class="aspect-square border rounded-full p-2">
+            <icon name="user300" is-svg-raw class="h-5 w-5 fill-red" />
           </div>
-          <div v-else class="flex items-center gap-1.5">
-            <icon name="sun400" is-svg-raw class="w-4 h-4 fill-yellow-500" />
-            <span>{{ $t("Светлый") }}</span>
+          <div>
+            <p class="text-xs text-zinc-500">{{ $t("Реквизиты") }}</p>
+            <p v-if="user && user['firstName'] && user['lastName']" class="text-sm text-zinc-900 line-clamp-1">
+              {{ `${user["firstName"]} ${user["lastName"]}` }}
+            </p>
           </div>
-        </a-button>
-      </div>
+        </div>
 
-      <!-- right -->
-      <div class="flex items-center gap-4">
-        <a-date-picker />
-        <language-select />
-        <a-dropdown trigger="click" class="cursor-pointer select-none">
-          <div class="max-w-[250px] text-left flex items-center gap-2 border-l px-4 py-4">
-            <div class="aspect-square border rounded-full p-2">
-              <icon name="user300" is-svg-raw class="h-5 w-5 fill-red" />
-            </div>
-            <div>
-              <p class="text-xs text-zinc-500">{{ $t("Реквизиты") }}</p>
-              <p v-if="user && user['firstName'] && user['lastName']" class="text-sm text-zinc-900 line-clamp-1">
-                {{ `${user["firstName"]} ${user["lastName"]}` }}
-              </p>
-            </div>
-          </div>
-
-          <template #overlay>
-            <a-menu>
-              <a-menu-item>
-                <div class="flex items-center gap-2 py-1">
-                  <icon name="settings400" is-svg-raw class="h-4 w-4 fill-zinc-500" />
-                  <span class="text-zinc-500">{{ $t("Настройки аккаунта") }}</span>
-                </div>
-              </a-menu-item>
-              <a-menu-item @click="logOut">
-                <div class="flex items-center gap-2 py-1">
-                  <icon name="sign-out400" is-svg-raw class="h-4 w-4 fill-red-600" />
-                  <span class="text-red-600">{{ $t("Выход") }}</span>
-                </div>
-              </a-menu-item>
-            </a-menu>
-          </template>
-        </a-dropdown>
-      </div>
+        <template #overlay>
+          <a-menu>
+            <a-menu-item>
+              <div class="flex items-center gap-2 py-1">
+                <icon name="settings400" is-svg-raw class="h-4 w-4 fill-zinc-500" />
+                <span class="text-zinc-500">{{ $t("Настройки аккаунта") }}</span>
+              </div>
+            </a-menu-item>
+            <a-menu-item @click="logOut">
+              <div class="flex items-center gap-2 py-1">
+                <icon name="sign-out400" is-svg-raw class="h-4 w-4 fill-red-600" />
+                <span class="text-red-600">{{ $t("Выход") }}</span>
+              </div>
+            </a-menu-item>
+          </a-menu>
+        </template>
+      </a-dropdown>
     </div>
   </header>
 </template>

@@ -33,9 +33,8 @@ i18next
         return {
           ru: "",
           uz: "",
-          en: "",
+          eng: "",
           cyrl: "",
-          qq: "",
           code: fallbackValue || "",
         };
       },
