@@ -51,21 +51,21 @@ const columns = [
     width: "20%",
   },
   {
-    title: "Uz",
+    title: "O'z",
     dataIndex: "uz",
     filters: [{ text: "Bo'shlari", value: "empty" }],
     onFilter: (value, record) => (value === "empty" ? !record.uz || record.uz.trim() === "" : record.uz && record.uz.trim() !== ""),
     width: "20%",
   },
   {
-    title: "En",
-    dataIndex: "en",
+    title: "Eng",
+    dataIndex: "eng",
     filters: [{ text: "Bo'shlari", value: "empty" }],
-    onFilter: (value, record) => (value === "empty" ? !record.en || record.en.trim() === "" : record.en && record.en.trim() !== ""),
+    onFilter: (value, record) => (value === "empty" ? !record.eng || record.eng.trim() === "" : record.eng && record.eng.trim() !== ""),
     width: "20%",
   },
   {
-    title: "Cyrl",
+    title: "Ўз",
     dataIndex: "cyrl",
     filters: [{ text: "Bo'shlari", value: "empty" }],
     onFilter: (value, record) => (value === "empty" ? !record.cyrl || record.cyrl.trim() === "" : record.cyrl && record.cyrl.trim() !== ""),
@@ -111,7 +111,7 @@ onMounted(async () => {
 <template>
   <a-table :columns="columns" :data-source="data">
     <template #bodyCell="{ column, text, record }">
-      <template v-if="['code', 'ru', 'uz', 'cyrl', 'en'].includes(column.dataIndex)">
+      <template v-if="['code', 'ru', 'uz', 'cyrl', 'eng'].includes(column.dataIndex)">
         <div class="flex items-center gap-2 justify-between">
           <a-textarea
             v-if="editableData[record.id] && column.disabled !== true"
