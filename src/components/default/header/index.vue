@@ -20,6 +20,21 @@ const catalogueType = ref("products");
 const store = useStore();
 const router = useRouter();
 
+const dataOptions = [
+  {
+    value: "products",
+    payload: {
+      name: "Products",
+    },
+  },
+  {
+    value: "services",
+    payload: {
+      name: "Services",
+    },
+  },
+];
+
 function navigateProfile() {
   if (authService.CheckOnePermission(6000)) {
     router.push("/structures");
@@ -132,7 +147,13 @@ watch(route, () => {
     >
       <div class="container py-8 flex-grow flex flex-col">
         <div class="flex items-center gap-2">
-          <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="['products', 'services']" />
+          <a-segmented v-model:value="catalogueType" class="custom-segmented p-1" size="large" :options="dataOptions">
+            <template #label="{ value: val, payload }">
+              <div style="padding: 4px 4px">
+                <div>{{ $t(payload.name) }}</div>
+              </div>
+            </template>
+          </a-segmented>
         </div>
         <div v-if="catalogueType === 'services'" class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
           <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">

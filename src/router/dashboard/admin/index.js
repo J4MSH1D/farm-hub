@@ -33,7 +33,7 @@ const links = [
     name: "Category Type",
     meta: {
       title: "Категории",
-      permissions: [9000],
+      permissions: [9001],
     },
     component: () => lazyLoad("dashboard/categoryType"),
   },
@@ -42,7 +42,7 @@ const links = [
     name: "Подкатегории",
     meta: {
       title: "Подкатегории",
-      permissions: [9000],
+      permissions: [9001],
     },
     component: () => lazyLoad("dashboard/category"),
   },

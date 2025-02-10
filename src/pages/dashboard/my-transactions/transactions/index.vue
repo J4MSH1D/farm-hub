@@ -22,9 +22,9 @@ const guarantee = ref("withGuarantee");
 
     <div class="flex items-center justify-between gap-5">
       <div class="flex gap-5 mt-5 items-center">
-        <a-radio-group size="large" button-style="solid" v-model:value="activeTab">
-          <a-radio-button size="large" primary value="products">{{ $t("Товары") }}</a-radio-button>
-          <a-radio-button size="large" value="services">{{ $t("Услуги") }}</a-radio-button>
+        <a-radio-group button-style="solid" v-model:value="activeTab">
+          <a-radio-button primary value="products">{{ $t("Товары") }}</a-radio-button>
+          <a-radio-button value="services">{{ $t("Услуги") }}</a-radio-button>
         </a-radio-group>
         <a-radio-group class="block" button-style="solid" v-model:value="userType">
           <a-radio-button value="vendor">{{ $t("Я продавец") }}</a-radio-button>
@@ -36,7 +36,7 @@ const guarantee = ref("withGuarantee");
         </a-radio-group>
       </div>
 
-      <a-button size="large">
+      <a-button>
         <div class="flex items-center gap-2">
           <icon name="filter400" is-svg-raw class="h-4 w-4 fill-zinc-500" />
           <span class="text-zinc-900">{{ $t("Фильтр") }}</span>
