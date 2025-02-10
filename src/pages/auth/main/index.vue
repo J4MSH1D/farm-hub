@@ -10,11 +10,11 @@ import { authService } from "@/services/auth";
 const userData = reactive({ login: "", password: "" }),
   store = useStore(),
   router = useRouter(),
-  loading = ref(false);
+  isLoading = ref(false);
 
 const onFinish = async values => {
   try {
-    loading.value = true;
+    isLoading.value = true;
     const response = await authApiService.LoginWithEmail(userData);
     await store.dispatch("getUser");
     storage.set("accessToken", response.content.accessToken);
@@ -26,7 +26,7 @@ const onFinish = async values => {
       router.push("/my-transactions");
     }
   } finally {
-    loading.value = false;
+    isLoading.value = false;
   }
 };
 const onFinishFailed = errorInfo => {
@@ -56,7 +56,7 @@ const onFinishFailed = errorInfo => {
         <a-input-password size="large" v-model:value="userData.password" placeholder="Пароль" autocomplete="on" />
       </a-form-item>
       <a-form-item class="mt-10">
-        <a-button class="w-full" type="primary" size="large" html-type="submit">{{ $t("Авторизоваться") }}</a-button>
+        <a-button :loading="isLoading" class="w-full" type="primary" size="large" html-type="submit">{{ $t("Авторизоваться") }}</a-button>
       </a-form-item>
     </a-form>
   </div>

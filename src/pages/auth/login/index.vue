@@ -7,6 +7,7 @@ import { useRouter } from "vue-router";
 import { authApiService } from "@/services/AuthService";
 import { useStore } from "vuex";
 
+const isLoading = ref(false);
 const { getAllUserKeys, signWithEsiId } = useEimzo(),
   keys = ref([]),
   selectedValue = ref(null),
@@ -19,6 +20,7 @@ async function getAllKeys() {
 
 async function sign() {
   try {
+    isLoading.value = true;
     const signature = await signWithEsiId(selectedValue.value);
     const response = await authApiService.LoginByEimzo({ signature });
     await store.dispatch("getUser");
@@ -26,6 +28,8 @@ async function sign() {
     router.push("/my-transactions");
   } catch {
     message.error("Ошибка подписи с ключом E-IMZO");
+  } finally {
+    isLoading.value = false;
   }
 }
 
@@ -55,7 +59,7 @@ onMounted(async () => {
         </a-select>
       </div>
       <div class="my-5">
-        <a-button size="large" @click="sign" class="min-w-full" type="primary">{{ $t("Авторизоваться") }}</a-button>
+        <a-button :loading="isLoading" size="large" @click="sign" class="min-w-full" type="primary">{{ $t("Авторизоваться") }}</a-button>
       </div>
       <div class="mt-10 text-center">
         <router-link to="/auth/register" class="underline text-gray-400 text-sm">{{ $t("Нет аккаунта? Регистрация") }}</router-link>

@@ -168,55 +168,55 @@ const links = [
   },
 
   // ============= Реквизиты =============
-  {
-    path: "/requisites",
-    name: "Dashboard/Requisites",
-    meta: {
-      title: "Реквизиты",
-      permissions: [3000],
-    },
-    children: [
-      {
-        path: "",
-        name: "Dashboard/Requisites/Requisites",
-        component: () => lazyLoad("dashboard/requisites/requisites"),
-        meta: {
-          icon: {
-            name: "requisites",
-            isSvg: true,
-          },
-          title: "Реквизиты",
-          permissions: [3000],
-        },
-      },
-      {
-        path: "add-card",
-        name: "Dashboard/Requisites/AddCard",
-        component: () => lazyLoad("dashboard/requisites/add-card"),
-        meta: {
-          icon: {
-            name: "add-card",
-            isSvg: true,
-          },
-          title: "Добавить карту",
-          permissions: [3000],
-        },
-      },
-      {
-        path: "add-virtual-card",
-        name: "Dashboard/Requisites/AddVirtualCard",
-        component: () => lazyLoad("dashboard/requisites/add-virtual-card"),
-        meta: {
-          icon: {
-            name: "add-card",
-            isSvg: true,
-          },
-          title: "Открыть виртуальную карту",
-          permissions: [3000],
-        },
-      },
-    ],
-  },
+  // {
+  //   path: "/requisites",
+  //   name: "Dashboard/Requisites",
+  //   meta: {
+  //     title: "Реквизиты",
+  //     permissions: [3000],
+  //   },
+  //   children: [
+  //     {
+  //       path: "",
+  //       name: "Dashboard/Requisites/Requisites",
+  //       component: () => lazyLoad("dashboard/requisites/requisites"),
+  //       meta: {
+  //         icon: {
+  //           name: "requisites",
+  //           isSvg: true,
+  //         },
+  //         title: "Реквизиты",
+  //         permissions: [3000],
+  //       },
+  //     },
+  //     {
+  //       path: "add-card",
+  //       name: "Dashboard/Requisites/AddCard",
+  //       component: () => lazyLoad("dashboard/requisites/add-card"),
+  //       meta: {
+  //         icon: {
+  //           name: "add-card",
+  //           isSvg: true,
+  //         },
+  //         title: "Добавить карту",
+  //         permissions: [3000],
+  //       },
+  //     },
+  //     {
+  //       path: "add-virtual-card",
+  //       name: "Dashboard/Requisites/AddVirtualCard",
+  //       component: () => lazyLoad("dashboard/requisites/add-virtual-card"),
+  //       meta: {
+  //         icon: {
+  //           name: "add-card",
+  //           isSvg: true,
+  //         },
+  //         title: "Открыть виртуальную карту",
+  //         permissions: [3000],
+  //       },
+  //     },
+  //   ],
+  // },
 
   // ============= Order =============
   {
