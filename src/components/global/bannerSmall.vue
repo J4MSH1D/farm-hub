@@ -15,10 +15,10 @@ const props = defineProps({
       <slot />
     </div>
     <router-link v-if="toRouter" :to="toRouter" class="absolute right-0 bottom-0 z-10">
-      <arrowButton :color="color"></arrowButton>
+      <arrowButton :color="color" cusClass="w-10 !h-10"></arrowButton>
     </router-link>
     <a v-else :href="link" target="_blank" class="absolute right-0 bottom-0 z-10">
-      <arrowButton :color="color"></arrowButton>
+      <arrowButton :color="color" cusClass="w-10 !h-10"></arrowButton>
     </a>
 
     <!-- Right leaf -->

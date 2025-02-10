@@ -19,6 +19,22 @@ const bigLinks = [
 
 const smallLinks = [
   {
+    color: "#62c025",
+    leafColor: "#75d241",
+    cusClass: "",
+    toRouter: "/products",
+    label: "Товары",
+    image: "home_link_1.png",
+  },
+  {
+    color: "#f67020",
+    leafColor: "#f47b33",
+    cusClass: "",
+    toRouter: "/services",
+    label: "Услуги",
+    image: "home_link_2.png",
+  },
+  {
     color: "#448540",
     leafColor: "#538e50",
     cusClass: "",

@@ -21,10 +21,18 @@ const guarantee = ref("withGuarantee");
     <h2 class="text-2xl text-zinc-900 font-semibold">{{ $t("Мои сделки") }}</h2>
 
     <div class="flex items-center justify-between gap-5">
-      <div class="flex gap-3 mt-5">
-        <a-radio-group size="large" v-model:value="activeTab">
-          <a-radio-button size="large" value="products">{{ $t("Товары") }}</a-radio-button>
+      <div class="flex gap-5 mt-5 items-center">
+        <a-radio-group size="large" button-style="solid" v-model:value="activeTab">
+          <a-radio-button size="large" primary value="products">{{ $t("Товары") }}</a-radio-button>
           <a-radio-button size="large" value="services">{{ $t("Услуги") }}</a-radio-button>
+        </a-radio-group>
+        <a-radio-group class="block" button-style="solid" v-model:value="userType">
+          <a-radio-button value="vendor">{{ $t("Я продавец") }}</a-radio-button>
+          <a-radio-button value="customer">{{ $t("Я покупатель") }}</a-radio-button>
+        </a-radio-group>
+        <a-radio-group class="block" button-style="solid" v-model:value="guarantee">
+          <a-radio-button value="withGuarantee">{{ $t("С гарантией") }}</a-radio-button>
+          <a-radio-button value="noGuarantee">{{ $t("Без гарантий") }}</a-radio-button>
         </a-radio-group>
       </div>
 
@@ -35,16 +43,7 @@ const guarantee = ref("withGuarantee");
         </div>
       </a-button>
     </div>
-    <div>
-      <a-radio-group class="block mt-8" v-model:value="userType">
-        <a-radio-button value="vendor">{{ $t("Я продавец") }}</a-radio-button>
-        <a-radio-button value="customer">{{ $t("Я покупатель") }}</a-radio-button>
-      </a-radio-group>
-      <a-radio-group class="block mt-3" v-model:value="guarantee">
-        <a-radio-button value="withGuarantee">{{ $t("С гарантией") }}</a-radio-button>
-        <a-radio-button value="noGuarantee">{{ $t("Без гарантий") }}</a-radio-button>
-      </a-radio-group>
-    </div>
+    <div></div>
 
     <div class="mt-8">
       <a-table :columns="table.columns" :data-source="table.data" :pagination="true" :scroll="{ x: 'max-content' }">

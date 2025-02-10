@@ -19,6 +19,7 @@ const isDeleteModal = ref(false);
 const formRef = ref();
 const loading = ref(false);
 const selectedOrderId = ref(null);
+const isLoadingData = ref(false);
 
 // Reactive states
 const formData = reactive({
@@ -57,9 +58,16 @@ async function submitForm() {
 }
 
 async function getAllProducts() {
-  const response = await productService.GetAll();
-  products.value = response;
-  console.log(response);
+  try {
+    isLoadingData.value = true;
+    const response = await productService.GetAll();
+    products.value = response;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    isLoadingData.value = false;
+  }
 }
 
 function closeModal() {
@@ -104,7 +112,7 @@ onMounted(() => {
       </template>
     </a-modal>
 
-    <a-table :data-source="products" :columns="tableColumns" bordered>
+    <a-table :data-source="products" :loading="isLoadingData" :columns="tableColumns" bordered>
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'id'">
           {{ record.id }}

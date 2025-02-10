@@ -11,7 +11,7 @@ i18next
   .use(I18NextHttpBackend)
   .use(LanguageDetector)
   .init({
-    // saveMissing: Boolean(Number(saveMissingStatus)),
+    saveMissing: false,
     fallbackLng: locale,
     detection: {
       order: ["localStorage", "sessionStorage", "queryString"],
@@ -31,8 +31,11 @@ i18next
       },
       parsePayload: function (namespace, key, fallbackValue) {
         return {
-          ru: fallbackValue || "",
+          ru: "",
           uz: "",
+          en: "",
+          cyrl: "",
+          qq: "",
           code: fallbackValue || "",
         };
       },
