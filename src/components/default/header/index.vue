@@ -174,7 +174,7 @@ watch(route, () => {
             <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
               <div>
                 <span class="text-2xl font-medium">
-                  {{ section.categoryName }}
+                  {{ $t(section.categoryName) }}
                 </span>
               </div>
               <div class="grid grid-cols-4 w-full gap-10 mt-10">
@@ -185,7 +185,7 @@ watch(route, () => {
                   <template v-if="item.image">
                     <icon :name="item.image" class="h-130px" />
                   </template>
-                  <div class="font-bold text-xl text-center mt-3 text-center">{{ item.title }}</div>
+                  <div class="font-bold text-xl text-center mt-3 text-center">{{ $t(item.title) }}</div>
                 </div>
               </div>
             </div>
