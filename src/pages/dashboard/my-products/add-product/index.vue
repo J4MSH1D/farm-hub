@@ -13,6 +13,7 @@ const trades = ref([]);
 const regions = ref([]);
 const districts = ref([]);
 const categories = ref([]);
+const loading = ref(false);
 
 const formRef = ref();
 
@@ -32,11 +33,18 @@ const form = ref({
 function saveAsDraft() {}
 
 async function createProduct() {
-  const response = await productService.Create(form.value);
-  if (response) {
-    form.value = {};
-    resetForm();
-    message.success(t("Товар успешно добавлен!"));
+  try {
+    loading.value = true;
+    const response = await productService.Create(form.value);
+    if (response) {
+      form.value = {};
+      resetForm();
+      message.success(t("Товар успешно добавлен!"));
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loading.value = false;
   }
 }
 
@@ -121,14 +129,14 @@ const tradeTypes = {
       </a-form-item>
       <!-- Добавить фото товара -->
       <a-form-item :label="$t('Добавить фото товара')" :labelCol="{ span: 24 }">
-        <!-- <ImageUploader @upload="(_, base64) => (form.image = base64)" @delete="() => (form.image = null)" /> -->
+        <ImageUploader @upload="(_, base64) => (form.image = base64)" @delete="() => (form.image = null)" v-model="form.image" />
       </a-form-item>
     </a-form>
 
     <!-- Save and Send buttons -->
     <div class="flex justify-end gap-3 mt-20">
       <a-button size="large" @click="saveAsDraft">{{ $t("Сохранить как черновик") }}</a-button>
-      <a-button size="large" @click="createProduct" type="primary">{{ $t("Отправить на модерацию") }}</a-button>
+      <a-button size="large" @click="createProduct" type="primary" :loading="loading">{{ $t("Отправить на модерацию") }}</a-button>
     </div>
   </div>
 </template>

@@ -265,11 +265,11 @@ const links = [
     ],
   },
   {
-    path: "/partnyors",
-    name: "Parnyors",
-    component: () => lazyLoad("default/partnyors"),
+    path: "/partners",
+    name: "Parners",
+    component: () => lazyLoad("default/partners"),
     meta: {
-      title: "Parnyors",
+      title: "Parners",
       permissions: [],
     },
   },

@@ -9,7 +9,11 @@ import { upperLinks, bottomLinks } from "./data";
         <span class="pl-5">
           <icon name="logo" is-svg />
         </span>
-        <span class="text-sm text-gray-500 *hoverGreen" v-for="link in upperLinks">{{ $t(link.name) }}</span>
+
+        <span class="text-sm text-gray-500 *hoverGreen" v-for="link in upperLinks">
+          <router-link v-if="link.path" :to="link.path" class="px-5 py-2 inline-block">{{ $t(link.name) }}</router-link>
+          <span v-else class="px-5 py-2 inline-block">{{ $t(link.name) }}</span>
+        </span>
       </div>
       <div class="py-8 columns-5 justify-items-center">
         <div v-for="link in bottomLinks" class="flex-1 py-3 min-w-[150px]" style="break-inside: avoid">

@@ -18,6 +18,7 @@ const isDeleteModal = ref(false);
 const formRef = ref();
 const loading = ref(false);
 const selectedOrderId = ref(null);
+const isLoadingData = ref(false);
 
 // Reactive states
 const formData = reactive({
@@ -32,7 +33,9 @@ const state = reactive({
 
 // Functions
 async function GetAllOrders() {
+  isLoadingData.value = true;
   state.tableData = await orderService.GetAll();
+  isLoadingData.value = false;
 }
 
 async function submitForm() {
@@ -125,7 +128,7 @@ onMounted(async () => {
       </template>
     </a-modal>
 
-    <a-table :data-source="state.tableData" :columns="columnData" bordered>
+    <a-table :data-source="state.tableData" :loading="isLoadingData" :columns="columnData" bordered>
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'products'">
           <a-tag v-for="product in record.products" size="large" color="green">{{ product.title }}</a-tag>

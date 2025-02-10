@@ -45,15 +45,16 @@ watch(route, () => {
 </script>
 <template>
   <div
-    class="pb-5 shadowCus sticky top-0 z-100 h-[180px] flex flex-col items-center"
+    class="shadowCus sticky top-0 z-100 h-[140px] flex flex-col items-center"
     :style="{ backgroundImage: `url(${bgHeader})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }"
   >
-    <div class="h-[30px] bg-yellow-500 flex items-center mb-6">
+    <div class="absolute w-full h-full top-0 left-0 bg-black/50"></div>
+    <div class="h-[20px] w-full overflow-x-hidden bg-yellow-500 flex items-center mb-6 relative z-10">
       <Vue3Marquee :pause-on-hover="true" :duration="100" class="overflow-hidden">
-        <p v-for="i in 15" class="mx-7 text-white">{{ $t("Сайт находится в режиме разработки") }}</p>
+        <p v-for="i in 15" class="mx-7 text-white text-sm">{{ $t("Сайт находится в режиме разработки") }}</p>
       </Vue3Marquee>
     </div>
-    <div class="container bg-white rounded-xl py-5 z-10">
+    <div class="container bg-white rounded-xl py-3 z-10">
       <div class="flex items-center justify-start gap-x-10">
         <router-link to="/">
           <icon name="logo" is-svg />

@@ -9,6 +9,7 @@ import Navigator from "./components/navigator.vue";
 
 const categoryTypes = ref([]);
 const categories = ref([]);
+const isLoadingData = ref(false);
 const modals = reactive({
   add: { open: false },
   edit: { open: false, params: null },
@@ -20,9 +21,11 @@ async function getCategoryTypes() {
 }
 
 async function getAllCategories() {
+  isLoadingData.value = true;
   const response = await categoryService.GetAll();
   console.log(response);
   categories.value[0] = response;
+  isLoadingData.value = false;
 }
 
 watch(() => {
@@ -33,6 +36,7 @@ watch(() => {
 provide("modals", modals);
 provide("categories", categories);
 provide("categoryTypes", categoryTypes);
+provide("isLoadingData", isLoadingData);
 </script>
 
 <template>

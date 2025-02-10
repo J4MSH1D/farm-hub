@@ -1,11 +1,11 @@
 const upperLinks = [
   {
     name: "О компании",
-    link: "/",
+    path: "/",
   },
   {
     name: "О проетке Менинг томорқам",
-    link: "",
+    path: "",
   },
   {
     name: "Обратная связь",
@@ -13,7 +13,7 @@ const upperLinks = [
   },
   {
     name: "Партнеры",
-    link: "/partners",
+    path: "/partners",
   },
 ];
 
