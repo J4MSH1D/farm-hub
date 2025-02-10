@@ -1,3 +1,5 @@
 <script setup></script>
 
-<template></template>
+<template>
+  <div>News Page</div>
+</template>
