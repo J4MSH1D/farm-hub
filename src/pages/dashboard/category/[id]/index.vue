@@ -2,11 +2,14 @@
 import Table from "./components/table.vue";
 import AddModal from "./components/addModal.vue";
 import EditModal from "./components/editModal.vue";
-import { onMounted, provide, reactive } from "vue";
+import { onMounted, provide, reactive, ref } from "vue";
 import { categoryService } from "@/services/CategoryService";
 import { categoryTypeService } from "@/services/CategoryTypeService";
 import Navigator from "./components/navigator.vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
+const { id } = route.params;
 const categoryTypes = reactive({ loading: false, data: [] });
 const categories = reactive({ loading: false, data: [] });
 const modals = reactive({
@@ -14,20 +17,19 @@ const modals = reactive({
   edit: { open: false, params: null },
 });
 
-async function getCategoryTypes() {
-  const response = await categoryTypeService.GetAllCategories();
-  categoryTypes.data = response;
-}
-
-async function getAllCategories() {
+async function getCategoryById(category_id) {
   try {
     categories.loading = true;
-    const response = await categoryService.GetAll();
-    const data = response.map(item => ({ ...item.category, categoryType: item.categoryType }));
-    categories.data[0] = { subCategories: data };
+    const response = await categoryService.GetById(category_id);
+    categories.data.push(response);
   } finally {
     categories.loading = false;
   }
+}
+
+async function getCategoryTypes() {
+  const response = await categoryTypeService.GetAllCategories();
+  categoryTypes.data = response;
 }
 
 async function refreshCategory() {
@@ -45,26 +47,15 @@ async function refreshCategory() {
   }
 }
 
-async function getCategoryById(id) {
-  try {
-    categories.loading = true;
-    const response = await categoryService.GetById(id);
-    categories.data.push(response);
-    console.log(response);
-  } finally {
-    categories.loading = false;
-  }
-}
-
 onMounted(() => {
   getCategoryTypes();
-  getAllCategories();
+  getCategoryById(id);
 });
 
 provide("modals", modals);
 provide("categories", categories);
 provide("categoryTypes", categoryTypes);
-provide("methods", { getAllCategories, getCategoryTypes, refreshCategory, getCategoryById });
+provide("methods", { getCategoryTypes, refreshCategory, getCategoryById });
 </script>
 
 <template>

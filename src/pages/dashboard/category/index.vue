@@ -23,34 +23,7 @@ async function getAllCategories() {
   try {
     categories.loading = true;
     const response = await categoryService.GetAll();
-    const data = response.map(item => ({ ...item.category, categoryType: item.categoryType }));
-    categories.data[0] = { subCategories: data };
-  } finally {
-    categories.loading = false;
-  }
-}
-
-async function refreshCategory() {
-  const id = categories.data?.at(-1)?.id;
-  if (id) {
-    try {
-      categories.loading = true;
-      const response = await categoryService.GetById(id);
-      categories.data.splice(-1, 1, response);
-    } finally {
-      categories.loading = false;
-    }
-  } else {
-    getAllCategories();
-  }
-}
-
-async function getCategoryById(id) {
-  try {
-    categories.loading = true;
-    const response = await categoryService.GetById(id);
-    categories.data.push(response);
-    console.log(response);
+    categories.data = response;
   } finally {
     categories.loading = false;
   }
@@ -64,7 +37,7 @@ onMounted(() => {
 provide("modals", modals);
 provide("categories", categories);
 provide("categoryTypes", categoryTypes);
-provide("methods", { getAllCategories, getCategoryTypes, refreshCategory, getCategoryById });
+provide("methods", { getAllCategories, getCategoryTypes });
 </script>
 
 <template>

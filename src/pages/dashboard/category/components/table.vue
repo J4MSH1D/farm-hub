@@ -2,19 +2,16 @@
 import { computed, inject, toRefs } from "vue";
 import { useTranslation } from "i18next-vue";
 import { categoryService } from "@/services/CategoryService";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const modals = inject("modals");
 const methods = inject("methods");
 const categories = inject("categories");
-const { loading } = toRefs(categories);
+const { loading, data } = toRefs(categories);
 
 const { i18next } = useTranslation();
 const locale = computed(() => i18next.language);
-const tableData = computed(() => {
-  if (categories.data) {
-    return categories.data?.at(-1)?.subCategories;
-  }
-});
 
 function openEditModal(item) {
   modals.edit.open = true;
@@ -25,14 +22,14 @@ async function deleteCategory(id) {
   try {
     loading.value = true;
     await categoryService.Delete(id);
-    await methods.refreshCategory();
+    await methods.getAllCategories();
   } finally {
     loading.value = false;
   }
 }
 
 function handleRecordClick(record) {
-  methods.getCategoryById(record.id);
+  router.push(`/category/${record.id}`);
 }
 
 const columns = [
@@ -51,10 +48,10 @@ const columns = [
 
 <template>
   <div class="container py-8">
-    <a-table :loading="loading" :dataSource="tableData" :columns="columns">
+    <a-table :loading="loading" :dataSource="data" :columns="columns">
       <template v-slot:bodyCell="{ record, column }">
         <template v-if="column.dataIndex === 'name'">
-          <span @click="handleRecordClick(record)" class="block cursor-pointer">{{ record.name?.[locale] }}</span>
+          <span @click="handleRecordClick(record)" class="block cursor-pointer">{{ record.category.name?.[locale] }}</span>
         </template>
         <template v-if="column.dataIndex === 'actions'">
           <div class="flex gap-2">

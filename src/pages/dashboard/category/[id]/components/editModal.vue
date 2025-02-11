@@ -1,19 +1,12 @@
 <script setup>
-import { computed, inject, reactive, ref, toRefs, watch } from "vue";
-import { useTranslation } from "i18next-vue";
+import { inject, reactive, ref, toRefs, watch } from "vue";
 import { categoryService } from "@/services/CategoryService";
 
 const modals = inject("modals");
 const categories = inject("categories");
 const methods = inject("methods");
-const categoryTypes = inject("categoryTypes");
 const { open, params } = toRefs(modals.edit);
-const { i18next } = useTranslation();
-const locale = computed(() => i18next.language);
 
-const categoryDisabled = computed(() => !modals.edit.params?.categoryType?.id);
-
-const formRef = ref();
 const loading = ref(false);
 const form = reactive({
   name: {
@@ -30,38 +23,28 @@ async function updateCategory() {
     loading.value = true;
     await categoryService.Update(form);
     await methods.refreshCategory();
-    formRef.value.resetFields();
     modals.edit.open = false;
     modals.edit.params = null;
+    formRef.value.resetFields();
   } finally {
     loading.value = false;
   }
 }
 
-watch(
-  params,
-  value => {
-    if (value) {
-      const categoryTypeId = value?.categoryType?.id;
-
-      if (categoryTypeId) {
-        form.categoryTypeId = value.categoryType.id;
-      } else {
-        form.categoryTypeId = categories.data?.at(-1)?.id;
-      }
-
-      form.id = value.id;
-      form.name = { ...value.name };
-      form.parentId = categories.data?.at(-1)?.id || null;
-    }
-  },
-  { deep: true }
-);
+watch(params, value => {
+  if (value) {
+    const parent = categories.data?.at(-1);
+    form.categoryTypeId = parent.categoryType?.id;
+    form.id = value.id;
+    form.name = { ...value.name };
+    form.parentId = parent.parentCategory?.parentId || null;
+  }
+});
 </script>
 
 <template>
   <a-modal v-model:open="open" :footer="false">
-    <a-form :model="form" ref="formRef" @finish="updateCategory" class="mb-5 mt-10">
+    <a-form :model="form" @finish="updateCategory" class="mb-5 mt-10">
       <!-- Name (uz) -->
       <a-form-item
         name="uz"
@@ -80,17 +63,8 @@ watch(
       >
         <a-input size="large" v-model:value="form.name.ru" placeholder="Русский" />
       </a-form-item>
-      <!-- CategoryId (ru) -->
-      <a-form-item
-        name="categoryTypeId"
-        :label="$t('Категория')"
-        :rules="[{ required: true, message: $t('Обязательно к заполнению') }]"
-        :labelCol="{ span: 24 }"
-      >
-        <a-select size="large" v-model:value="form.categoryTypeId" :disabled="categoryDisabled" :placeholder="$t('Категория')">
-          <a-select-option v-for="item in categoryTypes.data" :value="item.id">{{ item.name?.[locale] }}</a-select-option>
-        </a-select>
-      </a-form-item>
+
+      <!-- form-button -->
       <a-form-item class="w-full">
         <a-button size="large" type="primary" class="!w-full" html-type="submit" @click="updateCategory">{{ $t("Сохранить") }}</a-button>
       </a-form-item>

@@ -39,12 +39,22 @@ const links = [
   },
   {
     path: "/category",
-    name: "Подкатегории",
+    name: "Category",
     meta: {
       title: "Подкатегории",
       permissions: [9000],
     },
     component: () => lazyLoad("dashboard/category"),
+  },
+  {
+    path: "/category/:id",
+    name: "Category/Id",
+    meta: {
+      title: "Подкатегории",
+      permissions: [9000],
+      notVisible: true,
+    },
+    component: () => lazyLoad("dashboard/category/[id]"),
   },
 ];
 

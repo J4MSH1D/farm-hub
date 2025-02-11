@@ -4,7 +4,6 @@ import { useTranslation } from "i18next-vue";
 import { categoryService } from "@/services/CategoryService";
 
 const modals = inject("modals");
-const categories = inject("categories");
 const methods = inject("methods");
 const categoryTypes = inject("categoryTypes");
 const { open, params } = toRefs(modals.edit);
@@ -13,7 +12,7 @@ const locale = computed(() => i18next.language);
 
 const categoryDisabled = computed(() => !modals.edit.params?.categoryType?.id);
 
-const formRef = ref();
+const formRef = ref(null);
 const loading = ref(false);
 const form = reactive({
   name: {
@@ -29,10 +28,10 @@ async function updateCategory() {
   try {
     loading.value = true;
     await categoryService.Update(form);
-    await methods.refreshCategory();
-    formRef.value.resetFields();
+    await methods.getAllCategories();
     modals.edit.open = false;
     modals.edit.params = null;
+    formRef.value.resetFields();
   } finally {
     loading.value = false;
   }
@@ -42,17 +41,11 @@ watch(
   params,
   value => {
     if (value) {
-      const categoryTypeId = value?.categoryType?.id;
-
-      if (categoryTypeId) {
-        form.categoryTypeId = value.categoryType.id;
-      } else {
-        form.categoryTypeId = categories.data?.at(-1)?.id;
-      }
-
+      console.log(value);
+      form.categoryTypeId = value.categoryType.id;
       form.id = value.id;
-      form.name = { ...value.name };
-      form.parentId = categories.data?.at(-1)?.id || null;
+      form.name = { ...value.category.name };
+      form.parentId = null;
     }
   },
   { deep: true }
@@ -63,30 +56,15 @@ watch(
   <a-modal v-model:open="open" :footer="false">
     <a-form :model="form" ref="formRef" @finish="updateCategory" class="mb-5 mt-10">
       <!-- Name (uz) -->
-      <a-form-item
-        name="uz"
-        :label="$t('Название (uz)')"
-        :rules="[{ required: true, message: $t('Обязательно к заполнению') }]"
-        :labelCol="{ span: 24 }"
-      >
+      <a-form-item name="uz" :label="$t('Название (uz)')" :labelCol="{ span: 24 }">
         <a-input size="large" v-model:value="form.name.uz" placeholder="O'zbekcha" />
       </a-form-item>
       <!-- Name (ru) -->
-      <a-form-item
-        name="ru"
-        :label="$t('Название (ru)')"
-        :rules="[{ required: true, message: $t('Обязательно к заполнению') }]"
-        :labelCol="{ span: 24 }"
-      >
+      <a-form-item name="ru" :label="$t('Название (ru)')" :labelCol="{ span: 24 }">
         <a-input size="large" v-model:value="form.name.ru" placeholder="Русский" />
       </a-form-item>
       <!-- CategoryId (ru) -->
-      <a-form-item
-        name="categoryTypeId"
-        :label="$t('Категория')"
-        :rules="[{ required: true, message: $t('Обязательно к заполнению') }]"
-        :labelCol="{ span: 24 }"
-      >
+      <a-form-item name="categoryTypeId" :label="$t('Категория')" :labelCol="{ span: 24 }">
         <a-select size="large" v-model:value="form.categoryTypeId" :disabled="categoryDisabled" :placeholder="$t('Категория')">
           <a-select-option v-for="item in categoryTypes.data" :value="item.id">{{ item.name?.[locale] }}</a-select-option>
         </a-select>

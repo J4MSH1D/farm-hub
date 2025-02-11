@@ -24,8 +24,8 @@ function openEditModal(item) {
 async function deleteCategory(id) {
   try {
     loading.value = true;
-    await categoryService.Delete(id);
-    await methods.refreshCategory();
+    categoryService.Delete(id);
+    methods.refreshCategory();
   } finally {
     loading.value = false;
   }
