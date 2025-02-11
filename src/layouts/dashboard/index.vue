@@ -69,13 +69,13 @@ onMounted(() => {
             <a-menu style="border: none" theme="light" mode="inline" v-model:open-keys="activeSubMenu" v-model:selected-keys="activeMenuItem">
               <template v-for="(link, index) in links">
                 <a-sub-menu v-if="link.children" :key="link.name">
-                  <template #title>{{ link.meta.title }}</template>
+                  <template #title>{{ $t(link.meta.title) }}</template>
                   <a-menu-item v-for="elem in link.children" :key="elem.name" @click="navigate(elem.name)">
-                    {{ elem.meta.title }}
+                    {{ $t(elem.meta.title) }}
                   </a-menu-item>
                 </a-sub-menu>
                 <div v-else :key="index">
-                  <a-menu-item @click="navigate(link.name)" :key="link.name">{{ link.meta.title }} </a-menu-item>
+                  <a-menu-item @click="navigate(link.name)" :key="link.name">{{ $t(link.meta.title) }} </a-menu-item>
                 </div>
               </template>
             </a-menu>

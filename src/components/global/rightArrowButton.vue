@@ -1,8 +1,14 @@
 <script setup>
+import { type } from "windicss/utils";
+
 defineProps({
   color: {
     type: String,
     default: "#4AB75F",
+  },
+  cusClass: {
+    type: String,
+    default: "w-12 !h-12",
   },
 });
 </script>
@@ -15,8 +21,9 @@ defineProps({
     }"
   >
     <a-button
-      class="bg-white flex justify-center items-center rounded-none !rounded-none !rounded-tl-3xl !rounded-br-3xl w-12 !h-12 !p-0"
+      class="bg-white flex justify-center items-center rounded-none !rounded-none !rounded-tl-3xl !rounded-br-3xl !p-0"
       size="large"
+      :class="cusClass"
     >
       <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_462_898)">

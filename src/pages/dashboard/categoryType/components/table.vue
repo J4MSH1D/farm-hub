@@ -12,8 +12,10 @@ let data = ref([]),
   updateData = reactive({ id: null, uz: "", ru: "" });
 
 async function getAllCategories() {
+  loading.value = true;
   const response = await categoryTypeService.GetAllCategories();
   data.value = response;
+  loading.value = false;
 }
 
 function setUpdateModal(category) {
@@ -86,7 +88,7 @@ const columns = [
 <template>
   <div>
     <div class="mb-5 flex justify-end items-center">
-      <a-button @click="createModal = !createModal" type="primary" :loading="loading"> {{ $t("Создать") }} </a-button>
+      <a-button @click="createModal = !createModal" type="primary"> {{ $t("Создать") }} </a-button>
       <a-modal v-model:open="createModal" :footer="false">
         <a-form :model="addData" @finish="onAdd" class="mb-5 mt-10">
           <a-form-item name="uz" :rules="[{ required: true, message: $t('Обязательно к заполнению') }]">
@@ -96,7 +98,7 @@ const columns = [
             <a-input size="large" v-model:value="addData.ru" placeholder="Русский" />
           </a-form-item>
           <a-form-item class="w-full">
-            <a-button size="large" type="primary" class="!w-full" html-type="submit">{{ $t("Добавить") }}</a-button>
+            <a-button size="large" type="primary" class="!w-full" html-type="submit" :loading="loading">{{ $t("Добавить") }}</a-button>
           </a-form-item>
         </a-form>
       </a-modal>
@@ -109,20 +111,20 @@ const columns = [
             <a-input size="large" v-model:value="updateData.ru" placeholder="Русский" />
           </a-form-item>
           <a-form-item class="w-full">
-            <a-button size="large" type="primary" class="!w-full" html-type="submit">{{ $t("Добавить") }}</a-button>
+            <a-button size="large" type="primary" class="!w-full" html-type="submit" :loading="loading">{{ $t("Добавить") }}</a-button>
           </a-form-item>
         </a-form>
       </a-modal>
     </div>
-    <a-table :dataSource="data" :columns="columns">
+    <a-table :dataSource="data" :columns="columns" :loading="loading">
       <template v-slot:bodyCell="props">
         <template v-if="props.column.dataIndex === 'name'">
           <span>{{ props.value[`${i18next.language}`] }}</span>
         </template>
         <template v-if="props.column.dataIndex === 'actions'">
           <div class="flex gap-2">
-            <a-button :loading="loading" danger type="primary" @click="deleteCategory(props.record.id)">{{ $t("Удалить") }}</a-button>
-            <a-button :loading="loading" class="bg-yellow-500 hover:(!bg-yellow-400)" type="primary" @click="setUpdateModal(props.record)">{{
+            <a-button danger type="primary" @click="deleteCategory(props.record.id)">{{ $t("Удалить") }}</a-button>
+            <a-button class="bg-yellow-500 hover:(!bg-yellow-400)" type="primary" @click="setUpdateModal(props.record)">{{
               $t("Изменить")
             }}</a-button>
           </div>

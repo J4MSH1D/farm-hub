@@ -3,13 +3,22 @@ import { orderService } from "@/services/OrderService";
 import { useTranslation } from "i18next-vue";
 import { onMounted, reactive, ref } from "vue";
 import { productService } from "@/services/ProductService";
-import { columnData } from "./data";
 import { dateFormatter, numberFormatter } from "@/utils/internalization";
 import { message, Modal } from "ant-design-vue";
 
 // Composables
 const { i18next } = useTranslation();
 const lang = i18next.language;
+
+const columnData = [
+  { key: "id", name: "id", title: "#", dataIndex: "id" },
+  { key: "products", name: "products", title: i18next.t("Продукты"), dataIndex: "products" },
+  { key: "fee", name: "fee", title: i18next.t("Плата за заказ"), dataIndex: "fee" },
+  { key: "orderDate", name: "orderDate", title: i18next.t("Дата заказа"), dataIndex: "orderDate" },
+  { key: "name", name: "name", title: i18next.t("Cтатус заказа"), dataIndex: "name" },
+  { key: "user", name: "user", title: i18next.t("Пользователь"), dataIndex: "user" },
+  { title: "", dataIndex: "options", width: "20%" },
+];
 
 // Refs
 const isModal = ref(false);
@@ -18,6 +27,7 @@ const isDeleteModal = ref(false);
 const formRef = ref();
 const loading = ref(false);
 const selectedOrderId = ref(null);
+const isLoadingData = ref(false);
 
 // Reactive states
 const formData = reactive({
@@ -32,7 +42,9 @@ const state = reactive({
 
 // Functions
 async function GetAllOrders() {
+  isLoadingData.value = true;
   state.tableData = await orderService.GetAll();
+  isLoadingData.value = false;
 }
 
 async function submitForm() {
@@ -125,7 +137,7 @@ onMounted(async () => {
       </template>
     </a-modal>
 
-    <a-table :data-source="state.tableData" :columns="columnData" bordered>
+    <a-table :data-source="state.tableData" :loading="isLoadingData" :columns="columnData" bordered>
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'products'">
           <a-tag v-for="product in record.products" size="large" color="green">{{ product.title }}</a-tag>

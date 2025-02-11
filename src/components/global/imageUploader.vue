@@ -1,4 +1,5 @@
 <script setup>
+import { fileService } from "@/services/fileUpload";
 import { ref, watch } from "vue";
 
 const model = defineModel();
@@ -10,12 +11,15 @@ const fileList = ref([]);
 
 watch(model, value => {
   if (value) {
-    const reader = new FileReader();
-    reader.readAsDataURL(value);
-    reader.onload = () => {
-      base64Image.value = reader.result;
-      emit("upload", value, reader.result);
-    };
+    const formData = new FormData();
+    formData.append("file", value);
+    UploadFile(formData);
+    // const reader = new FileReader();
+    // reader.readAsDataURL(value);
+    // reader.onload = () => {
+    //   base64Image.value = reader.result;
+    //   emit("upload", value, reader.result);
+    // };
   } else {
     base64Image.value = null;
   }
@@ -24,6 +28,12 @@ watch(model, value => {
 watch(fileList, value => {
   if (value.length) model.value = value[0].originFileObj;
 });
+
+async function UploadFile(file) {
+  const data = await fileService.PostUploadFile(file);
+  console.log(data);
+  model.value = data;
+}
 
 function deleteFile() {
   model.value = null;

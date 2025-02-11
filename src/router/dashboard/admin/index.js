@@ -33,7 +33,7 @@ const links = [
     name: "Category Type",
     meta: {
       title: "Категории",
-      permissions: [9000],
+      permissions: [9001],
     },
     component: () => lazyLoad("dashboard/categoryType"),
   },
@@ -42,7 +42,7 @@ const links = [
     name: "Category",
     meta: {
       title: "Подкатегории",
-      permissions: [9000],
+      permissions: [9001],
     },
     component: () => lazyLoad("dashboard/category"),
   },
@@ -51,10 +51,20 @@ const links = [
     name: "Category/Id",
     meta: {
       title: "Подкатегории",
-      permissions: [9000],
+      permissions: [9001],
       notVisible: true,
     },
     component: () => lazyLoad("dashboard/category/[id]"),
+  },
+  {
+    path: "/media-settings",
+    name: "Media Settings",
+    meta: {
+      title: "Настройки медиа",
+      permissions: [11000],
+      notVisible: true,
+    },
+    component: () => lazyLoad("dashboard/mediaSettings"),
   },
 ];
 

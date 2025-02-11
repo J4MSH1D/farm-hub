@@ -40,21 +40,36 @@ const columns = [
     title: "Code",
     dataIndex: "code",
     sorter: true,
-    width: "20%",
+    width: "10%",
+    disabled: true,
   },
   {
     title: "Ru",
     dataIndex: "ru",
-    filters: [{ text: "Bo'shlari'", value: "empty" }],
+    filters: [{ text: "Bo'shlari", value: "empty" }],
     onFilter: (value, record) => (value === "empty" ? !record.ru || record.ru.trim() === "" : record.ru && record.ru.trim() !== ""),
-    width: "30%",
+    width: "20%",
   },
   {
-    title: "Uz",
+    title: "O'z",
     dataIndex: "uz",
-    filters: [{ text: "Bo'shlari'", value: "empty" }],
+    filters: [{ text: "Bo'shlari", value: "empty" }],
     onFilter: (value, record) => (value === "empty" ? !record.uz || record.uz.trim() === "" : record.uz && record.uz.trim() !== ""),
-    width: "30%",
+    width: "20%",
+  },
+  {
+    title: "Eng",
+    dataIndex: "eng",
+    filters: [{ text: "Bo'shlari", value: "empty" }],
+    onFilter: (value, record) => (value === "empty" ? !record.eng || record.eng.trim() === "" : record.eng && record.eng.trim() !== ""),
+    width: "20%",
+  },
+  {
+    title: "Ўз",
+    dataIndex: "cyrl",
+    filters: [{ text: "Bo'shlari", value: "empty" }],
+    onFilter: (value, record) => (value === "empty" ? !record.cyrl || record.cyrl.trim() === "" : record.cyrl && record.cyrl.trim() !== ""),
+    width: "20%",
   },
 
   {
@@ -99,11 +114,12 @@ onMounted(async () => {
       <template v-if="['code', 'ru', 'uz', 'cyrl', 'eng'].includes(column.dataIndex)">
         <div class="flex items-center gap-2 justify-between">
           <a-textarea
-            v-if="editableData[record.id]"
+            v-if="editableData[record.id] && column.disabled !== true"
             :auto-size="{ minCols: 3, maxCols: 8 }"
             v-model:value="editableData[record.id][column.dataIndex]"
             style="margin: -5px 0"
           />
+
           <template v-else>
             {{ text }}
           </template>
