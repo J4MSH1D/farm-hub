@@ -1,3 +1,4 @@
+d
 <script setup>
 import { computed, onUnmounted, ref, watch } from "vue";
 import { catalogue, quickLinks } from "./data/index";
@@ -35,6 +36,9 @@ const dataOptions = [
   },
 ];
 
+const data = computed(() => {
+  return catalogue.products.map(item => item.categoryName);
+});
 function navigateProfile() {
   if (authService.CheckOnePermission(6000)) {
     router.push("/structures");
@@ -155,6 +159,7 @@ watch(route, () => {
             </template>
           </a-segmented>
         </div>
+        <!-- Services -->
         <div v-if="catalogueType === 'services'" class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
           <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
             <div
@@ -169,8 +174,43 @@ watch(route, () => {
             </div>
           </div>
         </div>
+        <!-- Products -->
+
         <div v-else class="mt-10 flex items-start gap-5 w-full flex-grow overflow-y-auto">
           <div class="flex flex-col w-full">
+            <!-- <div class="container py-8">
+              <div class="flex items-center justify-between">
+       
+                <div class="flex items-center justify-end gap-2">
+                  <button class="localProducts-button-prev bg-white rounded-full shadow-lg p-1.5">
+                    <icon name="arrow-left-small600" is-svg-raw class="h-5 w-5 fill-gray-700" />
+                  </button>
+                  <button class="localProducts-button-next bg-white rounded-full shadow-lg p-1.5">
+                    <icon name="arrow-right-small600" is-svg-raw class="h-5 w-5 fill-gray-700" />
+                  </button>
+                </div>
+              </div>
+
+              <swiper
+                :modules="[Navigation]"
+                slides-per-view="auto"
+                :navigation="{ nextEl: '.localProducts-button-next', prevEl: '.localProducts-button-prev' }"
+                class="mt-5"
+                space-between="20"
+              >
+                <swiper-slide
+                  v-for="item in catalogue.products"
+                  :key="item"
+                  class="max-w-[220px] bg-white rounded-xl p-4 my-4 cus-shadow last:(mr-0)"
+                >
+               
+                  <div class="block border border-gray-200 aspect-square bg-gray-200">
+                    <icon :name="item.icon" :alt="item.title" class="w-full h-full object-contain" />
+                  </div>
+                </swiper-slide>
+              </swiper>
+            </div> -->
+
             <div v-for="section in catalogue[catalogueType]" class="flex flex-wrap w-full mb-12">
               <div>
                 <span class="text-2xl font-medium">

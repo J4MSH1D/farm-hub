@@ -11,7 +11,7 @@ i18next
   .use(I18NextHttpBackend)
   .use(LanguageDetector)
   .init({
-    saveMissing: false,
+    saveMissing: true,
     fallbackLng: locale,
     detection: {
       order: ["localStorage", "sessionStorage", "queryString"],
